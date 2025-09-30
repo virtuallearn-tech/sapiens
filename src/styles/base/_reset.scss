@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove estilos de listas */
+ul, ol {
+  list-style: none;
+}
+
+/* Remove sublinhado padrão de links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Normaliza botões e inputs */
+button, input, textarea, select {
+  font: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Imagens responsivas */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
