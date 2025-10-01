@@ -1,15 +1,19 @@
+import { useNavigate, Link } from 'react-router-dom'
 import logo from '@assets/icons/sapiens-logo-branco.png'
 import { Button } from '@components/common/Button'
 
-export const Header = () =>{
+export const Header = () => {
+  const navigate = useNavigate()
+
   return <div className="m-header">
-    <div className="m-header__logo">
-      <img src={logo} alt="Sapiens Logo" />
-      <h1>Sapiens</h1>
-    </div>
+    <Link to="/">
+      <div className="m-header__logo">
+        <img src={logo} alt="Sapiens Logo" />
+        <h1>Sapiens</h1>
+      </div>
+    </Link>
     <div className="m-header__session">
-      {/* <span>Entrar</span> */}
-      <Button typeBtn={'clear'}>Entrar</Button>
+      <Button typeBtn={'clear'} onClick={() => navigate('/signin')}>Entrar</Button>
     </div>
   </div>
 }

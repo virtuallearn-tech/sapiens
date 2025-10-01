@@ -1,8 +1,12 @@
-import { Button } from "@components/common/Button";
-import { Input } from "@components/common/Input";
-import { useState } from "react";
+import { Button } from "@components/common/Button"
+import { Input } from "@components/common/Input"
+import { useState } from "react"
+import { useNavigate } from 'react-router-dom'
 
-export const Signin = () => {
+const Signin = () => {
+
+  const navigate = useNavigate()
+
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
@@ -38,9 +42,18 @@ export const Signin = () => {
 
           <div className="p-login__actions">
             <Button type="submit" typeBtn="primary" className="m-button--full">Entrar</Button>
+
+            <Button type="button" 
+              typeBtn="secondary" 
+              className="m-button--full"
+              onClick={()=> navigate("/signup")}
+              >Criar conta</Button>
+
           </div>
         </form>
       </div>
     </div>
   );
 };
+
+export default Signin

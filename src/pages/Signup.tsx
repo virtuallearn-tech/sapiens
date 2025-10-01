@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Input } from "@components/common/Input";
 import { Button } from "@components/common/Button";
 
-export const Signup = () => {
+const Signup = () => {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -53,3 +53,5 @@ export const Signup = () => {
     </div>
   );
 };
+
+export default Signup

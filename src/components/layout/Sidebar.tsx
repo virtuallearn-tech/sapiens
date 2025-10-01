@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom'
 import { FaHome, FaShareAlt, FaBookOpen } from "react-icons/fa";
 import { GiProgression } from "react-icons/gi";
 import { MdContactSupport } from "react-icons/md";
-import { BsFillBadge3dFill  } from "react-icons/bs";
+import { BsFillBadge3dFill } from "react-icons/bs";
 
 import { useSidebar } from "@store/SidebarContext";
 
@@ -13,28 +14,40 @@ export const Sidebar = () => {
       <nav className="m-sidebar__nav">
         <ul className="m-sidebar__list">
           <li className="m-sidebar__item" onClick={close}>
-            <FaHome className="m-sidebar__icon" />
-            <span>Home</span>
+            <Link to="">
+              <FaHome className="m-sidebar__icon" />
+              <span>Home</span>
+            </Link>
           </li>
           <li className="m-sidebar__item" onClick={close}>
-            <BsFillBadge3dFill  className="m-sidebar__icon" />
-            <span>Aprender em 3D</span>
+            <Link to="">
+              <BsFillBadge3dFill className="m-sidebar__icon" />
+              <span>Aprender em 3D</span>
+            </Link>
           </li>
           <li className="m-sidebar__item" onClick={close}>
-            <FaBookOpen className="m-sidebar__icon" />
-            <span>Conteúdo</span>
+            <Link to="">
+              <FaBookOpen className="m-sidebar__icon" />
+              <span>Conteúdo</span>
+            </Link>
           </li>
           <li className="m-sidebar__item" onClick={close}>
-            <GiProgression className="m-sidebar__icon" />
-            <span>Questões do ENEM</span>
+            <Link to="">
+              <GiProgression className="m-sidebar__icon" />
+              <span>Questões do ENEM</span>
+            </Link>
           </li>
           <li className="m-sidebar__item" onClick={close}>
-            <FaShareAlt className="m-sidebar__icon" />
-            <span>Compartilhar</span>
+            <Link to="">
+              <FaShareAlt className="m-sidebar__icon" />
+              <span>Compartilhar</span>
+            </Link>
           </li>
           <li className="m-sidebar__item" onClick={close}>
-            <MdContactSupport className="m-sidebar__icon" />
-            <span>Contato</span>
+            <Link to="">
+              <MdContactSupport className="m-sidebar__icon" />
+              <span>Contato</span>
+            </Link>
           </li>
         </ul>
       </nav>
