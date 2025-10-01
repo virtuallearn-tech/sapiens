@@ -1,0 +1,21 @@
+@use '../base/var' as *;
+.fab {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: $primary;
+  color: $white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba($dark, 0.3);
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: darken($primary, 8%);
+  }
+}

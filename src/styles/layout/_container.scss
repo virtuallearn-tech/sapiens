@@ -1,0 +1,34 @@
+@use '../base/var' as *;
+
+.l-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // ocupa a tela toda
+
+  &__body {
+    display: flex;
+    flex: 1; // ocupa o espaço entre header e footer
+    flex-direction: row;
+    background-color: $gray-light;
+    // background-color: red;
+  }
+
+  &__content {
+    flex: 1; // ocupa todo o espaço restante
+    padding: 1rem;
+    background-color: $white;
+    overflow-y: auto;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .l-container__body {
+    flex-direction: column;
+  }
+
+  .l-container__content {
+    padding: 0.5rem;
+  }
+}
+

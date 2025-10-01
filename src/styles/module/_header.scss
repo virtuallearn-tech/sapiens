@@ -1,0 +1,55 @@
+@use '../base/var' as *;
+@use './display-flex' as *;
+
+.m-header {
+  @include display-flex($flex-direction: row,
+    $justify-content: space-between);
+  height: 54px;
+  padding: 0 1rem;
+  background-color: $primary;
+  color: $white;
+
+
+  &__logo {
+    @include display-flex($flex-direction: row,
+      $justify-content: space-between);
+    gap: 0.5rem;
+    cursor: pointer;
+
+    h1 {
+      font-size: 1.1rem;
+    }
+
+    img {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+
+  &__session {
+    @include display-flex($flex-direction: row,
+      $justify-content: space-between);
+    gap: 0.5rem;
+
+    .m-button {
+       padding: 0.4rem 1.2rem;
+      color: $white;
+      border: 2px solid $white;
+
+      &:hover {
+        background-color: rgba($white, 0.1);
+      }
+    }
+
+    // span {
+    //   font-size: 1.2rem;
+    //   font-weight: bold;
+    //   cursor: pointer;
+
+    //   &:hover {
+    //     color: $gray-light;
+    //   }
+    // }
+  }
+}

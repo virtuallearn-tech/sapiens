@@ -28,9 +28,30 @@
       "@components/*": [
         "components/*"
       ],
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
       "@styles/*": [
         "styles/*"
-      ]
+      ],
+      "@futures/*": [
+        "futures/*"
+      ],
+      "@routes/*": [
+        "routes/*"
+      ],
+      "@store/*": [
+        "store/*"
+      ],
+       "@services/*": [
+        "services/*"
+      ],
+      "@assets/*": [
+        "assets/*"
+      ],
     }
   },
   "include": ["src"]

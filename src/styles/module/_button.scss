@@ -1,0 +1,63 @@
+@use '../base/var' as *;
+
+.m-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: none;
+
+  // Estado desabilitado
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  // Hover padrão
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
+  }
+
+  // Tipos de botão
+  &--primary {
+    background-color: $primary;
+    color: $primary;
+
+    &:hover {
+      background-color: darken($primary, 8%);
+    }
+  }
+
+  &--secondary {
+    background-color: $secondary;
+    color: $white;
+
+    &:hover {
+      background-color: darken($secondary, 8%);
+    }
+  }
+
+  &--clear {
+    background-color: transparent;
+    color: $primary;
+    border: 2px solid $primary;
+
+    &:hover {
+      background-color: rgba($primary, 0.1);
+    }
+  }
+
+  &--dark {
+    background-color: $dark;
+    color: $white;
+
+    &:hover {
+      background-color: lighten($dark, 8%);
+    }
+  }
+}
