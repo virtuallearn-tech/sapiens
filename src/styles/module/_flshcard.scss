@@ -1,0 +1,69 @@
+@use '../base/var' as *;
+
+.m-flashcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+
+  &__card {
+    // width: 280px;
+    width: 100%;
+    height: 180px;
+    perspective: 1000px;
+    cursor: pointer;
+    position: relative;
+
+    &--flipped .m-flashcard__face--front {
+      transform: rotateY(180deg);
+    }
+
+    &--flipped .m-flashcard__face--back {
+      transform: rotateY(0deg);
+    }
+  }
+
+  &__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.6s;
+  }
+
+  &__face--front {
+    background-color: $primary;
+    color: $white;
+    transform: rotateY(0deg);
+  }
+
+  &__face--back {
+    background-color: lighten($primary, 15%);
+    color: $dark;
+    transform: rotateY(-180deg);
+  }
+
+  &__options {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1rem;
+
+    input {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__actions {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}

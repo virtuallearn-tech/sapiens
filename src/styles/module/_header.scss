@@ -1,5 +1,5 @@
 @use '../base/var' as *;
-@use './display-flex' as *;
+@use './mixins' as *;
 
 .m-header {
   @include display-flex($flex-direction: row,

@@ -1,6 +1,10 @@
 import { Header } from "@components/layout/Header"
 import { Sidebar } from "@components/layout/Sidebar";
+import { Signin } from "@pages/Signin";
+import { Signup } from "@pages/Signup";
 import { useSidebar } from "@store/SidebarContext";
+
+//https://docs.enem.dev/introduction
 
 function App() {
 
@@ -12,11 +16,10 @@ function App() {
       <div className="l-container__body">
         <Sidebar />   
         <main className="l-container__content">
-          {/* Conteúdo principal (rotas, páginas) */}
+          <Signup/> 
+          {/* <Signin/> */}
         </main>
       </div>
-      {/* <Footer /> */}
-      {/* Botão flutuante */}
       <button className="fab" onClick={toggle}>
         ☰
       </button>

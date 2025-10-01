@@ -9,7 +9,7 @@ export const Header = () =>{
     </div>
     <div className="m-header__session">
       {/* <span>Entrar</span> */}
-      <Button type={'clear'}>Entrar</Button>
+      <Button typeBtn={'clear'}>Entrar</Button>
     </div>
   </div>
 }
