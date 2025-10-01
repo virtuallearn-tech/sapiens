@@ -3,7 +3,6 @@ import { GiProgression } from "react-icons/gi";
 import { MdContactSupport } from "react-icons/md";
 import { BsFillBadge3dFill  } from "react-icons/bs";
 
-
 import { useSidebar } from "@store/SidebarContext";
 
 export const Sidebar = () => {
