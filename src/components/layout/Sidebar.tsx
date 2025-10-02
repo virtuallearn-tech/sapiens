@@ -13,38 +13,38 @@ export const Sidebar = () => {
     <aside className={`m-sidebar ${isOpen ? "m-sidebar--open" : ""}`}>
       <nav className="m-sidebar__nav">
         <ul className="m-sidebar__list">
-          <li className="m-sidebar__item" onClick={close}>
-            <Link to="">
+          <li onClick={close}>
+            <Link to="" className="m-sidebar__item">
               <FaHome className="m-sidebar__icon" />
               <span>Home</span>
             </Link>
           </li>
-          <li className="m-sidebar__item" onClick={close}>
-            <Link to="">
+          <li onClick={close}>
+            <Link to="" className="m-sidebar__item">
               <BsFillBadge3dFill className="m-sidebar__icon" />
               <span>Aprender em 3D</span>
             </Link>
           </li>
-          <li className="m-sidebar__item" onClick={close}>
-            <Link to="">
+          <li onClick={close}>
+            <Link to="" className="m-sidebar__item">
               <FaBookOpen className="m-sidebar__icon" />
               <span>Conteúdo</span>
             </Link>
           </li>
-          <li className="m-sidebar__item" onClick={close}>
-            <Link to="">
+          <li onClick={close}>
+            <Link to="" className="m-sidebar__item">
               <GiProgression className="m-sidebar__icon" />
               <span>Questões do ENEM</span>
             </Link>
           </li>
-          <li className="m-sidebar__item" onClick={close}>
-            <Link to="">
+          <li onClick={close}>
+            <Link to="" className="m-sidebar__item">
               <FaShareAlt className="m-sidebar__icon" />
               <span>Compartilhar</span>
             </Link>
           </li>
-          <li className="m-sidebar__item" onClick={close}>
-            <Link to="">
+          <li onClick={close}>
+            <Link to="" className="m-sidebar__item">
               <MdContactSupport className="m-sidebar__icon" />
               <span>Contato</span>
             </Link>

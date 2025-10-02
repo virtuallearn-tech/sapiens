@@ -5,6 +5,7 @@ import { Home } from "@pages/Home";
 // Lazy loading das páginas
 const Signin = lazy(() => import("@pages/Signin"));
 const Signup = lazy(() => import("@pages/Signup"));
+const TopicOptions = lazy(() => import("@pages/TopicOptions"))
 
 export const AppRoutes = () => {
   return (
@@ -13,6 +14,7 @@ export const AppRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
+        <Route path="/topic-option/:code/:title" element={<TopicOptions />} />
       </Routes>
     </Suspense>
   );

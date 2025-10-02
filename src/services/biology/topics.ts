@@ -1,8 +1,9 @@
-import type { Itopic } from "interfaces/topic";
+import type { Itopic, ITopicData } from "interfaces/topic";
 
 import EukaryoticCellCover from '@assets/cover/eukaryotic_cell.jpg'
 import ProkaryoticCellCover from '@assets/cover/prokaryotic_cell.jpg'
 import PlantCellCover from '@assets/cover/plant_cell.jpg'
+import type { CITOLOGY_TOPICS } from "interfaces/discipline";
 
 export const BIOLOGY_TOPICS: Itopic[] = [
   {
@@ -30,3 +31,7 @@ export const BIOLOGY_TOPICS: Itopic[] = [
     ]
   }
 ]
+
+export const getTopicByCode = (code: CITOLOGY_TOPICS): ITopicData => {
+  return BIOLOGY_TOPICS[0].data.find(topic => topic.code === code)!
+}

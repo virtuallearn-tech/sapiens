@@ -1,0 +1,17 @@
+@use './mixins' as *;
+
+.p-topic-options{
+  @include display-flex();
+  padding-top: 0.5rem;
+
+  &__title{
+    font-size: 1.4rem;
+  }
+
+  &__content{
+     @include display-flex();
+     gap: 0.5rem;
+     width: 100%;
+     padding: 1rem 0;
+  }
+}

@@ -1,0 +1,18 @@
+.p-home {
+  &__title {
+    font-size: 1.5rem;
+    padding: 0.3rem 0 0;
+  }
+
+  &__list {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    padding: 1rem 0;
+
+    .m-card-content{
+      height: 110px;
+    }
+  }
+}
