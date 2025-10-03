@@ -52,6 +52,9 @@
       "@assets/*": [
         "assets/*"
       ],
+      "@interfaces/*": [
+        "interfaces/*"
+      ],
     }
   },
   "include": ["src"]

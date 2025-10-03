@@ -37,6 +37,9 @@
       ],
       "@assets/*": [
         "assets/*"
+      ],
+      "@interfaces/*": [
+        "interfaces/*"
       ]
     }
   }

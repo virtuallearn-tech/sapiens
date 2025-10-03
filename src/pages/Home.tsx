@@ -3,16 +3,17 @@ import { Link } from 'react-router-dom'
 
 import { CardContent } from "@components/cards/CardContent"
 
-import { BIOLOGY_TOPICS } from "@services/biology/topics"
-import type { ITopicData } from "interfaces/topic"
+import type { Itopic, ITopicCode, ITopicData } from "interfaces/topic"
+import {getAllTopics } from "@services/contente"
 
 
 export const Home = () => {
 
-  const [topicList, setTopicList] = useState<ITopicData[]>([])
+  const [topicList, setTopicList] = useState<ITopicCode[]>([])
 
   useEffect(() => {
-    const topics = BIOLOGY_TOPICS[0].data
+    const topics = getAllTopics()
+    console.log('topics', topics)
     setTopicList(topics)
   }, [])
 
@@ -25,7 +26,7 @@ export const Home = () => {
 
       <div className="p-home__list">
         {topicList && topicList.map((topic) => (
-          <Link to={`/topic-option/${topic.code}/${topic.title}`}>
+          <Link to={`/topic-option/${topic.discipline}/${topic.topic}`}>
             <CardContent
               key={topic.code}
               id={topic.code}

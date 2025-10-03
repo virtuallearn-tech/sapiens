@@ -1,3 +1,4 @@
+import { getRandomItems } from "@utils/getRandomItems";
 import type { IFlashcard } from "interfaces/flsahcards";
 
 export const Flashcards: IFlashcard[] = [
@@ -232,3 +233,7 @@ export const Flashcards: IFlashcard[] = [
     answer: "Possuem dupla membrana e no interior apresentam tilacoides organizados em grana, onde estão os pigmentos como a clorofila, essenciais para a fotossíntese."
   }
 ];
+
+export const getFlashcards = (qtd:number) =>{
+  return getRandomItems<IFlashcard>(Flashcards, qtd);
+}

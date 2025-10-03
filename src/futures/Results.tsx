@@ -1,6 +1,8 @@
-import { Button } from "@components/common/Button";
+import { Button } from "@components/common/Button"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+
+import html2canvas from "html2canvas";
 
 const Results = () => {
 
@@ -9,6 +11,7 @@ const Results = () => {
   const [errors, setErrors] = useState(0);
   const [percentage, setPercentage] = useState(0);
   const [message, setMessage] = useState('');
+  // const [isSaving, setIsSaving] = useState(false);
 
   const handleErros = (total: number, right: number): number => {
     return total - right;
@@ -19,7 +22,7 @@ const Results = () => {
     return Math.round((right / total) * 100);
   };
 
-  const handleMessage = (percentage:number) => {
+  const handleMessage = (percentage: number) => {
     console.log('handleMessage', percentage)
     const messages = {
       EXCELENT: 'Excelente trabalho! Você está dominando o conteúdo 🚀',
@@ -39,24 +42,46 @@ const Results = () => {
     }
   }
 
-useEffect(() => {
-  const totalNum = Number(total);
-  const rightNum = Number(right);
+  useEffect(() => {
+    const totalNum = Number(total);
+    const rightNum = Number(right);
 
-  const errors = handleErros(totalNum, rightNum);
-  const perc = handlePercentage(totalNum, rightNum);
+    const errors = handleErros(totalNum, rightNum);
+    const perc = handlePercentage(totalNum, rightNum);
 
-  setErrors(errors);
-  setPercentage(perc);
+    setErrors(errors);
+    setPercentage(perc);
 
-  console.log('PA', perc);
-  handleMessage(perc);
-}, [total, right]);
+    console.log('PA', perc);
+    handleMessage(perc);
+  }, [total, right]);
 
+  const handleSaveResult = async () => {
+    // setIsSaving(true);
+    const element = document.querySelector(".results") as HTMLElement;
+    if (!element) return;
+
+    // Captura o elemento como canvas
+    const canvas = await html2canvas(element);
+
+    // Converte para imagem JPEG
+    const dataURL = canvas.toDataURL("image/jpeg", 1.0);
+
+    // Cria um link temporário para download
+    const link = document.createElement("a");
+    link.href = dataURL;
+    link.download = "resultado.jpeg";
+    link.click();
+    // setTimeout(() => {
+    // setIsSaving(false);
+    // }, 3000);
+  };
 
   return (
     <div className="results">
-      
+
+      <h2 className="results__title">Meus Resultados</h2>
+
       <div className="results__cards">
         <div className="results__card results__card--correct">
           <h3 className="results__card-title">Acertos</h3>
@@ -80,8 +105,10 @@ useEffect(() => {
         </p>
       </div>
 
-      <div className="results__actions">
-        <Button type="button" className="m-button--full">
+      <div className="results__actions" data-html2canvas-ignore="true">
+        <Button type="button" className="m-button--full"
+          onClick={handleSaveResult}
+        >
           Salvar resultado
         </Button>
       </div>
