@@ -1,12 +1,12 @@
 import type { BIOLOGY_TOPICS, DISCIPLINE } from "./discipline";
 
-interface IAnswer {
-  letter: string;
+export interface IAnswer {
+  letter?: string;
   isCorrect: boolean;
   text?: string;
 }
 
-interface IQuestionData {
+export interface IQuestionData {
   code: string;
   context: string;
   files?: string[];

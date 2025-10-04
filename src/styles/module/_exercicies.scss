@@ -1,7 +1,14 @@
+@use '../base/var' as *;
+@use './mixins' as *;
+
 .p-exercicios {
   display: flex;
   justify-content: center;
-  padding: 1rem 0.5rem;
+  // padding: 1rem 0.5rem;
+
+  &__num{
+    margin: 0.5rem auto;
+  }
 
   &__card {
     background: #fff;
@@ -19,8 +26,8 @@
   }
 
   &__question {
-    font-size: 1.4rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
     color: #333;
   }
 
@@ -44,6 +51,36 @@
     }
   }
 
+  &__option{
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    
+    &--wrong{
+      background-color: $wrong-answer;
+    }
+
+    &--correct{
+      background-color: $right-answer;
+    }
+
+  }
+
+  &__explanation{
+    @include display-flex(
+      $justify-content: flex-start,
+      $align-items: flex-start,
+    );
+    gap: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    // display: block;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-left: 0.55rem solid $info-answer;
+    border-radius: 0.2rem;
+  }
+
   &__actions {
     // background-color: red;
     .m-button{
@@ -53,3 +90,5 @@
     // justify-content: flex-end;
   }
 }
+
+

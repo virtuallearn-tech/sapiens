@@ -18,7 +18,7 @@ const Flashcard = () => {
   const [flashcards, setFlashcards] = useState<IFlashcard[]>([])
   const [right, setRight] = useState(0);
 
-  const [numFlashcards, setNumFlashcards] = useState(2);
+  const [numFlashcards, setNumFlashcards] = useState(10);
   const [started, setStarted] = useState(false);
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -53,6 +53,7 @@ const Flashcard = () => {
       <SelectNumQuestions
         id="num-flashcards"
         label="Número de Flashcards"
+        value={numFlashcards.toString()}
         onChange={(e) => setNumFlashcards(Number(e.target.value))}
         onClick={() => handleFlashcards()}
       />

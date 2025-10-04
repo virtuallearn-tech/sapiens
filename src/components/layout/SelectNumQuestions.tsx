@@ -20,7 +20,7 @@ interface ISelectNumQuestions {
 export const SelectNumQuestions = ({
   id,
   label,
-  value = "10",
+  value = "",
   options = flashcardsOpts,
   btnLabel = "Iniciar",
   onChange,
@@ -35,7 +35,7 @@ export const SelectNumQuestions = ({
         value={value}
         onChange={onChange}
       />
-      <Button onClick={onClick} className="m-button--full">
+      <Button onClick={onClick} className="m-button--full" disabled={!value}>
         {btnLabel}  
       </Button> 
     </div>

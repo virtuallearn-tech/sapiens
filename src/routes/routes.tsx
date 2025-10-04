@@ -7,6 +7,7 @@ const Signup = lazy(() => import("@pages/Signup"));
 const TopicOptions = lazy(() => import("@pages/TopicOptions"))
 const Results = lazy(() => import("@futures/Results"))
 const Flashcards = lazy(() => import("@futures/Flashcard"))
+const Exercises = lazy(() => import("@futures/Exercises"))
 
 export const AppRoutes = () => {
   return (
@@ -17,6 +18,7 @@ export const AppRoutes = () => {
         <Route path="/signin" element={<Signin />} />
         <Route path="/topic-option/:discipline/:code" element={<TopicOptions />} />
         <Route path="/flashcards/:discipline/:topic" element={<Flashcards />} />
+        <Route path="/exercises/:discipline/:topic" element={<Exercises />} />
         <Route path="/results/:total/:right" element={<Results />} />
       </Routes>
     </Suspense>

@@ -29,10 +29,17 @@ const TopicOptions = () => {
         <Button type="button" className="m-button--full">
           Explorar em 3D
         </Button>
-        <Button type="button" className="m-button--full" onClick={() => navigate(`/flashcards/${discipline}/${topic?.topic}`)}>
+        <Button 
+          type="button" 
+          className="m-button--full" 
+          onClick={() => navigate(`/flashcards/${discipline}/${topic?.topic}`)}>
           Flashcards
         </Button>
-        <Button type="button" className="m-button--full">
+        <Button 
+          type="button" 
+          className="m-button--full"
+          onClick={() => navigate(`/exercises/${discipline}/${topic?.topic}`)}
+          >
           Exercícios
         </Button>
       </div>

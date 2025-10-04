@@ -1,7 +1,6 @@
 import type { IQuestion } from "interfaces/question";
 
-export const Questions: IQuestion[] = [
-  {
+export const CitologyQuestions: IQuestion = {
     discipline: "BIOLOGY",
     topic: "CITOLOGY",
     data: [
@@ -548,4 +547,3 @@ export const Questions: IQuestion[] = [
     ]
 
   }
-];

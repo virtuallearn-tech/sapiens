@@ -55,6 +55,9 @@
       "@interfaces/*": [
         "interfaces/*"
       ],
+      "@hooks/*": [
+        "hooks/*"
+      ],
     }
   },
   "include": ["src"]
