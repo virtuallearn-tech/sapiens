@@ -15,9 +15,9 @@ export const AppRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
-        <Route path="/topic-option/:code" element={<TopicOptions />} />
-        <Route path="/results/:total/:right" element={<Results />} />
+        <Route path="/topic-option/:discipline/:code" element={<TopicOptions />} />
         <Route path="/flashcards/:discipline/:topic" element={<Flashcards />} />
+        <Route path="/results/:total/:right" element={<Results />} />
       </Routes>
     </Suspense>
   );

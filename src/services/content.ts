@@ -38,11 +38,13 @@ export const getContentByTopic = (discipline: DISCIPLINE = "BIOLOGY", topic: str
 
 export const getContentByCode = (
   discipline: DISCIPLINE = "BIOLOGY",
-  code: string): ITopicCode => {
+  code: string): ITopicCode => 
+{
   const content = getContentByDiscipline(discipline)!
   const getTopic = content.data.find(t => t.data.find(d => d.code === code))
   const topic = getTopic?.data.find(d => d.code === code)!
   topic.discipline = discipline
+  topic.topic = getTopic?.topic
   return topic
 }
 

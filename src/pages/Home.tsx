@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { CardContent } from "@components/cards/CardContent"
 
 import type { Itopic, ITopicCode, ITopicData } from "interfaces/topic"
-import {getAllTopics } from "@services/contente"
+import {getAllTopics } from "@services/content"
 
 
 export const Home = () => {
@@ -26,7 +26,7 @@ export const Home = () => {
 
       <div className="p-home__list">
         {topicList && topicList.map((topic) => (
-          <Link to={`/topic-option/${topic.discipline}/${topic.topic}`}>
+          <Link to={`/topic-option/${topic.discipline}/${topic.code}`}>
             <CardContent
               key={topic.code}
               id={topic.code}

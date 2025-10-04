@@ -1,7 +1,6 @@
-import { getRandomItems } from "@utils/getRandomItems";
 import type { IFlashcard } from "interfaces/flsahcards";
 
-export const Flashcards: IFlashcard[] = [
+export const CitologyFlashcards: IFlashcard[] = [
   {
     code: "A1B2C3D4",
     question: "Qual a principal diferença entre células procarióticas e eucarióticas?",
@@ -234,6 +233,3 @@ export const Flashcards: IFlashcard[] = [
   }
 ];
 
-export const getFlashcards = (qtd:number) =>{
-  return getRandomItems<IFlashcard>(Flashcards, qtd);
-}

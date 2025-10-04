@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { Button } from "@components/common/Button";
 import { SelectNumQuestions } from "@components/layout/SelectNumQuestions";
 import type { IFlashcard } from "interfaces/flsahcards";
-import { getFlashcards } from "@services/biology/flashcards";
 import { useNavigate } from "react-router-dom";
+import { getFlashcardsByTopic } from "@services/flashcards";
+import type { BIOLOGY_TOPICS, DISCIPLINE } from "@interfaces/discipline";
 
 
 const Flashcard = () => {
   const navigate = useNavigate()
 
-  // const { discipline, topic } = useParams<{ discipline: string; topic: string }>();
+  const { discipline, topic } = useParams<{ discipline: string; topic: string }>();
 
   const [flashcards, setFlashcards] = useState<IFlashcard[]>([])
   const [right, setRight] = useState(0);
@@ -36,7 +37,8 @@ const Flashcard = () => {
   };
 
   const handleFlashcards = () => {
-    const flashcards = getFlashcards(numFlashcards);
+    const flashcards = getFlashcardsByTopic(discipline as DISCIPLINE, topic as BIOLOGY_TOPICS, numFlashcards);
+    console.log('flashcard list', flashcards);
     setFlashcards(flashcards);
     setStarted(true)
   }
@@ -45,7 +47,6 @@ const Flashcard = () => {
     setAnswer(response);
     setRight((prev) => (response === "acertou" ? prev + 1 : prev));
   }
-
 
   {
     return !started ? (
