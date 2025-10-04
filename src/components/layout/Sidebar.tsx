@@ -26,7 +26,7 @@ export const Sidebar = () => {
             </Link>
           </li>
           <li onClick={close}>
-            <Link to="" className="m-sidebar__item">
+            <Link to="/summary-list" className="m-sidebar__item">
               <FaBookOpen className="m-sidebar__icon" />
               <span>Conteúdo</span>
             </Link>
