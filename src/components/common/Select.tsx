@@ -3,6 +3,7 @@ import React from "react";
 interface IOption {
   value: string;
   label: string;
+  start?: number | string;
 }
 
 interface ISelect {
@@ -10,10 +11,11 @@ interface ISelect {
   label: string;
   options: IOption[];
   value: string;
+  disabled?: boolean;
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-export const Select = ({ id, label, options, value, onChange }: ISelect) => {
+export const Select = ({ id, label, options, value, onChange, disabled = false }: ISelect) => {
   return (
     <div className="m-select">
       <label htmlFor={id} className="m-select__label">
@@ -23,8 +25,10 @@ export const Select = ({ id, label, options, value, onChange }: ISelect) => {
         id={id}
         value={value}
         onChange={onChange}
+        disabled={disabled}
         className="m-select__field"
       >
+        <option value="" disabled>Selecione</option>
         {options.map((opt) => (
           <option key={opt.value} value={opt.value}>
             {opt.label}

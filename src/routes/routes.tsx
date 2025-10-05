@@ -10,6 +10,7 @@ const Flashcards = lazy(() => import("@futures/Flashcard"))
 const Exercises = lazy(() => import("@futures/Exercises"))
 const SumaryList = lazy(() => import("@pages/SummaryList"))
 const Sumary = lazy(() => import("@pages/Summary"))
+const ENEMQuestions = lazy(() => import("@futures/ENEMQuestions"))
 
 export const AppRoutes = () => {
   return (
@@ -18,6 +19,7 @@ export const AppRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
+        <Route path="/enem" element={<ENEMQuestions />} />
         <Route path="/summary-list" element={<SumaryList />} />
         <Route path="/summary/:discipline/:code" element={<Sumary />} />
         <Route path="/topic-option/:discipline/:code" element={<TopicOptions />} />
