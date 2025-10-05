@@ -26,9 +26,11 @@
   }
 
   &__question {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 1rem;
     color: #333;
+    font-weight: normal;
+    line-height: 1.4rem;
   }
 
   &__options {
@@ -63,6 +65,12 @@
       background-color: $right-answer;
     }
 
+  }
+
+  &__intro{
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.4rem;
   }
 
   &__explanation{

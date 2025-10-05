@@ -44,6 +44,7 @@ export const ENEM_LANGUAGE = [
 ]
 
 export const ENEM_NUM_QUESTOES = [
+  { label: "3", value: '3' },
   { label: "10", value: '10' },
   { label: "15", value: '15' },
   { label: "20", value: '30' },

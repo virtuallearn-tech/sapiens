@@ -8,36 +8,38 @@ interface UseEnemQuestionsProps {
   discipline?: string | null
   language?: 'ingles' | 'espanhol' | null
   limit?: number | null
-  offset?: number | null
 }
 
 interface UseEnemQuestionsResult {
   questions: Question[]
   metadata: Metadata | null
   loading: boolean
-  error: string | null
+  error: string | null,
+  fetchQuestions: () => Promise<void>
 }
 
 export function useEnemQuestions({
   year,
   discipline,
   language,
-  limit = 10,
-  offset = 0,
+  limit
 }: UseEnemQuestionsProps): UseEnemQuestionsResult {
+  
   const [questions, setQuestions] = useState<Question[]>([])
   const [metadata, setMetadata] = useState<Metadata | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  useEffect(() => {
-    if (!year) return
+  // useEffect(() => {
 
-    const source = axios.CancelToken.source()
 
     async function fetchQuestions() {
 
-      console.log('Fetching questions with params:', { year, discipline, language, limit, offset })
+      if (!year) return
+
+      // const source = axios.CancelToken.source()
+
+      console.log('Fetching questions with params:', { year, discipline, language, limit })
 
       setLoading(true)
       setError(null)
@@ -47,16 +49,17 @@ export function useEnemQuestions({
         const response = await clientENEM.get<EnemApiResponse>(
           `/exams/${year}/questions`,
           {
-            params: { limit, offset, language },
-            cancelToken: source.token,
+            params: { limit, discipline, language },
+            // cancelToken: source.token,
           }
         )
-
         // filtro por disciplina (API não expõe query param para discipline)
         console.log('API response data:', response)
+
+
         let items = response.data.questions
         if (discipline) {
-            items = items.filter((q: Question) => q.discipline === discipline)
+          items = items.filter((q: Question) => q.discipline === discipline)
         }
         console.log('Fetched questions:', items)
         setQuestions(items)
@@ -70,11 +73,11 @@ export function useEnemQuestions({
       }
     }
 
-    fetchQuestions()
-    return () => {
-      source.cancel()
-    }
-  }, [year])
+    // fetchQuestions()
+    // return () => {
+    //   source.cancel()
+    // }
+  // }, [year])
 
-  return { questions, metadata, loading, error }
+  return { questions, metadata, loading, error, fetchQuestions }
 }
