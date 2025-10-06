@@ -1,6 +1,9 @@
+@use './mixins' as *;
+
 .m-select {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
+  @include display-flex($align-items: flex-start);
   gap: 0.5rem;
   width: 100%;
 
@@ -17,6 +20,7 @@
     font-size: 1rem;
     background-color: #fff;
     transition: border-color 0.2s;
+    width: 100%;
 
     &:focus {
       outline: none;

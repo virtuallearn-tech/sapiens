@@ -1,16 +1,21 @@
 @use '../base/var' as *;
+@use '../module/mixins' as *;
+@use '../base/breakpoint' as *;
 
 .l-container {
-  display: flex;
-  flex-direction: column;
+  @include display-flex();
+  // width: 100%;
   min-height: 100vh; // ocupa a tela toda
 
   &__body {
-    display: flex;
+    @include display-flex($flex-direction: row);
     flex: 1; // ocupa o espaço entre header e footer
-    flex-direction: row;
     background-color: $gray-light;
-    // background-color: red;
+    // width: 100%;
+
+    @include breakpoint($md, max-width){
+      flex-direction: column; 
+    }
   }
 
   &__content {
@@ -18,17 +23,24 @@
     padding: 1rem;
     background-color: $white;
     overflow-y: auto;
+    width: 100%;
+    height: 100vh;
+
+    @include breakpoint($md, max-width){
+      padding: 0.5rem;
+    }
+
   }
 
 }
 
-@media (max-width: 768px) {
-  .l-container__body {
-    flex-direction: column;
-  }
+// @media (max-width: 768px) {
+//   .l-container__body {
+//     flex-direction: column;
+//   }
 
-  .l-container__content {
-    padding: 0.5rem;
-  }
-}
+//   .l-container__content {
+//     padding: 0.5rem;
+//   }
+// }
 

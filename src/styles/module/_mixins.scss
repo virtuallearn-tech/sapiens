@@ -9,6 +9,7 @@
   align-items: $align-items;
   flex-direction: $flex-direction;
   flex-wrap: $flex-wrap;
+  width: 100%;
 }
 
 @mixin card{
@@ -17,6 +18,7 @@
   background-color: #fff;
   transition: transform 0.3s ease;
   cursor: pointer;
+  // width: 100%;
 
   &:hover{
     transform: scale(1.02);

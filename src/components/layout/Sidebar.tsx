@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom'
 import { FaHome, FaShareAlt, FaBookOpen } from "react-icons/fa";
 import { GiProgression } from "react-icons/gi";
 import { MdContactSupport } from "react-icons/md";
-import { BsFillBadge3dFill } from "react-icons/bs";
+import { BsFillBadge3dFill, BsFillPencilFill  } from "react-icons/bs";
+import { PiExam } from "react-icons/pi";
+
 
 import { useSidebar } from "@store/SidebarContext";
 
@@ -32,19 +34,19 @@ export const Sidebar = () => {
             </Link>
           </li>
           <li onClick={close}>
-            <Link to="" className="m-sidebar__item">
-              <GiProgression className="m-sidebar__icon" />
+            <Link to="/enem" className="m-sidebar__item">
+              <BsFillPencilFill className="m-sidebar__icon" />
               <span>Questões do ENEM</span>
             </Link>
           </li>
           <li onClick={close}>
-            <Link to="" className="m-sidebar__item">
+            <Link to="/share-app" className="m-sidebar__item">
               <FaShareAlt className="m-sidebar__icon" />
               <span>Compartilhar</span>
             </Link>
           </li>
           <li onClick={close}>
-            <Link to="" className="m-sidebar__item">
+            <Link to="/contact" className="m-sidebar__item">
               <MdContactSupport className="m-sidebar__icon" />
               <span>Contato</span>
             </Link>

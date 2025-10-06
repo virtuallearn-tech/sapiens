@@ -1,9 +1,11 @@
+@use './mixins' as *;
+
 .p-cadastro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
   // padding: 3rem;
-  // min-height: 100vh;
+  min-height: 100vh;
   // background-color: #f5f5f5;
   padding-top: 1rem;
 
@@ -24,14 +26,16 @@
   }
 
   &__form {
-    display: flex;
-    flex-direction: column;
+    @include display-flex();
+    // display: flex;
+    // flex-direction: column;
     gap: 1rem;
   }
 
   &__actions {
     // margin-top: 1rem;
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    // justify-content: center;
+    @include display-flex();
   }
 }

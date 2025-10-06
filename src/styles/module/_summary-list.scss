@@ -1,6 +1,10 @@
-.p-summary-list {
-  // padding: 2rem;
+@use './mixins' as *;
 
+.p-summary-list {
+  padding: 0 0.5rem;
+  @include display-flex();
+  // background-color: rgb(235, 202, 235);
+  
   .m-card-content{
     padding: 0.5rem 0.5rem;
     &__info-title{
@@ -17,8 +21,15 @@
   }
 
   &__grid {
+    // @include display-flex($flex-wrap: wrap);
+    // gap: 0.5rem;
+    .m-card-content{
+      max-width: unset;
+    }
+
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
     gap: 0.8rem;
+    width: 100%;
   }
 }
