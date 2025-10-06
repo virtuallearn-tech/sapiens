@@ -13,6 +13,7 @@ const Sumary = lazy(() => import("@pages/Summary"))
 const ENEMQuestions = lazy(() => import("@futures/ENEMQuestions"))
 const ShareApp = lazy(() => import("@pages/ShareApp"))
 const Contact = lazy(() => import("@pages/Contact"))
+const Donate = lazy(() => import("@pages/Donate"))
 
 export const AppRoutes = () => {
   return (
@@ -23,6 +24,7 @@ export const AppRoutes = () => {
         <Route path="/signin" element={<Signin />} />
         <Route path="/share-app" element={<ShareApp />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/donate" element={<Donate />} />
         <Route path="/enem" element={<ENEMQuestions />} />
         <Route path="/summary-list" element={<SumaryList />} />
         <Route path="/summary/:discipline/:code" element={<Sumary />} />

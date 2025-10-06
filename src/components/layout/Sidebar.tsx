@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import { FaHome, FaShareAlt, FaBookOpen } from "react-icons/fa";
+import { FaHome, FaShareAlt, FaBookOpen, FaHeart } from "react-icons/fa";
 import { GiProgression } from "react-icons/gi";
 import { MdContactSupport } from "react-icons/md";
-import { BsFillBadge3dFill, BsFillPencilFill  } from "react-icons/bs";
+import { BsFillBadge3dFill, BsFillPencilFill } from "react-icons/bs";
 import { PiExam } from "react-icons/pi";
 
 
@@ -49,6 +49,12 @@ export const Sidebar = () => {
             <Link to="/contact" className="m-sidebar__item">
               <MdContactSupport className="m-sidebar__icon" />
               <span>Contato</span>
+            </Link>
+          </li>
+          <li onClick={close}>
+            <Link to="/donate" className="m-sidebar__item">
+              <FaHeart className="m-sidebar__icon" />
+              <span>Apoie o Sapiens</span>
             </Link>
           </li>
         </ul>
