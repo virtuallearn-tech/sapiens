@@ -7,7 +7,7 @@ export const getFlashcardsByTopic = (
   discipline: DISCIPLINE,
   topic: BIOLOGY_TOPICS,
   qtd: number): IFlashcard[] => {
-  if (discipline === 'BIOLOGY' && topic === 'CITOLOGY') {
+  if (discipline === 'BIOLOGY' && topic === 'CYTOLOGY') {
     return getRandomItems<IFlashcard>(CitologyFlashcards, qtd);
   }
   return [];

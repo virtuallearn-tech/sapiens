@@ -5,7 +5,7 @@ const Donate = () => {
     <section className="p-donate">
       <h1 className="p-donate__title">Apoie o Sapiens</h1>
       <p className="p-donate__subtitle">
-        O Sapiens é gratuito e feito para você aprender ciências de forma didática, simples e objetiva.  
+        O Sapiens é gratuito e feito para você aprender ciências de forma didática, simples e objetiva.
         Se você acredita no projeto, considere apoiar com uma doação via Pix.
       </p>
 

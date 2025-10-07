@@ -7,7 +7,7 @@ export const getExerciciesByTopic = (
   discipline: DISCIPLINE,
   topic: DISCIPLINE_TOPICS,
   qtd: number): IQuestionData[] => {
-  if (discipline === 'BIOLOGY' && topic === 'CITOLOGY') {
+  if (discipline === 'BIOLOGY' && topic === 'CYTOLOGY') {
     return getRandomItems<IQuestionData>(CitologyQuestions.data, qtd);
   }
   return [];
