@@ -8,14 +8,14 @@ export interface IModelNode{
 }
 
 export interface IModelData{
-  souce:string,
+  source:string,
   name:string,
   title:string,
   description:string,
   text:string,
-  scale:number|number[],
-  rotation?:number|number[],
-  position?:number|number[]
+  scale:number,
+  rotation:[number, number, number],
+  position:[number, number, number],
   node:IModelNode[],
   attribuition?:string,
   wikipedia?:string

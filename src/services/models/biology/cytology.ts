@@ -21,7 +21,7 @@ const PROKARYOTIC_CELL_NODES: IModelNode[] = [
   // },
   {
     name: "Nucleoide",
-    node: "Line005_tt_0",
+    node: ['Box013_tt_0', 'Box014_tt_0', 'Line031_tt_0'],
     description: "Região onde está o DNA da célula, sem membrana envoltória.",
     text: "O nucleoide é uma área do citoplasma onde se encontra o material genético da célula procarionte. Diferente das células eucariontes, ele não está envolto por uma membrana, ficando livre no interior celular."
   },
@@ -46,13 +46,13 @@ const PROKARYOTIC_CELL_NODES: IModelNode[] = [
 ]
 
 export const PROKARYOTIC_CELL:IModelData = {
-  souce: '/models/archaea.glb',
+  source: '/models/archaea.glb',
   name: 'prokaryotic_cell',
   title: 'Célula Procarionte',
   description: 'Estrutura simples e primitiva, sem núcleo definido, onde o material genético fica disperso no citoplasma',
   text: `A célula eucarionte é uma estrutura complexa e altamente organizada, presente em organismos como animais, plantas, fungos e protozoários. Diferente das células procariontes, ela possui um núcleo verdadeiro, envolto por uma membrana, onde está armazenado o material genético. Seu interior é compartimentalizado por diversas organelas, cada uma com funções específicas: mitocôndrias produzem energia, ribossomos sintetizam proteínas, o retículo endoplasmático atua no transporte e processamento de substâncias, e o complexo golgiense organiza e distribui os produtos celulares. Essa arquitetura interna permite que a célula execute tarefas sofisticadas, essenciais para o funcionamento dos organismos multicelulares.`,
   scale: 16,
-  position: [0, 0.5, 0],
-  rotation: [0.50, 0, 0],
+  position: [0, 1, 0],
+  rotation: [1.57, -1.57, 0],
   node: PROKARYOTIC_CELL_NODES
 }

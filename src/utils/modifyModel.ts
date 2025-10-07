@@ -28,10 +28,11 @@ export function setOpacity(mesh: any, opacity: number){
 
 export function transverseModel (
   scene: any, 
-  target:any,
-  focusName: any, 
+  // target:any,
+  // focusName: any, 
   focusSet: any,
-  opacityOthers:any
+  // opacityOthers:any,
+  opacity:number = 0.05
 ){
   scene.traverse((child: any) => {
     if (!child.isMesh) return
@@ -55,7 +56,7 @@ export function transverseModel (
     }
     else {
       child.visible = true
-      setOpacity(child, opacityOthers)
+      setOpacity(child, opacity)
     }
   })
 }
