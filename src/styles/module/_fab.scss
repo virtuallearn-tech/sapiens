@@ -20,4 +20,12 @@
   &:hover {
     background-color: color.adjust($primary, $lightness: 8%);
   }
+
+  &--ui {
+    position: unset;
+    background-color: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

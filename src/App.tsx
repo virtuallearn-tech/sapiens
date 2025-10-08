@@ -18,9 +18,9 @@ function App() {
           <AppRoutes/>
         </main>
       </div>
-      <button className="fab" onClick={toggle}>
+      {/* <button className="fab" onClick={toggle}>
         ☰
-      </button>
+      </button> */}
     </div>
   );
 }

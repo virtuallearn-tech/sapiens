@@ -54,7 +54,7 @@
   }
 
   &--dark {
-    background-color: $dark;
+    background-color: $dark !important;
     color: $white;
 
     &:hover {

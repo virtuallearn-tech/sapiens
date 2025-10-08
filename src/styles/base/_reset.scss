@@ -5,9 +5,14 @@
   font-family: 'Roboto', Sans-serif;
 }
 
+html,
+body {
+  height: 100%;
+}
 
 /* Remove estilos de listas */
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -18,7 +23,10 @@ a {
 }
 
 /* Normaliza botões e inputs */
-button, input, textarea, select {
+button,
+input,
+textarea,
+select {
   font: inherit;
   border: none;
   background: none;
@@ -26,17 +34,22 @@ button, input, textarea, select {
 }
 
 /* Imagens responsivas */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
-h1{
+h1 {
   font-size: 1rem;
 }
 
-canvas{
+canvas {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 4.5rem);
+  // height: 100%;
   background-color: #ccc;
 }

@@ -1,0 +1,32 @@
+@use '../base/var' as *;
+
+.c-menu-options{
+  background-color: $dark;
+  color: $white;
+  width: max-content;
+  // padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  position: absolute;
+  bottom: 1rem;
+  left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &__item{
+    border-bottom: 1px solid $white;
+    padding: 0 1rem;
+    padding-bottom: 0.5rem;
+
+    &:first-child{
+      padding-top: 0.5rem;
+    }
+
+    &:hover{
+      opacity: 0.8;
+    }
+    // &:last-child{
+      // padding-bottom: 0.5rem;
+    // }
+  }
+}

@@ -1,0 +1,42 @@
+@use '../base/var' as *;
+@use './mixins' as *;
+
+%position {
+  padding: 0.5rem;
+  position: absolute;
+  bottom: 1rem;
+}
+
+.m-scene {
+  position: relative;
+
+  &__label {
+    @extend %position;
+    top: 1rem;
+    left: 1rem;
+    height: max-content;
+    width: max-content;
+    background-color: $dark;
+    color: $white;
+    border-radius: 0.4rem;
+    padding: 0.5rem 1rem;
+  }
+
+  &__ui {
+    @include display-flex();
+    gap: 0.5rem;
+    width: max-content;
+
+    &--left {
+      @extend %position;
+      left: 0.5rem;
+      background-color: $bg-ui;
+      border-radius: 0.4rem;
+    }
+
+    &--right {
+      right: 0.5rem;
+      @extend %position
+    }
+  }
+}
