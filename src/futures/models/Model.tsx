@@ -1,10 +1,15 @@
 import type { IModelData } from "@interfaces/model"
 import { useGLTF } from "@react-three/drei"
-import { getByPath, transverseModel } from "@utils/modifyModel"
+import { getByPath, resetTransverseModel, transverseModel } from "@utils/modifyModel"
 import { useControls } from "leva"
 import { useEffect } from "react"
 
-export const Model = ({ model }: { model: IModelData }) => {
+interface IPlotModel {
+  model: IModelData,
+  focusNames: string | string[] | null
+}
+
+export const Model = ({ model, focusNames }: IPlotModel) => {
   // Controles de transformação + foco
 
   console.log('model ', model)
@@ -30,44 +35,49 @@ export const Model = ({ model }: { model: IModelData }) => {
   console.log('scene', scene)
 
 
-  // useEffect(() => {
-  //   // Seleciona alvo por nome simples ou por caminho
+  useEffect(() => {
+    // Seleciona alvo por nome simples ou por caminho
 
-  //   // const target = usePath ? getByPath(scene, focusName) : scene.getObjectByName(focusName)
+    // const target = usePath ? getByPath(scene, focusName) : scene.getObjectByName(focusName)
 
-  //   // if (!target) {
-  //   //   console.warn(`Alvo não encontrado: ${focusName}. Listando meshes:`)
-  //   //   scene.traverse((child: any) => child.isMesh && console.log(child.name))
-  //   // }
+    // if (!target) {
+    //   console.warn(`Alvo não encontrado: ${focusName}. Listando meshes:`)
+    //   scene.traverse((child: any) => child.isMesh && console.log(child.name))
+    // }
 
-  //   // Aplica foco: alvo opaco, outros transparentes
+    // Aplica foco: alvo opaco, outros transparentes
 
-  //   const focusNames: string | string[] = model.node.map((n: any) => n.node)
-  //   //['Box013_tt_0', 'Box014_tt_0', 'Line031_tt_0'];
-  //   // 'Box001_tt_0'
-  //   //['Box013_tt_0', 'Box014_tt_0', 'Line031_tt_0'];
+    // const focusNames: string | string[] = model.node.map((n: any) => n.node)
+    //['Box013_tt_0', 'Box014_tt_0', 'Line031_tt_0'];
+    // 'Box001_tt_0'
+    //['Box013_tt_0', 'Box014_tt_0', 'Line031_tt_0'];
+    if(focusNames == 'Fechar' || focusNames == model.name)
+    {
+      resetTransverseModel(scene)
+    }
+    else if (focusNames !== null) {
+      const namesArray = Array.isArray(focusNames)
+        ? focusNames
+        : (focusNames as string).split(',').map((n) => n.trim())
 
-  //   const namesArray = Array.isArray(focusNames)
-  //     ? focusNames
-  //     : (focusNames as string).split(',').map((n) => n.trim())
+      // const focusSet = new Set(focusNames)
+      const focusSet = new Set(namesArray)
 
-  //   // const focusSet = new Set(focusNames)
-  //   const focusSet = new Set(namesArray)
+      transverseModel(
+        scene,
+        // model.node,
+        focusSet,
+      )
+    }
 
-  //   transverseModel(
-  //     scene,
-  //     // model.node,
-  //     focusSet,
-  //   )
-
-  // }, [model])
+  }, [model, focusNames])
 
   return (
     // <group scale={scale} position={[posX, posY, posZ]} rotation={[rotX, rotY, rotZ]}>
     //   <primitive object={scene}/>
     // </group>
-     <group scale={model.scale} position={model.position} rotation={model.rotation}>
-      <primitive object={scene}/>
+    <group scale={model.scale} position={model.position} rotation={model.rotation}>
+      <primitive object={scene} />
     </group>
   )
 }

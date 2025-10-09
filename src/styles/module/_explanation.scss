@@ -1,6 +1,6 @@
 .c-explanation {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.6);
@@ -11,12 +11,12 @@
   border-radius: 0.4rem;
   padding: 0.5rem 1rem;
 
-  &__close {
-    font-size: 2rem;
-    position: absolute;
-    right: 0.5rem;
-    top: 0.5rem;
-  }
+  // &__close {
+  //   font-size: 2rem;
+  //   position: absolute;
+  //   right: 0.5rem;
+  //   top: 0.5rem;
+  // }
 
   &__paragraph {
     margin-bottom: 0.8rem;
@@ -24,10 +24,9 @@
     text-align: center;
     font-size: 1.08rem;
     
-  &:first-of-type {
-    margin-top: 2rem;
-    // background-color: red;
-  }
+  // &:first-of-type {
+  //   margin-top: 2rem;
+  // }
 
   }
 

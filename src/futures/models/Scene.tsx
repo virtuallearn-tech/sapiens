@@ -12,14 +12,15 @@ import { Button } from '@components/common/Button'
 import { FabButton } from '@components/common/Fab'
 import { MenuOptions } from '@components/ui-3d/MenuOptions'
 import { Explanation } from '@components/ui-3d/Explanation'
+import { useSpeech } from '@hooks/useSpeech'
 
-const explanation = `A célula eucarionte é uma estrutura complexa e altamente organizada, presente em organismos como animais, plantas, fungos e protozoários. Diferente das células procariontes, ela possui um núcleo verdadeiro, envolto por uma membrana, onde está armazenado o material genético. Seu interior é compartimentalizado por diversas organelas, cada uma com funções específicas: mitocôndrias produzem energia, ribossomos sintetizam proteínas, o retículo endoplasmático atua no transporte e processamento de substâncias, e o complexo golgiense organiza e distribui os produtos celulares. Essa arquitetura interna permite que a célula execute tarefas sofisticadas, essenciais para o funcionamento dos organismos multicelulares.`
+
+const eQue: string = `A célula é a unidade fundamental da vida e está presente em todos os seres vivos. No ENEM, compreender a diferença entre células procariontes e eucariontes pode ser decisivo. Estudar biologia com atenção ajuda a conectar teoria e prática no dia a dia.`
 
 const test = [
-  {label: 'Mitocondria', value: 1},
-  {label: 'Ribossomos', value: 2},
-  {label: 'DNA', value: 3},
-  {label: 'Citoesqueleto', value: 4},
+  'Célula Procarionte',
+  'Nucleoide',
+  'Fechar'
 ]
 
 function Loader() {
@@ -32,9 +33,55 @@ const Scene = () => {
   // const { code } = useParams()
   const [model, setModel] = useState<IModelData | null>(null)
 
+  const [titleModel, setTitleModel] = useState<string>('')
+  const [textToSpeech, setTextToSpeech] = useState<string | null>(null)
+  const [explanation, setExplanation] = useState<string | null>(null)
+  const [focusNames, setFocusNames] = useState<string | string[] | null>(null)
+
+  const [showDetailOptions, setShowDetailOptions] = useState<boolean>(false)
+  const [showMenuOptions, setShowMenuOptions] = useState<boolean>(false)
+  const [showExplanation, setShowExplanation] = useState<boolean>(false)
+
+  const {
+    isSupported,
+    isSpeaking,
+    isPaused,
+    pause,
+    resume,
+    stop,
+    speak,
+  } = useSpeech()
+
   useEffect(() => {
-    setModel(getModel().data[0])
+    const m = getModel().data[0]
+    setModel(m)
+    setTextToSpeech(m?.text!)
+    setExplanation(m?.text)
+    setTitleModel(m?.name)
+    // handleSpeech(m?.name!)
   }, [])
+
+  const handleModelInfo = (name: string) => {
+    console.log('name', name)
+    //  if(!name) return null
+    if (name == model?.name || name == 'Fechar') {
+      setTextToSpeech(model!.text)
+      setExplanation(model!.text)
+      setTitleModel(model!.name)
+      setFocusNames(model!.name)
+    } else 
+      {
+      const findText = model?.node.find((n) => n.name == name)
+      console.log('find ', findText)
+      if (findText) {
+        setTextToSpeech(findText.text)
+        setExplanation(findText.text)
+        setTitleModel(findText?.name)
+        setFocusNames(findText.node)
+      }
+    }
+    setShowDetailOptions(false)
+  }
 
   return (
     <div className="m-scene">
@@ -44,43 +91,57 @@ const Scene = () => {
         <OrbitControls />
         <Suspense fallback={<Loader />}>
           <axesHelper args={[5]} />
-          <Model model={model!} />
+          <Model model={model!} focusNames={focusNames}/>
         </Suspense>
       </Canvas>
 
       <div className="m-scene__label">
-        <span>Célula Procariótica</span>
+        <span>{titleModel}</span>
       </div>
-      {/* <div className="m-scene__ui m-scene__ui--left">
-        <Button 
+      {!showDetailOptions && <div className="m-scene__ui m-scene__ui--left">
+        <Button
           type='button'
           typeBtn='dark'
           className='m-button--full'
-          >
+          onClick={() => setShowDetailOptions(prev => !prev)}
+        >
           Detalhes
         </Button>
-        <Button 
-        type='button'
-        typeBtn='dark'
-        className='m-button--full'
+        <Button
+          type='button'
+          typeBtn='dark'
+          className='m-button--full'
         >
           Menu
         </Button>
-      </div> */}
+      </div>}
+      
       <div className="m-scene__ui m-scene__ui--right">
-        <FabButton
+        {!isSpeaking && <FabButton
           icon='volume'
-          onClick={console.log}
-        />
+          onClick={() => speak(textToSpeech!)}
+        />}
+        {!isPaused && isSpeaking && <FabButton
+          icon='pause'
+          onClick={pause}
+        />}
+        {isPaused && <FabButton
+          icon='play'
+          onClick={resume}
+        />}
+        {isSpeaking && <FabButton
+          icon='stop'
+          onClick={() => { stop() }}
+        />}
         <FabButton
-          icon='letter'
-          onClick={console.log}
+          icon={showExplanation ? 'close' : 'letter'}
+          onClick={() => { setShowExplanation((prev) => !prev) }}
         />
       </div>
-      {/* <div className="m-scene__menuoptions"> */}
-        {/* <MenuOptions items={test} onClick={console.log}/> */}
-        <Explanation explanation={explanation} />
-      {/* </div> */}
+
+      {showDetailOptions && <MenuOptions items={test} onClick={handleModelInfo} />}
+      {showExplanation && <Explanation explanation={explanation!} />}
+
     </div>
 
   )

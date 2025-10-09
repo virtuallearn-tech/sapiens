@@ -1,12 +1,12 @@
-import type React from "react"
-
-import { FaVolumeUp } from "react-icons/fa";
-import { LuLetterText } from "react-icons/lu";
+import { FaVolumeUp, FaPause, FaStop, FaPlay, FaBook } from "react-icons/fa";
 import { CiMenuBurger } from "react-icons/ci";
+import { IoMdCloseCircleOutline } from "react-icons/io";
+
+
 
 
 type ButtonStyle = "primary" | "secondary" | "clear" | "dark" | "outline";
-type ButtonIcon = "volume" | "letter"
+type ButtonIcon = "volume" | "letter" | "stop" | "pause" | "play" | "close"
 
 interface IFabButton {
   // children: React.ReactNode,
@@ -21,15 +21,23 @@ export const FabButton = ({ onClick, icon, style = 'dark' }: IFabButton) => {
     switch (icon) {
       case 'volume':
         return <FaVolumeUp />
+      case 'play':
+        return <FaPlay />
+      case 'stop':
+        return <FaStop />
+      case 'pause':
+        return <FaPause />
       case 'letter':
-        return <LuLetterText />
+        return <FaBook />
+      case 'close':
+        return <IoMdCloseCircleOutline/>
       default:
         return <CiMenuBurger />
     }
   }
 
-  return <button 
-    className={`fab fab--ui m-button--${style}`} 
+  return <button
+    className={`fab fab--ui m-button--${style}`}
     onClick={() => { onClick() }}>
     {handleIcon()}
   </button>
