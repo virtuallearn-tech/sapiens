@@ -20,8 +20,7 @@ export const AppRoutes = () => {
   return (
     <Suspense fallback={<div>Carregando...</div>}>
       <Routes>
-        <Route path="/" element={<Scene />} />
-        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/share-app" element={<ShareApp />} />
@@ -34,6 +33,7 @@ export const AppRoutes = () => {
         <Route path="/flashcards/:discipline/:topic" element={<Flashcards />} />
         <Route path="/exercises/:discipline/:topic" element={<Exercises />} />
         <Route path="/results/:total/:right" element={<Results />} />
+        <Route path="/scene/:discipline/:topic/:code" element={<Scene />} />
       </Routes>
     </Suspense>
   );

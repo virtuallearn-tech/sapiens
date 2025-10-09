@@ -5,21 +5,16 @@ import { Suspense, useEffect, useState } from 'react'
 import { Html, useProgress } from '@react-three/drei'
 import { Model } from './Model'
 
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import type { IClass, IModelData } from '@interfaces/model'
-import { getModel, setClass } from '@services/models/getModel'
+import { getModel, getModelByCode, setClass } from '@services/models/getModel'
 import { Button } from '@components/common/Button'
 import { FabButton } from '@components/common/Fab'
 import { MenuOptions } from '@components/ui-3d/MenuOptions'
 import { Explanation } from '@components/ui-3d/Explanation'
 import { useSpeech } from '@hooks/useSpeech'
+import type { DISCIPLINE, DISCIPLINE_SUBTOPICS, DISCIPLINE_TOPICS } from '@interfaces/discipline'
 
-
-const test = [
-  'Célula Procarionte',
-  'Nucleoide',
-  'Fechar'
-]
 
 function Loader() {
   const { progress } = useProgress()
@@ -28,7 +23,10 @@ function Loader() {
 
 const Scene = () => {
 
-  // const { code } = useParams()
+  const navigate = useNavigate()
+  const { discipline, topic, code } = useParams()
+  console.log(discipline, topic, code)
+
   const [model, setModel] = useState<IModelData | null>(null)
 
   const [titleModel, setTitleModel] = useState<string>('')
@@ -58,8 +56,8 @@ const Scene = () => {
   } = useSpeech()
 
   useEffect(() => {
-    const m = getModel().data[0]
-
+    const m = getModelByCode(code as DISCIPLINE_SUBTOPICS, discipline as DISCIPLINE, topic as DISCIPLINE_TOPICS) //getModel().data[0]
+    console.log('MODEL ', m)
     const nodesNames = m?.node?.map(n => n.name).filter((s): s is string => typeof s === 'string') ?? []
     const menuOptions = [m?.name, ...nodesNames, 'Fechar'].filter((s): s is string => typeof s === 'string')
     setMenuOptions(menuOptions)
@@ -231,6 +229,7 @@ const Scene = () => {
           type='button'
           typeBtn='dark'
           className='m-button--full'
+          onClick={() => navigate(`/exercises/${discipline}/${topic}`)}
         >
           Exercícios
         </Button>

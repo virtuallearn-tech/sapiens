@@ -26,7 +26,11 @@ const TopicOptions = () => {
       <h1 className="p-topic-options__title">{topic?.title}</h1>
       
       <div className="p-topic-options__content">
-        <Button type="button" className="m-button--full">
+        <Button 
+          type="button" 
+          className="m-button--full"
+          onClick={() => navigate(`/scene/${discipline}/${topic?.topic}/${topic?.code}`)}
+          >
           Explorar em 3D
         </Button>
         <Button 

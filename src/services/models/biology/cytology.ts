@@ -16,6 +16,7 @@ const PROKARYOTIC_CELL_NODES: IModelNode[] = [
 ]
 
 export const PROKARYOTIC_CELL:IModelData = {
+  code: 'prokaryotic_cell',
   source: '/models/archaea.glb',
   name: 'Célula Procarionte',
   title: 'Célula Procarionte',

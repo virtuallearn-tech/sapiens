@@ -1,4 +1,4 @@
-import type { DISCIPLINE, DISCIPLINE_TOPICS } from "./discipline"
+import type { DISCIPLINE, DISCIPLINE_SUBTOPICS, DISCIPLINE_TOPICS } from "./discipline"
 
 export interface IModelNode {
   name: string,
@@ -8,6 +8,7 @@ export interface IModelNode {
 }
 
 export interface IModelData {
+  code: DISCIPLINE_SUBTOPICS,
   source: string,
   name: string,
   title: string,
