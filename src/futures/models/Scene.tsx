@@ -6,16 +6,14 @@ import { Html, useProgress } from '@react-three/drei'
 import { Model } from './Model'
 
 import { useParams } from 'react-router-dom'
-import type { IModelData } from '@interfaces/model'
-import { getModel } from '@services/models/getModel'
+import type { IClass, IModelData } from '@interfaces/model'
+import { getModel, setClass } from '@services/models/getModel'
 import { Button } from '@components/common/Button'
 import { FabButton } from '@components/common/Fab'
 import { MenuOptions } from '@components/ui-3d/MenuOptions'
 import { Explanation } from '@components/ui-3d/Explanation'
 import { useSpeech } from '@hooks/useSpeech'
 
-
-const eQue: string = `A célula é a unidade fundamental da vida e está presente em todos os seres vivos. No ENEM, compreender a diferença entre células procariontes e eucariontes pode ser decisivo. Estudar biologia com atenção ajuda a conectar teoria e prática no dia a dia.`
 
 const test = [
   'Célula Procarionte',
@@ -38,9 +36,16 @@ const Scene = () => {
   const [explanation, setExplanation] = useState<string | null>(null)
   const [focusNames, setFocusNames] = useState<string | string[] | null>(null)
 
+  const [menuOptions, setMenuOptions] = useState<string[]>([])
   const [showDetailOptions, setShowDetailOptions] = useState<boolean>(false)
-  const [showMenuOptions, setShowMenuOptions] = useState<boolean>(false)
   const [showExplanation, setShowExplanation] = useState<boolean>(false)
+
+
+  //routine to class the content
+  const [classRoutine, setClassRoutine] = useState<IClass[]>([])
+  const [currentStep, setCurrentStep] = useState<number>(0)
+  const [isClassActive, setIsClassActive] = useState(false)
+  const [isClassPaused, setIsClassPaused] = useState(false)
 
   const {
     isSupported,
@@ -54,12 +59,46 @@ const Scene = () => {
 
   useEffect(() => {
     const m = getModel().data[0]
+
+    const nodesNames = m?.node?.map(n => n.name).filter((s): s is string => typeof s === 'string') ?? []
+    const menuOptions = [m?.name, ...nodesNames, 'Fechar'].filter((s): s is string => typeof s === 'string')
+    setMenuOptions(menuOptions)
+
     setModel(m)
-    setTextToSpeech(m?.text!)
-    setExplanation(m?.text)
-    setTitleModel(m?.name)
+    setTextToSpeech(m?.text ?? null)
+    setExplanation(m?.text ?? null)
+    setTitleModel(m?.name ?? '')
+
+    const iClass = setClass(m!)
+    console.log('iClass', iClass)
     // handleSpeech(m?.name!)
   }, [])
+
+  useEffect(() => {
+    if (!isClassActive || isClassPaused) return
+    if (classRoutine.length === 0 || currentStep >= classRoutine.length) {
+      // {
+      setFocusNames(null)
+      setIsClassActive(false)
+      return
+      // }
+    }
+
+    const current = classRoutine[currentStep]
+
+    setTitleModel(current.name)
+    setExplanation(current.text)
+    setFocusNames(current.node)
+    setTextToSpeech(current.text)
+
+    speak(current.text, {
+      onAllEnd: () => {
+        if (!isClassPaused) {
+          setCurrentStep((prev) => prev + 1)
+        }
+      }
+    })
+  }, [currentStep, classRoutine, isClassActive, isClassPaused])
 
   const handleModelInfo = (name: string) => {
     console.log('name', name)
@@ -69,8 +108,7 @@ const Scene = () => {
       setExplanation(model!.text)
       setTitleModel(model!.name)
       setFocusNames(model!.name)
-    } else 
-      {
+    } else {
       const findText = model?.node.find((n) => n.name == name)
       console.log('find ', findText)
       if (findText) {
@@ -83,6 +121,79 @@ const Scene = () => {
     setShowDetailOptions(false)
   }
 
+  const startClassRoutine = () => {
+    if (!model) return
+    const routine = setClass(model)
+    setClassRoutine(routine)
+    setCurrentStep(0)
+    setIsClassActive(true)
+    setIsClassPaused(false)
+  }
+
+  const handlePauseClass = () => {
+    pause() // pausa o áudio
+    setIsClassPaused(true)
+  }
+
+  const handleResumeClass = () => {
+    resume() // retoma o áudio
+    setIsClassPaused(false)
+  }
+
+  const handleStopClass = () => {
+    stop() // para o áudio
+    setIsClassActive(false)
+    setIsClassPaused(false)
+    setCurrentStep(0)
+    setClassRoutine([])
+    setFocusNames(null)
+  }
+
+  const handleFreeUI = () => {
+    return (
+      <>
+        {!isSpeaking && (
+          <FabButton icon="volume" onClick={() => speak(textToSpeech!)} />
+        )}
+
+        {isSpeaking && !isPaused && (
+          <FabButton icon="pause" onClick={pause} />
+        )}
+
+        {isPaused && (
+          <FabButton icon="play" onClick={resume} />
+        )}
+
+        {isSpeaking && (
+          <FabButton icon="stop" onClick={stop} />
+        )}
+      </>
+    )
+  }
+
+  const handleClassUI = () => {
+    return (
+      <>
+        {/* Aula pausada → botão para retomar */}
+        {isClassPaused && (
+          <FabButton icon="play" onClick={handleResumeClass} />
+        )}
+
+        {/* Aula em andamento → botão para pausar */}
+        {!isClassPaused && isSpeaking && (
+          <FabButton icon="pause" onClick={handlePauseClass} />
+        )}
+
+        {/* Aula em andamento → botão para parar */}
+        {!isClassPaused && isSpeaking && (
+          <FabButton icon="stop" onClick={handleStopClass} />
+        )}
+      </>
+    )
+  }
+
+
+
   return (
     <div className="m-scene">
       <Canvas className='m-scene__canvas' camera={{ position: [0, 0, 5], fov: 75 }}>
@@ -91,55 +202,56 @@ const Scene = () => {
         <OrbitControls />
         <Suspense fallback={<Loader />}>
           <axesHelper args={[5]} />
-          <Model model={model!} focusNames={focusNames}/>
+          <Model model={model!} focusNames={focusNames} />
         </Suspense>
       </Canvas>
 
       <div className="m-scene__label">
         <span>{titleModel}</span>
       </div>
-      {!showDetailOptions && <div className="m-scene__ui m-scene__ui--left">
+
+      {!showDetailOptions && !isClassActive && <div className="m-scene__ui m-scene__ui--left">
         <Button
           type='button'
           typeBtn='dark'
           className='m-button--full'
           onClick={() => setShowDetailOptions(prev => !prev)}
         >
-          Detalhes
+          Explorar
+        </Button>
+        <Button
+          type='button'
+          typeBtn='dark'
+          className='m-button--full'
+          onClick={startClassRoutine}
+        >
+          Aula
         </Button>
         <Button
           type='button'
           typeBtn='dark'
           className='m-button--full'
         >
-          Menu
+          Exercícios
         </Button>
       </div>}
-      
+
       <div className="m-scene__ui m-scene__ui--right">
-        {!isSpeaking && <FabButton
-          icon='volume'
-          onClick={() => speak(textToSpeech!)}
-        />}
-        {!isPaused && isSpeaking && <FabButton
-          icon='pause'
-          onClick={pause}
-        />}
-        {isPaused && <FabButton
-          icon='play'
-          onClick={resume}
-        />}
-        {isSpeaking && <FabButton
-          icon='stop'
-          onClick={() => { stop() }}
-        />}
+        {/* MODO LIVRE */}
+        {!isClassActive && handleFreeUI()}
+
+        {/* MODO AULA */}
+        {isClassActive && handleClassUI()}
+
+        {/* Botão de explicação sempre visível */}
         <FabButton
-          icon={showExplanation ? 'close' : 'letter'}
-          onClick={() => { setShowExplanation((prev) => !prev) }}
+          icon={showExplanation ? "close" : "letter"}
+          onClick={() => setShowExplanation((prev) => !prev)}
         />
       </div>
 
-      {showDetailOptions && <MenuOptions items={test} onClick={handleModelInfo} />}
+
+      {showDetailOptions && <MenuOptions items={menuOptions} onClick={handleModelInfo} />}
       {showExplanation && <Explanation explanation={explanation!} />}
 
     </div>

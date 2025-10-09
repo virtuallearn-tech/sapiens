@@ -1,6 +1,6 @@
 import { FaVolumeUp, FaPause, FaStop, FaPlay, FaBook } from "react-icons/fa";
 import { CiMenuBurger } from "react-icons/ci";
-import { IoMdCloseCircleOutline } from "react-icons/io";
+import { IoMdClose } from "react-icons/io";
 
 
 
@@ -30,7 +30,7 @@ export const FabButton = ({ onClick, icon, style = 'dark' }: IFabButton) => {
       case 'letter':
         return <FaBook />
       case 'close':
-        return <IoMdCloseCircleOutline/>
+        return <IoMdClose/>
       default:
         return <CiMenuBurger />
     }

@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react"
 import { speakQueue, pauseSpeaking, resumeSpeaking, stopSpeaking } from "@utils/speech"
 
+type SpeakOptions = {
+  onParagraphEnd?: (text: string) => void
+  onAllEnd?: () => void
+}
+
 export function useSpeech() {
   const [isSupported, setIsSupported] = useState(true)
   const [isSpeaking, setIsSpeaking] = useState(false)
@@ -12,12 +17,8 @@ export function useSpeech() {
     }
   }, [])
 
-  const speak = (texts: string | string[]) => {
-    // if (!isSupported) return
-    // setIsSpeaking(true)
-    // setIsPaused(false)
-    // speakQueue(texts)
-
+  const speak = (texts: string | string[], options?:SpeakOptions) => {
+  
     if (!isSupported) return
 
     setIsSpeaking(true)
@@ -26,11 +27,13 @@ export function useSpeech() {
     speakQueue(texts, {
       onParagraphEnd: (text) => {
         console.log("Terminou parágrafo:", text)
+        options?.onParagraphEnd?.(text)
       },
       onAllEnd: () => {
         setIsSpeaking(false)
         setIsPaused(false)
         console.log("Leitura finalizada!")
+         options?.onAllEnd?.()
       }
     })
 

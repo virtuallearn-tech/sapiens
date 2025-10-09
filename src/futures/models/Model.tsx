@@ -51,7 +51,7 @@ export const Model = ({ model, focusNames }: IPlotModel) => {
     //['Box013_tt_0', 'Box014_tt_0', 'Line031_tt_0'];
     // 'Box001_tt_0'
     //['Box013_tt_0', 'Box014_tt_0', 'Line031_tt_0'];
-    if(focusNames == 'Fechar' || focusNames == model.name)
+    if(focusNames == 'Fechar' || focusNames == model.name || focusNames == null)
     {
       resetTransverseModel(scene)
     }
