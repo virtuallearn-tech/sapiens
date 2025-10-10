@@ -1,6 +1,8 @@
 @use "sass:color";
+
 @use '../base/var' as *;
 @use './mixins' as *;
+@use '../base/breakpoint' as *;
 
 .m-flashcard {
   @include display-flex();
@@ -10,6 +12,10 @@
   
   gap: 1rem;
   padding: 1rem;
+
+  @include breakpoint($md){
+    @include max-width()
+  }
 
   &__card {
     // width: 280px;

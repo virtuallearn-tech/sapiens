@@ -26,15 +26,16 @@ export const Home = () => {
 
       <div className="p-home__list">
         {topicList && topicList.map((topic) => (
-          <Link to={`/topic-option/${topic.discipline}/${topic.code}`}>
+          // <Link to={`/topic-option/${topic.discipline}/${topic.code}`}>
             <CardContent
               key={topic.code}
               id={topic.code}
               title={topic.title}
               description={topic.description}
               cover={topic.cover}
+              link={`/topic-option/${topic.discipline}/${topic.code}`}
             />
-          </Link>
+          // </Link>
         ))}
       </div>
     </div>

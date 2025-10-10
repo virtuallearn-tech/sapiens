@@ -1,8 +1,13 @@
 @use './mixins' as *;
+@use '../base/breakpoint' as *;
 
 .p-topic-options{
   @include display-flex();
   padding-top: 0.5rem;
+
+  @include breakpoint($md){
+    @include max-width()
+  }
 
   &__title{
     font-size: 1.4rem;

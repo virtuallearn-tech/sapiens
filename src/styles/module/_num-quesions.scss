@@ -1,6 +1,12 @@
 @use './mixins' as *;
+@use '../base/breakpoint' as *;
+ 
 .m-num-questions{
   @include display-flex();
   gap: 0.5rem;
   padding: 0.5rem 0;
+
+  @include breakpoint($md){
+    @include max-width()
+  }
 }

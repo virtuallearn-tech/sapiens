@@ -1,10 +1,15 @@
 @use '../base/var' as *;
+@use '../base/breakpoint' as *;
 
 .p-contact {
   padding: 1rem;
   text-align: center;
   background-color: $gray-light;
   border-radius: 12px;
+
+  @include breakpoint($md){
+    @include max-width()
+  }
 
   &__title {
     font-size: 2rem;

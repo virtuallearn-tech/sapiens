@@ -1,4 +1,5 @@
 @use './mixins' as *;
+@use '../base/breakpoint' as *;
 
 .p-summary-list {
   padding: 0 0.5rem;
@@ -17,19 +18,23 @@
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 1rem;
+    width: 100%;
     // text-align: center;
   }
 
   &__grid {
-    // @include display-flex($flex-wrap: wrap);
-    // gap: 0.5rem;
-    .m-card-content{
-      max-width: unset;
-    }
-
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
     gap: 0.8rem;
     width: 100%;
+
+    @include breakpoint($md){
+      grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+    }
+
+    @media(min-width: 657px) and (max-width: 768px){
+      grid-template-columns: repeat(auto-fill, minmax(300px, 2fr)) !important;
+      // background-color: red;
+    }
   }
 }

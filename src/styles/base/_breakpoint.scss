@@ -9,3 +9,8 @@ $xl2: 1536px;
     @content;
   }
 }
+
+@mixin max-width($max-width:600px, $margin:auto){
+  max-width: $max-width;
+  margin: $margin;
+}
