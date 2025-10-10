@@ -5,6 +5,7 @@ import type { IQuestionData } from "@interfaces/question";
 import { getExerciciesByTopic } from "@services/exercicies";
 import type { DISCIPLINE, DISCIPLINE_TOPICS } from "@interfaces/discipline";
 import { SelectNumQuestions } from "@components/layout/SelectNumQuestions";
+import { Message } from "@components/layout/Message";
 
 
 const Exercises = () => {
@@ -12,6 +13,8 @@ const Exercises = () => {
   const navigate = useNavigate()
 
   const { discipline, topic } = useParams<{ discipline: string; topic: string }>();
+
+  console.log('d/t', discipline, topic)
 
   const [questions, setQuestions] = useState<IQuestionData[]>([])
   const [right, setRight] = useState(0);
@@ -51,6 +54,11 @@ const Exercises = () => {
       setShowExplanation(true);
     }
     setRight((prev) => (isCorrect ? prev + 1 : prev));
+  }
+
+  if(started && questions.length === 0)
+  {
+    return <Message message="Não foi possível carregar os exercícios."/>
   }
 
   {

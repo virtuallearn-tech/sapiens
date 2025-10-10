@@ -1,0 +1,19 @@
+@use '../base/var' as *;
+
+.c-license {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  width: 90%;
+  padding: 1rem;
+  border-radius: 0.4rem;
+
+  a{
+    color: $primary;
+    text-decoration: underline;
+  }
+
+}

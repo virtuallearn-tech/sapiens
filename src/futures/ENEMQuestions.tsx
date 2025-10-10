@@ -5,6 +5,7 @@ import { Select } from "@components/common/Select";
 import { ENEM_ANO, ENEM_AREA, ENEM_NUM_QUESTOES } from "@services/enem/enemOptions";
 import type { EnemAreas } from "@interfaces/enem";
 import { useEnemQuestions } from "@hooks/useENEMQuestoes";
+import { Message } from "@components/layout/Message";
 
 
 const ENEMQuestions = () => {
@@ -16,14 +17,13 @@ const ENEMQuestions = () => {
   const [limit, setLimit] = useState<number | null>(null);
   const [year, setYear] = useState<number | null>(null);
 
-  const { questions, fetchQuestions } = useEnemQuestions({ year, discipline, language, limit })
+  const { questions, error, fetchQuestions } = useEnemQuestions({ year, discipline, language, limit })
 
   const [started, setStarted] = useState(false);
   const [right, setRight] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selected, setSelected] = useState<boolean | null>(null);
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
-
 
   const current = questions[currentIndex];
 
@@ -91,6 +91,11 @@ const ENEMQuestions = () => {
         </Button>
       </div>
     )
+  }
+
+  if(error)
+  {
+    return <Message message="Não foi possível carregar as questões." type="danger"/>
   }
 
   {//

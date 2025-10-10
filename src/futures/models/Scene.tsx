@@ -14,6 +14,7 @@ import { MenuOptions } from '@components/ui-3d/MenuOptions'
 import { Explanation } from '@components/ui-3d/Explanation'
 import { useSpeech } from '@hooks/useSpeech'
 import type { DISCIPLINE, DISCIPLINE_SUBTOPICS, DISCIPLINE_TOPICS } from '@interfaces/discipline'
+import { License } from '@components/layout/License'
 
 
 function Loader() {
@@ -62,6 +63,8 @@ const Scene = () => {
   const [currentStep, setCurrentStep] = useState<number>(0)
   const [isClassActive, setIsClassActive] = useState(false)
   const [isClassPaused, setIsClassPaused] = useState(false)
+
+  const [license, setLicense] = useState<boolean>(false)
 
   const {
     isSupported,
@@ -115,6 +118,17 @@ const Scene = () => {
       }
     })
   }, [currentStep, classRoutine, isClassActive, isClassPaused])
+
+  useEffect(() => {
+  // Só roda no unmount
+  return () => {
+    if (isSpeaking) {
+      stop()
+    }
+  }
+}, []) // <- sem dependências, roda apenas no unmount
+
+
 
   const handleModelInfo = (name: string) => {
     console.log('name', name)
@@ -265,11 +279,16 @@ const Scene = () => {
           icon={showExplanation ? "close" : "letter"}
           onClick={() => setShowExplanation((prev) => !prev)}
         />
+        <FabButton
+          icon='info'
+          onClick={() => setLicense((prev) => !prev)}
+        />
       </div>
 
 
       {showDetailOptions && <MenuOptions items={menuOptions} onClick={handleModelInfo} />}
       {showExplanation && <Explanation explanation={explanation!} />}
+      {license && <License content={model?.attribuition!}/>}  
 
     </div>
 

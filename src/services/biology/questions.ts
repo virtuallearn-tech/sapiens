@@ -2,7 +2,7 @@ import type { IQuestion } from "interfaces/question";
 
 export const CitologyQuestions: IQuestion = {
     discipline: "BIOLOGY",
-    topic: "CITOLOGY",
+    topic: "CYTOLOGY",
     data: [
       {
         code: "Q1A2B3C4",

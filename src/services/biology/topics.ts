@@ -8,7 +8,7 @@ export const BIOLOGY_TOPICS: Itopic = {
   discipline: "BIOLOGY",
   data: [
     {
-      topic: "CITOLOGY",
+      topic: "CYTOLOGY",
       data: [
         {
           code: 'eukaryotic_cell',

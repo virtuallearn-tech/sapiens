@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { Button } from "@components/common/Button";
-import type { CITOLOGY_TOPICS, DISCIPLINE } from "interfaces/discipline";
+import type { CYTOLOGY_TOPICS, DISCIPLINE } from "interfaces/discipline";
 import type { ITopicCode, ITopicData } from "@interfaces/topic";
 import { getContentByCode } from "@services/content";
 
@@ -15,7 +15,7 @@ const TopicOptions = () => {
   const [topic, setTopic] = useState<ITopicCode | null>(null)
   
   useEffect(()=>{
-    const topics = getContentByCode(discipline as DISCIPLINE, code as CITOLOGY_TOPICS)
+    const topics = getContentByCode(discipline as DISCIPLINE, code as CYTOLOGY_TOPICS)
     console.log('topics', topics)
     setTopic(topics)
   }, [code])

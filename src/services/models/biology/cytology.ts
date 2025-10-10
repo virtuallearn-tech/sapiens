@@ -7,7 +7,7 @@ const PROKARYOTIC_CELL: IModelData = {
   name: 'Célula Procarionte',
   title: 'Célula Procarionte',
   description: 'Estrutura simples e primitiva, sem núcleo definido, onde o material genético fica disperso no citoplasma',
-  text: `A célula eucarionte é uma estrutura complexa e altamente organizada, presente em organismos como animais, plantas, fungos e protozoários. Diferente das células procariontes, ela possui um núcleo verdadeiro, envolto por uma membrana, onde está armazenado o material genético. Seu interior é compartimentalizado por diversas organelas, cada uma com funções específicas: mitocôndrias produzem energia, ribossomos sintetizam proteínas, o retículo endoplasmático atua no transporte e processamento de substâncias, e o complexo golgiense organiza e distribui os produtos celulares. Essa arquitetura interna permite que a célula execute tarefas sofisticadas, essenciais para o funcionamento dos organismos multicelulares.`,
+  text: `As células procariontes são caracterizadas pela ausência de núcleo delimitado por membrana e pela simplicidade estrutural em relação às eucariontes. O DNA dessas células encontra-se disperso no citoplasma, em uma região chamada nucleoide, podendo também haver moléculas circulares menores chamadas plasmídeos. Elas não possuem organelas membranosas, mas apresentam ribossomos para a síntese de proteínas, membrana plasmática e parede celular, que protege e dá forma à célula. Em alguns grupos, há ainda flagelos, que auxiliam na locomoção, e cápsulas, que aumentam a proteção. Todos os seres procariontes pertencem aos reinos Monera, como as bactérias e arqueas.`,
   scale: 18,
   position: [0, 0.3, 0],
   rotation: [1.57, -1.57, 0],
@@ -59,7 +59,14 @@ const PROKARYOTIC_CELL: IModelData = {
       description: "Fragmento extra de DNA com funções adaptativas.",
       text: "Os plasmídeos são pequenos anéis de DNA que ficam soltos no citoplasma. Eles contêm genes extras, muitas vezes relacionados à sobrevivência, como resistência a antibióticos. Além disso, podem ser trocados entre bactérias, ajudando na adaptação e na evolução desses micro-organismos."
     }
-  ]
+  ], 
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/archaea-eb47b67df9ca4c47b681716d572e3177">Archaea</a> 
+  by <a href="https://sketchfab.com/arloopa">arloopa</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`
 }
 
 const PLANT_CELL: IModelData = {
@@ -157,8 +164,13 @@ const PLANT_CELL: IModelData = {
       text: "O nucléolo é uma estrutura localizada dentro do núcleo. Sua principal função é produzir e montar os ribossomos, que depois serão enviados ao citoplasma para fabricar proteínas."
     }
   ],
-  attribuition: "Modelo adaptado de Sketchfab",
-  wikipedia: "https://pt.wikipedia.org/wiki/C%C3%A9lula_vegetal"
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/plant-cell-biology-0640c7a14f41400fbdac382c7de1d776">Plant Cell | Biology</a> 
+  by <a href="https://sketchfab.com/okchs">Oliver</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
 }
 
 const EUKARYOTIC_CELL: IModelData = {
@@ -261,8 +273,13 @@ const EUKARYOTIC_CELL: IModelData = {
       text: "O nucléolo é uma região densa localizada dentro do núcleo. Sua principal função é produzir e montar os ribossomos, que depois serão enviados ao citoplasma para participar da síntese de proteínas."
     }
   ],
-  attribuition: "Modelo adaptado de Sketchfab",
-  wikipedia: "https://pt.wikipedia.org/wiki/C%C3%A9lula_eucarionte"
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/animal-cell-20-annotated-in-english-0d9f7f4257224975b2ef83a283709b2f">Animal cell 2.0 - annotated in English</a> 
+  by <a href="https://sketchfab.com/montanna">montanna</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`
 }
 
 export const CYTOLOGY_MODELS: IModelData[] = [

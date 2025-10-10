@@ -14,8 +14,8 @@ export const CitologySummary: IContent[] = [
     id: "bio-citologia-geral",
     title: "Citologia",
     discipline: "BIOLOGY",
-    topic: "CITOLOGY",
-    code: "citology",
+    topic: "CYTOLOGY",
+    code: "CYTOLOGY",
     cover: Cover.citology,
     component: Citology
   },
@@ -23,7 +23,7 @@ export const CitologySummary: IContent[] = [
     id: "bio-celula-eucarionte",
     title: "Célula Eucarionte",
     discipline: "BIOLOGY",
-    topic: "CITOLOGY",
+    topic: "CYTOLOGY",
     code: "eukaryotic_cell",
     cover: Cover.eukaryotic_cell,
     component: EukaryoticCellContent
@@ -32,7 +32,7 @@ export const CitologySummary: IContent[] = [
     id: "bio-celula-procarionte",
     title: "Célula Procarionte",
     discipline: "BIOLOGY",
-    topic: "CITOLOGY",
+    topic: "CYTOLOGY",
     code: "prokaryotic_cell",
     cover: Cover.prokaryotic_cell,
     component: ProkaryoticCell
@@ -41,7 +41,7 @@ export const CitologySummary: IContent[] = [
     id: "bio-celula-vegetal",
     title: "Célula Vegetal",
     discipline: "BIOLOGY",
-    topic: "CITOLOGY",
+    topic: "CYTOLOGY",
     code: "plant_cell",
     cover: Cover.plant_cell,
     component: PlantCell
@@ -50,7 +50,7 @@ export const CitologySummary: IContent[] = [
     id: "bio-organelas",
     title: "Organelas Citoplasmáticas",
     discipline: "BIOLOGY",
-    topic: "CITOLOGY",
+    topic: "CYTOLOGY",
     code: "cytoplasmic_organelles",
     cover: Cover.cytoplasmic_organelles,
     component: CytoplasmicOrganelles
@@ -59,7 +59,7 @@ export const CitologySummary: IContent[] = [
     id: "bio-membrana",
     title: "Membrana Plasmática e Transporte",
     discipline: "BIOLOGY",
-    topic: "CITOLOGY",
+    topic: "CYTOLOGY",
     code: "membrane_transport",
     cover: Cover.membrane_transport,
     component: MembraneTransport
@@ -68,7 +68,7 @@ export const CitologySummary: IContent[] = [
     id: "bio-ciclo-mitose",
     title: "Ciclo Celular e Mitose",
     discipline: "BIOLOGY",
-    topic: "CITOLOGY",
+    topic: "CYTOLOGY",
     code: "cell_cycle_mitosis",
     cover: Cover.cell_cycle_mitosis,
     component: CellCycle

@@ -1,4 +1,4 @@
-import { FaVolumeUp, FaPause, FaStop, FaPlay, FaBook } from "react-icons/fa";
+import { FaVolumeUp, FaPause, FaStop, FaPlay, FaBook, FaInfo } from "react-icons/fa";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 
@@ -6,7 +6,7 @@ import { IoMdClose } from "react-icons/io";
 
 
 type ButtonStyle = "primary" | "secondary" | "clear" | "dark" | "outline";
-type ButtonIcon = "volume" | "letter" | "stop" | "pause" | "play" | "close"
+type ButtonIcon = "volume" | "letter" | "stop" | "pause" | "play" | "close" | 'info'
 
 interface IFabButton {
   // children: React.ReactNode,
@@ -31,6 +31,8 @@ export const FabButton = ({ onClick, icon, style = 'dark' }: IFabButton) => {
         return <FaBook />
       case 'close':
         return <IoMdClose/>
+      case 'info':
+        return <FaInfo/>
       default:
         return <CiMenuBurger />
     }
