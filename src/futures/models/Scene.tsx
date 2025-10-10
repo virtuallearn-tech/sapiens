@@ -191,7 +191,6 @@ const Scene = () => {
   }
 
 
-
   return (
     <div className="m-scene">
       <Canvas className='m-scene__canvas' camera={{ position: [0, 0, 5], fov: 75 }}>

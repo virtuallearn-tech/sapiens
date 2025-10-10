@@ -2,7 +2,7 @@ import type { DISCIPLINE, DISCIPLINE_SUBTOPICS, DISCIPLINE_TOPICS } from "./disc
 
 export interface IModelNode {
   name: string,
-  node: string | string[],
+  node: string | string[] |  null,
   description: string,
   text: string
 }
