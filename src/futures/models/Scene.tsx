@@ -7,7 +7,7 @@ import { Model } from './Model'
 
 import { useParams, useNavigate } from 'react-router-dom'
 import type { IClass, IModelData } from '@interfaces/model'
-import { getModel, getModelByCode, setClass } from '@services/models/getModel'
+import { getModelByCode, setClass } from '@services/models/getModel'
 import { Button } from '@components/common/Button'
 import { FabButton } from '@components/common/Fab'
 import { MenuOptions } from '@components/ui-3d/MenuOptions'
@@ -18,8 +18,26 @@ import type { DISCIPLINE, DISCIPLINE_SUBTOPICS, DISCIPLINE_TOPICS } from '@inter
 
 function Loader() {
   const { progress } = useProgress()
-  return <Html center>{progress.toFixed(0)} % carregado</Html>
+  return (
+    <Html center>
+      <div
+        style={{
+          background: "rgba(0,0,0,0.7)",
+          color: "white",
+          padding: "6px 12px",
+          borderRadius: "8px",
+          fontFamily: "sans-serif",
+          fontSize: "0.9rem",
+          display: "inline-block",
+          whiteSpace: "nowrap"
+        }}
+      >
+        {progress.toFixed(0)}% carregado
+      </div>
+    </Html>
+  )
 }
+
 
 const Scene = () => {
 
@@ -204,7 +222,8 @@ const Scene = () => {
       </Canvas>
 
       <div className="m-scene__label">
-        <span>{titleModel}</span>
+        {isClassActive && <span>{currentStep+1}/{classRoutine.length} {titleModel}</span>}
+        {!isClassActive && <span>{titleModel}</span>}
       </div>
 
       {!showDetailOptions && !isClassActive && <div className="m-scene__ui m-scene__ui--left">

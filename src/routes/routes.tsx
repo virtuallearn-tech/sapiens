@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Home } from "@pages/Home";
+import Loading from "@components/layout/Loading";
 
 const Signin = lazy(() => import("@pages/Signin"));
 const Signup = lazy(() => import("@pages/Signup"));
@@ -18,7 +19,7 @@ const Scene = lazy(() => import("@futures/models/Scene"))
 
 export const AppRoutes = () => {
   return (
-    <Suspense fallback={<div>Carregando...</div>}>
+    <Suspense fallback={<Loading/>}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />

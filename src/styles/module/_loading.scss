@@ -1,0 +1,36 @@
+// SMACSS: este arquivo entra em "modules" (estilos específicos de componente)
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; // ocupa a tela toda
+  background: #0d0d0d; // fundo escuro para contraste
+  color: #fff;
+  text-align: center;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__logo {
+    width: 80px;
+    height: auto;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    font-style: italic;
+    opacity: 0.8;
+    margin: 0;
+  }
+}

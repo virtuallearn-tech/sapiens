@@ -1,9 +1,8 @@
 import type { IModelData } from "@interfaces/model"
 import { useGLTF } from "@react-three/drei"
-import { centerMeshOrigin, getByPath, resetTransverseModel, transverseModel } from "@utils/modifyModel"
+import { resetTransverseModel, transverseModel } from "@utils/modifyModel"
 import { useControls } from "leva"
 import { useEffect } from "react"
-import * as THREE from 'three'
 
 interface IPlotModel {
   model: IModelData,
