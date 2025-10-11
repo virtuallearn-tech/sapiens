@@ -9,7 +9,11 @@ const PROKARYOTIC_CELL: IModelData = {
   description: 'Estrutura simples e primitiva, sem núcleo definido, onde o material genético fica disperso no citoplasma',
   text: `As células procariontes são caracterizadas pela ausência de núcleo delimitado por membrana e pela simplicidade estrutural em relação às eucariontes. O DNA dessas células encontra-se disperso no citoplasma, em uma região chamada nucleoide, podendo também haver moléculas circulares menores chamadas plasmídeos. Elas não possuem organelas membranosas, mas apresentam ribossomos para a síntese de proteínas, membrana plasmática e parede celular, que protege e dá forma à célula. Em alguns grupos, há ainda flagelos, que auxiliam na locomoção, e cápsulas, que aumentam a proteção. Todos os seres procariontes pertencem aos reinos Monera, como as bactérias e arqueas.`,
   scale: 18,
-  position: [0, 0.3, 0],
+  scale_sm: 19,
+  scale_md: 20,
+  scale_lg: 20,
+  scale_2lg: 22,
+  position: [0, 0.8, 0],
   rotation: [1.57, -1.57, 0],
   node: [
     {
@@ -77,8 +81,12 @@ const PLANT_CELL: IModelData = {
   description: "Modelo 3D de uma célula vegetal com suas principais organelas.",
   text: `A célula vegetal é a unidade fundamental dos organismos do reino Plantae. Além das estruturas comuns a outras células eucariontes, como o núcleo e o citoplasma, ela apresenta características exclusivas: uma parede celular rígida composta por celulose, cloroplastos que realizam a fotossíntese e grandes vacúolos que regulam o armazenamento e o equilíbrio de água e substâncias no interior da célula.`,
   scale: 0.32,
-  rotation: [0.53, 0, 0],
-  position: [-2, 0, 0],
+  scale_sm: 0.35,
+  scale_md: 0.36,
+  scale_lg: 0.40,
+  scale_2lg: 0.40,
+  rotation: [0.83, 0, 0],
+  position: [-2.1, 0.5, 0],
   node: [
     {
       name: "Parede Celular",
@@ -122,13 +130,13 @@ const PLANT_CELL: IModelData = {
       text: "O Complexo de Golgi funciona como um centro de empacotamento e distribuição. Ele recebe proteínas e lipídios produzidos no retículo endoplasmático, modifica, armazena e os envia para outras partes da célula ou para fora dela."
     },
     {
-      name: "Retículo Endoplasmático Rugoso",
+      name: "Retículo Rugoso",
       node: ["floating_ribosomes_Mat1_0", "Mat.1_0"],
       description: "Rede de membranas com ribossomos aderidos.",
       text: "O Retículo Endoplasmático Rugoso (RER) é uma rede de membranas ligada ao núcleo e coberta por ribossomos. Ele fabrica proteínas que serão exportadas pela célula ou incorporadas às membranas celulares."
     },
     {
-      name: "Retículo Endoplasmático Liso",
+      name: "Retículo  Liso",
       node: null,
       description: "Rede de membranas sem ribossomos.",
       text: "O Retículo Endoplasmático Liso (REL) é uma rede de túbulos sem ribossomos. Ele participa da produção de lipídios, da regulação do cálcio e da desintoxicação da célula, removendo substâncias nocivas."
@@ -181,8 +189,12 @@ const EUKARYOTIC_CELL: IModelData = {
   description: "Modelo 3D de uma célula eucarionte animal com suas organelas.",
   text: `As células eucariontes são mais complexas que as procariontes, pois possuem um núcleo verdadeiro — envolto por uma membrana — onde se localiza o DNA. Também apresentam diversas organelas membranosas, cada uma responsável por uma função essencial, como a produção de energia, a síntese de proteínas e o transporte de substâncias. Essa compartimentalização torna o funcionamento celular mais eficiente e é uma característica de organismos pluricelulares, como animais e plantas, e também de seres unicelulares, como os protozoários.`,
   scale: 0.0045,
-  rotation: [0, 0, 0],
-  position: [0, 0, 0],
+  scale_sm: 0.006,
+  scale_md: 0.006,
+  scale_lg: 0.006,
+  scale_2lg: 0.006,
+  rotation: [0.083, 0, 0],
+  position: [0, 0.5, 0],
   node: [
     {
       name: "Núcleo",
@@ -207,13 +219,13 @@ const EUKARYOTIC_CELL: IModelData = {
       text: "As mitocôndrias são as 'usinas de energia' da célula. Elas realizam a respiração celular, transformando a glicose e o oxigênio em ATP — a principal fonte de energia usada nas atividades vitais da célula. Quanto mais ativa for a célula, mais mitocôndrias ela possui."
     },
     {
-      name: "Retículo Endoplasmático Rugoso",
+      name: "Retículo Rugoso",
       node: "Nulo__Material005_0",
       description: "Rede de membranas com ribossomos aderidos.",
       text: "O Retículo Endoplasmático Rugoso (RER) é uma rede de canais e bolsas ligada ao núcleo, coberta por ribossomos. Ele tem papel essencial na síntese de proteínas, especialmente aquelas que serão exportadas ou inseridas nas membranas celulares."
     },
     {
-      name: "Retículo Endoplasmático Liso",
+      name: "Retículo Liso",
       node: "Nulo__Material026_0",
       description: "Rede de membranas sem ribossomos.",
       text: "O Retículo Endoplasmático Liso (REL) é uma rede de túbulos sem ribossomos. Ele está envolvido na produção de lipídios, no armazenamento de íons e na desintoxicação da célula — ajudando a neutralizar substâncias tóxicas, como medicamentos e álcool."

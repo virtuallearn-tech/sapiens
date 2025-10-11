@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react"
-import { Link } from 'react-router-dom'
 
 import { CardContent } from "@components/cards/CardContent"
 
-import type { Itopic, ITopicCode, ITopicData } from "interfaces/topic"
+import type { ITopicCode } from "interfaces/topic"
 import {getAllTopics } from "@services/content"
 
 
@@ -26,7 +25,6 @@ export const Home = () => {
 
       <div className="p-home__list">
         {topicList && topicList.map((topic) => (
-          // <Link to={`/topic-option/${topic.discipline}/${topic.code}`}>
             <CardContent
               key={topic.code}
               id={topic.code}
@@ -35,7 +33,6 @@ export const Home = () => {
               cover={topic.cover}
               link={`/topic-option/${topic.discipline}/${topic.code}`}
             />
-          // </Link>
         ))}
       </div>
     </div>

@@ -120,13 +120,13 @@ const Scene = () => {
   }, [currentStep, classRoutine, isClassActive, isClassPaused])
 
   useEffect(() => {
-  // Só roda no unmount
-  return () => {
-    if (isSpeaking) {
-      stop()
+    // Só roda no unmount
+    return () => {
+      // if (isSpeaking) {
+        stop()
+      // }
     }
-  }
-}, []) // <- sem dependências, roda apenas no unmount
+  }, [])
 
 
 
@@ -230,13 +230,13 @@ const Scene = () => {
         <directionalLight position={[5, 5, 5]} intensity={2} />
         <OrbitControls />
         <Suspense fallback={<Loader />}>
-          <axesHelper args={[5]} />
+          {/* <axesHelper args={[5]} /> */}
           <Model model={model!} focusNames={focusNames} />
         </Suspense>
       </Canvas>
 
       <div className="m-scene__label">
-        {isClassActive && <span>{currentStep+1}/{classRoutine.length} {titleModel}</span>}
+        {isClassActive && <span>{currentStep + 1}/{classRoutine.length} {titleModel}</span>}
         {!isClassActive && <span>{titleModel}</span>}
       </div>
 
@@ -288,7 +288,7 @@ const Scene = () => {
 
       {showDetailOptions && <MenuOptions items={menuOptions} onClick={handleModelInfo} />}
       {showExplanation && <Explanation explanation={explanation!} />}
-      {license && <License content={model?.attribuition!}/>}  
+      {license && <License content={model?.attribuition!} />}
 
     </div>
 

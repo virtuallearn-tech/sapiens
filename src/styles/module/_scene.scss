@@ -33,11 +33,13 @@
       background-color: $bg-ui;
       border-radius: 0.4rem;
       min-width: 130px;
+      z-index: 2;
     }
 
     &--right {
       right: 0.5rem;
-      @extend %position
+      @extend %position;
+      z-index: 2;
     }
   }
 }

@@ -22,7 +22,7 @@ export const Sidebar = () => {
             </Link>
           </li>
           <li onClick={close}>
-            <Link to="" className="m-sidebar__item">
+            <Link to="/learn-3d" className="m-sidebar__item">
               <BsFillBadge3dFill className="m-sidebar__icon" />
               <span>Aprender em 3D</span>
             </Link>
