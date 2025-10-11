@@ -228,7 +228,7 @@ const Scene = () => {
       <Canvas className='m-scene__canvas' camera={{ position: [0, 0, 5], fov: 75 }}>
         <ambientLight intensity={0.6} />
         <directionalLight position={[5, 5, 5]} intensity={2} />
-        <OrbitControls />
+        <OrbitControls maxDistance={10} />
         <Suspense fallback={<Loader />}>
           {/* <axesHelper args={[5]} /> */}
           <Model model={model!} focusNames={focusNames} />

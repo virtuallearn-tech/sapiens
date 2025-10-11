@@ -3,7 +3,7 @@ import type { IModelData } from "@interfaces/model";
 
 const PROKARYOTIC_CELL: IModelData = {
   code: 'prokaryotic_cell',
-  source: '/models/archaea.glb',
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-models/master/archaea.glb',//'/models/archaea.glb',
   name: 'Célula Procarionte',
   title: 'Célula Procarionte',
   description: 'Estrutura simples e primitiva, sem núcleo definido, onde o material genético fica disperso no citoplasma',
@@ -75,7 +75,7 @@ const PROKARYOTIC_CELL: IModelData = {
 
 const PLANT_CELL: IModelData = {
   code: "plant_cell", // exemplo de subtopic
-  source: "/models/plant_cell.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-models/master/plant_cell.glb', //"/models/plant_cell.glb",
   name: "Célula Vegetal",
   title: "Estrutura da Célula Vegetal",
   description: "Modelo 3D de uma célula vegetal com suas principais organelas.",
@@ -183,7 +183,7 @@ const PLANT_CELL: IModelData = {
 
 const EUKARYOTIC_CELL: IModelData = {
   code: "eukaryotic_cell",
-  source: "/models/eukaryotic_cell.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-models/master/eukaryotic_cell.glb',//"/models/eukaryotic_cell.glb",
   name: "Célula Eucarionte",
   title: "Estrutura da Célula Eucarionte",
   description: "Modelo 3D de uma célula eucarionte animal com suas organelas.",
