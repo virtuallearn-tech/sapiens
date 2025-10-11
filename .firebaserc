@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "sapiens-30471"
+  },
+  "targets": {
+    "sapiens-30471": {
+      "hosting": {
+        "sapienslab": [
+          "sapienslab"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
