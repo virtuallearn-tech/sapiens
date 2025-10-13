@@ -294,7 +294,7 @@ const Scene = () => {
           onClick={() => setShowExplanation((prev) => !prev)}
         />
         <FabButton
-          icon='info'
+          icon={license ? 'close':'info'}
           onClick={() => setLicense((prev) => !prev)}
         />
       </div>

@@ -5,14 +5,15 @@
 .p-exercicios {
   @include display-flex();
 
-  @include breakpoint($md){
+  @include breakpoint($md) {
     @include max-width();
   }
+
   // display: flex;
   // justify-content: center;
   // padding: 1rem 0.5rem;
 
-  &__num{
+  &__num {
     margin: 0.5rem auto;
   }
 
@@ -46,7 +47,7 @@
     padding: 0;
     margin: 0 0 1.5rem 0;
 
-    & > .p-exercicios__option {
+    &>.p-exercicios__option {
       margin-bottom: 0.8rem;
 
       label {
@@ -61,29 +62,28 @@
     }
   }
 
-  &__option{
+  &__option {
     padding: 0.5rem;
     border-radius: 0.3rem;
-    
-    &--wrong{
+
+    &--wrong {
       background-color: $wrong-answer;
     }
 
-    &--correct{
+    &--correct {
       background-color: $right-answer;
     }
 
   }
 
-  &__intro{
+  &__intro {
     margin-bottom: 1rem;
     font-size: 1rem;
     line-height: 1.4rem;
   }
 
-  &__explanation{
-    @include display-flex(
-      $justify-content: flex-start,
+  &__explanation {
+    @include display-flex($justify-content: flex-start,
       $align-items: flex-start,
     );
     gap: 0.5rem;
@@ -98,13 +98,31 @@
   }
 
   &__actions {
+
     // background-color: red;
-    .m-button{
+    .m-button {
       width: 100%;
     }
+
     // display: flex;
     // justify-content: flex-end;
   }
+
+  &__content {
+  line-height: 1.4;
 }
 
+  &__imgoption {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+  }
 
+  &__empty {
+    color: #aaa;
+    font-style: italic;
+  }
+}

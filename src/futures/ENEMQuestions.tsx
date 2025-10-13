@@ -93,13 +93,12 @@ const ENEMQuestions = () => {
     )
   }
 
-  if(error)
-  {
-    return <Message message="Não foi possível carregar as questões." type="danger"/>
+  if (error) {
+    return <Message message="Não foi possível carregar as questões." type="danger" />
   }
 
   {//
-    return  !started? (
+    return !started ? (
       <SelectEnemOptions />
     ) : (
       <div className="p-exercicios">
@@ -117,7 +116,7 @@ const ENEMQuestions = () => {
             />
           )}
 
-          <h2 className="p-exercicios__question">{current.context}</h2>
+          <h2 className="p-exercicios__question">{current.context.replace(/https?:\/\/\S+/g, "")}</h2>
 
           {current.alternativesIntroduction && (
             <p className="p-exercicios__intro">{current.alternativesIntroduction}</p>
@@ -125,15 +124,41 @@ const ENEMQuestions = () => {
 
           <ul className="p-exercicios__options">
             {current.alternatives.map((op, idx) => (
+              // <li
+              //   key={idx}
+              //   className={`p-exercicios__option ${selected !== null
+              //     ? op.isCorrect
+              //       ? "p-exercicios__option--correct"
+              //       : selectedLetter === op.letter
+              //         ? "p-exercicios__option--wrong"
+              //         : ""
+              //     : ""
+              //     }`}
+              // >
+              //   <label className="p-exercicios__label">
+              //     <input
+              //       type="radio"
+              //       name={`questao-${currentIndex}`}
+              //       value={op.letter}
+              //       checked={selectedLetter === op.letter}
+              //       onChange={(e) => handleAnswer(e.target.value, op.isCorrect)}
+              //       disabled={selected !== null}
+              //       className="p-exercicios__input"
+              //     />
+              //     <span className="p-exercicios__text">
+              //       <strong>{op.letter}.</strong> {op.text}
+              //     </span>
+              //   </label>
+              // </li>
               <li
                 key={idx}
                 className={`p-exercicios__option ${selected !== null
-                  ? op.isCorrect
-                    ? "p-exercicios__option--correct"
-                    : selectedLetter === op.letter
-                      ? "p-exercicios__option--wrong"
-                      : ""
-                  : ""
+                    ? op.isCorrect
+                      ? "p-exercicios__option--correct"
+                      : selectedLetter === op.letter
+                        ? "p-exercicios__option--wrong"
+                        : ""
+                    : ""
                   }`}
               >
                 <label className="p-exercicios__label">
@@ -146,11 +171,26 @@ const ENEMQuestions = () => {
                     disabled={selected !== null}
                     className="p-exercicios__input"
                   />
+
                   <span className="p-exercicios__text">
-                    <strong>{op.letter}.</strong> {op.text}
+                    <strong className="p-exercicios__letter">{op.letter}.</strong>
+
+                    {/* Verifica se a alternativa é texto ou imagem */}
+                    {op.text ? (
+                      <span className="p-exercicios__content">{' ' + op.text}</span>
+                    ) : op.file ? (
+                      <img
+                        src={op.file}
+                        alt={`Alternativa ${op.letter}`}
+                        className="p-exercicios__imgoption"
+                      />
+                    ) : (
+                      <em className="p-exercicios__empty">Sem conteúdo</em>
+                    )}
                   </span>
                 </label>
               </li>
+
             ))}
           </ul>
 
