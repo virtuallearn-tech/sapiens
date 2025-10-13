@@ -9,7 +9,7 @@ const Signup = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({ nome, email, senha });
+    //console.log({ nome, email, senha });
     // Aqui futuramente você vai integrar com a API de cadastro
   };
 

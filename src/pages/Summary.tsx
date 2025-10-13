@@ -11,7 +11,7 @@ const Summary = () => {
 
   useEffect(() => {
     const summary = getSummaryByCode(discipline as DISCIPLINE, code as DISCIPLINE_SUBTOPICS);
-    console.log('summary', summary)
+    //console.log('summary', summary)
     setSummary(summary || null);
   }, [])
 

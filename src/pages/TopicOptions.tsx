@@ -9,14 +9,14 @@ import { getContentByCode } from "@services/content";
 const TopicOptions = () => {
 
   const { discipline, code } = useParams<{ discipline:string, code: string}>()
-  console.log('params', discipline, code)
+  //console.log('params', discipline, code)
   const navigate = useNavigate()
 
   const [topic, setTopic] = useState<ITopicCode | null>(null)
   
   useEffect(()=>{
     const topics = getContentByCode(discipline as DISCIPLINE, code as CYTOLOGY_TOPICS)
-    console.log('topics', topics)
+    //console.log('topics', topics)
     setTopic(topics)
   }, [code])
 

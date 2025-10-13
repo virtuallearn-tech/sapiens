@@ -39,7 +39,7 @@ export function useEnemQuestions({
 
     // const source = axios.CancelToken.source()
 
-    console.log('Fetching questions with params:', { year, discipline, language, limit })
+    //console.log('Fetching questions with params:', { year, discipline, language, limit })
 
     setLoading(true)
     setError(null)
@@ -54,14 +54,14 @@ export function useEnemQuestions({
         }
       )
       // filtro por disciplina (API não expõe query param para discipline)
-      console.log('API response data:', response)
+      //console.log('API response data:', response)
 
 
       let items = response.data.questions
       if (discipline) {
         items = items.filter((q: Question) => q.discipline === discipline)
       }
-      console.log('Fetched questions:', items)
+      //console.log('Fetched questions:', items)
       setQuestions(items)
       setMetadata(response.data.metadata)
     } catch (err: any) {

@@ -23,7 +23,7 @@ const Results = () => {
   };
 
   const handleMessage = (percentage: number) => {
-    console.log('handleMessage', percentage)
+    //console.log('handleMessage', percentage)
     const messages = {
       EXCELENT: 'Excelente trabalho! Você está dominando o conteúdo 🚀',
       GOOD: 'Bom trabalho! Continue assim 🚀',
@@ -52,7 +52,7 @@ const Results = () => {
     setErrors(errors);
     setPercentage(perc);
 
-    console.log('PA', perc);
+    //console.log('PA', perc);
     handleMessage(perc);
   }, [total, right]);
 

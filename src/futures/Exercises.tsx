@@ -14,7 +14,7 @@ const Exercises = () => {
 
   const { discipline, topic } = useParams<{ discipline: string; topic: string }>();
 
-  console.log('d/t', discipline, topic)
+  //console.log('d/t', discipline, topic)
 
   const [questions, setQuestions] = useState<IQuestionData[]>([])
   const [right, setRight] = useState(0);
@@ -30,9 +30,9 @@ const Exercises = () => {
   const current = questions[currentIndex];
 
   const handleQuestions = () => {
-    console.log('numQuestions', numQuestions);
+    //console.log('numQuestions', numQuestions);
     const questions = getExerciciesByTopic(discipline as DISCIPLINE, topic as DISCIPLINE_TOPICS, numQuestions);
-    console.log('questions list', questions);
+    //console.log('questions list', questions);
     setQuestions(questions);
     setStarted(true)
   }

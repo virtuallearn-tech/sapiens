@@ -12,7 +12,7 @@ export const Home = () => {
 
   useEffect(() => {
     const topics = getAllTopics()
-    console.log('topics', topics)
+    //console.log('topics', topics)
     setTopicList(topics)
   }, [])
 

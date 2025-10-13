@@ -12,7 +12,7 @@ const Signin = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({ email, senha });
+    //console.log({ email, senha });
     // Aqui futuramente você vai integrar com a API de autenticação
   };
 

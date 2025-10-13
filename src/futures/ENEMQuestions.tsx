@@ -17,7 +17,7 @@ const ENEMQuestions = () => {
   const [limit, setLimit] = useState<number | null>(null);
   const [year, setYear] = useState<number | null>(null);
 
-  const { questions, error, fetchQuestions } = useEnemQuestions({ year, discipline, language, limit })
+  const { questions, loading, error, fetchQuestions } = useEnemQuestions({ year, discipline, language, limit })
 
   const [started, setStarted] = useState(false);
   const [right, setRight] = useState(0);
@@ -86,8 +86,8 @@ const ENEMQuestions = () => {
         />
         <Button
           onClick={() => handleQuestions()}
-          disabled={discipline == null || (discipline == 'linguagens' && language == null) || year == null} className="m-button--full">
-          Iniciar
+          disabled={discipline == null || (discipline == 'linguagens' && language == null) || year == null || loading == true} className="m-button--full">
+          {loading ? 'Caregando...' : 'Iniciar'}
         </Button>
       </div>
     )

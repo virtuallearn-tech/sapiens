@@ -38,7 +38,7 @@ const Flashcard = () => {
 
   const handleFlashcards = () => {
     const flashcards = getFlashcardsByTopic(discipline as DISCIPLINE, topic as BIOLOGY_TOPICS, numFlashcards);
-    console.log('flashcard list', flashcards);
+    //console.log('flashcard list', flashcards);
     setFlashcards(flashcards);
     setStarted(true)
   }

@@ -13,11 +13,11 @@ export const Model = ({ model, focusNames }: IPlotModel) => {
   // Controles de transformação + foco
   const [width, setWidth] = useState<number>(window.innerWidth);
   const [scale, setScale] = useState<number>(1)
-  // console.log('model ', model, focusNames)
+  // //console.log('model ', model, focusNames)
 
 
   const { scene } = useGLTF(model.source)
-  // console.log('scene', scene)
+  // //console.log('scene', scene)
 
   // const { scale, posX, posY, posZ, rotX, rotY, rotZ } = useControls("Transformações", {
   //   scale: { value: 0.0045, min: 0.001, max: 25, step: 0.1 },
@@ -36,7 +36,7 @@ export const Model = ({ model, focusNames }: IPlotModel) => {
   }, []);
 
   useEffect(() => {
-    console.log("Atualizando scale para width:", width);
+    //console.log("Atualizando scale para width:", width);
 
     if (width < 640) {
       setScale(model.scale);

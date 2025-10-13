@@ -48,7 +48,7 @@ const Scene = () => {
 
   const navigate = useNavigate()
   const { discipline, topic, code } = useParams()
-  console.log(discipline, topic, code)
+  //console.log(discipline, topic, code)
 
   const [model, setModel] = useState<IModelData | null>(null)
 
@@ -83,7 +83,7 @@ const Scene = () => {
 
   useEffect(() => {
     const m = getModelByCode(code as DISCIPLINE_SUBTOPICS, discipline as DISCIPLINE, topic as DISCIPLINE_TOPICS) //getModel().data[0]
-    console.log('MODEL ', m)
+    //console.log('MODEL ', m)
     const nodesNames = m?.node?.map(n => n.name).filter((s): s is string => typeof s === 'string') ?? []
     const menuOptions = [m?.name, ...nodesNames, 'Fechar'].filter((s): s is string => typeof s === 'string')
     setMenuOptions(menuOptions)
@@ -94,7 +94,7 @@ const Scene = () => {
     setTitleModel(m?.name ?? '')
 
     const iClass = setClass(m!)
-    console.log('iClass', iClass)
+    //console.log('iClass', iClass)
     // handleSpeech(m?.name!)
   }, [])
 
@@ -135,7 +135,7 @@ const Scene = () => {
 
 
   const handleModelInfo = (name: string) => {
-    console.log('name', name)
+    //console.log('name', name)
     //  if(!name) return null
     if (name == model?.name || name == 'Fechar') {
       setTextToSpeech(model!.text)
@@ -144,7 +144,7 @@ const Scene = () => {
       setFocusNames(model!.name)
     } else {
       const findText = model?.node.find((n) => n.name == name)
-      console.log('find ', findText)
+      //console.log('find ', findText)
       if (findText) {
         setTextToSpeech(findText.text)
         setExplanation(findText.text)

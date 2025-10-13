@@ -26,13 +26,13 @@ export function useSpeech() {
 
     speakQueue(texts, {
       onParagraphEnd: (text) => {
-        console.log("Terminou parágrafo:", text)
+        //console.log("Terminou parágrafo:", text)
         options?.onParagraphEnd?.(text)
       },
       onAllEnd: () => {
         setIsSpeaking(false)
         setIsPaused(false)
-        console.log("Leitura finalizada!")
+        //console.log("Leitura finalizada!")
          options?.onAllEnd?.()
       }
     })
