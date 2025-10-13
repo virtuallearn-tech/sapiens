@@ -2,9 +2,9 @@ import { Button } from "@components/common/Button";
 import { Select } from "@components/common/Select";
 
 const flashcardsOpts = [
-  { label: '10 questões', value: '10' },
-  { label: '20 questões', value: '20' },
-  { label: '30 questões', value: '30' }
+  { label: '10', value: '10' },
+  { label: '20', value: '20' },
+  { label: '30', value: '30' }
 ]
 
 interface ISelectNumQuestions {

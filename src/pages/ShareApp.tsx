@@ -1,7 +1,7 @@
 import { FaWhatsapp, FaTelegramPlane, FaFacebookF } from "react-icons/fa";
 
 const ShareApp = () => {
-  const appUrl = "https://sapiens.app"; // URL do seu app
+  const appUrl = "https://sapienslab.web.app"; // URL do seu app
 
   const shareText = encodeURIComponent(
     "Conheça o Sapiens! Um app web para aprender ciências de forma didática, simples e objetiva."
