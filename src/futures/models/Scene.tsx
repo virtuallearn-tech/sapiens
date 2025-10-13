@@ -16,6 +16,10 @@ import { useSpeech } from '@hooks/useSpeech'
 import type { DISCIPLINE, DISCIPLINE_SUBTOPICS, DISCIPLINE_TOPICS } from '@interfaces/discipline'
 import { License } from '@components/layout/License'
 
+import { BsArrowsFullscreen } from "react-icons/bs";
+import { RiFullscreenExitFill } from "react-icons/ri";
+import { toggleFullscreen } from '@utils/fullScreen'
+
 
 function Loader() {
   const { progress } = useProgress()
@@ -65,6 +69,7 @@ const Scene = () => {
   const [isClassPaused, setIsClassPaused] = useState(false)
 
   const [license, setLicense] = useState<boolean>(false)
+  const [isFullscreen, setIsFullscreen] = useState<boolean>(false)
 
   const {
     isSupported,
@@ -127,7 +132,6 @@ const Scene = () => {
       // }
     }
   }, [])
-
 
 
   const handleModelInfo = (name: string) => {
@@ -222,9 +226,15 @@ const Scene = () => {
     )
   }
 
+  const handleFullscreen = () => {
+    toggleFullscreen(".m-scene")
+    setIsFullscreen(prev => !prev )
+  }
+
 
   return (
     <div className="m-scene">
+      
       <Canvas className='m-scene__canvas' camera={{ position: [0, 0, 5], fov: 75 }}>
         <ambientLight intensity={0.6} />
         <directionalLight position={[5, 5, 5]} intensity={2} />
@@ -238,6 +248,10 @@ const Scene = () => {
       <div className="m-scene__label">
         {isClassActive && <span>{currentStep + 1}/{classRoutine.length} {titleModel}</span>}
         {!isClassActive && <span>{titleModel}</span>}
+      </div>
+
+      <div className="m-scene__label--fullscreen" onClick={handleFullscreen}>
+        {isFullscreen ? <RiFullscreenExitFill/> : <BsArrowsFullscreen />} {isFullscreen ? 'Fechar' : 'Expandir' }  
       </div>
 
       {!showDetailOptions && !isClassActive && <div className="m-scene__ui m-scene__ui--left">
