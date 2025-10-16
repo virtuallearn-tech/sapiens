@@ -6,15 +6,14 @@ import { useEffect, useState } from "react"
 
 interface IPlotModel {
   model: IModelData,
-  focusNames: string | string[] | null
+  focusNames: string | string[] | null,
+  updateScale: boolean | null
 }
 
-export const Model = ({ model, focusNames }: IPlotModel) => {
+export const Model = ({ model, focusNames, updateScale }: IPlotModel) => {
   // Controles de transformação + foco
   const [width, setWidth] = useState<number>(window.innerWidth);
   const [scale, setScale] = useState<number>(1)
-  // //console.log('model ', model, focusNames)
-
 
   const { scene } = useGLTF(model.source)
   // //console.log('scene', scene)
@@ -37,19 +36,13 @@ export const Model = ({ model, focusNames }: IPlotModel) => {
 
   useEffect(() => {
     //console.log("Atualizando scale para width:", width);
+    handleUpdateScale()
+  }, [width, updateScale]);
 
-    if (width < 640) {
-      setScale(model.scale);
-    } else if (width < 768) {
-      setScale(model.scale_sm);
-    } else if (width < 1024) {
-      setScale(model.scale_md);
-    } else if (width < 1280) {
-      setScale(model.scale_lg);
-    } else if (width < 1536) {
-      setScale(model.scale_2lg);
-    }
-  }, [width]);
+
+  // useEffect(()=>{
+  //   if(updateScale) handleUpdateScale()
+  // }, [updateScale])
 
   useEffect(() => {
 
@@ -72,6 +65,20 @@ export const Model = ({ model, focusNames }: IPlotModel) => {
     }
 
   }, [scene, focusNames])
+
+  const handleUpdateScale = () => {
+    if (width < 640) {
+      setScale(model.scale);
+    } else if (width < 768) {
+      setScale(model.scale_sm);
+    } else if (width < 1024) {
+      setScale(model.scale_md);
+    } else if (width < 1280) {
+      setScale(model.scale_lg);
+    } else if (width < 1536) {
+      setScale(model.scale_2lg);
+    }
+  }
 
   return (
     // <group scale={scale} position={[posX, posY, posZ]} rotation={[rotX, rotY, rotZ]}>

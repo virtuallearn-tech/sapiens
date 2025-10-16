@@ -51,6 +51,7 @@ const Scene = () => {
   //console.log(discipline, topic, code)
 
   const [model, setModel] = useState<IModelData | null>(null)
+  const [updateScale, setUpdateScale] = useState<boolean>(false)
 
   const [titleModel, setTitleModel] = useState<string>('')
   const [textToSpeech, setTextToSpeech] = useState<string | null>(null)
@@ -132,6 +133,13 @@ const Scene = () => {
       // }
     }
   }, [])
+
+  const handleUpdateScale = () => {
+    if(!updateScale){
+      setUpdateScale(true)
+      setTimeout(()=>{setUpdateScale(false)}, 1000)
+    }
+  }
 
 
   const handleModelInfo = (name: string) => {
@@ -231,7 +239,6 @@ const Scene = () => {
     setIsFullscreen(prev => !prev )
   }
 
-
   return (
     <div className="m-scene">
       
@@ -241,7 +248,7 @@ const Scene = () => {
         <OrbitControls maxDistance={10} />
         <Suspense fallback={<Loader />}>
           {/* <axesHelper args={[5]} /> */}
-          <Model model={model!} focusNames={focusNames} />
+          <Model model={model!} focusNames={focusNames} updateScale={updateScale}/>
         </Suspense>
       </Canvas>
 
@@ -255,6 +262,14 @@ const Scene = () => {
       </div>
 
       {!showDetailOptions && !isClassActive && <div className="m-scene__ui m-scene__ui--left">
+        <Button
+          type='button'
+          typeBtn='dark'
+          className='m-button--full'
+          onClick={handleUpdateScale}
+        >
+          Redimensionar
+        </Button>
         <Button
           type='button'
           typeBtn='dark'

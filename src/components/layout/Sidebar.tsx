@@ -33,12 +33,12 @@ export const Sidebar = () => {
               <span>Conteúdo</span>
             </Link>
           </li>
-          <li onClick={close}>
+          {/* <li onClick={close}>
             <Link to="/enem" className="m-sidebar__item">
               <BsFillPencilFill className="m-sidebar__icon" />
               <span>Questões do ENEM</span>
             </Link>
-          </li>
+          </li> */}
           <li onClick={close}>
             <Link to="/share-app" className="m-sidebar__item">
               <FaShareAlt className="m-sidebar__icon" />
