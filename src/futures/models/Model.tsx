@@ -75,7 +75,7 @@ export const Model = ({ model, focusNames, updateScale }: IPlotModel) => {
       setScale(model.scale_md);
     } else if (width < 1280) {
       setScale(model.scale_lg);
-    } else if (width < 1536) {
+    } else {//if (width < 1536)
       setScale(model.scale_2lg);
     }
   }
