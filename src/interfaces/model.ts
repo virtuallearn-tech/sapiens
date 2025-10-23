@@ -1,4 +1,4 @@
-import type { DISCIPLINE, DISCIPLINE_SUBTOPICS, DISCIPLINE_TOPICS } from "./discipline"
+import type { DISCIPLINE_MODULE, DISCIPLINE_TOPICS } from "./discipline"
 
 export interface IModelNode {
   name: string,
@@ -8,7 +8,7 @@ export interface IModelNode {
 }
 
 export interface IModelData {
-  code: DISCIPLINE_SUBTOPICS,
+  topic: DISCIPLINE_TOPICS,
   source: string,
   name: string,
   title: string,
@@ -21,14 +21,16 @@ export interface IModelData {
   scale_2lg:number,
   rotation: [number, number, number],
   position: [number, number, number],
-  node: IModelNode[],
+  node: IModelNode[] | null,
   attribuition?: string,
-  wikipedia?: string
+  wikipedia?: string,
+  animation?: string | string[],
+  sound?:string 
 }
 
 export interface IModel {
-  disciplie: DISCIPLINE,
-  topic: DISCIPLINE_TOPICS,
+  // discipline: DISCIPLINE,
+  module: DISCIPLINE_MODULE,
   data: IModelData[]
 }
 

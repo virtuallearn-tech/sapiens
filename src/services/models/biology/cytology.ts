@@ -2,7 +2,7 @@ import type { IModelData } from "@interfaces/model";
 
 
 const PROKARYOTIC_CELL: IModelData = {
-  code: 'prokaryotic_cell',
+  topic: 'prokaryotic_cell',
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-models/master/archaea.glb',//'/models/archaea.glb',
   name: 'Célula Procarionte',
   title: 'Célula Procarionte',
@@ -74,7 +74,7 @@ const PROKARYOTIC_CELL: IModelData = {
 }
 
 const PLANT_CELL: IModelData = {
-  code: "plant_cell", // exemplo de subtopic
+  topic: "plant_cell", // exemplo de subtopic
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-models/master/plant_cell.glb', //"/models/plant_cell.glb",
   name: "Célula Vegetal",
   title: "Estrutura da Célula Vegetal",
@@ -182,7 +182,7 @@ const PLANT_CELL: IModelData = {
 }
 
 const EUKARYOTIC_CELL: IModelData = {
-  code: "eukaryotic_cell",
+  topic: "eukaryotic_cell",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-models/master/eukaryotic_cell.glb',//"/models/eukaryotic_cell.glb",
   name: "Célula Eucarionte",
   title: "Estrutura da Célula Eucarionte",

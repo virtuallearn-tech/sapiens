@@ -1,13 +1,13 @@
-import type { DISCIPLINE, DISCIPLINE_TOPICS } from "@interfaces/discipline";
+import type { DISCIPLINE, DISCIPLINE_MODULE } from "@interfaces/discipline";
 import { getRandomItems } from "@utils/getRandomItems";
 import { CitologyQuestions } from "./biology/questions";
 import type { IQuestionData } from "@interfaces/question";
 
 export const getExerciciesByTopic = (
   discipline: DISCIPLINE,
-  topic: DISCIPLINE_TOPICS,
+  module: DISCIPLINE_MODULE,
   qtd: number): IQuestionData[] => {
-  if (discipline === 'BIOLOGY' && topic === 'CYTOLOGY') {
+  if (discipline === 'BIOLOGY' && module === 'CYTOLOGY') {
     return getRandomItems<IQuestionData>(CitologyQuestions.data, qtd);
   }
   return [];

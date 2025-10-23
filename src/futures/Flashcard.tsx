@@ -7,7 +7,7 @@ import { SelectNumQuestions } from "@components/layout/SelectNumQuestions";
 import type { IFlashcard } from "interfaces/flsahcards";
 import { useNavigate } from "react-router-dom";
 import { getFlashcardsByTopic } from "@services/flashcards";
-import type { BIOLOGY_TOPICS, DISCIPLINE } from "@interfaces/discipline";
+import type { DISCIPLINE_MODULE, DISCIPLINE } from "@interfaces/discipline";
 
 
 const Flashcard = () => {
@@ -37,7 +37,7 @@ const Flashcard = () => {
   };
 
   const handleFlashcards = () => {
-    const flashcards = getFlashcardsByTopic(discipline as DISCIPLINE, topic as BIOLOGY_TOPICS, numFlashcards);
+    const flashcards = getFlashcardsByTopic(discipline as DISCIPLINE, topic as DISCIPLINE_MODULE, numFlashcards);
     //console.log('flashcard list', flashcards);
     setFlashcards(flashcards);
     setStarted(true)

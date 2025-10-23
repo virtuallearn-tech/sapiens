@@ -7,13 +7,13 @@ import { Model } from './Model'
 
 import { useParams, useNavigate } from 'react-router-dom'
 import type { IClass, IModelData } from '@interfaces/model'
-import { getModelByCode, setClass } from '@services/models/getModel'
+import { getModelByTopic, setClass } from '@services/models/getModel'
 import { Button } from '@components/common/Button'
 import { FabButton } from '@components/common/Fab'
 import { MenuOptions } from '@components/ui-3d/MenuOptions'
 import { Explanation } from '@components/ui-3d/Explanation'
 import { useSpeech } from '@hooks/useSpeech'
-import type { DISCIPLINE, DISCIPLINE_SUBTOPICS, DISCIPLINE_TOPICS } from '@interfaces/discipline'
+import type { DISCIPLINE, DISCIPLINE_MODULE, DISCIPLINE_TOPICS } from '@interfaces/discipline'
 import { License } from '@components/layout/License'
 
 import { BsArrowsFullscreen } from "react-icons/bs";
@@ -83,7 +83,7 @@ const Scene = () => {
   } = useSpeech()
 
   useEffect(() => {
-    const m = getModelByCode(code as DISCIPLINE_SUBTOPICS, discipline as DISCIPLINE, topic as DISCIPLINE_TOPICS) //getModel().data[0]
+    const m = getModelByTopic(code as DISCIPLINE_TOPICS, discipline as DISCIPLINE, topic as DISCIPLINE_MODULE) //getModel().data[0]
     //console.log('MODEL ', m)
     const nodesNames = m?.node?.map(n => n.name).filter((s): s is string => typeof s === 'string') ?? []
     const menuOptions = [m?.name, ...nodesNames, 'Fechar'].filter((s): s is string => typeof s === 'string')
@@ -141,7 +141,6 @@ const Scene = () => {
     }
   }
 
-
   const handleModelInfo = (name: string) => {
     //console.log('name', name)
     //  if(!name) return null
@@ -151,7 +150,7 @@ const Scene = () => {
       setTitleModel(model!.name)
       setFocusNames(model!.name)
     } else {
-      const findText = model?.node.find((n) => n.name == name)
+      const findText = model?.node!.find((n) => n.name == name)
       //console.log('find ', findText)
       if (findText) {
         setTextToSpeech(findText.text)
@@ -262,14 +261,14 @@ const Scene = () => {
       </div>
 
       {!showDetailOptions && !isClassActive && <div className="m-scene__ui m-scene__ui--left">
-        <Button
+        {/* <Button
           type='button'
           typeBtn='dark'
           className='m-button--full'
           onClick={handleUpdateScale}
         >
           Redimensionar
-        </Button>
+        </Button> */}
         <Button
           type='button'
           typeBtn='dark'

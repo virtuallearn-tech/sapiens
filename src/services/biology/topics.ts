@@ -8,25 +8,36 @@ export const BIOLOGY_TOPICS: Itopic = {
   discipline: "BIOLOGY",
   data: [
     {
-      topic: "CYTOLOGY",
+      module: "CYTOLOGY",
       data: [
         {
-          code: 'eukaryotic_cell',
+          topic: 'eukaryotic_cell',
           cover: EukaryoticCellCover,
           description: "Células com núcleo definido e organelas membranosas.",
           title: 'Célula Eucarionte',
         },
         {
-          code: 'prokaryotic_cell',
+          topic: 'prokaryotic_cell',
           cover: ProkaryoticCellCover,
           description: "Células simples, sem núcleo definido, típicas de bactérias.",
           title: 'Célula Procarionte',
         },
         {
-          code: 'plant_cell',
+          topic: 'plant_cell',
           cover: PlantCellCover,
           description: "Células com parede celular, cloroplastos e vacúolos.",
           title: 'Célula Vegetal',
+        }
+      ]
+    },
+    {
+      module: 'ANIMAL_KINGDOM',
+      data: [
+        {
+          topic: 'cnidarians_class_scyphozoa',
+          cover: PlantCellCover,
+          description: "Cnidários flutuantes. Encontrada no litoral brasileiro. Possui coloração rosada",
+          title: 'Água viva Geléia',
         }
       ]
     }

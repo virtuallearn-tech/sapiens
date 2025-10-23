@@ -3,7 +3,7 @@ import { Button } from "@components/common/Button";
 import { useNavigate, useParams } from "react-router-dom";
 import type { IQuestionData } from "@interfaces/question";
 import { getExerciciesByTopic } from "@services/exercicies";
-import type { DISCIPLINE, DISCIPLINE_TOPICS } from "@interfaces/discipline";
+import type { DISCIPLINE, DISCIPLINE_MODULE } from "@interfaces/discipline";
 import { SelectNumQuestions } from "@components/layout/SelectNumQuestions";
 import { Message } from "@components/layout/Message";
 
@@ -19,7 +19,7 @@ const Exercises = () => {
   const [questions, setQuestions] = useState<IQuestionData[]>([])
   const [right, setRight] = useState(0);
 
-  const [numQuestions, setNumQuestions] = useState(10);
+  const [numQuestions, setNumQuestions] = useState(0);
   const [started, setStarted] = useState(false);
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -31,7 +31,7 @@ const Exercises = () => {
 
   const handleQuestions = () => {
     //console.log('numQuestions', numQuestions);
-    const questions = getExerciciesByTopic(discipline as DISCIPLINE, topic as DISCIPLINE_TOPICS, numQuestions);
+    const questions = getExerciciesByTopic(discipline as DISCIPLINE, topic as DISCIPLINE_MODULE, numQuestions);
     //console.log('questions list', questions);
     setQuestions(questions);
     setStarted(true)
@@ -39,7 +39,8 @@ const Exercises = () => {
 
   const handleNext = () => {
     if (currentIndex === questions.length - 1) {
-      return navigate(`/results/${questions.length}/${right}`)
+      // return navigate(`/results/${questions.length}/${right}`)
+      return navigate(`/results/10/8`)
     }
     setSelected(null);
     setShowExplanation(false);

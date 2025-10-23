@@ -1,10 +1,10 @@
 import { CardContent } from "@components/cards/CardContent";
 import type { IContent } from "@interfaces/content";
 import { getSummaryAll } from "@services/summary";
-import { useNavigate, Link } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const SumaryList = () => {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const contents: IContent[] = getSummaryAll();
 
   return (

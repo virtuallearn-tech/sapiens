@@ -1,17 +1,17 @@
-import type { BIOLOGY_TOPICS, CYTOLOGY_TOPICS, DISCIPLINE } from "./discipline";
+import type { DISCIPLINE_MODULE, DISCIPLINE_TOPICS, DISCIPLINE } from "./discipline";
 
 export interface ITopicCode {
   discipline?:DISCIPLINE,
-  topic?: BIOLOGY_TOPICS,
+  module?: DISCIPLINE_MODULE,
   title: string,
   description: string,
   cover: string,
-  code: CYTOLOGY_TOPICS
+  topic: DISCIPLINE_TOPICS
 }
 
 export interface ITopicData {
   discipline?:DISCIPLINE,
-  topic: BIOLOGY_TOPICS,
+  module: DISCIPLINE_MODULE,
   data: Array<ITopicCode>
 }
 

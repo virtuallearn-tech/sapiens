@@ -29,30 +29,33 @@ export const getContentByDiscipline = (discipline: DISCIPLINE = "BIOLOGY") => {
   // }
 }
 
-export const getContentByTopic = (discipline: DISCIPLINE = "BIOLOGY", topic: string): ITopicData => {
+export const getContentByTopic = (discipline: DISCIPLINE = "BIOLOGY", module: string): ITopicData => {
   const content = getContentByDiscipline(discipline)!
-  const data = content.data.find(t => t.topic === topic)!
+  const data = content.data.find(t => t.module === module)!
   data.discipline = discipline
   return data
 }
 
 export const getContentByCode = (
   discipline: DISCIPLINE = "BIOLOGY",
-  code: string): ITopicCode => 
-{
+  topic: string): ITopicCode => {
+  console.log('mod param ', topic)
   const content = getContentByDiscipline(discipline)!
-  const getTopic = content.data.find(t => t.data.find(d => d.code === code))
-  const topic = getTopic?.data.find(d => d.code === code)!
-  topic.discipline = discipline
-  topic.topic = getTopic?.topic
-  return topic
+  console.log('content ', content)
+  const getModule = content.data.find(t => t.data.find(d => d.topic === topic))
+  console.log('module', getModule)
+  const topicData = getModule?.data.find(d => d.topic === topic)!
+  console.log('topicdata ', topicData)
+  topicData['discipline'] = discipline
+  topicData.module = getModule?.module
+  return topicData
 }
 
 const flattenTopics = (itopic: Itopic) => {
   return itopic.data.flatMap(topic =>
     topic.data.map(item => ({
       discipline: itopic.discipline,
-      topic: topic.topic,
+      module: topic.module,
       ...item,
     }))
   );

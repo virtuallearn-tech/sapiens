@@ -1,8 +1,8 @@
 import type { IModelData } from "@interfaces/model"
-import { useGLTF } from "@react-three/drei"
+import { useGLTF, useAnimations } from "@react-three/drei"
 import { resetTransverseModel, transverseModel } from "@utils/modifyModel"
 // import { useControls } from "leva"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 interface IPlotModel {
   model: IModelData,
@@ -12,11 +12,16 @@ interface IPlotModel {
 
 export const Model = ({ model, focusNames, updateScale }: IPlotModel) => {
   // Controles de transformação + foco
+  const group = useRef(null)
+
   const [width, setWidth] = useState<number>(window.innerWidth);
   const [scale, setScale] = useState<number>(1)
 
-  const { scene } = useGLTF(model.source)
-  // //console.log('scene', scene)
+  const { scene, animations } = useGLTF(model.source)
+  console.log('scene', scene)
+  console.log('animations ', animations)
+
+  const { actions } = useAnimations(animations, group)
 
   // const { scale, posX, posY, posZ, rotX, rotY, rotZ } = useControls("Transformações", {
   //   scale: { value: 0.0045, min: 0.001, max: 25, step: 0.1 },
@@ -66,6 +71,13 @@ export const Model = ({ model, focusNames, updateScale }: IPlotModel) => {
 
   }, [scene, focusNames])
 
+  useEffect(() => {
+    if (animations.length > 0 && actions) {
+      const first = Object.values(actions)[0]
+      first?.play()
+    }
+  }, [actions, animations])
+
   const handleUpdateScale = () => {
     if (width < 640) {
       setScale(model.scale);
@@ -85,7 +97,7 @@ export const Model = ({ model, focusNames, updateScale }: IPlotModel) => {
     //   <primitive object={scene}/>
     // </group>
     <group scale={scale} position={model.position} rotation={model.rotation}>
-      <primitive object={scene} />
+      <primitive object={scene}  ref={group}/>
     </group>
   )
 }
