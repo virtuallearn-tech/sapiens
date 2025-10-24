@@ -1,4 +1,3 @@
-// utils/speech.ts
 
 let selectedVoice: SpeechSynthesisVoice | null = null
 let queue: string[] = []
@@ -66,45 +65,6 @@ function playNext(options?: { onParagraphEnd?: (text: string) => void; onAllEnd?
 
   speechSynthesis.speak(currentUtterance)
 }
-
-
-// 🔊 Lê um array de textos em sequência
-// export function speakQueue(input: string | string[]) {
-//   if (!("speechSynthesis" in window)) {
-//     console.warn("Este navegador não suporta SpeechSynthesis")
-//     return
-//   }
-
-//   // limpa fila anterior
-//   stopSpeaking()
-//   const texts = Array.isArray(input) ? input : [input]
-//   queue = [...texts]
-
-//   playNext()
-// }
-
-// function playNext() {
-//   if (queue.length === 0) return
-
-//   const text = queue.shift()!
-//   currentUtterance = new SpeechSynthesisUtterance(text)
-//   currentUtterance.lang = "pt-BR"
-//   currentUtterance.rate = 0.9
-//   currentUtterance.pitch = 1.05
-
-//   if (selectedVoice) {
-//     currentUtterance.voice = selectedVoice
-//   }
-
-//   // quando terminar, passa para o próximo
-//   currentUtterance.onend = () => {
-//     playNext()
-//   }
-
-//   speechSynthesis.speak(currentUtterance)
-// }
-
-
 
 
 export function pauseSpeaking() {

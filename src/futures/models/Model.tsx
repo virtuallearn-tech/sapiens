@@ -7,10 +7,11 @@ import { useEffect, useRef, useState } from "react"
 interface IPlotModel {
   model: IModelData,
   focusNames: string | string[] | null,
-  updateScale: boolean | null
+  updateScale: boolean | null,
+  isAnimating: boolean
 }
 
-export const Model = ({ model, focusNames, updateScale }: IPlotModel) => {
+export const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotModel) => {
   // Controles de transformação + foco
   const group = useRef(null)
 
@@ -44,11 +45,6 @@ export const Model = ({ model, focusNames, updateScale }: IPlotModel) => {
     handleUpdateScale()
   }, [width, updateScale]);
 
-
-  // useEffect(()=>{
-  //   if(updateScale) handleUpdateScale()
-  // }, [updateScale])
-
   useEffect(() => {
 
     if (focusNames == 'Fechar' || focusNames == model.name || focusNames == null) {
@@ -72,11 +68,17 @@ export const Model = ({ model, focusNames, updateScale }: IPlotModel) => {
   }, [scene, focusNames])
 
   useEffect(() => {
+    handlePlayAnimation()
+  }, [actions, animations, isAnimating])
+
+
+  const handlePlayAnimation = () => {
     if (animations.length > 0 && actions) {
       const first = Object.values(actions)[0]
-      first?.play()
+      if(isAnimating) first?.fadeIn(0.5).play()
+      else first?.fadeOut(0.5).stop()
     }
-  }, [actions, animations])
+  }
 
   const handleUpdateScale = () => {
     if (width < 640) {
@@ -92,12 +94,17 @@ export const Model = ({ model, focusNames, updateScale }: IPlotModel) => {
     }
   }
 
+
   return (
     // <group scale={scale} position={[posX, posY, posZ]} rotation={[rotX, rotY, rotZ]}>
     //   <primitive object={scene}/>
     // </group>
     <group scale={scale} position={model.position} rotation={model.rotation}>
-      <primitive object={scene}  ref={group}/>
+      <primitive object={scene} ref={group} />
     </group>
   )
 }
+
+// useEffect(()=>{
+//   if(updateScale) handleUpdateScale()
+// }, [updateScale])

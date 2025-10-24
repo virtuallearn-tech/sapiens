@@ -4,17 +4,17 @@ import type { IModelData } from "@interfaces/model";
 const Scyphozoa: IModelData = {
   topic: "cnidarians_class_scyphozoa",
   source: "/cnidarians_class_scyphozoa.glb",
-  name: "Água-viva mosaico (Catostylus mosaicus)",
+  name: "Água-viva Mosaico",
   title: "Água-viva Blubber Jelly",
   description: "As águas-vivas da classe Scyphozoa são conhecidas como as 'verdadeiras águas-vivas'. Elas possuem corpo gelatinoso em forma de sino, vivem principalmente em ambientes marinhos costeiros e desempenham papel importante no equilíbrio ecológico dos oceanos.",
   text: "A classe Scyphozoa reúne as chamadas 'verdadeiras águas-vivas', animais marinhos do filo Cnidaria. Seu corpo é formado por uma mesogleia gelatinosa, com tentáculos que contêm cnidócitos — células especializadas na captura de presas e defesa. O ciclo de vida é marcado pela predominância da fase medusoide, que nada livremente e se alimenta de plâncton, pequenos peixes e outros organismos. A Blubber Jelly (*Catostylus mosaicus*) é um representante típico dessa classe, encontrada em águas costeiras da região do Indo-Pacífico. Ela possui coloração azulada ou amarronzada e pode formar grandes agregações. Além de sua importância ecológica como predadora e presa em cadeias alimentares marinhas, destaca-se como exemplo da necessidade de conservar a biodiversidade oceânica, já que mudanças ambientais e poluição podem afetar diretamente suas populações e o equilíbrio dos ecossistemas.",
-  scale: 1,
-  scale_sm: 1,
-  scale_md: 1,
-  scale_lg: 1,
-  scale_2lg: 1,
+  scale: 0.8,
+  scale_sm: 0.9,
+  scale_md: 0.9,
+  scale_lg: 0.9,
+  scale_2lg: 0.9,
   rotation: [0, 0, 0],
-  position: [0, 0, 0],
+  position: [-0.3, 0, 0],
   node: [
     {
       name: "Estrutura corporal",
@@ -42,7 +42,10 @@ const Scyphozoa: IModelData = {
     }
   ],
   attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
-  wikipedia: "https://pt.wikipedia.org/wiki/Catostylus_mosaicus"
+  wikipedia: "https://pt.wikipedia.org/wiki/Catostylus_mosaicus",
+  sound: '/sounds/ocean.wav',
+  sceneBg: '#000000',
+  hasAnimation: true
 };
 
 export const CNIDARIAN_MODELS: IModelData[] = [

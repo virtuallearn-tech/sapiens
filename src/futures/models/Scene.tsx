@@ -19,7 +19,9 @@ import { License } from '@components/layout/License'
 import { BsArrowsFullscreen } from "react-icons/bs";
 import { RiFullscreenExitFill } from "react-icons/ri";
 import { toggleFullscreen } from '@utils/fullScreen'
+import { useAudioPlayer } from '@hooks/useAudio'
 
+const defaultBgColor: string = '#CCCCCC'
 
 function Loader() {
   const { progress } = useProgress()
@@ -43,12 +45,15 @@ function Loader() {
   )
 }
 
-
 const Scene = () => {
 
   const navigate = useNavigate()
   const { discipline, topic, code } = useParams()
   //console.log(discipline, topic, code)
+
+  const { play: playAudio, resume: resumeAudio, stop: stopAudio } = useAudioPlayer();
+
+  const [bg, setBg] = useState(defaultBgColor)
 
   const [model, setModel] = useState<IModelData | null>(null)
   const [updateScale, setUpdateScale] = useState<boolean>(false)
@@ -71,6 +76,13 @@ const Scene = () => {
 
   const [license, setLicense] = useState<boolean>(false)
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false)
+
+  //hooks to handle audios from audio
+  const [isPlayigAudio, setIsPlayingAudio] = useState<boolean>(false)
+
+  //handlle animation
+  const [isAnimating, setIsAnimating] = useState<boolean>(false)
+  const [hasAnimation, setHasAnimation] = useState<boolean>(false)
 
   const {
     isSupported,
@@ -95,6 +107,16 @@ const Scene = () => {
     setTitleModel(m?.name ?? '')
 
     const iClass = setClass(m!)
+
+    if (m.sceneBg) {
+      setBg(m.sceneBg)
+    }
+
+    if (m.hasAnimation) {
+      setHasAnimation(true)
+      setIsAnimating(true)
+    }
+
     //console.log('iClass', iClass)
     // handleSpeech(m?.name!)
   }, [])
@@ -129,15 +151,16 @@ const Scene = () => {
     // Só roda no unmount
     return () => {
       // if (isSpeaking) {
-        stop()
+      stop(),
+        stopAudio()
       // }
     }
   }, [])
 
   const handleUpdateScale = () => {
-    if(!updateScale){
+    if (!updateScale) {
       setUpdateScale(true)
-      setTimeout(()=>{setUpdateScale(false)}, 1000)
+      setTimeout(() => { setUpdateScale(false) }, 1000)
     }
   }
 
@@ -164,6 +187,10 @@ const Scene = () => {
 
   const startClassRoutine = () => {
     if (!model) return
+    if (isPlayigAudio) {
+      stopAudio()
+      setIsPlayingAudio(false)
+    }
     const routine = setClass(model)
     setClassRoutine(routine)
     setCurrentStep(0)
@@ -177,6 +204,10 @@ const Scene = () => {
   }
 
   const handleResumeClass = () => {
+    if (isPlayigAudio) {
+      stopAudio()
+      setIsPlayingAudio(false)
+    }
     resume() // retoma o áudio
     setIsClassPaused(false)
   }
@@ -194,7 +225,7 @@ const Scene = () => {
     return (
       <>
         {!isSpeaking && (
-          <FabButton icon="volume" onClick={() => speak(textToSpeech!)} />
+          <FabButton icon="volume" onClick={() => { stopAudio(), setIsPlayingAudio(false), speak(textToSpeech!) }} />
         )}
 
         {isSpeaking && !isPaused && (
@@ -235,19 +266,32 @@ const Scene = () => {
 
   const handleFullscreen = () => {
     toggleFullscreen(".m-scene")
-    setIsFullscreen(prev => !prev )
+    setIsFullscreen(prev => !prev)
+  }
+
+  const handleModelAudio = () => {
+    if (model!.sound && !isPlayigAudio) {
+      console.log('iniciou o audio')
+      playAudio(model!.sound)
+      setIsPlayingAudio(true)
+    }
+    else if (model!.sound && isPlayigAudio) {
+      stopAudio()
+      setIsPlayingAudio(false)
+    }
   }
 
   return (
     <div className="m-scene">
-      
+
       <Canvas className='m-scene__canvas' camera={{ position: [0, 0, 5], fov: 75 }}>
         <ambientLight intensity={0.6} />
         <directionalLight position={[5, 5, 5]} intensity={2} />
         <OrbitControls maxDistance={10} />
+        <color attach="background" args={[bg]} />
         <Suspense fallback={<Loader />}>
           {/* <axesHelper args={[5]} /> */}
-          <Model model={model!} focusNames={focusNames} updateScale={updateScale}/>
+          <Model model={model!} focusNames={focusNames} updateScale={updateScale} isAnimating={isAnimating} />
         </Suspense>
       </Canvas>
 
@@ -257,10 +301,11 @@ const Scene = () => {
       </div>
 
       <div className="m-scene__label--fullscreen" onClick={handleFullscreen}>
-        {isFullscreen ? <RiFullscreenExitFill/> : <BsArrowsFullscreen />} {isFullscreen ? 'Fechar' : 'Expandir' }  
+        {isFullscreen ? <RiFullscreenExitFill /> : <BsArrowsFullscreen />} {isFullscreen ? 'Fechar' : 'Expandir'}
       </div>
 
       {!showDetailOptions && !isClassActive && <div className="m-scene__ui m-scene__ui--left">
+        <div className="m-scene__ui--left__inner">
         {/* <Button
           type='button'
           typeBtn='dark'
@@ -269,6 +314,25 @@ const Scene = () => {
         >
           Redimensionar
         </Button> */}
+        {model?.sound && (<Button
+          type='button'
+          typeBtn='dark'
+          className='m-button--full'
+          onClick={handleModelAudio}
+        >
+          Ouvir
+        </Button>)}
+        {hasAnimation && (
+          <Button
+            type='button'
+            typeBtn='dark'
+            className='m-button--full'
+            onClick={() => setIsAnimating(prev => !prev)}
+          >
+            {/* {isAnimating ? 'Parar animação' : 'Animar'} */}
+            Animar/Pausar
+          </Button>)
+        }
         <Button
           type='button'
           typeBtn='dark'
@@ -293,6 +357,7 @@ const Scene = () => {
         >
           Exercícios
         </Button>
+        </div>
       </div>}
 
       <div className="m-scene__ui m-scene__ui--right">
@@ -308,7 +373,7 @@ const Scene = () => {
           onClick={() => setShowExplanation((prev) => !prev)}
         />
         <FabButton
-          icon={license ? 'close':'info'}
+          icon={license ? 'close' : 'info'}
           onClick={() => setLicense((prev) => !prev)}
         />
       </div>

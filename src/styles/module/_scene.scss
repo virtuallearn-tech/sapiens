@@ -1,5 +1,6 @@
 @use '../base/var' as *;
 @use './mixins' as *;
+@use '../base/breakpoint' as *;
 
 %position {
   padding: 0.5rem;
@@ -54,6 +55,24 @@
       border-radius: 0.4rem;
       min-width: 130px;
       z-index: 2;
+
+      // @include breakpoint(560px, max-width) {
+      //   max-height: 157px;
+      //   overflow-y: auto;
+      //   padding-top: 4rem;
+      // }
+
+      &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        @include breakpoint(560px, max-width) {
+          max-height: 157px;
+          overflow-y: auto;
+        }
+      }
+
     }
 
     &--right {

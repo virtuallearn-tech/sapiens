@@ -25,7 +25,9 @@ export interface IModelData {
   attribuition?: string,
   wikipedia?: string,
   animation?: string | string[],
-  sound?:string 
+  sound?:string,
+  sceneBg?:string,
+  hasAnimation?:boolean 
 }
 
 export interface IModel {
