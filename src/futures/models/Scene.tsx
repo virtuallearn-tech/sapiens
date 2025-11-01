@@ -51,7 +51,7 @@ const Scene = () => {
   const { discipline, topic, code } = useParams()
   //console.log(discipline, topic, code)
 
-  const { play: playAudio, resume: resumeAudio, stop: stopAudio } = useAudioPlayer();
+  const { isPlaying: isPlayingAudio, play: playAudio, resume: resumeAudio, stop: stopAudio } = useAudioPlayer();
 
   const [bg, setBg] = useState(defaultBgColor)
 
@@ -306,7 +306,7 @@ const Scene = () => {
 
       {!showDetailOptions && !isClassActive && <div className="m-scene__ui m-scene__ui--left">
         <div className="m-scene__ui--left__inner">
-        {/* <Button
+          {/* <Button
           type='button'
           typeBtn='dark'
           className='m-button--full'
@@ -314,49 +314,49 @@ const Scene = () => {
         >
           Redimensionar
         </Button> */}
-        {model?.sound && (<Button
-          type='button'
-          typeBtn='dark'
-          className='m-button--full'
-          onClick={handleModelAudio}
-        >
-          Ouvir
-        </Button>)}
-        {hasAnimation && (
+          {model?.sound && (<Button
+            type='button'
+            typeBtn='dark'
+            className='m-button--full'
+            onClick={handleModelAudio}
+          >
+            {isPlayigAudio ? 'Pausar' : 'Ouvir'}
+          </Button>)}
+          {hasAnimation && (
+            <Button
+              type='button'
+              typeBtn='dark'
+              className='m-button--full'
+              onClick={() => setIsAnimating(prev => !prev)}
+            >
+              {isAnimating ? 'Estático' : 'Animar'}
+              {/* Animar/Pausar */}
+            </Button>)
+          }
           <Button
             type='button'
             typeBtn='dark'
             className='m-button--full'
-            onClick={() => setIsAnimating(prev => !prev)}
+            onClick={() => setShowDetailOptions(prev => !prev)}
           >
-            {/* {isAnimating ? 'Parar animação' : 'Animar'} */}
-            Animar/Pausar
-          </Button>)
-        }
-        <Button
-          type='button'
-          typeBtn='dark'
-          className='m-button--full'
-          onClick={() => setShowDetailOptions(prev => !prev)}
-        >
-          Explorar
-        </Button>
-        <Button
-          type='button'
-          typeBtn='dark'
-          className='m-button--full'
-          onClick={startClassRoutine}
-        >
-          Aula
-        </Button>
-        <Button
-          type='button'
-          typeBtn='dark'
-          className='m-button--full'
-          onClick={() => navigate(`/exercises/${discipline}/${topic}`)}
-        >
-          Exercícios
-        </Button>
+            Explorar
+          </Button>
+          <Button
+            type='button'
+            typeBtn='dark'
+            className='m-button--full'
+            onClick={startClassRoutine}
+          >
+            Aula
+          </Button>
+          <Button
+            type='button'
+            typeBtn='dark'
+            className='m-button--full'
+            onClick={() => navigate(`/exercises/${discipline}/${topic}`)}
+          >
+            Exercícios
+          </Button>
         </div>
       </div>}
 

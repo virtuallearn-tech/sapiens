@@ -1,7 +1,10 @@
 // utils/useAudioPlayer.ts
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export function useAudioPlayer() {
+
+  const [isPlaying, setIsPlaying] = useState<boolean>(false)
+
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const play = (src: string, isLoop: boolean = true) => {
@@ -13,13 +16,15 @@ export function useAudioPlayer() {
     const audio = new Audio(src);
     audio.loop = isLoop
     audio.play();
-
+    setIsPlaying(true)
     audioRef.current = audio;
   };
 
   const resume = () => {
+    setIsPlaying(false)
     if (audioRef.current) {
       audioRef.current.play();
+      setIsPlaying(true)
     }
   };
 
@@ -27,8 +32,9 @@ export function useAudioPlayer() {
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
+      setIsPlaying(false)
     }
   };
 
-  return { play, resume, stop };
+  return { isPlaying, play, resume, stop };
 }

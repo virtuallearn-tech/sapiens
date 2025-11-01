@@ -34,11 +34,48 @@ export const BIOLOGY_TOPICS: Itopic = {
       module: 'ANIMAL_KINGDOM',
       data: [
         {
+          topic: 'cnidarians_class_anthozoa',
+          cover: PlantCellCover,
+          description: "Cnidário fixo, construtor de recifes. Encontrado em águas tropicais rasas, com colônias maciças que lembram os sulcos de um cérebro humano.",
+          title: "Coral-Cérebro"
+        },
+        {
+          topic: 'cnidarians_class_hydrozoa',
+          cover: PlantCellCover,
+          description: "Pequena medusa transparente da ordem Trachymedusae, encontrada em águas tropicais e temperadas.",
+          title: 'Liriope Jellyfish',
+        },
+        {
           topic: 'cnidarians_class_scyphozoa',
           cover: PlantCellCover,
           description: "Cnidários flutuantes. Encontrada no litoral brasileiro. Possui coloração rosada",
           title: 'Água viva Geléia',
+        },
+        {
+          topic: 'mollusca_class_gastropoda',
+          cover: PlantCellCover,
+          description: "Molusco gastrópode terrestre, possui concha espiralada e respira por pulmões adaptados à vida terrestre.",
+          title: 'Euhadra herklotsi',
+        },
+        // {
+        //   topic: 'mollusca_class_cephalopoda_bobtail_squid',
+        //   cover: PlantCellCover,
+        //   description: "Cefalópode de pequeno porte da família Sepiolidae. Possui corpo arredondado, vive enterrado na areia durante o dia e apresenta bioluminescência simbiótica.",
+        //   title: 'Lula Bobtail Squid',
+        // },
+        {
+          topic: 'mollusca_class_cephalopoda_octopus',
+          cover: PlantCellCover,
+          description: "Pequeno cefalópode do Indo-Pacífico, famoso por seus anéis azuis fluorescentes e por ser um dos animais mais venenosos do mundo.",
+          title: 'Blue-ringed Octopus',
+        },
+        {
+          topic: 'mollusca_class_cephalopoda_nautilus',
+          cover: PlantCellCover,
+          description: "Cefalópode marinho com concha espiralada e câmaras internas que regulam a flutuabilidade. Considerado um 'fóssil vivo'.",
+          title: 'Nautilus pompilius',
         }
+
       ]
     }
   ]
