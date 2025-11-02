@@ -371,7 +371,6 @@ const Chilopoda_Centipede: IModelData = {
   hasAnimation: false
 };
 
-
 export const ARTHROPODA_MODELS: IModelData[] = [
     Arachnida_Pseudoscorpion,
     Arachnida_Solifugae,

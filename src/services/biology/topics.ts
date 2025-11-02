@@ -128,8 +128,19 @@ export const BIOLOGY_TOPICS: Itopic = {
           cover: PlantCellCover,
           description: "Artrópode predador da classe Chilopoda, com corpo segmentado e ferrões venenosos. Vive em ambientes úmidos e sombreados.",
           title: 'Centopeia',
+        },
+        {
+          topic: 'echinodermata_class_asteroidea_starfish',
+          cover: PlantCellCover,
+          description: "Equinodermo marinho com corpo em forma de estrela e simetria radial. Possui sistema ambulacrário e capacidade de regeneração.",
+          title: 'Estrela-do-mar',
+        },
+        {
+          topic: 'echinodermata_class_echinoidea_sanddollar',
+          cover: PlantCellCover,
+          description: "Equinodermo da classe Echinoidea, com corpo discoide e espinhos curtos. Vive enterrado na areia e possui canais em forma de flor.",
+          title: 'Bolacha-de-praia',
         }
-
       ]
     }
   ]
