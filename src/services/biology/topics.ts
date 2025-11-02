@@ -74,6 +74,60 @@ export const BIOLOGY_TOPICS: Itopic = {
           cover: PlantCellCover,
           description: "Cefalópode marinho com concha espiralada e câmaras internas que regulam a flutuabilidade. Considerado um 'fóssil vivo'.",
           title: 'Nautilus pompilius',
+        },
+        {
+          topic: 'mollusca_class_bivalvia',
+          cover: PlantCellCover,
+          description: "Molusco bivalve marinho da família Cardiidae. Possui concha espessa com costelas radiais e vive enterrado em substratos arenosos.",
+          title: 'Cardium costatum',
+        },
+        {
+          topic: 'arthropoda_class_arachnida_pseudoscorpion',
+          cover: PlantCellCover,
+          description: "Aracnídeo de pequeno porte, semelhante a um escorpião, mas sem cauda nem ferrão. Vive em ambientes úmidos e controla pequenos invertebrados.",
+          title: 'Pseudoscorpion',
+        },
+        {
+          topic: 'arthropoda_class_arachnida_solifugae',
+          cover: PlantCellCover,
+          description: "Aracnídeo da ordem Solifugae, conhecido como aranha-escorpião. Possui grandes quelíceras e é extremamente ágil, mas não venenoso.",
+          title: 'Aranha-escorpião (Solifugae)',
+        },
+        {
+          topic: 'arthropoda_class_crustacea_woodlouse',
+          cover: PlantCellCover,
+          description: "Crustáceo terrestre da ordem Isopoda. Vive em ambientes úmidos e se enrola como defesa. Importante na decomposição da matéria orgânica.",
+          title: 'Tatuzinho-de-jardim',
+        },
+        {
+          topic: 'arthropoda_class_crustacea_crab',
+          cover: PlantCellCover,
+          description: "Crustáceo da ordem Decapoda, com corpo achatado e pinças desenvolvidas. Vive em ambientes marinhos e costeiros.",
+          title: 'Caranguejo',
+        },
+        {
+          topic: 'arthropoda_class_insecta_butterfly',
+          cover: PlantCellCover,
+          description: "Inseto da ordem Lepidoptera, com asas laranja e pretas. Passa por metamorfose completa e atua como polinizador.",
+          title: 'Borboleta',
+        },
+        {
+          topic: 'arthropoda_class_insecta_bombus_dahlbomii',
+          cover: PlantCellCover,
+          description: "Abelha sul-americana de grande porte e pelagem avermelhada. Polinizadora essencial de plantas nativas, ameaçada por espécies exóticas.",
+          title: 'Bombus dahlbomii',
+        },
+        {
+          topic: 'arthropoda_class_insecta_ant',
+          cover: PlantCellCover,
+          description: "Inseto social da ordem Hymenoptera, com organização em castas e comportamento cooperativo. Vive em colônias e tem papel ecológico essencial.",
+          title: 'Formiga',
+        },
+        {
+          topic: 'arthropoda_class_chilopoda_centipede',
+          cover: PlantCellCover,
+          description: "Artrópode predador da classe Chilopoda, com corpo segmentado e ferrões venenosos. Vive em ambientes úmidos e sombreados.",
+          title: 'Centopeia',
         }
 
       ]

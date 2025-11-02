@@ -4,6 +4,8 @@ import { resetTransverseModel, transverseModel } from "@utils/modifyModel"
 // import { useControls } from "leva"
 import { useEffect, useRef, useState } from "react"
 
+import * as THREE from 'three';
+
 interface IPlotModel {
   model: IModelData,
   focusNames: string | string[] | null,
@@ -71,14 +73,37 @@ export const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotMode
     handlePlayAnimation()
   }, [actions, animations, isAnimating])
 
+  useEffect(() => {
+    const box = new THREE.Box3().setFromObject(scene);
+    const center = new THREE.Vector3();
+    box.getCenter(center);
+    scene.position.sub(center); // move o modelo para que o centro fique em (0,0,0)
+  }, [scene]);
+
+  // const handlePlayAnimation = () => {
+  //   if (animations.length > 0 && actions) {
+  //     const first = model.animation ? model.animation : Object.values(actions)[0]
+  //     if (isAnimating) first?.fadeIn(0.5).play()
+  //     else first?.fadeOut(0.5).stop()
+  //   }
+  // }
 
   const handlePlayAnimation = () => {
     if (animations.length > 0 && actions) {
-      const first = Object.values(actions)[0]
-      if(isAnimating) first?.fadeIn(0.5).play()
-      else first?.fadeOut(0.5).stop()
+      const selected =
+        model.animation && actions[model.animation]
+          ? actions[model.animation]
+          : Object.values(actions)[0];
+      console.log('selected animation', selected);
+      if (isAnimating) {
+        selected?.reset().fadeIn(0.5).play();
+      } else {
+        selected?.fadeOut(0.5).stop();
+      }
     }
-  }
+  };
+
+
 
   const handleUpdateScale = () => {
     if (width < 640) {

@@ -24,7 +24,7 @@ export interface IModelData {
   node: IModelNode[] | null,
   attribuition?: string,
   wikipedia?: string,
-  animation?: string | string[],
+  animation?: string,
   sound?:string,
   sceneBg?:string,
   hasAnimation?:boolean 

@@ -95,18 +95,18 @@ const Cephalopoda_BobtailSquid: IModelData = {
 
 const Cephalopoda_BlueRingedOctopus: IModelData = {
   topic: "mollusca_class_cephalopoda_octopus",
-  source: "/blue_ringed_octopus.glb",
+  source: "/scene.glb",
   name: "Blue-ringed Octopus",
   title: "Polvo-de-anéis-azuis (Hapalochlaena)",
   description: "Pequeno cefalópode altamente venenoso, encontrado em recifes e costas do Indo-Pacífico. Reconhecido por seus anéis azuis brilhantes que aparecem como sinal de alerta.",
   text: "O polvo-de-anéis-azuis pertence ao gênero *Hapalochlaena*, dentro da classe Cephalopoda. Apesar de seu tamanho reduzido (10 a 20 cm), é um dos animais mais venenosos do mundo. Vive em recifes de coral e áreas costeiras do Indo-Pacífico, escondendo-se em conchas, fendas e areia. Sua característica mais marcante são os anéis azuis fluorescentes que brilham quando o animal se sente ameaçado, funcionando como aviso visual. Alimenta-se de pequenos crustáceos e peixes, que paralisa com sua saliva tóxica. Embora seja perigoso para humanos, raramente ataca se não for provocado. É um exemplo impressionante da diversidade e das adaptações defensivas dos cefalópodes.",
-  scale: 0.8,
+  scale: 1.3,
   scale_sm: 0.9,
   scale_md: 0.9,
   scale_lg: 0.9,
   scale_2lg: 0.9,
-  rotation: [0, 0, 0],
-  position: [-0.3, 0, 0],
+  rotation: [0.523, 0.436, 0],
+  position: [0, 0, 0],
   node: [
     {
       name: "Estrutura corporal",
@@ -136,7 +136,7 @@ const Cephalopoda_BlueRingedOctopus: IModelData = {
   attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
   wikipedia: "https://en.wikipedia.org/wiki/Blue-ringed_octopus",
   // sound: '/sounds/ocean.wav',
-  // sceneBg: '#000022',
+  sceneBg: '#000000',
   hasAnimation: true
 };
 
@@ -187,9 +187,58 @@ const Cephalopoda_Nautilus: IModelData = {
   hasAnimation: false
 };
 
+const Bivalvia_CardiumCostatum: IModelData = {
+  topic: "mollusca_class_bivalvia",
+  source: "/cardium_costatum.glb",
+  name: "Cardium costatum",
+  title: "Cardium costatum (Família Cardiidae)",
+  description: "Molusco bivalve marinho da família Cardiidae. Possui concha robusta com costelas radiais e vive enterrado em substratos arenosos.",
+  text: "O *Cardium costatum* é um molusco da classe Bivalvia, conhecido por sua concha espessa e ornamentada com costelas radiais. Pertence à família Cardiidae, popularmente chamada de 'corações-do-mar' devido ao formato arredondado das conchas. Vive enterrado em sedimentos arenosos de ambientes marinhos rasos, onde se alimenta por filtração, capturando partículas orgânicas suspensas na água. Como outros bivalves, possui duas valvas articuladas que protegem seu corpo mole. Desempenha papel ecológico importante na ciclagem de nutrientes e na estruturação do fundo marinho. Além disso, suas conchas são frequentemente coletadas por sua beleza e valor científico.",
+  scale: 6,
+  scale_sm: 0.9,
+  scale_md: 0.9,
+  scale_lg: 0.9,
+  scale_2lg: 0.9,
+  rotation: [0, 0, 0],
+  position: [0, 0.4, 0],
+  node: [
+    {
+      name: "Concha",
+      node: null,
+      description: "Concha espessa com costelas radiais.",
+      text: "A concha do *Cardium costatum* é robusta e apresenta costelas que se irradiam a partir do umbo, conferindo resistência e aparência característica."
+    },
+    {
+      name: "Locomoção e proteção",
+      node: null,
+      description: "Enterramento em substratos arenosos.",
+      text: "Enterra-se parcialmente na areia para se proteger de predadores e correntes marinhas, utilizando seu pé muscular para escavar."
+    },
+    {
+      name: "Alimentação",
+      node: null,
+      description: "Filtrador de partículas orgânicas.",
+      text: "Alimenta-se por filtração, capturando plâncton e matéria orgânica suspensa na água por meio de seus sifões."
+    },
+    {
+      name: "Importância ecológica",
+      node: null,
+      description: "Contribui para a estrutura do fundo marinho.",
+      text: "Ajuda na oxigenação e na reciclagem de nutrientes do sedimento, além de servir de abrigo para pequenos organismos marinhos."
+    }
+  ],
+  attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
+  wikipedia: "https://en.wikipedia.org/wiki/Cardium_costatum",
+  // sound: '/sounds/ocean.wav',
+  sceneBg: '#002b2b',
+  hasAnimation: false
+};
+
+
 export const MOLLUSCA_MODELS: IModelData[] = [
   Gastropod,
   Cephalopoda_BobtailSquid,
   Cephalopoda_BlueRingedOctopus,
-  Cephalopoda_Nautilus
+  Cephalopoda_Nautilus,
+  Bivalvia_CardiumCostatum
 ]
