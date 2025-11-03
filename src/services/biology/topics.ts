@@ -158,7 +158,86 @@ export const BIOLOGY_TOPICS: Itopic = {
           cover: PlantCellCover,
           description: "Peixe ósseo de água doce com escamas visíveis, opérculo branquial e bexiga natatória. Vive em rios da Ásia.",
           title: 'Barbel Steed',
+        },
+        {
+          topic: 'chordata_class_amphibia_urodela_cynops_pyrrhogaster',
+          cover: PlantCellCover,
+          description: "Anfíbio da ordem Caudata, com corpo alongado, cauda persistente e barriga vermelha aposemática. Vive em ambientes úmidos do Japão.",
+          title: 'Salamandra-de-barriga-de-fogo',
+        },
+        {
+          topic: 'chordata_class_amphibia_anura_rhacophorus_schlegelii',
+          cover: PlantCellCover,
+          description: "Anuro arborícola japonês com coloração verde e discos adesivos nos dedos. Reproduz-se em ninhos de espuma sobre a água.",
+          title: 'Perereca-de-Schlegel',
+        },
+        {
+          topic: 'chordata_class_reptilia_chelonia_loggerhead',
+          cover: PlantCellCover,
+          description: "Réptil marinho da ordem Chelonia, com cabeça grande e mandíbulas fortes. Espécie migratória vulnerável à extinção.",
+          title: 'Tartaruga-cabeçuda',
+        },
+        {
+          topic: 'chordata_class_reptilia_squamata_lizard',
+          cover: PlantCellCover,
+          description: "Réptil da ordem Squamata, com corpo alongado, quatro patas e cauda longa. Modelo genérico representando os lagartos.",
+          title: 'Lagarto',
+        },
+        {
+          topic: 'chordata_class_reptilia_squamata_snake',
+          cover: PlantCellCover,
+          description: "Réptil da subordem Serpentes, com corpo alongado, ausência de membros e mandíbula flexível. Modelo genérico representando cobras.",
+          title: 'Serpente',
+        },
+        {
+          topic: 'chordata_class_aves_accipitriformes_bald_eagle',
+          cover: PlantCellCover,
+          description: "Ave de rapina da América do Norte, com cabeça e cauda brancas, corpo escuro e bico amarelo. Símbolo cultural dos EUA.",
+          title: 'Águia-careca americana',
+        },
+        {
+          topic: 'chordata_class_aves_struthioniformes_ostrich',
+          cover: PlantCellCover,
+          description: "Maior ave viva, não voadora, adaptada à corrida em savanas africanas. Possui pernas longas, olhos grandes e ovos gigantes.",
+          title: 'Avestruz-africano',
+        },
+        {
+          topic: 'chordata_class_aves_passeriformes_eastern_bluebird',
+          cover: PlantCellCover,
+          description: "Pequena ave canora da América do Norte, com plumagem azul vibrante e peito alaranjado. Símbolo cultural de felicidade.",
+          title: 'Eastern Bluebird',
+        },
+        {
+          topic: 'chordata_class_mammalia_chiroptera_bat',
+          cover: PlantCellCover,
+          description: "Mamífero da ordem Chiroptera, único capaz de voo ativo. Usa ecolocalização e possui asas membranosas.",
+          title: 'Morcego',
+        },
+        {
+          topic: 'chordata_class_mammalia_artiodactyla_giraffe',
+          cover: PlantCellCover,
+          description: "Mamífero terrestre mais alto do mundo, com pescoço longo, pernas compridas e língua preênsil para alcançar folhas.",
+          title: 'Girafa',
+        },
+        {
+          topic: 'chordata_class_mammalia_carnivora_lion',
+          cover: PlantCellCover,
+          description: "Grande felino social, com machos de juba imponente e fêmeas caçadoras cooperativas. Predador de topo das savanas.",
+          title: 'Leão',
+        },
+        {
+          topic: 'chordata_class_mammalia_cetacea_blue_whale',
+          cover: PlantCellCover,
+          description: "Maior animal do planeta, mamífero marinho que pode ultrapassar 30 metros e se alimenta de krill por filtração.",
+          title: 'Baleia-azul',
+        },
+        {
+          topic: 'chordata_class_mammalia_cetacea_humpback_dolphin',
+          cover: PlantCellCover,
+          description: "Golfinho costeiro da família Delphinidae, com nadadeira dorsal em corcova e coloração variável do cinza ao rosado.",
+          title: 'Humpback Dolphin',
         }
+
       ]
     }
   ]

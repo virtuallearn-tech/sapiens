@@ -1,7 +1,7 @@
 import type { IModelData } from "@interfaces/model"
 import { useGLTF, useAnimations } from "@react-three/drei"
 import { resetTransverseModel, transverseModel } from "@utils/modifyModel"
-// import { useControls } from "leva"
+import { useControls } from "leva"
 import { useEffect, useRef, useState } from "react"
 
 import * as THREE from 'three';
@@ -18,7 +18,7 @@ export const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotMode
   const group = useRef(null)
 
   const [width, setWidth] = useState<number>(window.innerWidth);
-  const [scale, setScale] = useState<number>(1)
+  const [scaleModel, setScale] = useState<number>(1)
 
   const { scene, animations } = useGLTF(model.source)
   console.log('scene', scene)
@@ -27,7 +27,7 @@ export const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotMode
   const { actions } = useAnimations(animations, group)
 
   // const { scale, posX, posY, posZ, rotX, rotY, rotZ } = useControls("Transformações", {
-  //   scale: { value: 0.0045, min: 0.001, max: 25, step: 0.1 },
+  //   scale: { value: 1, min: 0.5, max: 150, step: 0.1 },
   //   posX: { value: 0, min: -10, max: 10, step: 0.1 },
   //   posY: { value: 0.5, min: -10, max: 10, step: 0.1 },
   //   posZ: { value: 0, min: -10, max: 10, step: 0.1 },
@@ -122,11 +122,11 @@ export const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotMode
 
   return (
     // <group scale={scale} position={[posX, posY, posZ]} rotation={[rotX, rotY, rotZ]}>
-    //   <primitive object={scene}/>
+    //   <primitive object={scene} ref={group}/>
     // </group>
-    <group scale={scale} position={model.position} rotation={model.rotation}>
+    <group scale={scaleModel} position={model.position} rotation={model.rotation}>
       <primitive object={scene} ref={group} />
-    </group>
+    // </group>
   )
 }
 
