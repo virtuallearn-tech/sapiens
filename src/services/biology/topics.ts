@@ -140,6 +140,24 @@ export const BIOLOGY_TOPICS: Itopic = {
           cover: PlantCellCover,
           description: "Equinodermo da classe Echinoidea, com corpo discoide e espinhos curtos. Vive enterrado na areia e possui canais em forma de flor.",
           title: 'Bolacha-de-praia',
+        },
+        {
+          topic: 'chordata_class_chondrichthyes_tiger_shark',
+          cover: PlantCellCover,
+          description: "Peixe cartilaginoso com listras corporais e dentes serrilhados. Predador de topo em mares tropicais e temperados.",
+          title: 'Tubarão-tigre',
+        },
+        {
+          topic: 'chordata_class_chondrichthyes_cownose_ray',
+          cover: PlantCellCover,
+          description: "Peixe cartilaginoso com corpo achatado e nadadeiras em forma de asas. Nada com movimentos ondulantes e se alimenta de moluscos.",
+          title: 'Raia Cownose',
+        },
+        {
+          topic: 'chordata_class_osteichthyes_barbel_steed',
+          cover: PlantCellCover,
+          description: "Peixe ósseo de água doce com escamas visíveis, opérculo branquial e bexiga natatória. Vive em rios da Ásia.",
+          title: 'Barbel Steed',
         }
       ]
     }

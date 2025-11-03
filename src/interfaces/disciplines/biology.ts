@@ -25,7 +25,10 @@ type ANIMAL_KINGDOM_TOPICS = 'cnidarians' |
 'arthropoda_class_insecta_bombus_dahlbomii' | 'arthropoda_class_insecta_ant' | 
 'arthropoda_class_chilopoda_centipede' |
 'echinodermata_class_asteroidea_starfish' |
-'echinodermata_class_echinoidea_sanddollar'
+'echinodermata_class_echinoidea_sanddollar' | 
+'chordata_class_chondrichthyes_tiger_shark' |
+'chordata_class_chondrichthyes_cownose_ray' | 
+'chordata_class_osteichthyes_barbel_steed'
 
 
 

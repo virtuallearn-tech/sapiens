@@ -93,7 +93,6 @@ const Echinodermata_Echinoidea_SandDollar: IModelData = {
   hasAnimation: false
 };
 
-
 export const ECHINODERMATA_MODELS: IModelData[] = [
   Echinodermata_Asteroidea_Starfish,
   Echinodermata_Echinoidea_SandDollar
