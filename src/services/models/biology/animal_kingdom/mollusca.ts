@@ -230,7 +230,7 @@ const Bivalvia_CardiumCostatum: IModelData = {
   attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
   wikipedia: "https://en.wikipedia.org/wiki/Cardium_costatum",
   // sound: '/sounds/ocean.wav',
-  sceneBg: '#002b2b',
+  sceneBg: '#000',
   hasAnimation: false
 };
 

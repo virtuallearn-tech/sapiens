@@ -43,7 +43,7 @@ const Echinodermata_Asteroidea_Starfish: IModelData = {
   ],
   attribuition: "Modelo por Digital Atlas of Ancient Life - Sketchfab",
   wikipedia: "https://en.wikipedia.org/wiki/Starfish",
-  sceneBg: '#1a1a1a',
+  sceneBg: '#000',
   hasAnimation: false
 };
 
@@ -89,7 +89,7 @@ const Echinodermata_Echinoidea_SandDollar: IModelData = {
   ],
   attribuition: "Modelo por ffish.asia / floraZia.com - Sketchfab",
   wikipedia: "https://en.wikipedia.org/wiki/Sand_dollar",
-  sceneBg: '#1a1a1a',
+  sceneBg: '#000',
   hasAnimation: false
 };
 

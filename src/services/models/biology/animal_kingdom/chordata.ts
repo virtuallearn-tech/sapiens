@@ -43,7 +43,7 @@ const Chondrichthyes_TigerShark: IModelData = {
   ],
   attribuition: "Modelo por Major (@majorgalah) - Sketchfab",
   wikipedia: "https://en.wikipedia.org/wiki/Tiger_shark",
-  sceneBg: '#0e1a1f',
+  // sceneBg: '#0e1a1f',
   hasAnimation: true
 };
 
@@ -89,7 +89,7 @@ const Chondrichthyes_CownoseRay: IModelData = {
   ],
   attribuition: "Modelo por kenchoo - Sketchfab",
   wikipedia: "https://en.wikipedia.org/wiki/Cownose_ray",
-  sceneBg: '#0f1f1f',
+  // sceneBg: '#0f1f1f',
   hasAnimation: true
 };
 
@@ -135,7 +135,7 @@ const Osteichthyes_BarbelSteed: IModelData = {
   ],
   attribuition: "Modelo por ffish.asia / floraZia.com - Sketchfab",
   wikipedia: "https://en.wikipedia.org/wiki/Hemibarbus_barbus",
-  sceneBg: '#1a2a2f',
+  sceneBg: '#5A6E7F',
   hasAnimation: true
 };
 
@@ -181,7 +181,7 @@ const Amphibia_Urodela_CynopsPyrrhogaster: IModelData = {
   ],
   attribuition: "Modelo por ffish.asia / floraZia.com - Sketchfab",
   wikipedia: "https://en.wikipedia.org/wiki/Cynops_pyrrhogaster",
-  sceneBg: '#1a1f1a',
+  // sceneBg: '#1a1f1a',
   hasAnimation: true
 };
 
@@ -228,7 +228,7 @@ const Amphibia_Anura_RhacophorusSchlegelii: IModelData = {
   ],
   attribuition: "Modelo por ffish.asia / floraZia.com - Sketchfab",
   wikipedia: "https://en.wikipedia.org/wiki/Rhacophorus_schlegelii",
-  sceneBg: '#1a2f1a',
+  sceneBg: '#000',
   hasAnimation: true
 };
 
@@ -274,7 +274,7 @@ const Reptilia_Chelonia_Loggerhead: IModelData = {
   ],
   attribuition: "Modelo por Ra_in_coat - Sketchfab",
   wikipedia: "https://en.wikipedia.org/wiki/Loggerhead_sea_turtle",
-  sceneBg: '#0e1f1f',
+  // sceneBg: '#0e1f1f',
   hasAnimation: true
 };
 
@@ -369,7 +369,7 @@ const Reptilia_Squamata_Snake: IModelData = {
   ],
   attribuition: "Modelo genérico por yaman.serhan - Sketchfab",
   wikipedia: "https://en.wikipedia.org/wiki/Snake",
-  // sceneBg: '#1a1a1a',
+  sceneBg: '#C2B79B',
   hasAnimation: true
 };
 

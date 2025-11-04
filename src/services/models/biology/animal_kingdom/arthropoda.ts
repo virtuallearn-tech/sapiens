@@ -91,7 +91,7 @@ const Arachnida_Solifugae: IModelData = {
   ],
   attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
   wikipedia: "https://en.wikipedia.org/wiki/Solifugae",
-  sceneBg: '#1a0e0e',
+  // sceneBg: '#1a0e0e',
   hasAnimation: true
 };
 
@@ -184,7 +184,7 @@ const Crustacea_Crab: IModelData = {
   ],
   attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
   wikipedia: "https://en.wikipedia.org/wiki/Crab",
-  sceneBg: '#1c2c3c',
+  sceneBg: '#000',
   hasAnimation: true
 };
 
@@ -230,7 +230,7 @@ const Insecta_Butterfly: IModelData = {
   ],
   attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
   wikipedia: "https://en.wikipedia.org/wiki/Butterfly",
-  sceneBg: '#2e1e1e',
+  // sceneBg: '#2e1e1e',
   hasAnimation: true
 };
 
@@ -277,7 +277,7 @@ const Insecta_BombusDahlbomii: IModelData = {
   ],
   attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
   wikipedia: "https://en.wikipedia.org/wiki/Bombus_dahlbomii",
-  sceneBg: '#2a1a1a',
+  // sceneBg: '#2a1a1a',
   hasAnimation: true
 };
 
@@ -323,7 +323,7 @@ const Insecta_Ant: IModelData = {
   ],
   attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
   wikipedia: "https://en.wikipedia.org/wiki/Ant",
-  sceneBg: '#1f1f1f',
+  // sceneBg: '#1f1f1f',
   hasAnimation: true
 };
 
@@ -369,7 +369,7 @@ const Chilopoda_Centipede: IModelData = {
   ],
   attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
   wikipedia: "https://en.wikipedia.org/wiki/Centipede",
-  sceneBg: '#1a1a1a',
+  // sceneBg: '#1a1a1a',
   hasAnimation: false
 };
 
