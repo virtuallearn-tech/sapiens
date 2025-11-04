@@ -144,6 +144,7 @@ const Crustacea_Woodlouse: IModelData = {
 const Crustacea_Crab: IModelData = {
   topic: "arthropoda_class_crustacea_crab",
   source: "/freshwater_crab.glb",
+  sound: '/sounds/peel-prawns-277146.mp3',
   name: "Caranguejo",
   title: "Caranguejo (Decapoda)",
   description: "Crustáceo da ordem Decapoda, com corpo achatado e pinças desenvolvidas. Vive em ambientes marinhos e costeiros, com grande diversidade de espécies.",
@@ -236,6 +237,7 @@ const Insecta_Butterfly: IModelData = {
 const Insecta_BombusDahlbomii: IModelData = {
   topic: "arthropoda_class_insecta_bombus_dahlbomii",
   source: "/bombus_dahlbomii.glb",
+  sound: '/sounds/bee-flying-loop-42287.mp3',
   name: "Bombus dahlbomii",
   title: "Abelha Bombus dahlbomii",
   description: "Abelha sul-americana de grande porte, conhecida por sua coloração avermelhada e papel essencial na polinização de ecossistemas nativos.",

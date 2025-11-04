@@ -217,12 +217,6 @@ export const BIOLOGY_TOPICS: Itopic = {
           description: "Réptil da subordem Serpentes, com corpo alongado, ausência de membros e mandíbula flexível. Modelo genérico representando cobras.",
           title: 'Serpente',
         },
-        // {
-        //   topic: 'chordata_class_aves_accipitriformes_bald_eagle',
-        //   cover: PlantCellCover,
-        //   description: "Ave de rapina da América do Norte, com cabeça e cauda brancas, corpo escuro e bico amarelo. Símbolo cultural dos EUA.",
-        //   title: 'Águia-careca americana',
-        // },
         {
           topic: 'chordata_class_aves_accipitriformes_red_tailed_hawk',
           cover: RedTailedHawk,

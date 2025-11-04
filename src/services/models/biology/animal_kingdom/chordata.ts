@@ -188,6 +188,7 @@ const Amphibia_Urodela_CynopsPyrrhogaster: IModelData = {
 const Amphibia_Anura_RhacophorusSchlegelii: IModelData = {
   topic: "chordata_class_amphibia_anura_rhacophorus_schlegelii",
   source: "/frog.glb",
+  sound: '/sounds/frog-sound-210348.mp3',
   name: "Perereca-de-Schlegel",
   title: "Schlegel’s Green Tree Frog (Anura)",
   description: "Anuro da família Rhacophoridae, conhecido como Schlegel’s green tree frog. Vive em árvores e possui coloração verde adaptativa.",
@@ -280,6 +281,7 @@ const Reptilia_Chelonia_Loggerhead: IModelData = {
 const Reptilia_Squamata_Lizard: IModelData = {
   topic: "chordata_class_reptilia_squamata_lizard",
   source: "/lizard.glb",
+  // sound: '/sounds/iguana-220061.mp3',
   name: "Lagarto",
   title: "Lagarto (Squamata)",
   description: "Réptil da ordem Squamata, com corpo alongado, quatro patas bem desenvolvidas e cauda longa. Representa um modelo genérico de lagarto.",
@@ -327,6 +329,7 @@ const Reptilia_Squamata_Lizard: IModelData = {
 const Reptilia_Squamata_Snake: IModelData = {
   topic: "chordata_class_reptilia_squamata_snake",
   source: "/snake_animate.glb",
+  sound: '/sounds/snake-hissing-6092.mp3',
   name: "Serpente",
   title: "Serpente (Squamata)",
   description: "Réptil da subordem Serpentes, caracterizado pela ausência de membros, corpo alongado e escamas. Modelo genérico representando as cobras.",
@@ -373,6 +376,7 @@ const Reptilia_Squamata_Snake: IModelData = {
 const Reptilia_Crocodylia_Crocodile: IModelData = {
   topic: "chordata_class_reptilia_crocodylia_crocodile",
   source: "/crocodile.glb",
+  sound: '/sounds/alligator-411864.mp3',
   name: "Crocodilo",
   title: "Crocodilo (Crocodylia)",
   description: "Réptil da ordem Crocodylia, com corpo robusto, pele espessa e mandíbulas poderosas. Modelo genérico representando crocodilos.",
@@ -465,6 +469,7 @@ const Reptilia_Crocodylia_Crocodile: IModelData = {
 export const Aves_Accipitriformes_RedTailedHawk: IModelData = {
   topic: "chordata_class_aves_accipitriformes_red_tailed_hawk",
   source: "/red-tailed-hawk.glb", // substitua pelo caminho do modelo baixado
+  sound: '/sounds/hawk-78766-updated.mp3',
   name: "Gavião-de-cauda-vermelha",
   title: "Gavião-de-cauda-vermelha (Aves)",
   description: "Ave de rapina da família Accipitridae, amplamente distribuída na América do Norte. Reconhecida pela cauda de coloração avermelhada e voo planado característico.",
@@ -556,6 +561,7 @@ const Aves_Struthioniformes_Ostrich: IModelData = {
 const Aves_Passeriformes_EasternBluebird: IModelData = {
   topic: "chordata_class_aves_passeriformes_eastern_bluebird",
   source: "/eastern_blue_bird.glb",
+  sound: '/sounds/gallant_bluebirds-24092-updated.mp3',
   name: "Eastern Bluebird",
   title: "Eastern Bluebird (Aves)",
   description: "Pequena ave canora da América do Norte, com plumagem azul brilhante e peito alaranjado. Habita áreas abertas e campos arborizados.",
@@ -602,6 +608,7 @@ const Aves_Passeriformes_EasternBluebird: IModelData = {
 const Mammalia_Chiroptera_Bat: IModelData = {
   topic: "chordata_class_mammalia_chiroptera_bat",
   source: "/bat.glb",
+  sound: '/sounds/bat-chirping-type-1-354288.mp3',
   name: "Morcego",
   title: "Morcego (Chiroptera)",
   description: "Único mamífero capaz de voo ativo, com asas formadas por membranas de pele esticadas entre os dedos. Modelo genérico representando morcegos.",
@@ -694,6 +701,7 @@ const Mammalia_Artiodactyla_Giraffe: IModelData = {
 const Mammalia_Carnivora_Lion: IModelData = {
   topic: "chordata_class_mammalia_carnivora_lion",
   source: "/lion.glb",
+  sound: '/sounds/lion-loud-6813-updated.mp3',
   name: "Leão",
   title: "Leão (Mammalia)",
   description: "Grande felino da família Felidae, conhecido como 'rei da selva'. Vive em grupos sociais chamados alcateias ou 'prides'.",
@@ -741,6 +749,7 @@ const Mammalia_Carnivora_Lion: IModelData = {
 const Mammalia_Cetacea_BlueWhale: IModelData = {
   topic: "chordata_class_mammalia_cetacea_blue_whale",
   source: "/blue_whale.glb",
+  // sound: '/sounds/whale-sound-type-4-235993.mp3',
   name: "Baleia-azul",
   title: "Baleia-azul (Mammalia)",
   description: "Maior animal do planeta, mamífero marinho da ordem Cetacea. Pode ultrapassar 30 metros de comprimento e pesar mais de 150 toneladas.",
@@ -787,6 +796,7 @@ const Mammalia_Cetacea_BlueWhale: IModelData = {
 const Mammalia_Cetacea_HumpbackDolphin: IModelData = {
   topic: "chordata_class_mammalia_cetacea_humpback_dolphin",
   source: "/humpback_dolphin.glb",
+  // sound: '/sounds/dolphin-lumba-lumba-220055.mp3',
   name: "Humpback Dolphin",
   title: "Humpback Dolphin (Mammalia)",
   description: "Golfinho marinho costeiro da família Delphinidae, reconhecido pela nadadeira dorsal em forma de corcova.",
