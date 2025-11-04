@@ -42,7 +42,9 @@ type ANIMAL_KINGDOM_TOPICS = 'cnidarians' |
   'chordata_class_mammalia_artiodactyla_giraffe' |
   'chordata_class_mammalia_carnivora_lion' |
   'chordata_class_mammalia_cetacea_blue_whale' |
-  'chordata_class_mammalia_cetacea_humpback_dolphin'
+  'chordata_class_mammalia_cetacea_humpback_dolphin' |
+  'chordata_class_aves_accipitriformes_red_tailed_hawk'
+
 
 
 

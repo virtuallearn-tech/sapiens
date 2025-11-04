@@ -1,7 +1,7 @@
 import type { IModelData } from "@interfaces/model"
 import { useGLTF, useAnimations } from "@react-three/drei"
 import { resetTransverseModel, transverseModel } from "@utils/modifyModel"
-import { useControls } from "leva"
+// import { useControls } from "leva"
 import { useEffect, useRef, useState } from "react"
 
 import * as THREE from 'three';

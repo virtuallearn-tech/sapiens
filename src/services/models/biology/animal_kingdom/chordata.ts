@@ -416,49 +416,94 @@ const Reptilia_Crocodylia_Crocodile: IModelData = {
   hasAnimation: true
 };
 
-const Aves_Accipitriformes_BaldEagle: IModelData = {
-  topic: "chordata_class_aves_accipitriformes_bald_eagle",
-  source: "/animated_eagle.glb",
-  name: "Águia-careca",
-  title: "Águia-careca americana (Aves)",
-  description: "Ave de rapina da família Accipitridae, símbolo dos Estados Unidos. Reconhecida pela cabeça e cauda brancas contrastando com o corpo escuro.",
-  text: "A águia-careca (*Haliaeetus leucocephalus*) é uma ave de rapina da ordem Accipitriformes e da família Accipitridae. É facilmente identificada pela plumagem: corpo marrom-escuro, cabeça e cauda brancas, além do bico e olhos amarelos. Vive próxima a rios, lagos e zonas costeiras da América do Norte, alimentando-se principalmente de peixes, que captura com suas garras afiadas. Também pode caçar aves aquáticas e pequenos mamíferos. É uma espécie monogâmica, construindo grandes ninhos em árvores altas, que podem ser reutilizados por vários anos. Foi ameaçada de extinção no século XX devido à caça e ao uso de pesticidas, mas programas de conservação permitiram sua recuperação. Hoje é considerada símbolo de força e liberdade.",
-  scale: 0.2,
+// const Aves_Accipitriformes_BaldEagle: IModelData = {
+//   topic: "chordata_class_aves_accipitriformes_bald_eagle",
+//   source: "/animated_eagle.glb",
+//   name: "Águia-careca",
+//   title: "Águia-careca americana (Aves)",
+//   description: "Ave de rapina da família Accipitridae, símbolo dos Estados Unidos. Reconhecida pela cabeça e cauda brancas contrastando com o corpo escuro.",
+//   text: "A águia-careca (*Haliaeetus leucocephalus*) é uma ave de rapina da ordem Accipitriformes e da família Accipitridae. É facilmente identificada pela plumagem: corpo marrom-escuro, cabeça e cauda brancas, além do bico e olhos amarelos. Vive próxima a rios, lagos e zonas costeiras da América do Norte, alimentando-se principalmente de peixes, que captura com suas garras afiadas. Também pode caçar aves aquáticas e pequenos mamíferos. É uma espécie monogâmica, construindo grandes ninhos em árvores altas, que podem ser reutilizados por vários anos. Foi ameaçada de extinção no século XX devido à caça e ao uso de pesticidas, mas programas de conservação permitiram sua recuperação. Hoje é considerada símbolo de força e liberdade.",
+//   scale: 0.2,
+//   scale_sm: 0.9,
+//   scale_md: 0.9,
+//   scale_lg: 0.9,
+//   scale_2lg: 0.9,
+//   rotation: [0, 0, 0],
+//   position: [0, 0, -6],
+//   node: [
+//     {
+//       name: "Cabeça e cauda brancas",
+//       node: null,
+//       description: "Plumagem característica da espécie.",
+//       text: "A cabeça e a cauda brancas contrastam com o corpo escuro, tornando a águia-careca inconfundível."
+//     },
+//     {
+//       name: "Bico e olhos amarelos",
+//       node: null,
+//       description: "Adaptação para caça.",
+//       text: "O bico curvo e forte, junto com a visão aguçada, permitem capturar e rasgar presas com eficiência."
+//     },
+//     {
+//       name: "Alimentação piscívora",
+//       node: null,
+//       description: "Especialista em capturar peixes.",
+//       text: "A águia-careca mergulha em alta velocidade para capturar peixes com suas garras afiadas."
+//     },
+//     {
+//       name: "Símbolo cultural",
+//       node: null,
+//       description: "Ave nacional dos EUA.",
+//       text: "Além de sua importância ecológica, é um ícone cultural e símbolo de liberdade nos Estados Unidos."
+//     }
+//   ],
+//   attribuition: "Modelo genérico por Sketchfab Creator",
+//   wikipedia: "https://en.wikipedia.org/wiki/Bald_eagle",
+//   // sceneBg: '#1a1f2a',
+//   hasAnimation: true
+// };
+
+export const Aves_Accipitriformes_RedTailedHawk: IModelData = {
+  topic: "chordata_class_aves_accipitriformes_red_tailed_hawk",
+  source: "/red-tailed-hawk.glb", // substitua pelo caminho do modelo baixado
+  name: "Gavião-de-cauda-vermelha",
+  title: "Gavião-de-cauda-vermelha (Aves)",
+  description: "Ave de rapina da família Accipitridae, amplamente distribuída na América do Norte. Reconhecida pela cauda de coloração avermelhada e voo planado característico.",
+  text: "O gavião-de-cauda-vermelha (*Buteo jamaicensis*) é uma das aves de rapina mais comuns da América do Norte. Possui corpo robusto, asas largas e cauda curta de coloração avermelhada, especialmente visível nos adultos. Alimenta-se de pequenos mamíferos, aves e répteis, caçando a partir de poleiros elevados ou em voo planado. É uma espécie altamente adaptável, encontrada em áreas abertas, campos agrícolas, desertos e até regiões urbanas. Seu grito característico é frequentemente usado em filmes para representar aves de rapina em geral.",
+  scale: 1,
   scale_sm: 0.9,
   scale_md: 0.9,
   scale_lg: 0.9,
   scale_2lg: 0.9,
-  rotation: [0, 0, 0],
-  position: [0, 0, -6],
+  rotation: [FIFTEEN, THIRTY, 0],
+  position: [0, 0, 0],
   node: [
     {
-      name: "Cabeça e cauda brancas",
+      name: "Cauda avermelhada",
       node: null,
-      description: "Plumagem característica da espécie.",
-      text: "A cabeça e a cauda brancas contrastam com o corpo escuro, tornando a águia-careca inconfundível."
+      description: "Característica marcante da espécie.",
+      text: "A cauda curta e de coloração avermelhada é um dos traços mais distintivos do gavião-de-cauda-vermelha."
     },
     {
-      name: "Bico e olhos amarelos",
+      name: "Asas largas",
       node: null,
-      description: "Adaptação para caça.",
-      text: "O bico curvo e forte, junto com a visão aguçada, permitem capturar e rasgar presas com eficiência."
+      description: "Adaptação para voo planado.",
+      text: "As asas largas permitem longos voos planados, ideais para patrulhar áreas abertas em busca de presas."
     },
     {
-      name: "Alimentação piscívora",
+      name: "Alimentação variada",
       node: null,
-      description: "Especialista em capturar peixes.",
-      text: "A águia-careca mergulha em alta velocidade para capturar peixes com suas garras afiadas."
+      description: "Predador oportunista.",
+      text: "Caça pequenos mamíferos, aves e répteis, desempenhando papel importante no equilíbrio ecológico."
     },
     {
-      name: "Símbolo cultural",
+      name: "Espécie comum",
       node: null,
-      description: "Ave nacional dos EUA.",
-      text: "Além de sua importância ecológica, é um ícone cultural e símbolo de liberdade nos Estados Unidos."
+      description: "Amplamente distribuída na América do Norte.",
+      text: "É uma das aves de rapina mais abundantes e adaptáveis, encontrada em diversos habitats, inclusive próximos a áreas urbanas."
     }
   ],
-  attribuition: "Modelo genérico por Sketchfab Creator",
-  wikipedia: "https://en.wikipedia.org/wiki/Bald_eagle",
-  // sceneBg: '#1a1f2a',
+  attribuition: "Modelo 'Red-tailed Hawk - in Flight' por Oregon State University | Ecampus no Sketchfab",
+  wikipedia: "https://en.wikipedia.org/wiki/Red-tailed_hawk",
   hasAnimation: true
 };
 
@@ -796,7 +841,8 @@ export const CHORDATA_MODELS: IModelData[] = [
   Reptilia_Squamata_Lizard,
   Reptilia_Squamata_Snake,
   Reptilia_Crocodylia_Crocodile,
-  Aves_Accipitriformes_BaldEagle,
+  // Aves_Accipitriformes_BaldEagle,
+  Aves_Accipitriformes_RedTailedHawk,
   Aves_Struthioniformes_Ostrich,
   Aves_Passeriformes_EasternBluebird,
   Mammalia_Chiroptera_Bat,
