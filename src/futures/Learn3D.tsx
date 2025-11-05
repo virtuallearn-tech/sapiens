@@ -22,12 +22,12 @@ const Learn3D = () => {
        <div className="p-home__list">
          {topicList && topicList.map((topic) => (
              <CardContent
-               key={topic.code}
-               id={topic.code}
+               key={topic.topic}
+               id={topic.topic}
                title={topic.title}
                description={topic.description}
                cover={topic.cover}
-               link={`/scene/${topic.discipline}/${topic.topic}/${topic.code}`}
+               link={`/scene/${topic.discipline}/${topic.module}/${topic.topic}`}
              />
          ))}
        </div>
