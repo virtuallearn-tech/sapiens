@@ -183,7 +183,7 @@ const Cephalopoda_Nautilus: IModelData = {
   attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
   wikipedia: "https://en.wikipedia.org/wiki/Nautilus",
   // sound: '/sounds/ocean.wav',
-  sceneBg: '#000000',
+  sceneBg: '#5A6E7F',
   hasAnimation: false
 };
 
