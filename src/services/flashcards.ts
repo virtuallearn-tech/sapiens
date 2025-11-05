@@ -1,7 +1,7 @@
 import type { DISCIPLINE_MODULE, DISCIPLINE } from "@interfaces/discipline";
 import type { IFlashcard } from "@interfaces/flsahcards";
 import { getRandomItems } from "@utils/getRandomItems";
-import { CitologyFlashcards } from "./biology/flashcards";
+import { CitologyFlashcards } from "./biology/flashcards/flashcards";
 
 export const getFlashcardsByTopic = (
   discipline: DISCIPLINE,

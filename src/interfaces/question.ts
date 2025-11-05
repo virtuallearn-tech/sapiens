@@ -1,4 +1,4 @@
-import type { BIOLOGY_TOPICS, DISCIPLINE } from "./discipline";
+import type { DISCIPLINE_MODULE, DISCIPLINE } from "./discipline";
 
 export interface IAnswer {
   letter?: string;
@@ -18,6 +18,6 @@ export interface IQuestionData {
 
 export interface IQuestion {
   discipline: DISCIPLINE;
-  topic: BIOLOGY_TOPICS;
+  module: DISCIPLINE_MODULE;
   data: IQuestionData[] 
 }

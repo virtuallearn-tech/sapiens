@@ -1,6 +1,6 @@
 import type { DISCIPLINE, DISCIPLINE_MODULE } from "@interfaces/discipline";
 import { getRandomItems } from "@utils/getRandomItems";
-import { CitologyQuestions } from "./biology/questions";
+import { CitologyQuestions } from "./biology/questions/citology_questions";
 import type { IQuestionData } from "@interfaces/question";
 
 export const getExerciciesByTopic = (

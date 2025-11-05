@@ -1,7 +1,9 @@
 
 export type BIOLOGY_MODULE = 'CYTOLOGY' | 'ANIMAL_KINGDOM'
 
-type CYTOLOGY_TOPICS = 'eukaryotic_cell' |
+type CYTOLOGY_TOPICS = 
+  'citology' |
+  'eukaryotic_cell' |
   'prokaryotic_cell' |
   'plant_cell' |
   'cytoplasmic_organelles' |

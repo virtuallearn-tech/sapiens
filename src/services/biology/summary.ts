@@ -6,6 +6,7 @@ import { MembraneTransport } from "@futures/content/biology/MembraneTransport";
 import { PlantCell } from "@futures/content/biology/PlanCell";
 import { ProkaryoticCell } from "@futures/content/biology/ProkaryoticCell";
 import type { IContent } from "@interfaces/content";
+
 import { Cover } from "@utils/getImageCover";
 
 
@@ -14,8 +15,8 @@ export const CitologySummary: IContent[] = [
     id: "bio-citologia-geral",
     title: "Citologia",
     discipline: "BIOLOGY",
-    topic: "CYTOLOGY",
-    code: "CYTOLOGY",
+    module: "CYTOLOGY",
+    topic: "citology",
     cover: Cover.citology,
     component: Citology
   },
@@ -23,8 +24,8 @@ export const CitologySummary: IContent[] = [
     id: "bio-celula-eucarionte",
     title: "Célula Eucarionte",
     discipline: "BIOLOGY",
-    topic: "CYTOLOGY",
-    code: "eukaryotic_cell",
+    module: "CYTOLOGY",
+    topic: "eukaryotic_cell",
     cover: Cover.eukaryotic_cell,
     component: EukaryoticCellContent
   },
@@ -32,8 +33,8 @@ export const CitologySummary: IContent[] = [
     id: "bio-celula-procarionte",
     title: "Célula Procarionte",
     discipline: "BIOLOGY",
-    topic: "CYTOLOGY",
-    code: "prokaryotic_cell",
+    module: "CYTOLOGY",
+    topic: "prokaryotic_cell",
     cover: Cover.prokaryotic_cell,
     component: ProkaryoticCell
   },
@@ -41,8 +42,8 @@ export const CitologySummary: IContent[] = [
     id: "bio-celula-vegetal",
     title: "Célula Vegetal",
     discipline: "BIOLOGY",
-    topic: "CYTOLOGY",
-    code: "plant_cell",
+    module: "CYTOLOGY",
+    topic: "plant_cell",
     cover: Cover.plant_cell,
     component: PlantCell
   },
@@ -50,8 +51,8 @@ export const CitologySummary: IContent[] = [
     id: "bio-organelas",
     title: "Organelas Citoplasmáticas",
     discipline: "BIOLOGY",
-    topic: "CYTOLOGY",
-    code: "cytoplasmic_organelles",
+    module: "CYTOLOGY",
+    topic: "cytoplasmic_organelles",
     cover: Cover.cytoplasmic_organelles,
     component: CytoplasmicOrganelles
   },
@@ -59,8 +60,8 @@ export const CitologySummary: IContent[] = [
     id: "bio-membrana",
     title: "Membrana Plasmática e Transporte",
     discipline: "BIOLOGY",
-    topic: "CYTOLOGY",
-    code: "membrane_transport",
+    module: "CYTOLOGY",
+    topic: "membrane_transport",
     cover: Cover.membrane_transport,
     component: MembraneTransport
   },
@@ -68,8 +69,8 @@ export const CitologySummary: IContent[] = [
     id: "bio-ciclo-mitose",
     title: "Ciclo Celular e Mitose",
     discipline: "BIOLOGY",
-    topic: "CYTOLOGY",
-    code: "cell_cycle_mitosis",
+    module: "CYTOLOGY",
+    topic: "cell_cycle_mitosis",
     cover: Cover.cell_cycle_mitosis,
     component: CellCycle
   }
