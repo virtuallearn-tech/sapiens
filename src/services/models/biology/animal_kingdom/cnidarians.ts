@@ -7,11 +7,11 @@ const Anthozoa: IModelData = {
   title: "Coral-cérebro (Família Mussidae)",
   description: "Os corais da classe Anthozoa são cnidários exclusivamente pólipos, fixos ao substrato marinho. O coral-cérebro é conhecido por suas colônias maciças e sulcos que lembram os giros de um cérebro humano. Esses organismos formam recifes que sustentam uma enorme biodiversidade nos oceanos tropicais.",
   text: "A classe Anthozoa reúne corais e anêmonas-do-mar, cnidários que não apresentam fase medusoide em seu ciclo de vida. O coral-cérebro, pertencente à família Mussidae, é um exemplo marcante: suas colônias calcárias crescem lentamente e podem viver por séculos. Cada sulco visível na estrutura corresponde ao crescimento de pólipos interconectados, que secretam carbonato de cálcio para formar o esqueleto rígido. Esses corais vivem em simbiose com algas zooxantelas, que realizam fotossíntese e fornecem nutrientes essenciais. Além de sua beleza, o coral-cérebro desempenha papel vital na formação de recifes, que servem de abrigo, proteção e fonte de alimento para inúmeras espécies marinhas. Contudo, estão ameaçados por mudanças climáticas, acidificação dos oceanos e atividades humanas, tornando sua conservação fundamental para a saúde dos ecossistemas costeiros.",
-  scale: 0.004,
-  scale_sm: 0.9,
-  scale_md: 0.9,
-  scale_lg: 0.9,
-  scale_2lg: 0.9,
+  scale: 0.003,
+  scale_sm: 0.004,
+  scale_md: 0.004,
+  scale_lg: 0.005,
+  scale_2lg: 0.006,
   rotation: [0, 0, 0],
   position: [0, 0.4, 0],
   node: [
@@ -40,7 +40,13 @@ const Anthozoa: IModelData = {
       text: "Os corais-cérebro contribuem para a formação de recifes, que abrigam milhares de espécies marinhas. Além disso, protegem as costas contra erosão e tempestades, sendo fundamentais para a biodiversidade e para comunidades humanas costeiras."
     }
   ],
-  attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/brain-coral-c841a57b0b584a0d8fbf655c612dc836">Brain Coral</a> 
+  by <a href="https://sketchfab.com/RubaQewar">RubaQewar</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://pt.wikipedia.org/wiki/Mussidae",
   // sound: '/sounds/ocean.wav',
   // sceneBg: '#001a33',
@@ -55,10 +61,10 @@ const Hydrozoa: IModelData = {
   description: "Cnidário da classe Hydrozoa. Pequena medusa transparente da ordem Narcomedusae, com corpo achatado e tentáculos que partem da face superior da campânula.",
   text: "A Solmundella é uma medusa da ordem Narcomedusae, pertencente à classe Hydrozoa. Diferencia-se por apresentar corpo em forma de disco achatado, com tentáculos que emergem da face superior da campânula, ao contrário da maioria das medusas. É uma espécie pelágica, encontrada em águas oceânicas profundas e temperadas. Alimenta-se de plâncton e pequenos organismos, utilizando seus tentáculos urticantes para capturar presas. Apesar de seu tamanho reduzido, desempenha papel importante nas cadeias alimentares marinhas, servindo de alimento para peixes e outros predadores. Sua morfologia peculiar a torna um exemplo fascinante da diversidade dentro dos cnidários.",
   scale: 0.38,
-  scale_sm: 0.9,
-  scale_md: 0.9,
-  scale_lg: 0.9,
-  scale_2lg: 0.9,
+  scale_sm: 0.38,
+  scale_md: 0.38,
+  scale_lg: 0.38,
+  scale_2lg: 0.4,
   rotation: [0.523, 0, -0.1666],
   position: [-0.2, 0.1, 0],
   node: [
@@ -87,7 +93,13 @@ const Hydrozoa: IModelData = {
       text: "Apesar de pequena, a Solmundella é alimento para peixes e outros predadores, além de predadora de plâncton, contribuindo para o equilíbrio ecológico dos oceanos."
     }
   ],
-  attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/solmundella-jellyfish-narcomedusae-7bef3b41186e407e935a2da97f04bd3a">Solmundella Jellyfish (Narcomedusae)</a> 
+  by <a href="https://sketchfab.com/n-">n-</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Narcomedusae",
   // sound: '/sounds/ocean.wav',
   sceneBg: '#000000',
@@ -134,7 +146,13 @@ const Scyphozoa: IModelData = {
       text: "Como predadora de plâncton e presa de tartarugas marinhas e peixes, a Blubber Jelly participa ativamente das cadeias alimentares. Sua conservação é essencial para manter o equilíbrio ecológico dos oceanos."
     }
   ],
-  attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/jellyfish-003-7ef761c3eb2143b6a7178ddfb97e9e88">Jellyfish_003</a> 
+  by <a href="https://sketchfab.com/n-">n-</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://pt.wikipedia.org/wiki/Catostylus_mosaicus",
   // sound: '/sounds/ocean.wav',
   sceneBg: '#000000',

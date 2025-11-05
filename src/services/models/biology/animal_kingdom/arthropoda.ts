@@ -41,7 +41,13 @@ const Arachnida_Pseudoscorpion: IModelData = {
       text: "Habita o solo, troncos, folhas e até livros. Alimenta-se de ácaros e larvas, contribuindo para o equilíbrio ecológico."
     }
   ],
-  attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/pseudoscorpion-60a474f1f87040f38e073f87a63b7548">Pseudoscorpion</a> 
+  by <a href="https://sketchfab.com/.hapto">.hapto GmbH</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Pseudoscorpion",
   // sound: '/sounds/forest_floor.wav',
   // sceneBg: '#1a1a1a',
@@ -49,13 +55,13 @@ const Arachnida_Pseudoscorpion: IModelData = {
   animation: 'Walk'
 };
 
-const Arachnida_Solifugae: IModelData = {
-  topic: "arthropoda_class_arachnida_solifugae",
+const Arachnida_Araneae_WolfSpider: IModelData = {
+  topic: "arthropoda_class_arachnida_araneae_wolf_spider",
   source: "/wolf_spider.glb",
-  name: "Solífugo",
-  title: "Aranha-escorpião (Solifugae)",
-  description: "Aracnídeo da ordem Solifugae, conhecido como aranha-escorpião ou camel spider. Possui quelíceras grandes e é ágil, mas não venenoso.",
-  text: "Os solífugos, popularmente chamados de aranhas-escorpião ou camel spiders, pertencem à ordem Solifugae dentro da classe Arachnida. Apesar do nome, não são nem aranhas nem escorpiões. Possuem corpo segmentado, oito patas e grandes quelíceras que usam para capturar e triturar presas. São extremamente rápidos e habitam regiões áridas e semiáridas, como desertos. Não possuem veneno, mas sua mordida pode ser dolorosa. Alimentam-se de insetos, pequenos vertebrados e até outros aracnídeos. Sua aparência intimidadora e velocidade impressionante os tornam um exemplo marcante da diversidade dos aracnídeos.",
+  name: "Aranha-lobo",
+  title: "Aranha-lobo (Lycosidae)",
+  description: "Aracnídeo da família Lycosidae, conhecido por sua caça ativa e por carregar os filhotes nas costas. Possui excelente visão e é comum em ambientes terrestres.",
+  text: "A aranha-lobo pertence à família Lycosidae, dentro da ordem Araneae. Diferente de muitas aranhas que constroem teias para capturar presas, ela é uma caçadora ativa, perseguindo suas vítimas pelo solo. Possui oito olhos dispostos em três fileiras, garantindo excelente visão. Uma característica marcante é o cuidado parental: as fêmeas carregam seus ovos em um saco preso ao abdômen e, após o nascimento, os filhotes permanecem sobre seu dorso por vários dias. É encontrada em diversos habitats, como florestas, campos e até áreas urbanas. Apesar da aparência intimidadora, não representa perigo significativo para humanos.",
   scale: 100,
   scale_sm: 105,
   scale_md: 110,
@@ -65,33 +71,37 @@ const Arachnida_Solifugae: IModelData = {
   position: [0, 0.3, 0.1],
   node: [
     {
-      name: "Quelíceras",
+      name: "Olhos frontais",
       node: null,
-      description: "Mandíbulas grandes usadas para capturar e triturar presas.",
-      text: "As quelíceras dos solífugos são proporcionalmente maiores que as de outros aracnídeos, permitindo uma mordida poderosa e precisa."
+      description: "Disposição ocular característica.",
+      text: "A aranha-lobo possui oito olhos distribuídos em três fileiras, com os dois frontais maiores, garantindo excelente visão para caça."
     },
     {
-      name: "Locomoção",
+      name: "Locomoção ativa",
       node: null,
-      description: "Extremamente rápidos e ágeis.",
-      text: "Solífugos são conhecidos por sua velocidade, podendo correr rapidamente para capturar presas ou fugir de predadores."
+      description: "Caçadora que não usa teias.",
+      text: "Ela se move rapidamente pelo solo, perseguindo presas como insetos e outros pequenos invertebrados."
+    },
+    {
+      name: "Cuidado parental",
+      node: null,
+      description: "Carrega os filhotes nas costas.",
+      text: "Após o nascimento, os filhotes sobem no dorso da mãe e permanecem ali por dias, protegidos até se dispersarem."
     },
     {
       name: "Habitat",
       node: null,
-      description: "Regiões áridas e semiáridas.",
-      text: "Vivem em desertos e áreas secas, escondendo-se sob pedras ou em tocas durante o dia e caçando à noite."
-    },
-    {
-      name: "Classificação",
-      node: null,
-      description: "Não são aranhas nem escorpiões.",
-      text: "Apesar do nome popular, os solífugos formam um grupo próprio dentro dos aracnídeos, com características únicas."
+      description: "Ambientes variados.",
+      text: "Pode ser encontrada em florestas, campos, jardins e até dentro de casas, sempre em busca de presas."
     }
   ],
-  attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
-  wikipedia: "https://en.wikipedia.org/wiki/Solifugae",
-  // sceneBg: '#1a0e0e',
+  attribuition: `<div>
+    <a href="https://sketchfab.com/3d-models/wolf-spider-rigged-rabidosa-rabida-6392e4cfb64d407182fdad2cea9e0abe">Wolf Spider (Rigged) - (Rabidosa rabida)</a> 
+    by <a href="https://sketchfab.com/DreamingInAlternation27">Dreaming In Alternation 27</a> 
+    on <a href="https://sketchfab.com">Sketchfab</a>, 
+    licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+  </div>`,
+  wikipedia: "https://en.wikipedia.org/wiki/Wolf_spider",
   hasAnimation: true
 };
 
@@ -135,7 +145,13 @@ const Crustacea_Woodlouse: IModelData = {
       text: "Alimenta-se de folhas mortas e matéria orgânica, ajudando na decomposição e reciclagem de nutrientes nos ecossistemas terrestres."
     }
   ],
-  attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/woodlouse-fae04aa296f844c18675f6ae50aefe77">Woodlouse</a> 
+  by <a href="https://sketchfab.com/.hapto">.hapto GmbH</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Woodlouse",
   // sceneBg: '#1e2d1e',
   hasAnimation: true
@@ -182,7 +198,13 @@ const Crustacea_Crab: IModelData = {
       text: "Existem caranguejos marinhos, de água doce e terrestres, adaptados a diferentes condições ambientais."
     }
   ],
-  attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/cc0-japanese-freshwater-crab-35559c2236d04c1a80ccbe08cae863c6">Japanese Freshwater Crab</a> 
+  by <a href="https://sketchfab.com/ffishAsia-and-floraZia">ffish.asia / floraZia.com</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Crab",
   sceneBg: '#000',
   hasAnimation: true
@@ -228,7 +250,13 @@ const Insecta_Butterfly: IModelData = {
       text: "O padrão laranja e preto é um sinal visual para predadores, indicando que a borboleta pode ser tóxica ou de sabor ruim."
     }
   ],
-  attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/butterfly-d642db74a3fa491a8143bd088b408094">Butterfly</a> 
+  by <a href="https://sketchfab.com/rukh3d">Rukh3D</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Butterfly",
   // sceneBg: '#2e1e1e',
   hasAnimation: true
@@ -275,7 +303,13 @@ const Insecta_BombusDahlbomii: IModelData = {
       text: "A introdução de abelhas europeias como *Bombus terrestris* ameaça a sobrevivência da *Bombus dahlbomii* por competição e transmissão de patógenos."
     }
   ],
-  attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/bombus-dahlbomii-375f7b0ab4fd463f89c3b1a702fd653d">Bombus dahlbomii</a> 
+  by <a href="https://sketchfab.com/sapiains">Philippe Sapiains</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Bombus_dahlbomii",
   // sceneBg: '#2a1a1a',
   hasAnimation: true
@@ -321,7 +355,13 @@ const Insecta_Ant: IModelData = {
       text: "Ao interagir com o solo e outros organismos, as formigas ajudam a manter o equilíbrio dos ecossistemas."
     }
   ],
-  attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/ant-b29567ff8d2949eb950283e0e42ad85f">Ant</a> 
+  by <a href="https://sketchfab.com/ap-school">ap-school</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Ant",
   // sceneBg: '#1f1f1f',
   hasAnimation: true
@@ -367,19 +407,25 @@ const Chilopoda_Centipede: IModelData = {
       text: "Vivem sob pedras, troncos e folhas, onde a umidade ajuda a evitar a desidratação."
     }
   ],
-  attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/centipede-4b2a2d5f3b4b4c4b9c1c9e6e3f6f6f6f">Centipede</a> 
+  by <a href="https://sketchfab.com/.hapto">.hapto GmbH</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Centipede",
   // sceneBg: '#1a1a1a',
   hasAnimation: false
 };
 
 export const ARTHROPODA_MODELS: IModelData[] = [
-    Arachnida_Pseudoscorpion,
-    Arachnida_Solifugae,
-    Crustacea_Woodlouse,
-    Crustacea_Crab,
-    Insecta_Butterfly,
-    Insecta_BombusDahlbomii,
-    Insecta_Ant,
-    Chilopoda_Centipede
+  Arachnida_Pseudoscorpion,
+  Arachnida_Araneae_WolfSpider,
+  Crustacea_Woodlouse,
+  Crustacea_Crab,
+  Insecta_Butterfly,
+  Insecta_BombusDahlbomii,
+  Insecta_Ant,
+  Chilopoda_Centipede
 ] 

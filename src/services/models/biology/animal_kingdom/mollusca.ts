@@ -40,11 +40,17 @@ const Gastropod: IModelData = {
       text: "É encontrado em florestas e áreas úmidas, onde a umidade é essencial para sua sobrevivência."
     }
   ],
-  attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/cc0-tsukushi-snail-euhadra-herklotsi-c8abfc3cf4f54dd98b9076b79799bb39">Tsukushi Snail (Euhadra herklotsi)</a> 
+  by <a href="https://sketchfab.com/ffishAsia-and-floraZia">ffish.asia / floraZia.com</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Euhadra_herklotsi",
   // sound: '/sounds/forest.wav',
   sceneBg: '#000',
-  hasAnimation: false
+  hasAnimation: true
 };
 
 const Cephalopoda_BobtailSquid: IModelData = {
@@ -133,7 +139,13 @@ const Cephalopoda_BlueRingedOctopus: IModelData = {
       text: "Apesar de perigoso, o polvo-de-anéis-azuis é um predador importante em recifes, ajudando a controlar populações de pequenos crustáceos e peixes."
     }
   ],
-  attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/blue-ringed-octopus-inktober-day-1-ac85becda709471494d049ab346136f0">Blue Ringed Octopus – Inktober Day 1</a> 
+  by <a href="https://sketchfab.com/lesliestowe">lesliestowe</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Blue-ringed_octopus",
   // sound: '/sounds/ocean.wav',
   sceneBg: '#000000',
@@ -180,7 +192,13 @@ const Cephalopoda_Nautilus: IModelData = {
       text: "O nautilus preserva características primitivas dos cefalópodes, sendo um exemplo vivo da história evolutiva do grupo."
     }
   ],
-  attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/nautilus-shell-ca29276e0659491eb4c5e6eb9d2ae0fc">Nautilus shell</a> 
+  by <a href="https://sketchfab.com/hrachski">Hailey Majewski (@hrachski)</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Nautilus",
   // sound: '/sounds/ocean.wav',
   sceneBg: '#5A6E7F',
@@ -227,7 +245,13 @@ const Bivalvia_CardiumCostatum: IModelData = {
       text: "Ajuda na oxigenação e na reciclagem de nutrientes do sedimento, além de servir de abrigo para pequenos organismos marinhos."
     }
   ],
-  attribuition: "Conteúdo adaptado para fins educativos - App Sapiens",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/cardium-costatum-ea26ce5865b9434592bc70b07a607a94">Cardium costatum</a> 
+  by <a href="https://sketchfab.com/latedcapuerj">latedcapuerj</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Cardium_costatum",
   // sound: '/sounds/ocean.wav',
   sceneBg: '#000',

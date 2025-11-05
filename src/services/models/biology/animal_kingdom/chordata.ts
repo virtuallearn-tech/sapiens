@@ -41,7 +41,13 @@ const Chondrichthyes_TigerShark: IModelData = {
       text: "Como predador de topo, o tubarão-tigre regula populações de outras espécies e mantém a saúde dos ecossistemas marinhos."
     }
   ],
-  attribuition: "Modelo por Major (@majorgalah) - Sketchfab",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/tiger-shark-galeocerdo-cuvier-9cb1b98c288f41cc822a8894933b061c">Tiger shark (Galeocerdo cuvier)</a> 
+  by <a href="https://sketchfab.com/majorgalah">Major (@majorgalah)</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Tiger_shark",
   // sceneBg: '#0e1a1f',
   hasAnimation: true
@@ -87,7 +93,13 @@ const Chondrichthyes_CownoseRay: IModelData = {
       text: "A raia Cownose se alimenta de moluscos e crustáceos, que são triturados por suas placas dentárias resistentes."
     }
   ],
-  attribuition: "Modelo por kenchoo - Sketchfab",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/cownose-ray-c7c51649007e4afba58416b15d891bf4">Cownose Ray</a> 
+  by <a href="https://sketchfab.com/kenchoo">kenchoo</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Cownose_ray",
   // sceneBg: '#0f1f1f',
   hasAnimation: true
@@ -133,7 +145,13 @@ const Osteichthyes_BarbelSteed: IModelData = {
       text: "O Barbel Steed prefere águas doces com correnteza moderada, onde se alimenta de pequenos organismos bentônicos."
     }
   ],
-  attribuition: "Modelo por ffish.asia / floraZia.com - Sketchfab",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/cc0-barbel-steed-h-barbus-animation-464c2645048c48618818d7b3fcb702db">Barbel Steed (Hemibarbus barbus)</a> 
+  by <a href="https://sketchfab.com/ffishAsia-and-floraZia">ffish.asia / floraZia.com</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Hemibarbus_barbus",
   sceneBg: '#5A6E7F',
   hasAnimation: true
@@ -179,7 +197,13 @@ const Amphibia_Urodela_CynopsPyrrhogaster: IModelData = {
       text: "Assim como outros anfíbios, passa por metamorfose, iniciando como larva aquática com brânquias e tornando-se adulto com pulmões."
     }
   ],
-  attribuition: "Modelo por ffish.asia / floraZia.com - Sketchfab",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/cc0-japanese-fire-bellied-newt-162a62976ebd4b7180db6723564b72ab">Japanese Fire-bellied Newt (Cynops pyrrhogaster)</a> 
+  by <a href="https://sketchfab.com/ffishAsia-and-floraZia">ffish.asia / floraZia.com</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Cynops_pyrrhogaster",
   // sceneBg: '#1a1f1a',
   hasAnimation: true
@@ -226,7 +250,13 @@ const Amphibia_Anura_RhacophorusSchlegelii: IModelData = {
       text: "Assim como outros anuros, passa por metamorfose, iniciando como girino aquático e tornando-se adulto com pulmões e pernas."
     }
   ],
-  attribuition: "Modelo por ffish.asia / floraZia.com - Sketchfab",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/cc0-schlegels-green-tree-frog-218caec043db49d4b41855ab7e92765d">Schlegel's Green Tree Frog (Rhacophorus schlegelii)</a> 
+  by <a href="https://sketchfab.com/ffishAsia-and-floraZia">ffish.asia / floraZia.com</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Rhacophorus_schlegelii",
   sceneBg: '#000',
   hasAnimation: true
@@ -272,7 +302,13 @@ const Reptilia_Chelonia_Loggerhead: IModelData = {
       text: "A tartaruga-cabeçuda realiza migrações transoceânicas entre áreas de alimentação e praias de desova."
     }
   ],
-  attribuition: "Modelo por Ra_in_coat - Sketchfab",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/loggerhead-turtle-42aaed2a8085424b9aeaa3f3394eeb3a">Loggerhead Turtle</a> 
+  by <a href="https://sketchfab.com/ra_in_coat">Ra_in_coat</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Loggerhead_sea_turtle",
   // sceneBg: '#0e1f1f',
   hasAnimation: true
@@ -319,7 +355,13 @@ const Reptilia_Squamata_Lizard: IModelData = {
       text: "Existem lagartos terrestres, arborícolas, aquáticos e até escavadores, mostrando grande capacidade de adaptação."
     }
   ],
-  attribuition: "Modelo genérico por Froggreen - Sketchfab",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/lizard-2405fa5c4338474ebb646a21aaf81f2d">Lizard</a> 
+  by <a href="https://sketchfab.com/Froggreen">Froggreen</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Lizard",
   // sceneBg: '#1f1a1a',
   hasAnimation: true,
@@ -367,7 +409,13 @@ const Reptilia_Squamata_Snake: IModelData = {
       text: "As serpentes vivem em desertos, florestas, ambientes aquáticos e até áreas urbanas, mostrando grande capacidade de adaptação."
     }
   ],
-  attribuition: "Modelo genérico por yaman.serhan - Sketchfab",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/snake-animate-b386cde691a5419b847b2730ac652371">Snake Animate</a> 
+  by <a href="https://sketchfab.com/yaman.serhan">yaman.serhan</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Snake",
   sceneBg: '#C2B79B',
   hasAnimation: true
@@ -507,7 +555,13 @@ export const Aves_Accipitriformes_RedTailedHawk: IModelData = {
       text: "É uma das aves de rapina mais abundantes e adaptáveis, encontrada em diversos habitats, inclusive próximos a áreas urbanas."
     }
   ],
-  attribuition: "Modelo 'Red-tailed Hawk - in Flight' por Oregon State University | Ecampus no Sketchfab",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/red-tailed-hawk-in-flight-4abcab5af9044a939fb5a55bff9e5000">Red-tailed Hawk – in Flight</a> 
+  by <a href="https://sketchfab.com/osuecampus">Oregon State University | Ecampus</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Red-tailed_hawk",
   hasAnimation: true
 };
@@ -552,7 +606,13 @@ const Aves_Struthioniformes_Ostrich: IModelData = {
       text: "Cada ovo de avestruz pode pesar até 1,5 kg, sendo proporcional ao tamanho da ave."
     }
   ],
-  attribuition: "Modelo por Andrey - Sketchfab",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/african-ostrich-revised-version-0999e676453e4562a7777cd006125738">African Ostrich (Revised version)</a> 
+  by <a href="https://sketchfab.com/andrey.">Andrey</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Ostrich",
   // sceneBg: '#2a1f1a',
   hasAnimation: true
@@ -599,7 +659,13 @@ const Aves_Passeriformes_EasternBluebird: IModelData = {
       text: "A espécie nidifica em buracos de árvores ou em caixas-ninho, sendo favorecida por projetos de conservação."
     }
   ],
-  attribuition: "Modelo por kenchoo - Sketchfab",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/eastern-blue-bird-c646531de6a3494faeaf2d3ce91b9dd2">Eastern Blue Bird</a> 
+  by <a href="https://sketchfab.com/kenchoo">kenchoo</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Eastern_bluebird",
   // sceneBg: '#1a2a3a',
   hasAnimation: true
@@ -646,7 +712,13 @@ const Mammalia_Chiroptera_Bat: IModelData = {
       text: "Ao controlar populações de insetos e polinizar plantas, os morcegos contribuem para a manutenção dos ecossistemas."
     }
   ],
-  attribuition: "Modelo genérico por Mordecai The Despicable Me Fan - Sketchfab",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/bat-8719886cf8f645ca9d53d766976baf9c">Bat</a> 
+  by <a href="https://sketchfab.com/theice9">ice9</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Bat",
   // sceneBg: '#1a1a2a',
   hasAnimation: true
@@ -692,7 +764,13 @@ const Mammalia_Artiodactyla_Giraffe: IModelData = {
       text: "Com até 5,5 metros de altura, a girafa é o mamífero terrestre mais alto do mundo."
     }
   ],
-  attribuition: "Modelo genérico por BlueMesh - Sketchfab",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/giraffe-98ecdd62c76d47dea44683b3f8b37bf6">Giraffe</a> 
+  by <a href="https://sketchfab.com/Amx360">Amx360</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Giraffe",
   // sceneBg: '#2a1f1a',
   hasAnimation: true
@@ -739,7 +817,13 @@ const Mammalia_Carnivora_Lion: IModelData = {
       text: "A maioria dos leões vive na África subsaariana, mas ainda existe uma população remanescente na Índia (Leão-asiático)."
     }
   ],
-  attribuition: "Modelo genérico por planeta-elefante - Sketchfab",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/lion-e5adb6265b944c5990031a9aa93ee316">Lion</a> 
+  by <a href="https://sketchfab.com/planeta-elefante">planeta-elefante</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Lion",
   // sceneBg: '#2a1a1a',
   hasAnimation: true,
@@ -787,7 +871,13 @@ const Mammalia_Cetacea_BlueWhale: IModelData = {
       text: "Realiza migrações entre águas frias, onde se alimenta, e águas tropicais, onde se reproduz."
     }
   ],
-  attribuition: "Modelo por Bohdan Lvov - Sketchfab",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/blue-whale-textured-d24d19021c724c3a9134eebcb76b0e0f">Blue Whale – Textured</a> 
+  by <a href="https://sketchfab.com/ostapblendercg">Bohdan Lvov (@ostapblendercg)</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Blue_whale",
   // sceneBg: '#0a1f3a',
   hasAnimation: true
@@ -834,7 +924,13 @@ const Mammalia_Cetacea_HumpbackDolphin: IModelData = {
       text: "Formam grupos sociais que cooperam para cercar cardumes de peixes e capturar presas com eficiência."
     }
   ],
-  attribuition: "Modelo por Bohdan Lvov - Sketchfab",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/humpback-dolphin-5f27b694149e4c3eb5e338b734134ecf">Humpback Dolphin</a> 
+  by <a href="https://sketchfab.com/ostapblendercg">Bohdan Lvov (@ostapblendercg)</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Humpback_dolphin",
   // sceneBg: '#0f1f2f',
   hasAnimation: true

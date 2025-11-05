@@ -41,7 +41,13 @@ const Echinodermata_Asteroidea_Starfish: IModelData = {
       text: "A estrela-do-mar pode evertir seu estômago para fora da boca e digerir presas como mexilhões diretamente no ambiente externo."
     }
   ],
-  attribuition: "Modelo por Digital Atlas of Ancient Life - Sketchfab",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/asteroid-starfish-or-seastar-32de6a92ad104e20aaa841c8e3eef93f">Asteroid: starfish or seastar</a> 
+  by <a href="https://sketchfab.com/DigitalAtlasOfAncientLife">Digital Atlas of Ancient Life</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Starfish",
   sceneBg: '#000',
   hasAnimation: false
@@ -87,7 +93,13 @@ const Echinodermata_Echinoidea_SandDollar: IModelData = {
       text: "Após a morte, o esqueleto branco e delicado da bolacha-de-praia é frequentemente encontrado nas praias, com aparência decorativa."
     }
   ],
-  attribuition: "Modelo por ffish.asia / floraZia.com - Sketchfab",
+  attribuition: `<div>
+  <a href="https://sketchfab.com/3d-models/sand-dollar-3d-scan-d94302c29223418ebdae7e28a3b2d952">Sand Dollar (3D Scan)</a> 
+  by <a href="https://sketchfab.com/JPDV">JPDV</a> 
+  on <a href="https://sketchfab.com">Sketchfab</a>, 
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+</div>
+`,
   wikipedia: "https://en.wikipedia.org/wiki/Sand_dollar",
   sceneBg: '#000',
   hasAnimation: false

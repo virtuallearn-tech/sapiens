@@ -115,11 +115,17 @@ export const BIOLOGY_TOPICS: Itopic = {
           description: "Aracnídeo de pequeno porte, semelhante a um escorpião, mas sem cauda nem ferrão. Vive em ambientes úmidos e controla pequenos invertebrados.",
           title: 'Pseudoescorpião',
         },
+        // {
+        //   topic: 'arthropoda_class_arachnida_solifugae',
+        //   cover: WolfSpider,
+        //   description: "Aracnídeo da ordem Solifugae, conhecido como aranha-escorpião. Possui grandes quelíceras e é extremamente ágil, mas não venenoso.",
+        //   title: 'Aranha-lobo',
+        // },
         {
-          topic: 'arthropoda_class_arachnida_solifugae',
+          topic: 'arthropoda_class_arachnida_araneae_wolf_spider',
           cover: WolfSpider,
-          description: "Aracnídeo da ordem Solifugae, conhecido como aranha-escorpião. Possui grandes quelíceras e é extremamente ágil, mas não venenoso.",
           title: 'Aranha-lobo',
+          description: "Aracnídeo da família Lycosidae, caçador ativo que não usa teias. Possui excelente visão e comportamento parental marcante, carregando os filhotes nas costas."
         },
         {
           topic: 'arthropoda_class_crustacea_woodlouse',
