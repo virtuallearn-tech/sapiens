@@ -1,13 +1,13 @@
 import type { IModelData } from "@interfaces/model";
 import { NINETY } from "@utils/radAngles";
 
-const Echinodermata_Asteroidea_Starfish: IModelData = {
+const Echinodermata_Asteroidea_Starfish: IModelData = { 
   topic: "echinodermata_class_asteroidea_starfish",
   source: "/scene_star3.glb",
   name: "Estrela-do-mar",
   title: "Estrela-do-mar (Asteroidea)",
-  description: "Equinodermo marinho da classe Asteroidea, com corpo em forma de estrela e simetria radial. Possui sistema ambulacrário e capacidade de regeneração.",
-  text: "A estrela-do-mar é um equinodermo da classe Asteroidea, caracterizado por seu corpo em forma de estrela, geralmente com cinco braços. Possui simetria radial e um esqueleto interno formado por placas calcárias. Seu sistema ambulacrário permite locomoção e captura de alimento por meio de pés ambulacrários que funcionam com pressão hidráulica. A boca está localizada na face inferior do corpo, e muitas espécies têm capacidade de regenerar braços perdidos. Alimenta-se de moluscos e outros invertebrados, podendo evertir o estômago para digerir presas externamente. Vive em ambientes marinhos variados, desde recifes tropicais até regiões profundas.",
+  description: "Animal marinho equinodermo, com corpo em forma de estrela e geralmente cinco braços. Possui simetria radial, sistema ambulacrário e incrível capacidade de regeneração.",
+  text: "A estrela-do-mar é um animal marinho do grupo dos equinodermos, pertencente à classe Asteroidea. Seu corpo tem forma de estrela, com braços que partem de um disco central. Apresenta simetria radial, o que significa que suas partes estão organizadas ao redor de um eixo central. O esqueleto é interno e formado por placas calcárias, o que dá rigidez e proteção. Um dos sistemas mais interessantes é o sistema ambulacrário, que usa a pressão da água para movimentar pequenos pés, chamados pés ambulacrários, responsáveis pela locomoção e pela captura de alimento. A estrela-do-mar se alimenta principalmente de moluscos, podendo projetar o estômago para fora da boca e digerir suas presas externamente. Vive em ambientes exclusivamente marinhos, desde águas rasas até grandes profundidades. Uma característica marcante é sua capacidade de regenerar braços perdidos e, em algumas espécies, até formar um novo indivíduo a partir de um único braço.",
   scale: 1.2,
   scale_sm: 1.22,
   scale_md: 1.3,
@@ -19,26 +19,26 @@ const Echinodermata_Asteroidea_Starfish: IModelData = {
     {
       name: "Simetria radial",
       node: null,
-      description: "Corpo organizado em torno de um eixo central.",
-      text: "A estrela-do-mar apresenta simetria radial pentâmera, típica dos equinodermos, com braços dispostos ao redor de um disco central."
+      description: "Corpo organizado em torno de um ponto central.",
+      text: "A estrela-do-mar apresenta simetria radial pentâmera, ou seja, o corpo é dividido em cinco partes iguais ao redor de um centro. Esse tipo de simetria facilita a locomoção e a percepção do ambiente em todas as direções."
     },
     {
       name: "Sistema ambulacrário",
       node: null,
-      description: "Locomoção por pés hidráulicos.",
-      text: "O sistema ambulacrário usa canais internos e pressão de água para movimentar os pés ambulacrários, permitindo locomoção e manipulação de alimento."
+      description: "Sistema de locomoção e alimentação movido por pressão da água.",
+      text: "O sistema ambulacrário é formado por canais internos que conduzem água do mar para movimentar os pés ambulacrários. Esses pés funcionam como ventosas, permitindo que o animal se mova, fixe em superfícies e capture alimento com precisão."
     },
     {
       name: "Regeneração",
       node: null,
-      description: "Capacidade de regenerar braços perdidos.",
-      text: "Algumas espécies podem regenerar braços inteiros e, em casos raros, até formar um novo indivíduo a partir de um braço."
+      description: "Capacidade de formar novamente partes do corpo perdidas.",
+      text: "A estrela-do-mar pode regenerar braços perdidos e, em algumas espécies, até se reproduzir de forma assexuada a partir de um único braço e parte do disco central. Essa capacidade ajuda na sobrevivência após ataques de predadores."
     },
     {
       name: "Alimentação externa",
       node: null,
-      description: "Digestão fora do corpo.",
-      text: "A estrela-do-mar pode evertir seu estômago para fora da boca e digerir presas como mexilhões diretamente no ambiente externo."
+      description: "Digestão realizada fora do corpo.",
+      text: "A estrela-do-mar se alimenta de moluscos e outros invertebrados. Ela projeta o estômago para fora da boca, introduzindo-o na concha da presa para digerir o alimento antes de recolhê-lo novamente para o interior do corpo."
     }
   ],
   attribuition: `<div>
@@ -48,18 +48,19 @@ const Echinodermata_Asteroidea_Starfish: IModelData = {
   licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain</a>
 </div>
 `,
-  wikipedia: "https://en.wikipedia.org/wiki/Starfish",
+  wikipedia: "https://pt.wikipedia.org/wiki/Estrela-do-mar",
   sceneBg: '#000',
   hasAnimation: false
 };
+
 
 const Echinodermata_Echinoidea_SandDollar: IModelData = {
   topic: "echinodermata_class_echinoidea_sanddollar",
   source: "/scene_dolla.glb",
   name: "Bolacha-de-praia",
   title: "Bolacha-de-praia (Echinoidea)",
-  description: "Equinodermo da classe Echinoidea, com corpo achatado e discoide. Vive enterrado na areia e possui simetria radial modificada.",
-  text: "A bolacha-de-praia é um equinodermo da classe Echinoidea, grupo que inclui também os ouriços-do-mar. Seu corpo é achatado, rígido e em forma de disco, com simetria radial modificada para facilitar a vida enterrada na areia. Possui espinhos curtos e finos que ajudam na locomoção e na escavação. A face inferior abriga a boca, enquanto a superior exibe um padrão em forma de flor, formado por canais ambulacrários. Alimenta-se de partículas orgânicas presentes no sedimento marinho. Quando viva, possui coloração escura e textura aveludada; após a morte, seu esqueleto calcário branco é frequentemente encontrado nas praias. É um exemplo fascinante da diversidade morfológica dos equinodermos.",
+  description: "Equinodermo marinho de corpo achatado e circular, adaptado para viver enterrado na areia. Apresenta simetria radial modificada e pequenos espinhos para locomoção.",
+  text: "A bolacha-de-praia é um equinodermo da classe Echinoidea, a mesma dos ouriços-do-mar. Seu corpo é achatado, em forma de disco, e rígido, sendo uma adaptação para a vida enterrada na areia do fundo do mar. Apresenta simetria radial modificada, com o corpo organizado de forma mais bilateral para se movimentar melhor sob o sedimento. Possui espinhos curtos e finos, que auxiliam tanto na locomoção quanto na escavação. Na face inferior, encontra-se a boca, enquanto a face superior exibe um belo desenho em forma de flor, resultado dos canais do sistema ambulacrário, que ajudam na respiração e na movimentação. Alimenta-se de pequenas partículas orgânicas e detritos encontrados na areia. Quando viva, possui coloração escura e textura aveludada; após a morte, seu esqueleto branco e frágil, chamado de 'testa', é frequentemente encontrado nas praias. Esse animal é um excelente exemplo da diversidade e das adaptações do grupo dos equinodermos.",
   scale: 2,
   scale_sm: 2.1,
   scale_md: 2.1,
@@ -71,26 +72,26 @@ const Echinodermata_Echinoidea_SandDollar: IModelData = {
     {
       name: "Corpo discoide",
       node: null,
-      description: "Forma achatada adaptada ao sedimento.",
-      text: "O corpo da bolacha-de-praia é achatado e rígido, ideal para se mover e se enterrar na areia do fundo marinho."
+      description: "Forma achatada que facilita a vida sob o sedimento.",
+      text: "A bolacha-de-praia possui corpo circular e achatado, o que permite que ela se enterre facilmente na areia, protegendo-se de predadores e correntes marítimas."
     },
     {
       name: "Sistema ambulacrário",
       node: null,
-      description: "Canais em forma de flor na face superior.",
-      text: "Os canais ambulacrários formam um padrão radial que lembra uma flor, usado para locomoção e troca gasosa."
+      description: "Rede de canais usada para locomoção e respiração.",
+      text: "Os canais ambulacrários formam um desenho em forma de flor na face superior. Esse sistema hidráulico movimenta pequenos pés ambulacrários, ajudando o animal a se mover e realizar trocas gasosas."
     },
     {
       name: "Espinhos curtos",
       node: null,
-      description: "Usados para escavação e movimentação.",
-      text: "Diferente dos ouriços, a bolacha-de-praia possui espinhos pequenos que ajudam a se mover pelo sedimento."
+      description: "Auxiliam na escavação e movimentação na areia.",
+      text: "A bolacha-de-praia tem espinhos curtos e delicados, diferentes dos espinhos longos dos ouriços-do-mar. Eles funcionam como pequenas pás, empurrando a areia e permitindo que o animal se desloque lentamente."
     },
     {
       name: "Esqueleto calcário",
       node: null,
-      description: "Estrutura rígida visível após a morte.",
-      text: "Após a morte, o esqueleto branco e delicado da bolacha-de-praia é frequentemente encontrado nas praias, com aparência decorativa."
+      description: "Estrutura rígida visível após a morte do animal.",
+      text: "O esqueleto, chamado de 'testa', é formado por placas calcárias unidas, conferindo resistência e forma ao corpo. Após a morte, esse esqueleto branco é frequentemente encontrado nas praias e confundido com uma concha."
     }
   ],
   attribuition: `<div>
@@ -100,10 +101,11 @@ const Echinodermata_Echinoidea_SandDollar: IModelData = {
   licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
 </div>
 `,
-  wikipedia: "https://en.wikipedia.org/wiki/Sand_dollar",
+  wikipedia: "https://pt.wikipedia.org/wiki/Bolacha-da-praia",
   sceneBg: '#000',
   hasAnimation: false
 };
+
 
 export const ECHINODERMATA_MODELS: IModelData[] = [
   Echinodermata_Asteroidea_Starfish,

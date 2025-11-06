@@ -5,9 +5,9 @@ const Chondrichthyes_TigerShark: IModelData = {
   topic: "chordata_class_chondrichthyes_tiger_shark",
   source: "/tiger_shark.glb",
   name: "Tubarão-tigre",
-  title: "Tubarão-tigre (Chondrichthyes)",
-  description: "Peixe cartilaginoso da classe Chondrichthyes, conhecido por suas listras corporais e comportamento predador. Vive em mares tropicais e temperados.",
-  text: "O tubarão-tigre (*Galeocerdo cuvier*) é um peixe cartilaginoso da classe Chondrichthyes, pertencente à ordem Carcharhiniformes. Seu nome vem das listras escuras no corpo, semelhantes às de um tigre, especialmente visíveis em indivíduos jovens. Possui esqueleto de cartilagem, cinco fendas branquiais, nadadeiras bem desenvolvidas e dentes serrilhados adaptados para cortar carne e ossos. É um predador oportunista, alimentando-se de peixes, aves marinhas, tartarugas e até objetos não comestíveis. Habita águas tropicais e temperadas, sendo encontrado em regiões costeiras e oceânicas. Sua importância ecológica como predador de topo é fundamental para o equilíbrio dos ecossistemas marinhos.",
+  title: "Tubarão-tigre (Galeocerdo cuvier)",
+  description: "Peixe cartilaginoso da classe Chondrichthyes, conhecido pelas listras corporais e comportamento predador. Vive em mares tropicais e temperados de todo o mundo.",
+  text: "O tubarão-tigre (Galeocerdo cuvier) é um peixe cartilaginoso da classe Chondrichthyes, pertencente à ordem Carcharhiniformes. É um dos maiores predadores marinhos, podendo atingir mais de 5 metros de comprimento. Seu nome vem das listras escuras que lembram as de um tigre, especialmente evidentes nos jovens. Possui esqueleto composto por cartilagem, o que lhe confere leveza e agilidade. Alimenta-se de uma ampla variedade de presas — peixes, aves, tartarugas e até objetos não comestíveis —, sendo considerado um predador oportunista. Habita águas tropicais e temperadas, tanto em regiões costeiras quanto oceânicas. Ecologicamente, exerce papel fundamental como predador de topo, ajudando a equilibrar as populações marinhas.",
   scale: 0.4,
   scale_sm: 0.4,
   scale_md: 0.5,
@@ -20,25 +20,25 @@ const Chondrichthyes_TigerShark: IModelData = {
       name: "Esqueleto cartilaginoso",
       node: null,
       description: "Estrutura leve e flexível.",
-      text: "Ao contrário dos peixes ósseos, o tubarão-tigre possui esqueleto feito de cartilagem, o que proporciona maior agilidade e flutuação."
+      text: "Diferente dos peixes ósseos, o tubarão-tigre possui esqueleto formado por cartilagem, o que melhora sua flutuação e mobilidade."
     },
     {
       name: "Listras corporais",
       node: null,
       description: "Padrão escuro semelhante ao de um tigre.",
-      text: "As listras são mais visíveis em indivíduos jovens e ajudam na camuflagem em ambientes costeiros."
+      text: "As listras laterais servem para camuflagem em habitats costeiros e são mais visíveis em indivíduos jovens."
     },
     {
       name: "Dentes serrilhados",
       node: null,
       description: "Adaptados para cortar carne e ossos.",
-      text: "Seus dentes são afiados e curvos, permitindo rasgar presas com facilidade, inclusive tartarugas e mamíferos marinhos."
+      text: "Seus dentes curvos e serrilhados permitem rasgar carne e perfurar cascos de tartarugas, sendo constantemente substituídos ao longo da vida."
     },
     {
       name: "Predador de topo",
       node: null,
-      description: "Importante para o equilíbrio ecológico.",
-      text: "Como predador de topo, o tubarão-tigre regula populações de outras espécies e mantém a saúde dos ecossistemas marinhos."
+      description: "Essencial para o equilíbrio ecológico.",
+      text: "O tubarão-tigre regula populações de presas e evita o desequilíbrio das cadeias alimentares marinhas."
     }
   ],
   attribuition: `<div>
@@ -46,20 +46,20 @@ const Chondrichthyes_TigerShark: IModelData = {
   by <a href="https://sketchfab.com/majorgalah">Major (@majorgalah)</a> 
   on <a href="https://sketchfab.com">Sketchfab</a>, 
   licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
-</div>
-`,
-  wikipedia: "https://en.wikipedia.org/wiki/Tiger_shark",
+</div>`,
+  wikipedia: "https://pt.wikipedia.org/wiki/Tubar%C3%A3o-tigre",
   // sceneBg: '#0e1a1f',
   hasAnimation: true
 };
 
+
 const Chondrichthyes_CownoseRay: IModelData = {
   topic: "chordata_class_chondrichthyes_cownose_ray",
   source: "/cownose_ray.glb",
-  name: "Raia Cownose",
-  title: "Raia Cownose (Chondrichthyes)",
-  description: "Peixe cartilaginoso da classe Chondrichthyes, com corpo achatado e nadadeiras peitorais em forma de asas. Nada com movimentos ondulatórios graciosos.",
-  text: "A raia Cownose (*Rhinoptera bonasus*) é um peixe cartilaginoso da classe Chondrichthyes, pertencente à ordem Myliobatiformes. Possui corpo achatado em forma de losango e nadadeiras peitorais que se estendem como asas, permitindo um nado elegante e ondulatório. Seu nome vem do formato da cabeça, que lembra o focinho de uma vaca. Alimenta-se principalmente de moluscos e crustáceos, que tritura com placas dentárias. Vive em águas costeiras tropicais e subtropicais, muitas vezes formando grandes cardumes migratórios. Assim como outros condrictes, possui esqueleto de cartilagem e sistema sensorial especializado para detectar presas enterradas no fundo do mar.",
+  name: "Raia-cownose",
+  title: "Raia-cownose (Rhinoptera bonasus)",
+  description: "Peixe cartilaginoso da classe Chondrichthyes, com corpo achatado e nadadeiras em forma de asas. Nada com movimentos ondulatórios graciosos e é comum em águas costeiras tropicais.",
+  text: "A raia-cownose (Rhinoptera bonasus) é um peixe cartilaginoso da classe Chondrichthyes e ordem Myliobatiformes. Possui corpo achatado em forma de losango e amplas nadadeiras peitorais que se movem de forma ondulatória, lembrando o bater de asas de um pássaro. Seu nome deriva do formato da cabeça, que lembra o focinho de uma vaca. Alimenta-se de moluscos e crustáceos, triturando suas presas com placas dentárias resistentes. Vive em águas costeiras tropicais e subtropicais do Atlântico Ocidental, muitas vezes formando grandes cardumes migratórios. Assim como outros condrictes, possui esqueleto de cartilagem e sensores elétricos especializados para detectar presas enterradas no fundo do mar.",
   scale: 0.45,
   scale_sm: 0.45,
   scale_md: 0.45,
@@ -72,25 +72,25 @@ const Chondrichthyes_CownoseRay: IModelData = {
       name: "Corpo achatado",
       node: null,
       description: "Forma adaptada ao fundo marinho.",
-      text: "O corpo em forma de disco permite que a raia deslize sobre o fundo do mar com eficiência e discrição."
+      text: "O corpo em formato de disco permite que a raia deslize sobre o fundo marinho de maneira eficiente, reduzindo a resistência da água."
     },
     {
       name: "Nadadeiras em forma de asas",
       node: null,
-      description: "Movimento ondulatório para natação.",
-      text: "As nadadeiras peitorais se movem como asas de pássaro, permitindo um nado fluido e elegante."
+      description: "Movimento ondulatório característico.",
+      text: "As nadadeiras peitorais largas se movem como asas, possibilitando um nado fluido e gracioso, típico das raias."
     },
     {
       name: "Cabeça em formato de focinho de vaca",
       node: null,
-      description: "Característica que dá nome à espécie.",
-      text: "A forma arredondada e dividida da cabeça lembra o focinho de uma vaca, originando o nome 'Cownose'."
+      description: "Origem do nome 'Cownose'.",
+      text: "A forma arredondada e bipartida da cabeça lembra o focinho de uma vaca, característica marcante da espécie."
     },
     {
       name: "Alimentação por trituração",
       node: null,
-      description: "Placas dentárias para esmagar presas.",
-      text: "A raia Cownose se alimenta de moluscos e crustáceos, que são triturados por suas placas dentárias resistentes."
+      description: "Placas dentárias adaptadas.",
+      text: "Alimenta-se de moluscos e crustáceos, utilizando suas placas dentárias planas para quebrar conchas e carapaças."
     }
   ],
   attribuition: `<div>
@@ -98,20 +98,21 @@ const Chondrichthyes_CownoseRay: IModelData = {
   by <a href="https://sketchfab.com/kenchoo">kenchoo</a> 
   on <a href="https://sketchfab.com">Sketchfab</a>, 
   licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
-</div>
-`,
-  wikipedia: "https://en.wikipedia.org/wiki/Cownose_ray",
+</div>`,
+  wikipedia: "https://pt.wikipedia.org/wiki/Rhinoptera_bonasus",
   // sceneBg: '#0f1f1f',
   hasAnimation: true
 };
+
 
 const Osteichthyes_BarbelSteed: IModelData = {
   topic: "chordata_class_osteichthyes_barbel_steed",
   source: "/barbel_steed_h_barbus.glb",
   name: "Barbel Steed",
   title: "Barbel Steed (Osteichthyes)",
-  description: "Peixe ósseo de água doce da família Cyprinidae. Possui corpo alongado, nadadeiras bem desenvolvidas e escamas visíveis.",
-  text: "O Barbel Steed (*Hemibarbus barbus*) é um peixe ósseo da classe Osteichthyes, pertencente à ordem Cypriniformes e à família Cyprinidae. É encontrado em rios e lagos da Ásia, especialmente em regiões de correnteza moderada. Seu corpo é alongado, com escamas bem definidas e nadadeiras adaptadas à natação em águas doces. Como todos os peixes ósseos, possui esqueleto calcificado, opérculo cobrindo as brânquias e bexiga natatória para controle de flutuabilidade. Alimenta-se de pequenos invertebrados e matéria orgânica no fundo dos rios. É um excelente exemplo para ilustrar a diversidade dos peixes ósseos, que representam o maior grupo de vertebrados do planeta.",
+  description:
+    "Peixe ósseo de água doce da família Cyprinidae, com corpo alongado, escamas visíveis e nadadeiras bem desenvolvidas.",
+  text: "O Barbel Steed (Hemibarbus barbus) é um peixe ósseo da classe Osteichthyes, pertencente à ordem Cypriniformes e à família Cyprinidae. Vive em rios e lagos da Ásia, preferindo águas de correnteza moderada. Seu corpo é alongado e coberto por escamas bem definidas, com nadadeiras adaptadas à natação eficiente. Como todos os peixes ósseos, possui esqueleto calcificado, opérculo cobrindo as brânquias e bexiga natatória que auxilia no controle de flutuabilidade. Alimenta-se de pequenos invertebrados e matéria orgânica no fundo dos rios. É um excelente exemplo da diversidade dos Osteíctes, grupo que representa a maioria dos vertebrados conhecidos.",
   scale: 17,
   scale_sm: 17,
   scale_md: 18,
@@ -124,25 +125,25 @@ const Osteichthyes_BarbelSteed: IModelData = {
       name: "Esqueleto ósseo",
       node: null,
       description: "Estrutura rígida e calcificada.",
-      text: "Diferente dos peixes cartilaginosos, o Barbel Steed possui esqueleto formado por ossos, conferindo maior suporte e proteção."
+      text: "Diferente dos peixes cartilaginosos, o Barbel Steed possui esqueleto formado por ossos, o que garante maior resistência e suporte corporal."
     },
     {
       name: "Opérculo branquial",
       node: null,
-      description: "Protege as brânquias e facilita a respiração.",
-      text: "O opérculo é uma estrutura móvel que cobre as brânquias, permitindo a ventilação mesmo com o peixe parado."
+      description: "Protege as brânquias e auxilia na respiração.",
+      text: "O opérculo é uma estrutura móvel que cobre as brânquias, permitindo ao peixe respirar mesmo quando está parado."
     },
     {
       name: "Bexiga natatória",
       node: null,
-      description: "Controle de flutuabilidade.",
-      text: "A bexiga natatória permite ao peixe ajustar sua posição na coluna d'água sem gastar energia nadando constantemente."
+      description: "Órgão responsável pela flutuabilidade.",
+      text: "A bexiga natatória permite ajustar a posição do peixe na coluna d’água sem esforço constante de natação."
     },
     {
       name: "Habitat de água doce",
       node: null,
-      description: "Vive em rios e lagos asiáticos.",
-      text: "O Barbel Steed prefere águas doces com correnteza moderada, onde se alimenta de pequenos organismos bentônicos."
+      description: "Ambiente típico dos rios asiáticos.",
+      text: "O Barbel Steed vive em águas doces e limpas, geralmente com correnteza moderada, onde busca alimento no fundo dos rios."
     }
   ],
   attribuition: `<div>
@@ -150,20 +151,21 @@ const Osteichthyes_BarbelSteed: IModelData = {
   by <a href="https://sketchfab.com/ffishAsia-and-floraZia">ffish.asia / floraZia.com</a> 
   on <a href="https://sketchfab.com">Sketchfab</a>, 
   licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain</a>
-</div>
-`,
+</div>`,
   wikipedia: "https://en.wikipedia.org/wiki/Hemibarbus_barbus",
-  sceneBg: '#5A6E7F',
+  sceneBg: "#5A6E7F",
   hasAnimation: true
 };
+
 
 const Amphibia_Urodela_CynopsPyrrhogaster: IModelData = {
   topic: "chordata_class_amphibia_urodela_cynops_pyrrhogaster",
   source: "/salamandra.glb",
   name: "Salamandra-de-barriga-de-fogo",
   title: "Salamandra-de-barriga-de-fogo (Urodela)",
-  description: "Anfíbio da ordem Caudata, com corpo alongado, cauda persistente e pele úmida. Espécie nativa do Japão, conhecida pela coloração ventral avermelhada.",
-  text: "A salamandra-de-barriga-de-fogo japonesa (*Cynops pyrrhogaster*) é um anfíbio da ordem Caudata (Urodela), pertencente à família Salamandridae. Diferente dos anuros, mantém a cauda durante toda a vida. Possui corpo alongado, pele úmida e lisa, e coloração ventral avermelhada que serve como aviso de toxicidade para predadores. Vive em ambientes aquáticos e terrestres, alternando entre rios, lagoas e áreas úmidas. Alimenta-se de pequenos invertebrados aquáticos e terrestres. Como outros anfíbios, apresenta respiração cutânea e pulmonar, além de passar por metamorfose durante o desenvolvimento. É um exemplo marcante da diversidade dos anfíbios e da adaptação a ambientes úmidos.",
+  description:
+    "Anfíbio da ordem Caudata, com corpo alongado, cauda persistente e pele úmida. Espécie nativa do Japão, conhecida pela coloração ventral avermelhada.",
+  text: "A salamandra-de-barriga-de-fogo japonesa (Cynops pyrrhogaster) é um anfíbio da ordem Caudata (Urodela), pertencente à família Salamandridae. Diferente dos anuros, mantém a cauda durante toda a vida. Possui corpo alongado, pele lisa e úmida, e coloração ventral avermelhada que serve como aviso de toxicidade para predadores. Vive em ambientes aquáticos e terrestres, alternando entre rios, lagoas e regiões úmidas. Alimenta-se de pequenos invertebrados aquáticos e terrestres. Como outros anfíbios, apresenta respiração cutânea e pulmonar, além de passar por metamorfose durante o desenvolvimento. É um excelente exemplo da diversidade e das adaptações dos anfíbios a ambientes úmidos.",
   scale: 0.7,
   scale_sm: 0.7,
   scale_md: 0.8,
@@ -176,25 +178,25 @@ const Amphibia_Urodela_CynopsPyrrhogaster: IModelData = {
       name: "Cauda persistente",
       node: null,
       description: "Mantida durante toda a vida.",
-      text: "Ao contrário dos anuros, as salamandras mantêm a cauda mesmo na fase adulta, característica da ordem Caudata."
+      text: "Ao contrário dos anuros (sapos e rãs), as salamandras mantêm a cauda mesmo na fase adulta — característica típica da ordem Caudata."
     },
     {
       name: "Coloração de aviso",
       node: null,
       description: "Barriga vermelha indica toxicidade.",
-      text: "A coloração ventral brilhante funciona como aposematismo, alertando predadores sobre sua toxicidade."
+      text: "A coloração ventral brilhante serve como um aviso (aposematismo), indicando a presença de toxinas que afastam predadores."
     },
     {
       name: "Respiração cutânea",
       node: null,
       description: "Trocas gasosas pela pele úmida.",
-      text: "Além dos pulmões, a salamandra realiza respiração cutânea, o que exige pele sempre úmida."
+      text: "A salamandra respira tanto pelos pulmões quanto pela pele úmida e permeável, essencial para trocas gasosas eficientes."
     },
     {
       name: "Metamorfose",
       node: null,
       description: "Transformação do girino em adulto.",
-      text: "Assim como outros anfíbios, passa por metamorfose, iniciando como larva aquática com brânquias e tornando-se adulto com pulmões."
+      text: "Como outros anfíbios, passa por metamorfose: inicia como larva aquática com brânquias e transforma-se em adulto com pulmões."
     }
   ],
   attribuition: `<div>
@@ -202,21 +204,22 @@ const Amphibia_Urodela_CynopsPyrrhogaster: IModelData = {
   by <a href="https://sketchfab.com/ffishAsia-and-floraZia">ffish.asia / floraZia.com</a> 
   on <a href="https://sketchfab.com">Sketchfab</a>, 
   licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain</a>
-</div>
-`,
+</div>`,
   wikipedia: "https://en.wikipedia.org/wiki/Cynops_pyrrhogaster",
   // sceneBg: '#1a1f1a',
   hasAnimation: true
 };
 
+
 const Amphibia_Anura_RhacophorusSchlegelii: IModelData = {
   topic: "chordata_class_amphibia_anura_rhacophorus_schlegelii",
   source: "/frog.glb",
-  sound: '/sounds/frog-sound-210348.mp3',
+  sound: "/sounds/frog-sound-210348.mp3",
   name: "Perereca-de-Schlegel",
-  title: "Schlegel’s Green Tree Frog (Anura)",
-  description: "Anuro da família Rhacophoridae, conhecido como Schlegel’s green tree frog. Vive em árvores e possui coloração verde adaptativa.",
-  text: "O *Rhacophorus schlegelii*, conhecido como Schlegel’s green tree frog, é um anfíbio da ordem Anura e da família Rhacophoridae. É nativo do Japão e habita áreas florestais úmidas, vivendo principalmente em árvores e arbustos. Possui corpo esguio, coloração verde que auxilia na camuflagem e discos adesivos nos dedos, que permitem escalar superfícies. Como outros anuros, apresenta metamorfose, passando de girino aquático a adulto terrestre. Durante a reprodução, constrói ninhos de espuma em folhas sobre a água, onde os ovos se desenvolvem até que os girinos caiam no ambiente aquático. É um exemplo marcante da adaptação dos anuros à vida arborícola.",
+  title: "Perereca-de-Schlegel (Anura)",
+  description:
+    "Anuro arborícola da família Rhacophoridae, conhecido pela coloração verde adaptativa e pelos discos adesivos que auxiliam na escalada.",
+  text: "A perereca-de-Schlegel (Rhacophorus schlegelii), conhecida internacionalmente como Schlegel’s green tree frog, é um anfíbio da ordem Anura e da família Rhacophoridae. Nativa do Japão, habita áreas florestais úmidas, vivendo principalmente em árvores e arbustos. Possui corpo esguio, coloração verde brilhante que favorece a camuflagem e discos adesivos nos dedos que permitem escalar superfícies lisas. Durante a reprodução, o casal constrói ninhos de espuma em folhas sobre a água, onde os ovos se desenvolvem até que os girinos caiam no ambiente aquático. Como outros anuros, apresenta metamorfose, passando de girino aquático a adulto terrestre. É um exemplo notável da adaptação dos anuros à vida arborícola.",
   scale: 1.3,
   scale_sm: 1.7,
   scale_md: 1.8,
@@ -229,25 +232,25 @@ const Amphibia_Anura_RhacophorusSchlegelii: IModelData = {
       name: "Discos adesivos",
       node: null,
       description: "Auxiliam na escalada de superfícies.",
-      text: "Os discos adesivos nos dedos permitem que a perereca suba em folhas, galhos e até superfícies lisas."
+      text: "Os discos adesivos presentes nos dedos permitem que a perereca escale folhas, galhos e até superfícies lisas, característica essencial para sua vida arborícola."
     },
     {
       name: "Coloração verde",
       node: null,
       description: "Camuflagem em ambientes florestais.",
-      text: "A coloração verde brilhante ajuda a se esconder entre folhas e vegetação densa."
+      text: "A coloração verde vibrante ajuda a perereca a se camuflar entre a vegetação, protegendo-a de predadores."
     },
     {
       name: "Ninhos de espuma",
       node: null,
       description: "Estratégia reprodutiva única.",
-      text: "Durante a reprodução, o casal constrói ninhos de espuma em folhas sobre a água, protegendo os ovos até a eclosão."
+      text: "Durante a reprodução, o casal constrói ninhos de espuma em folhas sobre a água. Os ovos ficam protegidos até que os girinos eclodam e caiam no ambiente aquático."
     },
     {
       name: "Metamorfose",
       node: null,
-      description: "Transformação de girino em adulto.",
-      text: "Assim como outros anuros, passa por metamorfose, iniciando como girino aquático e tornando-se adulto com pulmões e pernas."
+      description: "Transformação do girino em adulto.",
+      text: "Assim como outros anuros, a perereca passa por metamorfose, iniciando como girino aquático com brânquias e transformando-se em adulto com pulmões e pernas adaptadas ao salto."
     }
   ],
   attribuition: `<div>
@@ -255,20 +258,21 @@ const Amphibia_Anura_RhacophorusSchlegelii: IModelData = {
   by <a href="https://sketchfab.com/ffishAsia-and-floraZia">ffish.asia / floraZia.com</a> 
   on <a href="https://sketchfab.com">Sketchfab</a>, 
   licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain</a>
-</div>
-`,
-  wikipedia: "https://en.wikipedia.org/wiki/Rhacophorus_schlegelii",
-  sceneBg: '#000',
+</div>`,
+  wikipedia: "https://pt.wikipedia.org/wiki/Rhacophorus_schlegelii",
+  sceneBg: "#000",
   hasAnimation: true
 };
+
 
 const Reptilia_Chelonia_Loggerhead: IModelData = {
   topic: "chordata_class_reptilia_chelonia_loggerhead",
   source: "/loggerhead_turtle.glb",
   name: "Tartaruga-cabeçuda",
-  title: "Loggerhead sea turtle (Chelonia)",
-  description: "Réptil marinho da ordem Chelonia, conhecido por sua cabeça grande e forte mandíbula. Espécie migratória encontrada em oceanos tropicais e temperados.",
-  text: "A tartaruga-cabeçuda (*Caretta caretta*) é um réptil marinho da ordem Chelonia (ou Testudines). É facilmente reconhecida pela cabeça grande e mandíbulas poderosas, adaptadas para esmagar crustáceos e moluscos. Possui carapaça rígida e nadadeiras adaptadas para a natação oceânica. É uma espécie migratória, percorrendo longas distâncias entre áreas de alimentação e praias de desova. Como outros quelônios, apresenta respiração pulmonar e precisa emergir à superfície para respirar. Está classificada como vulnerável devido à perda de habitat, captura acidental em redes de pesca e poluição marinha. É um símbolo da conservação dos oceanos e da importância da proteção dos répteis marinhos.",
+  title: "Tartaruga-cabeçuda (Chelonia)",
+  description:
+    "Réptil marinho da ordem Chelonia, reconhecido pela cabeça grande e mandíbula poderosa. Espécie migratória que habita oceanos tropicais e temperados.",
+  text: "A tartaruga-cabeçuda (Caretta caretta) é um réptil marinho da ordem Chelonia (ou Testudines), amplamente distribuído pelos oceanos tropicais e temperados. É facilmente identificada pela cabeça grande e mandíbulas robustas, adaptadas para esmagar crustáceos e moluscos. Possui carapaça óssea e nadadeiras em forma de remo, que permitem natação eficiente em longas distâncias. Realiza migrações transoceânicas entre áreas de alimentação e praias de desova, retornando muitas vezes ao local de nascimento. Como todos os quelônios, respira por pulmões e precisa subir à superfície para respirar. Está classificada como espécie vulnerável devido à perda de habitat, poluição e captura acidental em redes de pesca, sendo um importante símbolo da conservação marinha.",
   scale: 3.5,
   scale_sm: 4,
   scale_md: 4.5,
@@ -281,25 +285,25 @@ const Reptilia_Chelonia_Loggerhead: IModelData = {
       name: "Cabeça grande",
       node: null,
       description: "Característica marcante da espécie.",
-      text: "A cabeça robusta abriga mandíbulas fortes, usadas para esmagar crustáceos e moluscos."
+      text: "A cabeça robusta abriga mandíbulas poderosas, usadas para esmagar crustáceos e moluscos, sua principal fonte de alimento."
     },
     {
       name: "Carapaça rígida",
       node: null,
       description: "Proteção contra predadores.",
-      text: "A carapaça óssea e resistente protege os órgãos internos e ajuda na hidrodinâmica durante a natação."
+      text: "A carapaça óssea e resistente protege os órgãos internos e contribui para a hidrodinâmica durante o nado."
     },
     {
       name: "Nadadeiras adaptadas",
       node: null,
       description: "Permitem longas migrações oceânicas.",
-      text: "As nadadeiras em forma de remo são adaptadas para natação eficiente em mar aberto."
+      text: "As nadadeiras anteriores funcionam como remos, impulsionando a tartaruga através de vastas distâncias marítimas."
     },
     {
       name: "Espécie migratória",
       node: null,
       description: "Percorre grandes distâncias.",
-      text: "A tartaruga-cabeçuda realiza migrações transoceânicas entre áreas de alimentação e praias de desova."
+      text: "A tartaruga-cabeçuda realiza migrações transoceânicas entre áreas de alimentação e praias de desova, demonstrando notável orientação geográfica."
     }
   ],
   attribuition: `<div>
@@ -307,12 +311,12 @@ const Reptilia_Chelonia_Loggerhead: IModelData = {
   by <a href="https://sketchfab.com/ra_in_coat">Ra_in_coat</a> 
   on <a href="https://sketchfab.com">Sketchfab</a>, 
   licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
-</div>
-`,
-  wikipedia: "https://en.wikipedia.org/wiki/Loggerhead_sea_turtle",
-  // sceneBg: '#0e1f1f',
+</div>`,
+  wikipedia: "https://pt.wikipedia.org/wiki/Caretta_caretta",
+  // sceneBg: "#0e1f1f",
   hasAnimation: true
 };
+
 
 const Reptilia_Squamata_Lizard: IModelData = {
   topic: "chordata_class_reptilia_squamata_lizard",
@@ -321,7 +325,7 @@ const Reptilia_Squamata_Lizard: IModelData = {
   name: "Lagarto",
   title: "Lagarto (Squamata)",
   description: "Réptil da ordem Squamata, com corpo alongado, quatro patas bem desenvolvidas e cauda longa. Representa um modelo genérico de lagarto.",
-  text: "Os lagartos são répteis da ordem Squamata, grupo que também inclui as serpentes. Possuem corpo alongado, quatro membros bem desenvolvidos e uma cauda geralmente longa. Sua pele é recoberta por escamas queratinizadas, que ajudam a reduzir a perda de água e oferecem proteção. A maioria das espécies é terrestre, mas há lagartos arborícolas, aquáticos e até escavadores. Muitas espécies apresentam autotomia caudal, ou seja, a capacidade de soltar a cauda para escapar de predadores. São animais ectotérmicos, regulando a temperatura corporal por meio de fontes externas de calor, como o sol. Alimentam-se de insetos, pequenos vertebrados, frutas e vegetais, dependendo da espécie. Representam um grupo diverso e adaptável de répteis, distribuídos em quase todos os continentes.",
+  text: "Os lagartos são répteis da ordem Squamata, grupo que também inclui as serpentes. Possuem corpo alongado, quatro membros bem desenvolvidos e cauda geralmente longa. A pele é recoberta por escamas queratinizadas que reduzem a perda de água e oferecem proteção. A maioria das espécies é terrestre, mas há lagartos arborícolas, aquáticos e escavadores. Muitas espécies apresentam autotomia caudal, ou seja, a capacidade de soltar a cauda para escapar de predadores. São ectotérmicos, regulando a temperatura corporal por meio de fontes externas de calor. Alimentam-se de insetos, pequenos vertebrados, frutas e vegetais, dependendo da espécie. Representam um grupo diverso e adaptável, distribuído em quase todos os continentes.",
   scale: 0.005,
   scale_sm: 0.006,
   scale_md: 0.006,
@@ -334,7 +338,7 @@ const Reptilia_Squamata_Lizard: IModelData = {
       name: "Escamas",
       node: null,
       description: "Revestimento protetor do corpo.",
-      text: "A pele dos lagartos é recoberta por escamas de queratina, que reduzem a perda de água e oferecem proteção contra o ambiente."
+      text: "As escamas de queratina reduzem a perda de água e protegem contra agressões do ambiente."
     },
     {
       name: "Cauda longa",
@@ -346,13 +350,13 @@ const Reptilia_Squamata_Lizard: IModelData = {
       name: "Ectotermia",
       node: null,
       description: "Dependência de fontes externas de calor.",
-      text: "Como répteis, os lagartos regulam sua temperatura corporal por meio do ambiente, buscando sol ou sombra conforme necessário."
+      text: "Regulam a temperatura corporal buscando sol ou sombra conforme necessário."
     },
     {
       name: "Diversidade de habitats",
       node: null,
       description: "Vivem em diferentes ambientes.",
-      text: "Existem lagartos terrestres, arborícolas, aquáticos e até escavadores, mostrando grande capacidade de adaptação."
+      text: "Existem lagartos terrestres, arborícolas, aquáticos e escavadores, mostrando grande capacidade de adaptação."
     }
   ],
   attribuition: `<div>
@@ -360,13 +364,13 @@ const Reptilia_Squamata_Lizard: IModelData = {
   by <a href="https://sketchfab.com/Froggreen">Froggreen</a> 
   on <a href="https://sketchfab.com">Sketchfab</a>, 
   licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
-</div>
-`,
-  wikipedia: "https://en.wikipedia.org/wiki/Lizard",
+</div>`,
+  wikipedia: "https://pt.wikipedia.org/wiki/Lagartos",
   // sceneBg: '#1f1a1a',
   hasAnimation: true,
   animation: "Armature|WALK.002"
 };
+
 
 const Reptilia_Squamata_Snake: IModelData = {
   topic: "chordata_class_reptilia_squamata_snake",
@@ -394,13 +398,13 @@ const Reptilia_Squamata_Snake: IModelData = {
       name: "Mandíbula flexível",
       node: null,
       description: "Permite engolir presas grandes.",
-      text: "A mandíbula das serpentes não é fundida, o que possibilita abrir a boca em grande amplitude."
+      text: "A mandíbula das serpentes não é fundida, permitindo abrir a boca em grande amplitude."
     },
     {
       name: "Escamas",
       node: null,
       description: "Revestimento protetor do corpo.",
-      text: "As escamas queratinizadas protegem o corpo e ajudam na locomoção, reduzindo o atrito com o solo."
+      text: "As escamas queratinizadas protegem o corpo e auxiliam na locomoção, reduzindo o atrito com o solo."
     },
     {
       name: "Diversidade ecológica",
@@ -414,12 +418,12 @@ const Reptilia_Squamata_Snake: IModelData = {
   by <a href="https://sketchfab.com/yaman.serhan">yaman.serhan</a> 
   on <a href="https://sketchfab.com">Sketchfab</a>, 
   licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
-</div>
-`,
-  wikipedia: "https://en.wikipedia.org/wiki/Snake",
+</div>`,
+  wikipedia: "https://pt.wikipedia.org/wiki/Serpentes",
   sceneBg: '#C2B79B',
   hasAnimation: true
 };
+
 
 const Reptilia_Crocodylia_Crocodile: IModelData = {
   topic: "chordata_class_reptilia_crocodylia_crocodile",
@@ -468,51 +472,6 @@ const Reptilia_Crocodylia_Crocodile: IModelData = {
   hasAnimation: true
 };
 
-// const Aves_Accipitriformes_BaldEagle: IModelData = {
-//   topic: "chordata_class_aves_accipitriformes_bald_eagle",
-//   source: "/animated_eagle.glb",
-//   name: "Águia-careca",
-//   title: "Águia-careca americana (Aves)",
-//   description: "Ave de rapina da família Accipitridae, símbolo dos Estados Unidos. Reconhecida pela cabeça e cauda brancas contrastando com o corpo escuro.",
-//   text: "A águia-careca (*Haliaeetus leucocephalus*) é uma ave de rapina da ordem Accipitriformes e da família Accipitridae. É facilmente identificada pela plumagem: corpo marrom-escuro, cabeça e cauda brancas, além do bico e olhos amarelos. Vive próxima a rios, lagos e zonas costeiras da América do Norte, alimentando-se principalmente de peixes, que captura com suas garras afiadas. Também pode caçar aves aquáticas e pequenos mamíferos. É uma espécie monogâmica, construindo grandes ninhos em árvores altas, que podem ser reutilizados por vários anos. Foi ameaçada de extinção no século XX devido à caça e ao uso de pesticidas, mas programas de conservação permitiram sua recuperação. Hoje é considerada símbolo de força e liberdade.",
-//   scale: 0.2,
-//   scale_sm: 0.9,
-//   scale_md: 0.9,
-//   scale_lg: 0.9,
-//   scale_2lg: 0.9,
-//   rotation: [0, 0, 0],
-//   position: [0, 0, -6],
-//   node: [
-//     {
-//       name: "Cabeça e cauda brancas",
-//       node: null,
-//       description: "Plumagem característica da espécie.",
-//       text: "A cabeça e a cauda brancas contrastam com o corpo escuro, tornando a águia-careca inconfundível."
-//     },
-//     {
-//       name: "Bico e olhos amarelos",
-//       node: null,
-//       description: "Adaptação para caça.",
-//       text: "O bico curvo e forte, junto com a visão aguçada, permitem capturar e rasgar presas com eficiência."
-//     },
-//     {
-//       name: "Alimentação piscívora",
-//       node: null,
-//       description: "Especialista em capturar peixes.",
-//       text: "A águia-careca mergulha em alta velocidade para capturar peixes com suas garras afiadas."
-//     },
-//     {
-//       name: "Símbolo cultural",
-//       node: null,
-//       description: "Ave nacional dos EUA.",
-//       text: "Além de sua importância ecológica, é um ícone cultural e símbolo de liberdade nos Estados Unidos."
-//     }
-//   ],
-//   attribuition: "Modelo genérico por Sketchfab Creator",
-//   wikipedia: "https://en.wikipedia.org/wiki/Bald_eagle",
-//   // sceneBg: '#1a1f2a',
-//   hasAnimation: true
-// };
 
 export const Aves_Accipitriformes_RedTailedHawk: IModelData = {
   topic: "chordata_class_aves_accipitriformes_red_tailed_hawk",
@@ -521,7 +480,7 @@ export const Aves_Accipitriformes_RedTailedHawk: IModelData = {
   name: "Gavião-de-cauda-vermelha",
   title: "Gavião-de-cauda-vermelha (Aves)",
   description: "Ave de rapina da família Accipitridae, amplamente distribuída na América do Norte. Reconhecida pela cauda de coloração avermelhada e voo planado característico.",
-  text: "O gavião-de-cauda-vermelha (*Buteo jamaicensis*) é uma das aves de rapina mais comuns da América do Norte. Possui corpo robusto, asas largas e cauda curta de coloração avermelhada, especialmente visível nos adultos. Alimenta-se de pequenos mamíferos, aves e répteis, caçando a partir de poleiros elevados ou em voo planado. É uma espécie altamente adaptável, encontrada em áreas abertas, campos agrícolas, desertos e até regiões urbanas. Seu grito característico é frequentemente usado em filmes para representar aves de rapina em geral.",
+  text: "O gavião-de-cauda-vermelha (Buteo jamaicensis) é uma das aves de rapina mais comuns da América do Norte. Possui corpo robusto, asas largas e cauda curta de coloração avermelhada, especialmente visível nos adultos. Alimenta-se de pequenos mamíferos, aves e répteis, caçando a partir de poleiros elevados ou em voo planado. É uma espécie altamente adaptável, encontrada em áreas abertas, campos agrícolas, desertos e até regiões urbanas. Seu grito característico é frequentemente usado em filmes para representar aves de rapina em geral.",
   scale: 1,
   scale_sm: 1.5,
   scale_md: 1.5,
@@ -560,11 +519,11 @@ export const Aves_Accipitriformes_RedTailedHawk: IModelData = {
   by <a href="https://sketchfab.com/osuecampus">Oregon State University | Ecampus</a> 
   on <a href="https://sketchfab.com">Sketchfab</a>, 
   licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
-</div>
-`,
-  wikipedia: "https://en.wikipedia.org/wiki/Red-tailed_hawk",
+</div>`,
+  wikipedia: "https://pt.wikipedia.org/wiki/Buteo_jamaicensis",
   hasAnimation: true
 };
+
 
 const Aves_Struthioniformes_Ostrich: IModelData = {
   topic: "chordata_class_aves_struthioniformes_ostrich",
@@ -572,7 +531,7 @@ const Aves_Struthioniformes_Ostrich: IModelData = {
   name: "Avestruz-africano",
   title: "Avestruz-africano (Aves)",
   description: "Maior ave viva, incapaz de voar, adaptada à corrida em savanas africanas. Possui pernas longas e fortes, olhos grandes e penas macias.",
-  text: "O avestruz-africano (*Struthio camelus*) é a maior ave existente, podendo atingir até 2,7 metros de altura e pesar mais de 150 kg. Pertence à ordem Struthioniformes, grupo de aves ratitas (não voadoras). Seu corpo robusto, pernas longas e musculosas e pés com dois dedos são adaptações para a corrida, alcançando velocidades de até 70 km/h. Possui olhos grandes, que garantem excelente visão em campo aberto. Alimenta-se de sementes, folhas, frutos e pequenos invertebrados. Os machos apresentam plumagem preta e branca, enquanto as fêmeas são mais acastanhadas. Seus ovos são os maiores do reino animal, chegando a pesar 1,5 kg. O avestruz é um exemplo marcante da diversidade das aves e de suas adaptações a ambientes terrestres.",
+  text: "O avestruz-africano (Struthio camelus) é a maior ave existente, podendo atingir até 2,7 metros de altura e pesar mais de 150 kg. Pertence à ordem Struthioniformes, grupo de aves ratitas (não voadoras). Seu corpo robusto, pernas longas e musculosas e pés com dois dedos são adaptações para a corrida, alcançando velocidades de até 70 km/h. Possui olhos grandes, que garantem excelente visão em campo aberto. Alimenta-se de sementes, folhas, frutos e pequenos invertebrados. Os machos apresentam plumagem preta e branca, enquanto as fêmeas são mais acastanhadas. Seus ovos são os maiores do reino animal, chegando a pesar 1,5 kg. O avestruz é um exemplo marcante da diversidade das aves e de suas adaptações a ambientes terrestres.",
   scale: 0.7,
   scale_sm: 0.7,
   scale_md: 0.7,
@@ -611,12 +570,11 @@ const Aves_Struthioniformes_Ostrich: IModelData = {
   by <a href="https://sketchfab.com/andrey.">Andrey</a> 
   on <a href="https://sketchfab.com">Sketchfab</a>, 
   licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
-</div>
-`,
-  wikipedia: "https://en.wikipedia.org/wiki/Ostrich",
-  // sceneBg: '#2a1f1a',
+</div>`,
+  wikipedia: "https://pt.wikipedia.org/wiki/Struthio_camelus",
   hasAnimation: true
 };
+
 
 const Aves_Passeriformes_EasternBluebird: IModelData = {
   topic: "chordata_class_aves_passeriformes_eastern_bluebird",
@@ -625,7 +583,7 @@ const Aves_Passeriformes_EasternBluebird: IModelData = {
   name: "Eastern Bluebird",
   title: "Eastern Bluebird (Aves)",
   description: "Pequena ave canora da América do Norte, com plumagem azul brilhante e peito alaranjado. Habita áreas abertas e campos arborizados.",
-  text: "O Eastern Bluebird (*Sialia sialis*) é uma ave passeriforme da família Turdidae, encontrada em grande parte da América do Norte. É facilmente reconhecida pela plumagem azul intensa no dorso e asas, contrastando com o peito alaranjado e a barriga branca. Vive em áreas abertas, campos, pomares e bordas de florestas, onde se alimenta de insetos, minhocas e frutos. É uma espécie migratória em algumas regiões, mas residente em outras. Conhecida por seu canto melodioso, é considerada um símbolo de felicidade e esperança em várias culturas. Nidifica em cavidades naturais ou em caixas-ninho, sendo beneficiada por programas de conservação que instalaram abrigos artificiais para a espécie.",
+  text: "O Eastern Bluebird (Sialia sialis) é uma ave passeriforme da família Turdidae, encontrada em grande parte da América do Norte. É facilmente reconhecida pela plumagem azul intensa no dorso e asas, contrastando com o peito alaranjado e a barriga branca. Vive em áreas abertas, campos, pomares e bordas de florestas, onde se alimenta de insetos, minhocas e frutos. É uma espécie migratória em algumas regiões, mas residente em outras. Conhecida por seu canto melodioso, é considerada um símbolo de felicidade e esperança em várias culturas. Nidifica em cavidades naturais ou em caixas-ninho, sendo beneficiada por programas de conservação que instalaram abrigos artificiais para a espécie.",
   scale: 0.12,
   scale_sm: 0.13,
   scale_md: 0.14,
@@ -664,12 +622,11 @@ const Aves_Passeriformes_EasternBluebird: IModelData = {
   by <a href="https://sketchfab.com/kenchoo">kenchoo</a> 
   on <a href="https://sketchfab.com">Sketchfab</a>, 
   licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
-</div>
-`,
-  wikipedia: "https://en.wikipedia.org/wiki/Eastern_bluebird",
-  // sceneBg: '#1a2a3a',
+</div>`,
+  wikipedia: "https://pt.wikipedia.org/wiki/Sialia_sialis",
   hasAnimation: true
 };
+
 
 const Mammalia_Chiroptera_Bat: IModelData = {
   topic: "chordata_class_mammalia_chiroptera_bat",
@@ -717,12 +674,12 @@ const Mammalia_Chiroptera_Bat: IModelData = {
   by <a href="https://sketchfab.com/theice9">ice9</a> 
   on <a href="https://sketchfab.com">Sketchfab</a>, 
   licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
-</div>
-`,
-  wikipedia: "https://en.wikipedia.org/wiki/Bat",
+</div>`,
+  wikipedia: "https://pt.wikipedia.org/wiki/Morcego",
   // sceneBg: '#1a1a2a',
   hasAnimation: true
 };
+
 
 const Mammalia_Artiodactyla_Giraffe: IModelData = {
   topic: "chordata_class_mammalia_artiodactyla_giraffe",
@@ -730,7 +687,7 @@ const Mammalia_Artiodactyla_Giraffe: IModelData = {
   name: "Girafa",
   title: "Girafa (Mammalia)",
   description: "O mamífero terrestre mais alto do mundo, com pescoço longo e pernas compridas, adaptado para alcançar folhas no topo das árvores.",
-  text: "A girafa (*Giraffa camelopardalis*) é um mamífero da ordem Artiodactyla, nativo das savanas africanas. É o animal terrestre mais alto do planeta, podendo ultrapassar 5,5 metros de altura. Seu pescoço longo, apesar de ter o mesmo número de vértebras cervicais que outros mamíferos (sete), é altamente alongado, permitindo alcançar folhas de acácias e outras árvores altas. Possui língua preênsil de até 45 cm, usada para segurar galhos espinhosos. As pernas longas e fortes permitem correr a velocidades de até 60 km/h. Vivem em grupos sociais e desempenham papel ecológico importante na dispersão de sementes. São símbolos da fauna africana e frequentemente estudadas como exemplo de adaptação evolutiva.",
+  text: "A girafa (Giraffa camelopardalis) é um mamífero da ordem Artiodactyla, nativo das savanas africanas. É o animal terrestre mais alto do planeta, podendo ultrapassar 5,5 metros de altura. Seu pescoço longo, apesar de ter o mesmo número de vértebras cervicais que outros mamíferos (sete), é altamente alongado, permitindo alcançar folhas de acácias e outras árvores altas. Possui língua preênsil de até 45 cm, usada para segurar galhos espinhosos. As pernas longas e fortes permitem correr a velocidades de até 60 km/h. Vivem em grupos sociais e desempenham papel ecológico importante na dispersão de sementes. São símbolos da fauna africana e frequentemente estudadas como exemplo de adaptação evolutiva.",
   scale: 0.9,
   scale_sm: 1,
   scale_md: 1,
@@ -769,12 +726,12 @@ const Mammalia_Artiodactyla_Giraffe: IModelData = {
   by <a href="https://sketchfab.com/Amx360">Amx360</a> 
   on <a href="https://sketchfab.com">Sketchfab</a>, 
   licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
-</div>
-`,
+</div>`,
   wikipedia: "https://en.wikipedia.org/wiki/Giraffe",
   // sceneBg: '#2a1f1a',
   hasAnimation: true
 };
+
 
 const Mammalia_Carnivora_Lion: IModelData = {
   topic: "chordata_class_mammalia_carnivora_lion",
@@ -783,7 +740,7 @@ const Mammalia_Carnivora_Lion: IModelData = {
   name: "Leão",
   title: "Leão (Mammalia)",
   description: "Grande felino da família Felidae, conhecido como 'rei da selva'. Vive em grupos sociais chamados alcateias ou 'prides'.",
-  text: "O leão (*Panthera leo*) é um mamífero carnívoro da ordem Carnivora e da família Felidae. É o único felino verdadeiramente social, vivendo em grupos chamados 'prides', compostos por fêmeas aparentadas, seus filhotes e um ou poucos machos dominantes. Os machos são facilmente reconhecidos pela juba, que varia em cor e tamanho e serve como sinal de maturidade e força. As fêmeas são as principais caçadoras, trabalhando em grupo para capturar presas como zebras, gnus e búfalos. O leão é considerado um predador de topo e desempenha papel fundamental no equilíbrio ecológico das savanas africanas. Apesar de sua fama de força, a espécie enfrenta ameaças como perda de habitat e caça ilegal.",
+  text: "O leão (Panthera leo) é um mamífero carnívoro da ordem Carnivora e da família Felidae. É o único felino verdadeiramente social, vivendo em grupos chamados 'prides', compostos por fêmeas aparentadas, seus filhotes e um ou poucos machos dominantes. Os machos são facilmente reconhecidos pela juba, que varia em cor e tamanho e serve como sinal de maturidade e força. As fêmeas são as principais caçadoras, trabalhando em grupo para capturar presas como zebras, gnus e búfalos. O leão é considerado um predador de topo e desempenha papel fundamental no equilíbrio ecológico das savanas africanas. Apesar de sua fama de força, a espécie enfrenta ameaças como perda de habitat e caça ilegal.",
   scale: 1.2,
   scale_sm: 1.2,
   scale_md: 1.2,
@@ -822,13 +779,13 @@ const Mammalia_Carnivora_Lion: IModelData = {
   by <a href="https://sketchfab.com/planeta-elefante">planeta-elefante</a> 
   on <a href="https://sketchfab.com">Sketchfab</a>, 
   licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
-</div>
-`,
+</div>`,
   wikipedia: "https://en.wikipedia.org/wiki/Lion",
   // sceneBg: '#2a1a1a',
   hasAnimation: true,
   animation: 'Walk'
 };
+
 
 const Mammalia_Cetacea_BlueWhale: IModelData = {
   topic: "chordata_class_mammalia_cetacea_blue_whale",
@@ -837,7 +794,7 @@ const Mammalia_Cetacea_BlueWhale: IModelData = {
   name: "Baleia-azul",
   title: "Baleia-azul (Mammalia)",
   description: "Maior animal do planeta, mamífero marinho da ordem Cetacea. Pode ultrapassar 30 metros de comprimento e pesar mais de 150 toneladas.",
-  text: "A baleia-azul (*Balaenoptera musculus*) é o maior animal conhecido da história da Terra, podendo atingir mais de 30 metros de comprimento e pesar até 180 toneladas. Pertence à ordem Cetacea e à família Balaenopteridae. Apesar do tamanho colossal, alimenta-se quase exclusivamente de pequenos crustáceos chamados krill, filtrados por meio de placas de barbas em sua boca. É um mamífero marinho, respirando por pulmões e precisando emergir para expelir ar pelos espiráculos. As baleias-azuis são migratórias, percorrendo longas distâncias entre áreas de alimentação em águas frias e regiões de reprodução em águas tropicais. Estiveram à beira da extinção devido à caça comercial, mas hoje são protegidas internacionalmente. Ainda assim, permanecem ameaçadas por colisões com navios, poluição sonora e mudanças climáticas.",
+  text: "A baleia-azul (Balaenoptera musculus) é o maior animal conhecido da história da Terra, podendo atingir mais de 30 metros de comprimento e pesar até 180 toneladas. Pertence à ordem Cetacea e à família Balaenopteridae. Apesar do tamanho colossal, alimenta-se quase exclusivamente de pequenos crustáceos chamados krill, filtrados por meio de placas de barbas em sua boca. É um mamífero marinho, respirando por pulmões e precisando emergir para expelir ar pelos espiráculos. As baleias-azuis são migratórias, percorrendo longas distâncias entre áreas de alimentação em águas frias e regiões de reprodução em águas tropicais. Estiveram à beira da extinção devido à caça comercial, mas hoje são protegidas internacionalmente. Ainda assim, permanecem ameaçadas por colisões com navios, poluição sonora e mudanças climáticas.",
   scale: 0.0032,
   scale_sm: 0.0033,
   scale_md: 0.0035,
@@ -876,12 +833,12 @@ const Mammalia_Cetacea_BlueWhale: IModelData = {
   by <a href="https://sketchfab.com/ostapblendercg">Bohdan Lvov (@ostapblendercg)</a> 
   on <a href="https://sketchfab.com">Sketchfab</a>, 
   licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
-</div>
-`,
+</div>`,
   wikipedia: "https://en.wikipedia.org/wiki/Blue_whale",
   // sceneBg: '#0a1f3a',
   hasAnimation: true
 };
+
 
 const Mammalia_Cetacea_HumpbackDolphin: IModelData = {
   topic: "chordata_class_mammalia_cetacea_humpback_dolphin",
@@ -890,7 +847,7 @@ const Mammalia_Cetacea_HumpbackDolphin: IModelData = {
   name: "Humpback Dolphin",
   title: "Humpback Dolphin (Mammalia)",
   description: "Golfinho marinho costeiro da família Delphinidae, reconhecido pela nadadeira dorsal em forma de corcova.",
-  text: "Os Humpback Dolphins pertencem ao gênero *Sousa*, dentro da família Delphinidae. São golfinhos marinhos que habitam águas costeiras rasas do Oceano Índico e Pacífico, incluindo regiões da África, Índia, Sudeste Asiático e norte da Austrália. Seu nome vem da nadadeira dorsal característica, posicionada sobre uma elevação em forma de corcova. Podem medir entre 2 e 2,8 metros de comprimento e pesar até 280 kg. Sua coloração varia do cinza ao rosado, sendo que alguns indivíduos apresentam tons rosados semelhantes aos do boto-cor-de-rosa, mas não são a mesma espécie. Alimentam-se de peixes e lulas, caçando em grupos cooperativos. Estão ameaçados pela degradação costeira, poluição e captura acidental em redes de pesca.",
+  text: "Os Humpback Dolphins pertencem ao gênero Sousa, dentro da família Delphinidae. São golfinhos marinhos que habitam águas costeiras rasas do Oceano Índico e Pacífico, incluindo regiões da África, Índia, Sudeste Asiático e norte da Austrália. Seu nome vem da nadadeira dorsal característica, posicionada sobre uma elevação em forma de corcova. Podem medir entre 2 e 2,8 metros de comprimento e pesar até 280 kg. Sua coloração varia do cinza ao rosado, sendo que alguns indivíduos apresentam tons rosados semelhantes aos do boto-cor-de-rosa, mas não são a mesma espécie. Alimentam-se de peixes e lulas, caçando em grupos cooperativos. Estão ameaçados pela degradação costeira, poluição e captura acidental em redes de pesca.",
   scale: 0.005,
   scale_sm: 0.005,
   scale_md: 0.005,
@@ -929,12 +886,12 @@ const Mammalia_Cetacea_HumpbackDolphin: IModelData = {
   by <a href="https://sketchfab.com/ostapblendercg">Bohdan Lvov (@ostapblendercg)</a> 
   on <a href="https://sketchfab.com">Sketchfab</a>, 
   licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
-</div>
-`,
+</div>`,
   wikipedia: "https://en.wikipedia.org/wiki/Humpback_dolphin",
   // sceneBg: '#0f1f2f',
   hasAnimation: true
 };
+
 
 
 export const CHORDATA_MODELS: IModelData[] = [

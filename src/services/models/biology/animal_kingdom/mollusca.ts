@@ -5,8 +5,8 @@ const Gastropod: IModelData = {
   source: "/tsukushi_snail_euhadra_herklotsi.glb",
   name: "Euhadra herklotsi",
   title: "Caracol japonês (Euhadra herklotsi)",
-  description: "Molusco gastrópode terrestre da família Camaenidae, encontrado no Japão. Possui concha espiralada e respira por pulmões adaptados à vida terrestre.",
-  text: "O *Euhadra herklotsi*, conhecido como Tsukushi Snail, é um gastrópode pulmonado da família Camaenidae, endêmico do Japão. Como outros caracóis terrestres, apresenta concha calcária em espiral que protege seu corpo mole e auxilia na retenção de umidade. Respira por meio de uma cavidade pulmonar adaptada, característica da ordem Pulmonata. Alimenta-se de matéria vegetal em decomposição e folhas, desempenhando papel importante na ciclagem de nutrientes nos ecossistemas terrestres. Sua presença também é um indicador da qualidade ambiental, já que é sensível a mudanças de habitat e poluição.",
+  description: "Molusco gastrópode terrestre com concha espiralada e respiração pulmonar. Espécie endêmica do Japão, sensível à poluição e importante para o equilíbrio ecológico.",
+  text: "O Euhadra herklotsi, conhecido como caracol japonês ou Tsukushi Snail, é um gastrópode pulmonado pertencente à família Camaenidae. Vive em ambientes terrestres úmidos e é endêmico do Japão. Seu corpo mole é protegido por uma concha calcária em espiral, que auxilia na retenção de umidade e na defesa contra predadores. Respira por meio de uma cavidade pulmonar adaptada — uma característica evolutiva que permitiu aos gastrópodes colonizar o ambiente terrestre. Alimenta-se de folhas, frutos caídos e matéria vegetal em decomposição, contribuindo para a ciclagem de nutrientes e a fertilidade do solo. Por ser sensível à poluição e à perda de habitat, é considerado um indicador biológico da qualidade ambiental.",
   scale: 70,
   scale_sm: 75,
   scale_md: 80,
@@ -18,26 +18,32 @@ const Gastropod: IModelData = {
     {
       name: "Concha",
       node: null,
-      description: "Concha calcária em espiral.",
-      text: "A concha do *Euhadra herklotsi* é espiralada e robusta, oferecendo proteção contra predadores e perda de água."
+      description: "Estrutura calcária em espiral que protege o corpo.",
+      text: "A concha do Euhadra herklotsi é espiralada, resistente e essencial para evitar a desidratação e proteger contra predadores."
     },
     {
-      name: "Respiração",
+      name: "Cavidade pulmonar",
       node: null,
-      description: "Cavidade pulmonar adaptada à vida terrestre.",
-      text: "Diferente de moluscos aquáticos, este gastrópode respira por pulmões, permitindo sua sobrevivência em ambientes terrestres úmidos."
+      description: "Sistema respiratório adaptado ao ambiente terrestre.",
+      text: "Esse caracol respira por pulmões formados a partir de uma cavidade modificada, o que permite a troca gasosa em ar úmido."
     },
     {
-      name: "Alimentação",
+      name: "Radula",
       node: null,
-      description: "Herbívoro e detritívoro.",
-      text: "Alimenta-se de folhas, frutos caídos e matéria vegetal em decomposição, contribuindo para a reciclagem de nutrientes no solo."
+      description: "Estrutura raspadora usada na alimentação.",
+      text: "A radula é uma 'língua' com fileiras de dentículos quitinosos, usada para raspar superfícies e ingerir matéria vegetal."
     },
     {
       name: "Habitat",
       node: null,
-      description: "Ambientes terrestres úmidos do Japão.",
-      text: "É encontrado em florestas e áreas úmidas, onde a umidade é essencial para sua sobrevivência."
+      description: "Ambientes terrestres úmidos e sombreados do Japão.",
+      text: "O Euhadra herklotsi vive em florestas e regiões com alta umidade, onde encontra abrigo e alimento abundante."
+    },
+    {
+      name: "Importância ecológica",
+      node: null,
+      description: "Contribui para a reciclagem de nutrientes e o equilíbrio do solo.",
+      text: "Ao decompor matéria orgânica, esses caracóis participam do ciclo de nutrientes e ajudam a manter o solo fértil."
     }
   ],
   attribuition: `<div>
@@ -45,13 +51,12 @@ const Gastropod: IModelData = {
   by <a href="https://sketchfab.com/ffishAsia-and-floraZia">ffish.asia / floraZia.com</a> 
   on <a href="https://sketchfab.com">Sketchfab</a>, 
   licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain</a>
-</div>
-`,
+</div>`,
   wikipedia: "https://en.wikipedia.org/wiki/Euhadra_herklotsi",
-  // sound: '/sounds/forest.wav',
   sceneBg: '#000',
   hasAnimation: true
 };
+
 
 const Cephalopoda_BobtailSquid: IModelData = {
   topic: "mollusca_class_cephalopoda_bobtail_squid",
@@ -59,7 +64,7 @@ const Cephalopoda_BobtailSquid: IModelData = {
   name: "Bobtail Squid",
   title: "Lula Bobtail (Sepiolidae)",
   description: "Cefalópode de pequeno porte, encontrado em águas costeiras rasas. Conhecido por sua bioluminescência simbiótica e habilidade de camuflagem.",
-  text: "A lula Bobtail pertence à família Sepiolidae, dentro da classe Cephalopoda. Diferente de lulas maiores, possui corpo arredondado e compacto, lembrando um polvo em miniatura. Vive enterrada na areia durante o dia e sai para caçar à noite. Uma de suas características mais notáveis é a simbiose com bactérias bioluminescentes (*Vibrio fischeri*), que vivem em um órgão especial e produzem luz. Essa bioluminescência ajuda a camuflar a lula contra predadores, imitando o brilho da superfície marinha. Alimenta-se de pequenos crustáceos e peixes, desempenhando papel importante nos ecossistemas costeiros. Além de sua relevância ecológica, é um modelo de estudo em biologia marinha e microbiologia devido à sua relação simbiótica única.",
+  text: "A lula Bobtail pertence à família Sepiolidae, dentro da classe Cephalopoda. Diferente de lulas maiores, possui corpo arredondado e compacto, lembrando um polvo em miniatura. Vive enterrada na areia durante o dia e sai para caçar à noite. Uma de suas características mais notáveis é a simbiose com bactérias bioluminescentes (Vibrio fischeri), que vivem em um órgão especial e produzem luz. Essa bioluminescência ajuda a camuflar a lula contra predadores, imitando o brilho da superfície marinha. Alimenta-se de pequenos crustáceos e peixes, desempenhando papel importante nos ecossistemas costeiros. Além de sua relevância ecológica, é um modelo de estudo em biologia marinha e microbiologia devido à sua relação simbiótica única.",
   scale: 0.4,
   scale_sm: 0.5,
   scale_md: 0.6,
@@ -78,7 +83,7 @@ const Cephalopoda_BobtailSquid: IModelData = {
       name: "Bioluminescência",
       node: null,
       description: "Simbiose com bactérias luminosas.",
-      text: "Abriga bactérias *Vibrio fischeri* em um órgão especializado. A luz emitida ajuda a camuflar sua silhueta contra a iluminação da superfície marinha, evitando predadores."
+      text: "Abriga bactérias Vibrio fischeri em um órgão especializado. A luz emitida ajuda a camuflar sua silhueta contra a iluminação da superfície marinha, evitando predadores."
     },
     {
       name: "Comportamento",
@@ -104,8 +109,8 @@ const Cephalopoda_BlueRingedOctopus: IModelData = {
   source: "/scene.glb",
   name: "Blue-ringed Octopus",
   title: "Polvo-de-anéis-azuis (Hapalochlaena)",
-  description: "Pequeno cefalópode altamente venenoso, encontrado em recifes e costas do Indo-Pacífico. Reconhecido por seus anéis azuis brilhantes que aparecem como sinal de alerta.",
-  text: "O polvo-de-anéis-azuis pertence ao gênero *Hapalochlaena*, dentro da classe Cephalopoda. Apesar de seu tamanho reduzido (10 a 20 cm), é um dos animais mais venenosos do mundo. Vive em recifes de coral e áreas costeiras do Indo-Pacífico, escondendo-se em conchas, fendas e areia. Sua característica mais marcante são os anéis azuis fluorescentes que brilham quando o animal se sente ameaçado, funcionando como aviso visual. Alimenta-se de pequenos crustáceos e peixes, que paralisa com sua saliva tóxica. Embora seja perigoso para humanos, raramente ataca se não for provocado. É um exemplo impressionante da diversidade e das adaptações defensivas dos cefalópodes.",
+  description: "Cefalópode de pequeno porte e alta toxicidade, encontrado em recifes do Indo-Pacífico. Reconhecido por seus anéis azuis fluorescentes que funcionam como aviso de perigo.",
+  text: "O polvo-de-anéis-azuis pertence ao gênero Hapalochlaena, dentro da classe Cephalopoda. Apesar de medir apenas entre 10 e 20 cm, é um dos animais mais venenosos do planeta. Vive em recifes de coral, zonas costeiras e áreas arenosas do Indo-Pacífico, onde se esconde em conchas, fendas e rochas. Sua característica mais marcante são os anéis azuis fluorescentes, que brilham intensamente quando o animal se sente ameaçado, servindo como um alerta visual aos predadores. Alimenta-se de pequenos crustáceos e peixes, que paralisa com uma potente neurotoxina presente em sua saliva. Embora potencialmente letal para humanos, é um animal tímido e raramente ataca, sendo um exemplo notável das estratégias defensivas e da complexa biologia dos cefalópodes.",
   scale: 1.3,
   scale_sm: 1.4,
   scale_md: 1.8,
@@ -115,28 +120,34 @@ const Cephalopoda_BlueRingedOctopus: IModelData = {
   position: [0, 0, 0],
   node: [
     {
-      name: "Estrutura corporal",
+      name: "Morfologia",
       node: null,
-      description: "Corpo pequeno, com braços curtos e robustos.",
-      text: "O polvo-de-anéis-azuis mede cerca de 10 a 20 cm, com corpo compacto e braços curtos, adaptados para se esconder em fendas e conchas."
+      description: "Corpo pequeno e flexível, com oito braços curtos.",
+      text: "Possui corpo mole e braços robustos, adaptados para se mover entre fendas e superfícies rochosas dos recifes."
     },
     {
-      name: "Coloração e defesa",
+      name: "Anéis fluorescentes",
       node: null,
-      description: "Anéis azuis fluorescentes como aviso.",
-      text: "Quando ameaçado, exibe anéis azuis brilhantes em todo o corpo, sinalizando sua toxicidade extrema para predadores."
+      description: "Coloração azul intensa em padrão de anéis.",
+      text: "Os anéis azuis aparecem subitamente quando o animal se sente ameaçado, servindo como aviso visual de sua alta toxicidade."
+    },
+    {
+      name: "Veneno",
+      node: null,
+      description: "Saliva com neurotoxina letal (tetrodotoxina).",
+      text: "A toxina do Hapalochlaena é suficientemente potente para paralisar rapidamente suas presas — e pode ser fatal para humanos."
     },
     {
       name: "Alimentação",
       node: null,
-      description: "Predador de pequenos crustáceos e peixes.",
-      text: "Utiliza sua saliva venenosa para paralisar presas, que depois são consumidas com auxílio de seu bico quitinoso."
+      description: "Predador de crustáceos e pequenos peixes.",
+      text: "Usa seu bico quitinoso para perfurar presas e injetar veneno, digerindo o alimento externamente antes de ingeri-lo."
     },
     {
-      name: "Importância ecológica",
+      name: "Comportamento",
       node: null,
-      description: "Parte da cadeia alimentar costeira.",
-      text: "Apesar de perigoso, o polvo-de-anéis-azuis é um predador importante em recifes, ajudando a controlar populações de pequenos crustáceos e peixes."
+      description: "Animal tímido e não agressivo.",
+      text: "Apesar de seu veneno poderoso, o polvo-de-anéis-azuis só exibe comportamento defensivo quando é manipulado ou ameaçado."
     }
   ],
   attribuition: `<div>
@@ -144,21 +155,21 @@ const Cephalopoda_BlueRingedOctopus: IModelData = {
   by <a href="https://sketchfab.com/lesliestowe">lesliestowe</a> 
   on <a href="https://sketchfab.com">Sketchfab</a>, 
   licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
-</div>
-`,
+</div>`,
   wikipedia: "https://en.wikipedia.org/wiki/Blue-ringed_octopus",
   // sound: '/sounds/ocean.wav',
   sceneBg: '#000000',
   hasAnimation: true
 };
 
+
 const Cephalopoda_Nautilus: IModelData = {
   topic: "mollusca_class_cephalopoda_nautilus",
   source: "/nautilus_shell.glb",
   name: "Nautilus pompilius",
   title: "Nautilus (Nautilus pompilius)",
-  description: "Cefalópode marinho considerado um 'fóssil vivo'. Possui concha espiralada com câmaras internas que auxiliam na flutuabilidade.",
-  text: "O *Nautilus pompilius* é um cefalópode da ordem Nautilida, pertencente à classe Cephalopoda. Diferente de polvos, lulas e sépias, o nautilus mantém uma concha externa espiralada, dividida em câmaras preenchidas com gás e líquido que regulam sua flutuabilidade. Habita águas profundas do Indo-Pacífico, emergindo à noite para se alimentar de crustáceos e peixes. Seus tentáculos não possuem ventosas, mas são numerosos e pegajosos, permitindo capturar presas de forma eficiente. É considerado um 'fóssil vivo', pois apresenta características muito semelhantes às de seus ancestrais de centenas de milhões de anos. Além de sua importância ecológica, o nautilus é símbolo da fragilidade dos ecossistemas marinhos, já que sofre com a coleta excessiva e mudanças ambientais.",
+  description: "Cefalópode marinho primitivo, conhecido como 'fóssil vivo'. Possui concha externa espiralada com câmaras internas que controlam sua flutuabilidade.",
+  text: "O Nautilus pompilius é um cefalópode da ordem Nautilida, considerado um dos representantes mais antigos e primitivos da classe Cephalopoda. Ao contrário de lulas, sépias e polvos, mantém uma concha externa espiralada composta por várias câmaras internas. Essas câmaras são preenchidas com misturas de gás e líquido que permitem o controle preciso da flutuabilidade, funcionando como um sistema natural de lastro. Vive em águas profundas do Indo-Pacífico, emergindo à noite para caçar pequenos crustáceos e peixes. Seus tentáculos, que podem ultrapassar 90 em número, são finos e pegajosos, mas não possuem ventosas. Por conservar traços anatômicos semelhantes aos de fósseis de centenas de milhões de anos, o nautilus é considerado um 'fóssil vivo' e símbolo da continuidade evolutiva dos moluscos marinhos. Atualmente, sofre com a sobrepesca e a degradação dos habitats oceânicos.",
   scale: 22,
   scale_sm: 23,
   scale_md: 25,
@@ -168,28 +179,34 @@ const Cephalopoda_Nautilus: IModelData = {
   position: [-0.5, 0.4, 0],
   node: [
     {
-      name: "Concha",
+      name: "Concha espiralada",
       node: null,
-      description: "Concha espiralada com câmaras internas.",
-      text: "A concha do nautilus é dividida em câmaras que podem ser preenchidas com gás ou líquido, permitindo controlar a flutuabilidade."
+      description: "Estrutura externa dividida em câmaras.",
+      text: "A concha do Nautilus pompilius é formada por múltiplas câmaras interconectadas, usadas para controlar sua flutuabilidade através de variação na pressão dos gases internos."
     },
     {
       name: "Tentáculos",
       node: null,
-      description: "Numerosos tentáculos sem ventosas.",
-      text: "O nautilus possui dezenas de tentáculos finos e pegajosos, usados para capturar presas como crustáceos e pequenos peixes."
+      description: "Mais de 90 tentáculos finos e aderentes.",
+      text: "Diferente de outros cefalópodes, os tentáculos do nautilus não possuem ventosas, mas apresentam superfícies pegajosas para capturar presas."
     },
     {
-      name: "Habitat",
+      name: "Flutuabilidade",
       node: null,
-      description: "Águas profundas do Indo-Pacífico.",
-      text: "Durante o dia, o nautilus permanece em águas profundas. À noite, sobe para regiões mais rasas em busca de alimento."
+      description: "Controle natural por câmaras internas com gás.",
+      text: "O nautilus ajusta a proporção de gás e líquido dentro das câmaras da concha para subir ou descer na coluna d’água."
+    },
+    {
+      name: "Comportamento noturno",
+      node: null,
+      description: "Atividade aumentada à noite.",
+      text: "Durante o dia, permanece em grandes profundidades; à noite, sobe para regiões rasas em busca de alimento."
     },
     {
       name: "Importância evolutiva",
       node: null,
-      description: "Considerado um 'fóssil vivo'.",
-      text: "O nautilus preserva características primitivas dos cefalópodes, sendo um exemplo vivo da história evolutiva do grupo."
+      description: "Espécie relicta, semelhante a fósseis antigos.",
+      text: "O Nautilus pompilius representa uma linhagem pouco modificada de cefalópodes, fornecendo informações valiosas sobre a evolução do grupo."
     }
   ],
   attribuition: `<div>
@@ -197,21 +214,22 @@ const Cephalopoda_Nautilus: IModelData = {
   by <a href="https://sketchfab.com/hrachski">Hailey Majewski (@hrachski)</a> 
   on <a href="https://sketchfab.com">Sketchfab</a>, 
   licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
-</div>
-`,
+</div>`,
   wikipedia: "https://en.wikipedia.org/wiki/Nautilus",
   // sound: '/sounds/ocean.wav',
   sceneBg: '#5A6E7F',
   hasAnimation: false
 };
 
+
+
 const Bivalvia_CardiumCostatum: IModelData = {
   topic: "mollusca_class_bivalvia",
   source: "/cardium_costatum.glb",
   name: "Cardium costatum",
   title: "Cardium costatum (Família Cardiidae)",
-  description: "Molusco bivalve marinho da família Cardiidae. Possui concha robusta com costelas radiais e vive enterrado em substratos arenosos.",
-  text: "O *Cardium costatum* é um molusco da classe Bivalvia, conhecido por sua concha espessa e ornamentada com costelas radiais. Pertence à família Cardiidae, popularmente chamada de 'corações-do-mar' devido ao formato arredondado das conchas. Vive enterrado em sedimentos arenosos de ambientes marinhos rasos, onde se alimenta por filtração, capturando partículas orgânicas suspensas na água. Como outros bivalves, possui duas valvas articuladas que protegem seu corpo mole. Desempenha papel ecológico importante na ciclagem de nutrientes e na estruturação do fundo marinho. Além disso, suas conchas são frequentemente coletadas por sua beleza e valor científico.",
+  description: "Molusco bivalve marinho de concha espessa e ornamentada, pertencente à família Cardiidae. Vive enterrado em substratos arenosos e alimenta-se por filtração.",
+  text: "O Cardium costatum é um molusco bivalve da família Cardiidae, conhecida como 'corações-do-mar' devido ao formato arredondado das conchas. Suas valvas são robustas e apresentam costelas radiais bem marcadas, que oferecem resistência e contribuem para o aspecto característico do grupo. Habita regiões costeiras de águas rasas, onde se enterra parcialmente em sedimentos arenosos. Alimenta-se por filtração, utilizando sifões para capturar plâncton e partículas orgânicas suspensas na água. Assim como outros bivalves, possui um pé muscular adaptado para escavação e locomoção no substrato. Além de sua importância ecológica na reciclagem de nutrientes e estabilização do fundo marinho, as conchas do C. costatum são valorizadas por sua beleza e relevância científica em estudos de paleoecologia e morfologia.",
   scale: 6,
   scale_sm: 6,
   scale_md: 6,
@@ -223,26 +241,32 @@ const Bivalvia_CardiumCostatum: IModelData = {
     {
       name: "Concha",
       node: null,
-      description: "Concha espessa com costelas radiais.",
-      text: "A concha do *Cardium costatum* é robusta e apresenta costelas que se irradiam a partir do umbo, conferindo resistência e aparência característica."
+      description: "Concha espessa com costelas radiais pronunciadas.",
+      text: "As conchas do Cardium costatum apresentam costelas que irradiam a partir do umbo, conferindo resistência e uma textura característica ao molusco."
     },
     {
-      name: "Locomoção e proteção",
+      name: "Pé muscular",
       node: null,
-      description: "Enterramento em substratos arenosos.",
-      text: "Enterra-se parcialmente na areia para se proteger de predadores e correntes marinhas, utilizando seu pé muscular para escavar."
+      description: "Estrutura usada para escavação e fixação.",
+      text: "O pé muscular permite ao animal enterrar-se parcialmente no substrato arenoso, protegendo-se de predadores e fortes correntes marinhas."
     },
     {
-      name: "Alimentação",
+      name: "Sifões",
       node: null,
-      description: "Filtrador de partículas orgânicas.",
-      text: "Alimenta-se por filtração, capturando plâncton e matéria orgânica suspensa na água por meio de seus sifões."
+      description: "Estruturas usadas na alimentação por filtração.",
+      text: "Os sifões do Cardium costatum captam água contendo plâncton e partículas orgânicas, filtradas para sua nutrição."
+    },
+    {
+      name: "Hábitat",
+      node: null,
+      description: "Regiões costeiras com sedimentos arenosos.",
+      text: "Vive enterrado em fundos de areia ou lodo, geralmente em águas rasas, onde encontra proteção e alimento abundante."
     },
     {
       name: "Importância ecológica",
       node: null,
-      description: "Contribui para a estrutura do fundo marinho.",
-      text: "Ajuda na oxigenação e na reciclagem de nutrientes do sedimento, além de servir de abrigo para pequenos organismos marinhos."
+      description: "Espécie filtradora que contribui para o equilíbrio ambiental.",
+      text: "O Cardium costatum ajuda na oxigenação dos sedimentos, na ciclagem de nutrientes e serve de abrigo a pequenos invertebrados bentônicos."
     }
   ],
   attribuition: `<div>
@@ -250,8 +274,7 @@ const Bivalvia_CardiumCostatum: IModelData = {
   by <a href="https://sketchfab.com/latedcapuerj">latedcapuerj</a> 
   on <a href="https://sketchfab.com">Sketchfab</a>, 
   licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
-</div>
-`,
+</div>`,
   wikipedia: "https://en.wikipedia.org/wiki/Cardium_costatum",
   // sound: '/sounds/ocean.wav',
   sceneBg: '#000',
