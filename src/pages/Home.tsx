@@ -12,7 +12,7 @@ export const Home = () => {
 
   useEffect(() => {
     const topics = getAllTopics()
-    //console.log('topics', topics)
+    console.log('topics', topics)
     setTopicList(topics)
   }, [])
 
@@ -31,7 +31,7 @@ export const Home = () => {
               title={topic.title}
               description={topic.description}
               cover={topic.cover}
-              link={`/topic-option/${topic.discipline}/${topic.topic}`}
+              link={`/topic-option/${topic.discipline}/${topic.module}/${topic.topic}`}
             />
         ))}
       </div>

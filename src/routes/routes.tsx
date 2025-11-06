@@ -32,9 +32,9 @@ export const AppRoutes = () => {
         <Route path="/enem" element={<ENEMQuestions />} />
         <Route path="/summary-list" element={<SumaryList />} />
         <Route path="/summary/:discipline/:code" element={<Sumary />} />
-        <Route path="/topic-option/:discipline/:code" element={<TopicOptions />} />
-        <Route path="/flashcards/:discipline/:topic" element={<Flashcards />} />
-        <Route path="/exercises/:discipline/:topic" element={<Exercises />} />
+        <Route path="/topic-option/:discipline/:module/:topic" element={<TopicOptions />} />
+        <Route path="/flashcards/:discipline/:module/:topic" element={<Flashcards />} />
+        <Route path="/exercises/:discipline/:module/:topic" element={<Exercises />} />
         <Route path="/results/:total/:right" element={<Results />} />
         <Route path="/scene/:discipline/:topic/:code" element={<Scene />} />
       </Routes>

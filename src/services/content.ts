@@ -1,4 +1,4 @@
-import type { DISCIPLINE } from "@interfaces/discipline";
+import type { DISCIPLINE, DISCIPLINE_MODULE } from "@interfaces/discipline";
 import { BIOLOGY_TOPICS } from "./biology/topics";
 import type { Itopic, ITopicCode, ITopicData } from "@interfaces/topic";
 
@@ -29,25 +29,25 @@ export const getContentByDiscipline = (discipline: DISCIPLINE = "BIOLOGY") => {
   // }
 }
 
-export const getContentByTopic = (discipline: DISCIPLINE = "BIOLOGY", module: string): ITopicData => {
+export const getContentByModule = (discipline: DISCIPLINE = "BIOLOGY", module: DISCIPLINE_MODULE): ITopicData => {
   const content = getContentByDiscipline(discipline)!
-  const data = content.data.find(t => t.module === module)!
-  data.discipline = discipline
-  return data
+  const modules = content.data.find(t => t.module === module)! 
+  return modules
 }
 
-export const getContentByCode = (
+
+export const getContentByTopic = (
   discipline: DISCIPLINE = "BIOLOGY",
+  module: DISCIPLINE_MODULE,
   topic: string): ITopicCode => {
-  console.log('mod param ', topic)
-  const content = getContentByDiscipline(discipline)!
-  console.log('content ', content)
-  const getModule = content.data.find(t => t.data.find(d => d.topic === topic))
-  console.log('module', getModule)
-  const topicData = getModule?.data.find(d => d.topic === topic)!
+  const moduleData = getContentByModule(discipline, module)
+  console.log('module', moduleData)
+  
+  const topicData = moduleData?.data.find(d => d.topic === topic)!
   console.log('topicdata ', topicData)
+  
   topicData['discipline'] = discipline
-  topicData.module = getModule?.module
+  topicData.module = moduleData?.module
   return topicData
 }
 

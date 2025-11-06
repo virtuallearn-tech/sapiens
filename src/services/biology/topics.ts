@@ -68,19 +68,19 @@ export const BIOLOGY_TOPICS: Itopic = {
       module: 'ANIMAL_KINGDOM',
       data: [
         {
-          topic: 'cnidarians_class_anthozoa',
+          topic: 'cnidaria_class_anthozoa',
           cover: BrainCoral,
           description: "Cnidário fixo, construtor de recifes. Encontrado em águas tropicais rasas, com colônias maciças que lembram os sulcos de um cérebro humano.",
           title: "Coral-Cérebro"
         },
         {
-          topic: 'cnidarians_class_hydrozoa',
+          topic: 'cnidaria_class_hydrozoa',
           cover: MeduseLiriope,
           description: "Pequena medusa transparente da ordem Trachymedusae, encontrada em águas tropicais e temperadas.",
           title: 'Medusa Líriope',
         },
         {
-          topic: 'cnidarians_class_scyphozoa',
+          topic: 'cnidaria_class_scyphozoa',
           cover: JellyfishJelly,
           description: "Cnidários flutuantes. Encontrada no litoral brasileiro. Possui coloração rosada",
           title: 'Água viva Geléia',

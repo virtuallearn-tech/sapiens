@@ -1,3 +1,4 @@
+import type { ANIMAL_KINGDOM_TOPICS } from "@interfaces/disciplines/biology";
 import type { IQuestion } from "@interfaces/question";
 
 export const poriferosQuestions: IQuestion = {
@@ -2456,3 +2457,20 @@ export const cordadosMamiferosQuestions: IQuestion = {
     }
   ]
 };
+
+export const getAnimalKingdomQuestions = (topic:ANIMAL_KINGDOM_TOPICS): IQuestion | undefined => {
+  if(topic.includes('porifera')) return poriferosQuestions;
+  if(topic.includes('cnidaria')) return cnidariosQuestions;
+  if(topic.includes('platyhelminthes')) return platelmintosQuestions;
+  if(topic.includes('nematoda')) return nematelmintosQuestions;
+  if(topic.includes('annelida')) return anelideosQuestions;
+  if(topic.includes('mollusca')) return moluscosQuestions;
+  if(topic.includes('arthropoda')) return artropodesQuestions;
+  if(topic.includes('echinodermata')) return equinodermosQuestions;
+  if(topic.includes('amphibia')) return cordadosAnfibiosQuestions;
+  if(topic.includes('chondrichthyes') || topic.includes('osteichthyes')) return cordadosPeixesQuestions;
+  if(topic.includes('reptilia')) return cordadosRepteisQuestions;
+  if(topic.includes('aves')) return cordadosAvesQuestions;
+  if(topic.includes('mammalia')) return cordadosMamiferosQuestions;
+  return undefined;
+}

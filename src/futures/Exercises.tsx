@@ -3,7 +3,7 @@ import { Button } from "@components/common/Button";
 import { useNavigate, useParams } from "react-router-dom";
 import type { IQuestionData } from "@interfaces/question";
 import { getExerciciesByTopic } from "@services/exercicies";
-import type { DISCIPLINE, DISCIPLINE_MODULE } from "@interfaces/discipline";
+import type { DISCIPLINE, DISCIPLINE_MODULE, DISCIPLINE_TOPICS } from "@interfaces/discipline";
 import { SelectNumQuestions } from "@components/layout/SelectNumQuestions";
 import { Message } from "@components/layout/Message";
 
@@ -12,14 +12,14 @@ const Exercises = () => {
 
   const navigate = useNavigate()
 
-  const { discipline, topic } = useParams<{ discipline: string; topic: string }>();
+  const { discipline, module, topic } = useParams<{ discipline: string; module:string, topic: string }>();
 
-  //console.log('d/t', discipline, topic)
+  console.log('parans on questions', discipline, module, topic)
 
   const [questions, setQuestions] = useState<IQuestionData[]>([])
   const [right, setRight] = useState(0);
 
-  const [numQuestions, setNumQuestions] = useState(0);
+  const [numQuestions, setNumQuestions] = useState(10);
   const [started, setStarted] = useState(false);
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -31,8 +31,8 @@ const Exercises = () => {
 
   const handleQuestions = () => {
     //console.log('numQuestions', numQuestions);
-    const questions = getExerciciesByTopic(discipline as DISCIPLINE, topic as DISCIPLINE_MODULE, numQuestions);
-    //console.log('questions list', questions);
+    const questions = getExerciciesByTopic(discipline as DISCIPLINE, module as DISCIPLINE_MODULE, topic as DISCIPLINE_TOPICS,numQuestions);
+    console.log('questions list', questions);
     setQuestions(questions);
     setStarted(true)
   }

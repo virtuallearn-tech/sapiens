@@ -1,7 +1,7 @@
 
 export type BIOLOGY_MODULE = 'CYTOLOGY' | 'ANIMAL_KINGDOM'
 
-type CYTOLOGY_TOPICS = 
+export type CYTOLOGY_TOPICS =
   'citology' |
   'eukaryotic_cell' |
   'prokaryotic_cell' |
@@ -10,10 +10,19 @@ type CYTOLOGY_TOPICS =
   'membrane_transport' |
   'cell_cycle_mitosis'
 
-type ANIMAL_KINGDOM_TOPICS = 'cnidarians' |
-  'cnidarians_class_scyphozoa' |
-  'cnidarians_class_anthozoa' |
-  'cnidarians_class_hydrozoa' |
+export type ANIMAL_KINGDOM_TOPICS =
+  'porifera' |
+  'platyhelminthes' |
+  'nematoda' |
+  'mollusca' |
+  'annelida' |
+  'arthropoda' |
+  'echinodermata' |
+  'chordata' |
+  'cnidaria' |
+  'cnidaria_class_scyphozoa' |
+  'cnidaria_class_anthozoa' |
+  'cnidaria_class_hydrozoa' |
   'mollusca_class_gastropoda' |
   'mollusca_class_cephalopoda' |
   'mollusca_class_cephalopoda_bobtail_squid' |
@@ -47,8 +56,5 @@ type ANIMAL_KINGDOM_TOPICS = 'cnidarians' |
   'chordata_class_mammalia_cetacea_humpback_dolphin' |
   'chordata_class_aves_accipitriformes_red_tailed_hawk' |
   'arthropoda_class_arachnida_araneae_wolf_spider'
-
-
-
 
 export type BIOLOGY_TOPICS = CYTOLOGY_TOPICS | ANIMAL_KINGDOM_TOPICS

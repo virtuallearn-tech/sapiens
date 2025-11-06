@@ -7,13 +7,13 @@ import { SelectNumQuestions } from "@components/layout/SelectNumQuestions";
 import type { IFlashcard } from "interfaces/flsahcards";
 import { useNavigate } from "react-router-dom";
 import { getFlashcardsByTopic } from "@services/flashcards";
-import type { DISCIPLINE_MODULE, DISCIPLINE } from "@interfaces/discipline";
+import type { DISCIPLINE_MODULE, DISCIPLINE, DISCIPLINE_TOPICS } from "@interfaces/discipline";
 
 
 const Flashcard = () => {
   const navigate = useNavigate()
 
-  const { discipline, topic } = useParams<{ discipline: string; topic: string }>();
+  const { discipline, module, topic } = useParams<{ discipline: string; module:string, topic: string }>();
 
   const [flashcards, setFlashcards] = useState<IFlashcard[]>([])
   const [right, setRight] = useState(0);
@@ -37,7 +37,7 @@ const Flashcard = () => {
   };
 
   const handleFlashcards = () => {
-    const flashcards = getFlashcardsByTopic(discipline as DISCIPLINE, topic as DISCIPLINE_MODULE, numFlashcards);
+    const flashcards = getFlashcardsByTopic(discipline as DISCIPLINE, module as DISCIPLINE_MODULE, topic as DISCIPLINE_TOPICS || null, numFlashcards);
     //console.log('flashcard list', flashcards);
     setFlashcards(flashcards);
     setStarted(true)

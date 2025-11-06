@@ -1,7 +1,7 @@
 import type { IModelData } from "@interfaces/model";
 
 const Anthozoa: IModelData = {
-  topic: "cnidarians_class_anthozoa",
+  topic: "cnidaria_class_anthozoa",
   source: "/brain_coral.glb",
   name: "Coral-cérebro",
   title: "Coral-cérebro (Família Mussidae)",
@@ -54,7 +54,7 @@ const Anthozoa: IModelData = {
 };
 
 const Hydrozoa: IModelData = {
-  topic: "cnidarians_class_hydrozoa",
+  topic: "cnidaria_class_hydrozoa",
   source: "/solmundella_jellyfish_narcomedusae.glb",
   name: "Solmundella Jellyfish",
   title: "Solmundella (Narcomedusae)",
@@ -107,7 +107,7 @@ const Hydrozoa: IModelData = {
 };
 
 const Scyphozoa: IModelData = {
-  topic: "cnidarians_class_scyphozoa",
+  topic: "cnidaria_class_scyphozoa",
   source: "/cnidarians_class_scyphozoa.glb",
   name: "Água-viva Mosaico",
   title: "Água-viva Blubber Jelly",

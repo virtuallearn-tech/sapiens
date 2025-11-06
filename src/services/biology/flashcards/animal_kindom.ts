@@ -1,3 +1,4 @@
+import type { ANIMAL_KINGDOM_TOPICS } from "@interfaces/disciplines/biology";
 import type { IFlashcard } from "@interfaces/flsahcards";
 
 export const poriferosFlashcards: IFlashcard[] = [
@@ -1014,4 +1015,19 @@ export const cordadosMamiferosFlashcards: IFlashcard[] = [
   }
 ];
 
-
+export const getAnimalKingdomFlashcards = (topic:ANIMAL_KINGDOM_TOPICS): IFlashcard[] => {
+  if(topic.includes('porifera')) return poriferosFlashcards;
+  if(topic.includes('cnidaria')) return cnidariosFlashcards;
+  if(topic.includes('platyhelminthes')) return platelmintosFlashcards;
+  if(topic.includes('nematoda')) return nematelmintosFlashcards;
+  if(topic.includes('annelida')) return anelideosFlashcards;
+  if(topic.includes('mollusca')) return moluscosFlashcards;
+  if(topic.includes('arthropoda')) return artropodesFlashcards;
+  if(topic.includes('echinodermata')) return equinodermosFlashcards;
+  if(topic.includes('amphibia')) return cordadosAnfibiosFlashcards;
+  if(topic.includes('chondrichthyes') || topic.includes('osteichthyes')) return cordadosPeixesFlashcards;
+  if(topic.includes('reptilia')) return cordadosRepteisFlashcards;
+  if(topic.includes('aves')) return cordadosAvesFlashcards;
+  if(topic.includes('mammalia')) return cordadosMamiferosFlashcards;
+  return [];
+}
