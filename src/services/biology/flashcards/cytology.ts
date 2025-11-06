@@ -1,4 +1,4 @@
-import type { IFlashcard } from "interfaces/flsahcards";
+import type { IFlashcard } from "@interfaces/flashcards";
 
 export const CitologyFlashcards: IFlashcard[] = [
   {

@@ -1,8 +1,8 @@
 import type { DISCIPLINE_MODULE, DISCIPLINE, DISCIPLINE_TOPICS } from "@interfaces/discipline";
-import type { IFlashcard } from "@interfaces/flsahcards";
+import type { IFlashcard } from "@interfaces/flashcards";
 import { getRandomItems } from "@utils/getRandomItems";
 import { CitologyFlashcards } from "./biology/flashcards/cytology";
-import { getAnimalKingdomFlashcards } from "./biology/flashcards/animal_kindom";
+import { getAnimalKingdomFlashcards } from "./biology/flashcards/animal_kingdom";
 import type { ANIMAL_KINGDOM_TOPICS } from "@interfaces/disciplines/biology";
 
 export const getFlashcardsByTopic = (

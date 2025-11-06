@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 import { Button } from "@components/common/Button";
 import { SelectNumQuestions } from "@components/layout/SelectNumQuestions";
-import type { IFlashcard } from "interfaces/flsahcards";
+import type { IFlashcard } from "@interfaces/flashcards";
 import { useNavigate } from "react-router-dom";
 import { getFlashcardsByTopic } from "@services/flashcards";
 import type { DISCIPLINE_MODULE, DISCIPLINE, DISCIPLINE_TOPICS } from "@interfaces/discipline";
