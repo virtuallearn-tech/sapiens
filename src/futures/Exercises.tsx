@@ -39,8 +39,8 @@ const Exercises = () => {
 
   const handleNext = () => {
     if (currentIndex === questions.length - 1) {
-      // return navigate(`/results/${questions.length}/${right}`)
-      return navigate(`/results/10/8`)
+      return navigate(`/results/${questions.length}/${right}`)
+      // return navigate(`/results/10/8`)
     }
     setSelected(null);
     setShowExplanation(false);

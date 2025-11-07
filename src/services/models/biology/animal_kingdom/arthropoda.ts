@@ -209,7 +209,7 @@ const Crustacea_Crab: IModelData = {
     licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain</a>
   </div>`,
   wikipedia: "https://en.wikipedia.org/wiki/Crab",
-  sceneBg: "#000",
+  sceneBg: "#323232",
   hasAnimation: true
 };
 

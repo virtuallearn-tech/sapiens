@@ -10,8 +10,8 @@ export const getSummaryByTopic = (discipline: DISCIPLINE, topic: DISCIPLINE_TOPI
   return CitologySummary.filter(c => c.discipline === discipline && c.topic === topic);
 }
 
-export const getSummaryByCode = (discipline: DISCIPLINE, code: DISCIPLINE_MODULE): IContent | undefined => {
-  return CitologySummary.find(c => c.discipline === discipline && c.code === code);
+export const getSummaryByCode = (discipline: DISCIPLINE, module: DISCIPLINE_MODULE): IContent | undefined => {
+  return CitologySummary.find(c => c.discipline === discipline && c.module === module);
 }
 
 export const getSummaryAll = (): IContent[] => {

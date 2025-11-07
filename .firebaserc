@@ -7,6 +7,9 @@
       "hosting": {
         "sapienslab": [
           "sapienslab"
+        ],
+        "test": [
+          "test-sapienslab"
         ]
       }
     }

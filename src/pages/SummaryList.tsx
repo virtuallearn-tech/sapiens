@@ -19,7 +19,7 @@ const SumaryList = () => {
             id={content.id}
             cover={content.cover} // caminho fictício para imagem
             title={content.title}
-            link={`/summary/${content.discipline}/${content.code}`}
+            link={`/summary/${content.discipline}/${content.module}`}
           />
           // </Link>
         ))}

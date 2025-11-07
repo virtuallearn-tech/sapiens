@@ -301,7 +301,7 @@ const Scene = () => {
       </div>
 
       <div className="m-scene__label--fullscreen" onClick={handleFullscreen}>
-        {isFullscreen ? <RiFullscreenExitFill /> : <BsArrowsFullscreen />} {isFullscreen ? 'Fechar' : 'Expandir'}
+        {isFullscreen ? <RiFullscreenExitFill /> : <BsArrowsFullscreen />}
       </div>
 
       {!showDetailOptions && !isClassActive && <div className="m-scene__ui m-scene__ui--left">

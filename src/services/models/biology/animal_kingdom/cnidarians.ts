@@ -116,7 +116,7 @@ const Hydrozoa: IModelData = {
   </div>`,
   wikipedia: "https://en.wikipedia.org/wiki/Narcomedusae",
   // sound: '/sounds/ocean.wav',
-  sceneBg: "#000",
+  sceneBg: "#323232",
   hasAnimation: true
 };
 
@@ -176,7 +176,7 @@ const Scyphozoa: IModelData = {
   </div>`,
   wikipedia: "https://pt.wikipedia.org/wiki/Catostylus_mosaicus",
   // sound: '/sounds/ocean.wav',
-  sceneBg: "#000",
+  sceneBg: "#323232",
   hasAnimation: true
 };
 

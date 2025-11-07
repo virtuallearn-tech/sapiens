@@ -27,12 +27,12 @@ export const Sidebar = () => {
               <span>Aprender em 3D</span>
             </Link>
           </li>
-          <li onClick={close}>
+          {/* <li onClick={close}>
             <Link to="/summary-list" className="m-sidebar__item">
               <FaBookOpen className="m-sidebar__icon" />
               <span>Conteúdo</span>
             </Link>
-          </li>
+          </li> */}
           {/* <li onClick={close}>
             <Link to="/enem" className="m-sidebar__item">
               <BsFillPencilFill className="m-sidebar__icon" />
