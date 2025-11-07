@@ -14,7 +14,6 @@ const Exercises = () => {
 
   const { discipline, module, topic } = useParams<{ discipline: string; module:string, topic: string }>();
 
-  console.log('parans on questions', discipline, module, topic)
 
   const [questions, setQuestions] = useState<IQuestionData[]>([])
   const [right, setRight] = useState(0);
@@ -32,7 +31,7 @@ const Exercises = () => {
   const handleQuestions = () => {
     //console.log('numQuestions', numQuestions);
     const questions = getExerciciesByTopic(discipline as DISCIPLINE, module as DISCIPLINE_MODULE, topic as DISCIPLINE_TOPICS,numQuestions);
-    console.log('questions list', questions);
+    // console.log('questions list', questions);
     setQuestions(questions);
     setStarted(true)
   }

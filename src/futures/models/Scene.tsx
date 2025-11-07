@@ -271,7 +271,7 @@ const Scene = () => {
 
   const handleModelAudio = () => {
     if (model!.sound && !isPlayigAudio) {
-      console.log('iniciou o audio', model!.sound)
+      // console.log('iniciou o audio', model!.sound)
       playAudio(model!.sound)
       setIsPlayingAudio(true)
     }

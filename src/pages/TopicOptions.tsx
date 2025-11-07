@@ -9,14 +9,14 @@ import { getContentByTopic } from "@services/content";
 const TopicOptions = () => {
 
   const { discipline, module, topic } = useParams<{ discipline:string, module: string, topic:string}>()
-  console.log('params', discipline, module, topic)
+  // console.log('params', discipline, module, topic)
   const navigate = useNavigate()
 
   const [moduleData, setModule] = useState<ITopicCode | null>(null)
   
   useEffect(()=>{
     const modules = getContentByTopic(discipline as DISCIPLINE, module as DISCIPLINE_MODULE, topic as DISCIPLINE_TOPICS )
-    console.log('modules on get topics', modules)
+    // console.log('modules on get topics', modules)
     setModule(modules)
   }, [moduleData])
 

@@ -21,8 +21,8 @@ export const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotMode
   const [scaleModel, setScale] = useState<number>(1)
 
   const { scene, animations } = useGLTF(model.source)
-  console.log('scene', scene)
-  console.log('animations ', animations)
+  // console.log('scene', scene)
+  // console.log('animations ', animations)
 
   const { actions } = useAnimations(animations, group)
 
@@ -94,7 +94,7 @@ export const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotMode
         model.animation && actions[model.animation]
           ? actions[model.animation]
           : Object.values(actions)[0];
-      console.log('selected animation', selected);
+      // console.log('selected animation', selected);
       if (isAnimating) {
         selected?.reset().fadeIn(0.5).play();
       } else {

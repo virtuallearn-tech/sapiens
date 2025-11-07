@@ -41,10 +41,10 @@ export const getContentByTopic = (
   module: DISCIPLINE_MODULE,
   topic: string): ITopicCode => {
   const moduleData = getContentByModule(discipline, module)
-  console.log('module', moduleData)
+  // console.log('module', moduleData)
   
   const topicData = moduleData?.data.find(d => d.topic === topic)!
-  console.log('topicdata ', topicData)
+  // console.log('topicdata ', topicData)
   
   topicData['discipline'] = discipline
   topicData.module = moduleData?.module
