@@ -2,7 +2,8 @@ import type { IModelData } from "@interfaces/model";
 
 const Gastropod: IModelData = {
   topic: "mollusca_class_gastropoda",
-  source: "/tsukushi_snail_euhadra_herklotsi.glb",
+  // source: "/tsukushi_snail_euhadra_herklotsi.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/tsukushi_snail_euhadra_herklotsi_compressed.glb',
   name: "Euhadra herklotsi",
   title: "Caracol japonês (Euhadra herklotsi)",
   description: "Molusco gastrópode terrestre com concha espiralada e respiração pulmonar. Espécie endêmica do Japão, sensível à poluição e importante para o equilíbrio ecológico.",
@@ -57,7 +58,6 @@ const Gastropod: IModelData = {
   hasAnimation: true
 };
 
-
 const Cephalopoda_BobtailSquid: IModelData = {
   topic: "mollusca_class_cephalopoda_bobtail_squid",
   source: "/firefly-squid-glowing.glb",
@@ -106,7 +106,8 @@ const Cephalopoda_BobtailSquid: IModelData = {
 
 const Cephalopoda_BlueRingedOctopus: IModelData = {
   topic: "mollusca_class_cephalopoda_octopus",
-  source: "/scene.glb",
+  // source: "/scene.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/blue_ring_octopus_compressed.glb',
   name: "Blue-ringed Octopus",
   title: "Polvo-de-anéis-azuis (Hapalochlaena)",
   description: "Cefalópode de pequeno porte e alta toxicidade, encontrado em recifes do Indo-Pacífico. Reconhecido por seus anéis azuis fluorescentes que funcionam como aviso de perigo.",
@@ -162,10 +163,10 @@ const Cephalopoda_BlueRingedOctopus: IModelData = {
   hasAnimation: true
 };
 
-
 const Cephalopoda_Nautilus: IModelData = {
   topic: "mollusca_class_cephalopoda_nautilus",
-  source: "/nautilus_shell.glb",
+  // source: "/nautilus_shell.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/nautilus_shell_compressed.glb',
   name: "Nautilus pompilius",
   title: "Nautilus (Nautilus pompilius)",
   description: "Cefalópode marinho primitivo, conhecido como 'fóssil vivo'. Possui concha externa espiralada com câmaras internas que controlam sua flutuabilidade.",
@@ -221,11 +222,10 @@ const Cephalopoda_Nautilus: IModelData = {
   hasAnimation: false
 };
 
-
-
 const Bivalvia_CardiumCostatum: IModelData = {
   topic: "mollusca_class_bivalvia",
-  source: "/cardium_costatum.glb",
+  // source: "/cardium_costatum.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/cardium_costatum_compressed.glb',
   name: "Cardium costatum",
   title: "Cardium costatum (Família Cardiidae)",
   description: "Molusco bivalve marinho de concha espessa e ornamentada, pertencente à família Cardiidae. Vive enterrado em substratos arenosos e alimenta-se por filtração.",
@@ -280,7 +280,6 @@ const Bivalvia_CardiumCostatum: IModelData = {
   sceneBg: '#000',
   hasAnimation: false
 };
-
 
 export const MOLLUSCA_MODELS: IModelData[] = [
   Gastropod,

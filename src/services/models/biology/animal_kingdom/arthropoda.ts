@@ -3,7 +3,8 @@ import { FIFTEEN, FORTY_FIVE, NINETY, TEN, THIRTY, TWENTY } from "@utils/radAngl
 
 const Arachnida_Pseudoscorpion: IModelData = {
   topic: "arthropoda_class_arachnida_pseudoscorpion",
-  source: "/pseudoscorpion.glb",
+  // source: "/pseudoscorpion.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/pseudoscorpion_compressed.glb',
   name: "Pseudoscorpion",
   title: "Pseudoscorpion (Arachnida)",
   description:
@@ -55,10 +56,10 @@ const Arachnida_Pseudoscorpion: IModelData = {
   animation: "Walk"
 };
 
-
 const Arachnida_Araneae_WolfSpider: IModelData = {
   topic: "arthropoda_class_arachnida_araneae_wolf_spider",
-  source: "/wolf_spider.glb",
+  // source: "/wolf_spider.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/wolf_spider_compressed.glb',
   name: "Aranha-lobo",
   title: "Aranha-lobo (Lycosidae)",
   description:
@@ -109,7 +110,8 @@ const Arachnida_Araneae_WolfSpider: IModelData = {
 
 const Crustacea_Woodlouse: IModelData = {
   topic: "arthropoda_class_crustacea_woodlouse",
-  source: "/woodlouse.glb",
+  // source: "/woodlouse.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/woodlouse_compressed.glb',
   name: "Tatuzinho-de-jardim",
   title: "Tatuzinho-de-jardim (Isopoda)",
   description:
@@ -158,10 +160,10 @@ const Crustacea_Woodlouse: IModelData = {
   hasAnimation: true
 };
 
-
 const Crustacea_Crab: IModelData = {
   topic: "arthropoda_class_crustacea_crab",
-  source: "/freshwater_crab.glb",
+  // source: "/freshwater_crab.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/freshwater_crab_compressed.glb',
   sound: "/sounds/peel-prawns-277146.mp3",
   name: "Caranguejo",
   title: "Caranguejo (Decapoda)",
@@ -211,10 +213,10 @@ const Crustacea_Crab: IModelData = {
   hasAnimation: true
 };
 
-
 const Insecta_Butterfly: IModelData = {
   topic: "arthropoda_class_insecta_butterfly",
-  source: "/butterfly.glb",
+  // source: "/butterfly.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/butterfly_compressed.glb',
   name: "Borboleta",
   title: "Borboleta (Lepidoptera)",
   description: "Inseto da ordem Lepidoptera, com asas coloridas e corpo segmentado. Passa por metamorfose completa e é importante polinizador.",
@@ -263,10 +265,10 @@ const Insecta_Butterfly: IModelData = {
   hasAnimation: true
 };
 
-
 const Insecta_BombusDahlbomii: IModelData = {
   topic: "arthropoda_class_insecta_bombus_dahlbomii",
-  source: "/bombus_dahlbomii.glb",
+  // source: "/bombus_dahlbomii.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/bombus_dahlbomii_compressed.glb',
   sound: "/sounds/bee-flying-loop-42287.mp3",
   name: "Bombus dahlbomii",
   title: "Abelha Bombus dahlbomii",
@@ -316,10 +318,10 @@ const Insecta_BombusDahlbomii: IModelData = {
   hasAnimation: true
 };
 
-
 const Insecta_Ant: IModelData = {
   topic: "arthropoda_class_insecta_ant",
-  source: "/ant.glb",
+  // source: "/ant.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/ant_compressed.glb',
   name: "Formiga",
   title: "Formiga (Formicidae)",
   description: "Inseto social da ordem Hymenoptera, com organização em castas e comportamento cooperativo. Vive em colônias e desempenha papel ecológico essencial.",
@@ -368,10 +370,10 @@ const Insecta_Ant: IModelData = {
   hasAnimation: true
 };
 
-
 const Chilopoda_Centipede: IModelData = {
   topic: "arthropoda_class_chilopoda_centipede",
-  source: "/polydesmus_angustus.glb",
+  // source: "/polydesmus_angustus.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/polydesmus_angustus_compressed.glb',
   name: "Centopeia",
   title: "Centopeia (Chilopoda)",
   description: "Artrópode predador de corpo alongado e segmentado, com um par de pernas por segmento. Possui forcípulas venenosas e hábitos noturnos.",
@@ -424,7 +426,6 @@ const Chilopoda_Centipede: IModelData = {
   wikipedia: "https://en.wikipedia.org/wiki/Centipede",
   hasAnimation: false
 };
-
 
 export const ARTHROPODA_MODELS: IModelData[] = [
   Arachnida_Pseudoscorpion,

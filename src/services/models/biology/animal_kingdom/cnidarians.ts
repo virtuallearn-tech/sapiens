@@ -2,7 +2,8 @@ import type { IModelData } from "@interfaces/model";
 
 const Anthozoa: IModelData = {
   topic: "cnidaria_class_anthozoa",
-  source: "/brain_coral.glb",
+  // source: "/brain_coral.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/brain_coral_compressed.glb',
   name: "Coral-cérebro",
   title: "Coral-cérebro (Família Mussidae)",
   description:
@@ -61,7 +62,8 @@ const Anthozoa: IModelData = {
 
 const Hydrozoa: IModelData = {
   topic: "cnidaria_class_hydrozoa",
-  source: "/solmundella_jellyfish_narcomedusae.glb",
+  // source: "/solmundella_jellyfish_narcomedusae.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/solmundella_jellyfish_narcomedusae_compressed-updated.glb',
   name: "Solmundella Jellyfish",
   title: "Solmundella (Narcomedusae)",
   description:
@@ -118,10 +120,10 @@ const Hydrozoa: IModelData = {
   hasAnimation: true
 };
 
-
 const Scyphozoa: IModelData = {
   topic: "cnidaria_class_scyphozoa",
-  source: "/cnidarians_class_scyphozoa.glb",
+  // source: "/cnidarians_class_scyphozoa.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/cnidarians_class_scyphozoa_compressed.glb',
   name: "Água-viva Mosaico",
   title: "Água-viva Mosaico (Catostylus mosaicus)",
   description:

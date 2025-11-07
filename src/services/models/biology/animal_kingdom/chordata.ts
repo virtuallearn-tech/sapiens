@@ -3,7 +3,8 @@ import { FIFTEEN, FORTY_FIVE, NINETY, SIXTY, TEN, THIRTY, TWENTY } from "@utils/
 
 const Chondrichthyes_TigerShark: IModelData = {
   topic: "chordata_class_chondrichthyes_tiger_shark",
-  source: "/tiger_shark.glb",
+  // source: "/tiger_shark.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/tiger_shark_compressed.glb',
   name: "Tubarão-tigre",
   title: "Tubarão-tigre (Galeocerdo cuvier)",
   description: "Peixe cartilaginoso da classe Chondrichthyes, conhecido pelas listras corporais e comportamento predador. Vive em mares tropicais e temperados de todo o mundo.",
@@ -55,7 +56,8 @@ const Chondrichthyes_TigerShark: IModelData = {
 
 const Chondrichthyes_CownoseRay: IModelData = {
   topic: "chordata_class_chondrichthyes_cownose_ray",
-  source: "/cownose_ray.glb",
+  // source: "/cownose_ray.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/cownose_ray_compressed.glb',
   name: "Raia-cownose",
   title: "Raia-cownose (Rhinoptera bonasus)",
   description: "Peixe cartilaginoso da classe Chondrichthyes, com corpo achatado e nadadeiras em forma de asas. Nada com movimentos ondulatórios graciosos e é comum em águas costeiras tropicais.",
@@ -107,7 +109,8 @@ const Chondrichthyes_CownoseRay: IModelData = {
 
 const Osteichthyes_BarbelSteed: IModelData = {
   topic: "chordata_class_osteichthyes_barbel_steed",
-  source: "/barbel_steed_h_barbus.glb",
+  // source: "/barbel_steed_h_barbus.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/barbel_steed_h_barbus_compressed.glb',
   name: "Barbel Steed",
   title: "Barbel Steed (Osteichthyes)",
   description:
@@ -160,7 +163,8 @@ const Osteichthyes_BarbelSteed: IModelData = {
 
 const Amphibia_Urodela_CynopsPyrrhogaster: IModelData = {
   topic: "chordata_class_amphibia_urodela_cynops_pyrrhogaster",
-  source: "/salamandra.glb",
+  // source: "/salamandra.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/salamandra_compressed.glb',
   name: "Salamandra-de-barriga-de-fogo",
   title: "Salamandra-de-barriga-de-fogo (Urodela)",
   description:
@@ -213,7 +217,8 @@ const Amphibia_Urodela_CynopsPyrrhogaster: IModelData = {
 
 const Amphibia_Anura_RhacophorusSchlegelii: IModelData = {
   topic: "chordata_class_amphibia_anura_rhacophorus_schlegelii",
-  source: "/frog.glb",
+  // source: "/frog.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/frog_compressed.glb',
   sound: "/sounds/frog-sound-210348.mp3",
   name: "Perereca-de-Schlegel",
   title: "Perereca-de-Schlegel (Anura)",
@@ -267,7 +272,8 @@ const Amphibia_Anura_RhacophorusSchlegelii: IModelData = {
 
 const Reptilia_Chelonia_Loggerhead: IModelData = {
   topic: "chordata_class_reptilia_chelonia_loggerhead",
-  source: "/loggerhead_turtle.glb",
+  // source: "/loggerhead_turtle.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/loggerhead_turtle_compressed.glb',
   name: "Tartaruga-cabeçuda",
   title: "Tartaruga-cabeçuda (Chelonia)",
   description:
@@ -320,7 +326,8 @@ const Reptilia_Chelonia_Loggerhead: IModelData = {
 
 const Reptilia_Squamata_Lizard: IModelData = {
   topic: "chordata_class_reptilia_squamata_lizard",
-  source: "/lizard.glb",
+  // source: "/lizard.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/lizard_compressed.glb',
   // sound: '/sounds/iguana-220061.mp3',
   name: "Lagarto",
   title: "Lagarto (Squamata)",
@@ -374,7 +381,8 @@ const Reptilia_Squamata_Lizard: IModelData = {
 
 const Reptilia_Squamata_Snake: IModelData = {
   topic: "chordata_class_reptilia_squamata_snake",
-  source: "/snake_animate.glb",
+  // source: "/snake_animate.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/snake_animate_compressed.glb',
   sound: '/sounds/snake-hissing-6092.mp3',
   name: "Serpente",
   title: "Serpente (Squamata)",
@@ -475,7 +483,8 @@ const Reptilia_Crocodylia_Crocodile: IModelData = {
 
 export const Aves_Accipitriformes_RedTailedHawk: IModelData = {
   topic: "chordata_class_aves_accipitriformes_red_tailed_hawk",
-  source: "/red-tailed-hawk.glb", // substitua pelo caminho do modelo baixado
+  //source: "/red-tailed-hawk.glb", // substitua pelo caminho do modelo baixado
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/red-tailed-hawk_compressed.glb',
   sound: '/sounds/hawk-78766-updated.mp3',
   name: "Gavião-de-cauda-vermelha",
   title: "Gavião-de-cauda-vermelha (Aves)",
@@ -527,7 +536,8 @@ export const Aves_Accipitriformes_RedTailedHawk: IModelData = {
 
 const Aves_Struthioniformes_Ostrich: IModelData = {
   topic: "chordata_class_aves_struthioniformes_ostrich",
-  source: "/african_ostrich.glb",
+  // source: "/african_ostrich.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/african_ostrich_compressed.glb',
   name: "Avestruz-africano",
   title: "Avestruz-africano (Aves)",
   description: "Maior ave viva, incapaz de voar, adaptada à corrida em savanas africanas. Possui pernas longas e fortes, olhos grandes e penas macias.",
@@ -578,7 +588,8 @@ const Aves_Struthioniformes_Ostrich: IModelData = {
 
 const Aves_Passeriformes_EasternBluebird: IModelData = {
   topic: "chordata_class_aves_passeriformes_eastern_bluebird",
-  source: "/eastern_blue_bird.glb",
+  // source: "/eastern_blue_bird.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/eastern_blue_bird_compressed.glb',
   sound: '/sounds/gallant_bluebirds-24092-updated.mp3',
   name: "Eastern Bluebird",
   title: "Eastern Bluebird (Aves)",
@@ -630,7 +641,8 @@ const Aves_Passeriformes_EasternBluebird: IModelData = {
 
 const Mammalia_Chiroptera_Bat: IModelData = {
   topic: "chordata_class_mammalia_chiroptera_bat",
-  source: "/bat.glb",
+  // source: "/bat.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/bat_compressed.glb',
   sound: '/sounds/bat-chirping-type-1-354288.mp3',
   name: "Morcego",
   title: "Morcego (Chiroptera)",
@@ -683,7 +695,8 @@ const Mammalia_Chiroptera_Bat: IModelData = {
 
 const Mammalia_Artiodactyla_Giraffe: IModelData = {
   topic: "chordata_class_mammalia_artiodactyla_giraffe",
-  source: "/giraffe.glb",
+  // source: "/giraffe.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/giraffe_compressed.glb',
   name: "Girafa",
   title: "Girafa (Mammalia)",
   description: "O mamífero terrestre mais alto do mundo, com pescoço longo e pernas compridas, adaptado para alcançar folhas no topo das árvores.",
@@ -735,7 +748,8 @@ const Mammalia_Artiodactyla_Giraffe: IModelData = {
 
 const Mammalia_Carnivora_Lion: IModelData = {
   topic: "chordata_class_mammalia_carnivora_lion",
-  source: "/lion.glb",
+  // source: "/lion.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/lion_compressed.glb',
   sound: '/sounds/lion-loud-6813-updated.mp3',
   name: "Leão",
   title: "Leão (Mammalia)",
@@ -789,7 +803,8 @@ const Mammalia_Carnivora_Lion: IModelData = {
 
 const Mammalia_Cetacea_BlueWhale: IModelData = {
   topic: "chordata_class_mammalia_cetacea_blue_whale",
-  source: "/blue_whale.glb",
+  // source: "/blue_whale.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/blue_whale_compressed.glb',
   // sound: '/sounds/whale-sound-type-4-235993.mp3',
   name: "Baleia-azul",
   title: "Baleia-azul (Mammalia)",
@@ -842,7 +857,8 @@ const Mammalia_Cetacea_BlueWhale: IModelData = {
 
 const Mammalia_Cetacea_HumpbackDolphin: IModelData = {
   topic: "chordata_class_mammalia_cetacea_humpback_dolphin",
-  source: "/humpback_dolphin.glb",
+  // source: "/humpback_dolphin.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/humpback_dolphin_compressed.glb',
   // sound: '/sounds/dolphin-lumba-lumba-220055.mp3',
   name: "Humpback Dolphin",
   title: "Humpback Dolphin (Mammalia)",

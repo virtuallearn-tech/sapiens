@@ -3,7 +3,8 @@ import { NINETY } from "@utils/radAngles";
 
 const Echinodermata_Asteroidea_Starfish: IModelData = { 
   topic: "echinodermata_class_asteroidea_starfish",
-  source: "/scene_star3.glb",
+  // source: "/scene_star3.glb",
+  source:'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/seastar_compressed.glb',
   name: "Estrela-do-mar",
   title: "Estrela-do-mar (Asteroidea)",
   description: "Animal marinho equinodermo, com corpo em forma de estrela e geralmente cinco braços. Possui simetria radial, sistema ambulacrário e incrível capacidade de regeneração.",
@@ -56,7 +57,8 @@ const Echinodermata_Asteroidea_Starfish: IModelData = {
 
 const Echinodermata_Echinoidea_SandDollar: IModelData = {
   topic: "echinodermata_class_echinoidea_sanddollar",
-  source: "/scene_dolla.glb",
+  // source: "/scene_dolla.glb",
+  source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/sea_dolla_compressed.glb',
   name: "Bolacha-de-praia",
   title: "Bolacha-de-praia (Echinoidea)",
   description: "Equinodermo marinho de corpo achatado e circular, adaptado para viver enterrado na areia. Apresenta simetria radial modificada e pequenos espinhos para locomoção.",
