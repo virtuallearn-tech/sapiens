@@ -357,7 +357,7 @@ const Scene = () => {
             type='button'
             typeBtn='dark'
             className='m-button--full'
-            onClick={() => navigate(`${ROUTES_NAME.EXERCISES}/${discipline}/${topic}`)}
+            onClick={() => navigate(`${ROUTES_NAME.EXERCISES}/${discipline}/${topic}/${code}`)}
           >
             Exercícios
           </Button>

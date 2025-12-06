@@ -27,7 +27,7 @@ export const getModelByTopic = (
 
 export const setClass = (model: IModelData): IClass[] => {
 
-  console.log('model on set class', model)
+  // console.log('model on set class', model)
 
   const iClass: IClass[] = [
     {

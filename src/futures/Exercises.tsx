@@ -34,8 +34,8 @@ const Exercises = () => {
     const questions = getExerciciesByTopic(
         discipline as typeof DISCIPLINE[keyof typeof DISCIPLINE], 
         module as typeof DISCIPLINE_MODULE[keyof typeof DISCIPLINE_MODULE], 
-        topic as typeof DISCIPLINE_TOPICS[keyof typeof DISCIPLINE_TOPICS],numQuestions);
-    // console.log('questions list', questions);
+        topic as typeof DISCIPLINE_TOPICS[keyof typeof DISCIPLINE_TOPICS], numQuestions);
+    console.log('questions list', questions);
     setQuestions(questions);
     setStarted(true)
   }
