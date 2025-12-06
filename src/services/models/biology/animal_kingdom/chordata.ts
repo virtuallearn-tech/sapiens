@@ -1,8 +1,10 @@
+import { ANIMAL_KINGDOM_TOPICS } from "@interfaces/disciplines/biology";
 import type { IModelData } from "@interfaces/model";
-import { FIFTEEN, FORTY_FIVE, NINETY, SIXTY, TEN, THIRTY, TWENTY } from "@utils/radAngles";
+import { FIFTEEN, FORTY_FIVE, NINETY, SIXTY, TEN, THIRTY,  } from "@utils/radAngles";
 
 const Chondrichthyes_TigerShark: IModelData = {
-  topic: "chordata_class_chondrichthyes_tiger_shark",
+  // topic: "chordata_class_chondrichthyes_tiger_shark",
+  topic: ANIMAL_KINGDOM_TOPICS.CHORDATA_CLASS_CHONDRICHTHYES_TIGER_SHARK,
   // source: "/tiger_shark.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/tiger_shark_compressed.glb',
   name: "Tubarão-tigre",
@@ -51,11 +53,12 @@ const Chondrichthyes_TigerShark: IModelData = {
   wikipedia: "https://pt.wikipedia.org/wiki/Tubar%C3%A3o-tigre",
   // sceneBg: '#0e1a1f',
   hasAnimation: true
-};
+} as const;
 
 
 const Chondrichthyes_CownoseRay: IModelData = {
-  topic: "chordata_class_chondrichthyes_cownose_ray",
+  // topic: "chordata_class_chondrichthyes_cownose_ray",
+  topic: ANIMAL_KINGDOM_TOPICS.CHORDATA_CLASS_CHONDRICHTHYES_COWNOSE_RAY,
   // source: "/cownose_ray.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/cownose_ray_compressed.glb',
   name: "Raia-cownose",
@@ -104,11 +107,12 @@ const Chondrichthyes_CownoseRay: IModelData = {
   wikipedia: "https://pt.wikipedia.org/wiki/Rhinoptera_bonasus",
   // sceneBg: '#0f1f1f',
   hasAnimation: true
-};
+} as const;
 
 
 const Osteichthyes_BarbelSteed: IModelData = {
-  topic: "chordata_class_osteichthyes_barbel_steed",
+  // topic: "chordata_class_osteichthyes_barbel_steed",
+  topic: ANIMAL_KINGDOM_TOPICS.CHORDATA_CLASS_OSTEICHTHYES_BARREL_STEED,
   // source: "/barbel_steed_h_barbus.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/barbel_steed_h_barbus_compressed.glb',
   name: "Barbel Steed",
@@ -158,11 +162,12 @@ const Osteichthyes_BarbelSteed: IModelData = {
   wikipedia: "https://en.wikipedia.org/wiki/Hemibarbus_barbus",
   sceneBg: "#5A6E7F",
   hasAnimation: true
-};
+} as const;
 
 
 const Amphibia_Urodela_CynopsPyrrhogaster: IModelData = {
-  topic: "chordata_class_amphibia_urodela_cynops_pyrrhogaster",
+  // topic: "chordata_class_amphibia_urodela_cynops_pyrrhogaster",
+  topic: ANIMAL_KINGDOM_TOPICS.CHORDATA_CLASS_AMPHIBIA_URODELA_CYNOPS_PYRRHOGASTER,
   // source: "/salamandra.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/salamandra_compressed.glb',
   name: "Salamandra-de-barriga-de-fogo",
@@ -212,11 +217,12 @@ const Amphibia_Urodela_CynopsPyrrhogaster: IModelData = {
   wikipedia: "https://en.wikipedia.org/wiki/Cynops_pyrrhogaster",
   // sceneBg: '#1a1f1a',
   hasAnimation: true
-};
+} as const;
 
 
 const Amphibia_Anura_RhacophorusSchlegelii: IModelData = {
-  topic: "chordata_class_amphibia_anura_rhacophorus_schlegelii",
+  // topic: "chordata_class_amphibia_anura_rhacophorus_schlegelii",
+  topic: ANIMAL_KINGDOM_TOPICS.CHORDATA_CLASS_AMPHIBIA_ANURA_RHACOPHORUS_SCHLEGELII,
   // source: "/frog.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/frog_compressed.glb',
   sound: "/sounds/frog-sound-210348.mp3",
@@ -267,11 +273,12 @@ const Amphibia_Anura_RhacophorusSchlegelii: IModelData = {
   wikipedia: "https://pt.wikipedia.org/wiki/Rhacophorus_schlegelii",
   sceneBg: "#000",
   hasAnimation: true
-};
+} as const;
 
 
 const Reptilia_Chelonia_Loggerhead: IModelData = {
-  topic: "chordata_class_reptilia_chelonia_loggerhead",
+  // topic: "chordata_class_reptilia_chelonia_loggerhead",
+  topic: ANIMAL_KINGDOM_TOPICS.CHORDATA_CLASS_REPTILIA_CHELONIA_LOGGERHEAD,
   // source: "/loggerhead_turtle.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/loggerhead_turtle_compressed.glb',
   name: "Tartaruga-cabeçuda",
@@ -321,11 +328,12 @@ const Reptilia_Chelonia_Loggerhead: IModelData = {
   wikipedia: "https://pt.wikipedia.org/wiki/Caretta_caretta",
   // sceneBg: "#0e1f1f",
   hasAnimation: true
-};
+} as const;
 
 
 const Reptilia_Squamata_Lizard: IModelData = {
-  topic: "chordata_class_reptilia_squamata_lizard",
+  // topic: "chordata_class_reptilia_squamata_lizard",
+  topic: ANIMAL_KINGDOM_TOPICS.CHORDATA_CLASS_REPTILIA_SQUAMATA_LIZARD,
   // source: "/lizard.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/lizard_compressed.glb',
   // sound: '/sounds/iguana-220061.mp3',
@@ -376,11 +384,12 @@ const Reptilia_Squamata_Lizard: IModelData = {
   // sceneBg: '#1f1a1a',
   hasAnimation: true,
   animation: "Armature|WALK.002"
-};
+} as const;
 
 
 const Reptilia_Squamata_Snake: IModelData = {
-  topic: "chordata_class_reptilia_squamata_snake",
+  // topic: "chordata_class_reptilia_squamata_snake",
+  topic: ANIMAL_KINGDOM_TOPICS.CHORDATA_CLASS_REPTILIA_SQUAMATA_SNAKE,
   // source: "/snake_animate.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/snake_animate_compressed.glb',
   sound: '/sounds/snake-hissing-6092.mp3',
@@ -430,11 +439,12 @@ const Reptilia_Squamata_Snake: IModelData = {
   wikipedia: "https://pt.wikipedia.org/wiki/Serpentes",
   sceneBg: '#C2B79B',
   hasAnimation: true
-};
+} as const;
 
 
 const Reptilia_Crocodylia_Crocodile: IModelData = {
-  topic: "chordata_class_reptilia_crocodylia_crocodile",
+  // topic: "chordata_class_reptilia_crocodylia_crocodile",
+  topic: ANIMAL_KINGDOM_TOPICS.CHORDATA_CLASS_REPTILIA_CROCODYLIA_CROCODILE,
   source: "/scene_crocodile.glb",
   sound: '/sounds/alligator-411864.mp3',
   name: "Crocodilo",
@@ -478,11 +488,12 @@ const Reptilia_Crocodylia_Crocodile: IModelData = {
   wikipedia: "https://en.wikipedia.org/wiki/Crocodile",
   // sceneBg: '#1a1f1f',
   hasAnimation: true
-};
+} as const;
 
 
 export const Aves_Accipitriformes_RedTailedHawk: IModelData = {
-  topic: "chordata_class_aves_accipitriformes_red_tailed_hawk",
+  // topic: "chordata_class_aves_accipitriformes_red_tailed_hawk",
+  topic: ANIMAL_KINGDOM_TOPICS.CHORDATA_CLASS_AVES_ACCIPITRIFORMES_RED_TAILED_HAWK,
   //source: "/red-tailed-hawk.glb", // substitua pelo caminho do modelo baixado
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/red-tailed-hawk_compressed.glb',
   sound: '/sounds/hawk-78766-updated.mp3',
@@ -531,11 +542,12 @@ export const Aves_Accipitriformes_RedTailedHawk: IModelData = {
 </div>`,
   wikipedia: "https://pt.wikipedia.org/wiki/Buteo_jamaicensis",
   hasAnimation: true
-};
+} as const;
 
 
 const Aves_Struthioniformes_Ostrich: IModelData = {
-  topic: "chordata_class_aves_struthioniformes_ostrich",
+  // topic: "chordata_class_aves_struthioniformes_ostrich",
+  topic: ANIMAL_KINGDOM_TOPICS.CHORDATA_CLASS_AVES_STRUTHIONIFORMES_OSTRICH,
   // source: "/african_ostrich.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/african_ostrich_compressed.glb',
   name: "Avestruz-africano",
@@ -583,11 +595,11 @@ const Aves_Struthioniformes_Ostrich: IModelData = {
 </div>`,
   wikipedia: "https://pt.wikipedia.org/wiki/Struthio_camelus",
   hasAnimation: true
-};
-
+} as const;
 
 const Aves_Passeriformes_EasternBluebird: IModelData = {
-  topic: "chordata_class_aves_passeriformes_eastern_bluebird",
+  // topic: "chordata_class_aves_passeriformes_eastern_bluebird",
+  topic: ANIMAL_KINGDOM_TOPICS.CHORDATA_CLASS_AVES_PASSERIFORMES_EASTERN_BLUEBIRD,
   // source: "/eastern_blue_bird.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/eastern_blue_bird_compressed.glb',
   sound: '/sounds/gallant_bluebirds-24092-updated.mp3',
@@ -636,11 +648,12 @@ const Aves_Passeriformes_EasternBluebird: IModelData = {
 </div>`,
   wikipedia: "https://pt.wikipedia.org/wiki/Sialia_sialis",
   hasAnimation: true
-};
+} as const;
 
 
 const Mammalia_Chiroptera_Bat: IModelData = {
-  topic: "chordata_class_mammalia_chiroptera_bat",
+  // topic: "chordata_class_mammalia_chiroptera_bat",
+  topic: ANIMAL_KINGDOM_TOPICS.CHORDATA_CLASS_MAMMALIA_CHIROPTERA_BAT,
   // source: "/bat.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/bat_compressed.glb',
   sound: '/sounds/bat-chirping-type-1-354288.mp3',
@@ -690,11 +703,12 @@ const Mammalia_Chiroptera_Bat: IModelData = {
   wikipedia: "https://pt.wikipedia.org/wiki/Morcego",
   // sceneBg: '#1a1a2a',
   hasAnimation: true
-};
+} as const;
 
 
 const Mammalia_Artiodactyla_Giraffe: IModelData = {
-  topic: "chordata_class_mammalia_artiodactyla_giraffe",
+  // topic: "chordata_class_mammalia_artiodactyla_giraffe",
+  topic: ANIMAL_KINGDOM_TOPICS.CHORDATA_CLASS_MAMMALIA_ARTIODACTYLA_GIRAFFE, 
   // source: "/giraffe.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/giraffe_compressed.glb',
   name: "Girafa",
@@ -743,11 +757,12 @@ const Mammalia_Artiodactyla_Giraffe: IModelData = {
   wikipedia: "https://en.wikipedia.org/wiki/Giraffe",
   // sceneBg: '#2a1f1a',
   hasAnimation: true
-};
+} as const;
 
 
 const Mammalia_Carnivora_Lion: IModelData = {
-  topic: "chordata_class_mammalia_carnivora_lion",
+  // topic: "chordata_class_mammalia_carnivora_lion",
+  topic: ANIMAL_KINGDOM_TOPICS.CHORDATA_CLASS_MAMMALIA_CARNIVORA_LION,
   // source: "/lion.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/lion_compressed.glb',
   sound: '/sounds/lion-loud-6813-updated.mp3',
@@ -798,11 +813,12 @@ const Mammalia_Carnivora_Lion: IModelData = {
   // sceneBg: '#2a1a1a',
   hasAnimation: true,
   animation: 'Walk'
-};
+} as const;
 
 
 const Mammalia_Cetacea_BlueWhale: IModelData = {
-  topic: "chordata_class_mammalia_cetacea_blue_whale",
+  // topic: "chordata_class_mammalia_cetacea_blue_whale",
+  topic: ANIMAL_KINGDOM_TOPICS.CHORDATA_CLASS_MAMMALIA_CETACEA_BLUE_WHALE,
   // source: "/blue_whale.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/blue_whale_compressed.glb',
   // sound: '/sounds/whale-sound-type-4-235993.mp3',
@@ -852,11 +868,12 @@ const Mammalia_Cetacea_BlueWhale: IModelData = {
   wikipedia: "https://en.wikipedia.org/wiki/Blue_whale",
   // sceneBg: '#0a1f3a',
   hasAnimation: true
-};
+} as const;
 
 
 const Mammalia_Cetacea_HumpbackDolphin: IModelData = {
-  topic: "chordata_class_mammalia_cetacea_humpback_dolphin",
+  // topic: "chordata_class_mammalia_cetacea_humpback_dolphin",
+  topic: ANIMAL_KINGDOM_TOPICS.CHORDATA_CLASS_MAMMALIA_CETACEA_HUMPBACK_DOLPHIN,
   // source: "/humpback_dolphin.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/humpback_dolphin_compressed.glb',
   // sound: '/sounds/dolphin-lumba-lumba-220055.mp3',
@@ -906,8 +923,7 @@ const Mammalia_Cetacea_HumpbackDolphin: IModelData = {
   wikipedia: "https://en.wikipedia.org/wiki/Humpback_dolphin",
   // sceneBg: '#0f1f2f',
   hasAnimation: true
-};
-
+} as const;
 
 
 export const CHORDATA_MODELS: IModelData[] = [

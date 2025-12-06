@@ -3,7 +3,7 @@ import { Button } from "@components/common/Button";
 import { useNavigate, useParams } from "react-router-dom";
 import type { IQuestionData } from "@interfaces/question";
 import { getExerciciesByTopic } from "@services/exercicies";
-import type { DISCIPLINE, DISCIPLINE_MODULE, DISCIPLINE_TOPICS } from "@interfaces/discipline";
+import  { DISCIPLINE, DISCIPLINE_MODULE, DISCIPLINE_TOPICS } from "@interfaces/discipline";
 import { SelectNumQuestions } from "@components/layout/SelectNumQuestions";
 import { Message } from "@components/layout/Message";
 
@@ -30,7 +30,10 @@ const Exercises = () => {
 
   const handleQuestions = () => {
     //console.log('numQuestions', numQuestions);
-    const questions = getExerciciesByTopic(discipline as DISCIPLINE, module as DISCIPLINE_MODULE, topic as DISCIPLINE_TOPICS,numQuestions);
+    const questions = getExerciciesByTopic(
+        discipline as typeof DISCIPLINE[keyof typeof DISCIPLINE], 
+        module as typeof DISCIPLINE_MODULE[keyof typeof DISCIPLINE_MODULE], 
+        topic as typeof DISCIPLINE_TOPICS[keyof typeof DISCIPLINE_TOPICS],numQuestions);
     // console.log('questions list', questions);
     setQuestions(questions);
     setStarted(true)

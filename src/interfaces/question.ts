@@ -17,7 +17,7 @@ export interface IQuestionData {
 }
 
 export interface IQuestion {
-  discipline: DISCIPLINE;
-  module: DISCIPLINE_MODULE;
+  discipline: typeof DISCIPLINE[keyof typeof DISCIPLINE];
+  module: typeof DISCIPLINE_MODULE[keyof typeof DISCIPLINE_MODULE];
   data: IQuestionData[] 
 }

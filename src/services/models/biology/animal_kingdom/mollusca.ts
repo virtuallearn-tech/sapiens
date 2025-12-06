@@ -1,7 +1,9 @@
+import { ANIMAL_KINGDOM_TOPICS } from "@interfaces/disciplines/biology";
 import type { IModelData } from "@interfaces/model";
 
 const Gastropod: IModelData = {
-  topic: "mollusca_class_gastropoda",
+  // topic: "mollusca_class_gastropoda",
+  topic: ANIMAL_KINGDOM_TOPICS.MOLLUSCA_CLASS_GASTROPODA,
   // source: "/tsukushi_snail_euhadra_herklotsi.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/tsukushi_snail_euhadra_herklotsi_compressed.glb',
   name: "Euhadra herklotsi",
@@ -56,10 +58,11 @@ const Gastropod: IModelData = {
   wikipedia: "https://en.wikipedia.org/wiki/Euhadra_herklotsi",
   sceneBg: '#000',
   hasAnimation: true
-};
+} as const;
 
 const Cephalopoda_BobtailSquid: IModelData = {
-  topic: "mollusca_class_cephalopoda_bobtail_squid",
+  // topic: "mollusca_class_cephalopoda_bobtail_squid",
+  topic: ANIMAL_KINGDOM_TOPICS.MOLLUSCA_CLASS_CEPHALOPODA,
   source: "/firefly-squid-glowing.glb",
   name: "Bobtail Squid",
   title: "Lula Bobtail (Sepiolidae)",
@@ -102,10 +105,11 @@ const Cephalopoda_BobtailSquid: IModelData = {
   wikipedia: "https://en.wikipedia.org/wiki/Bobtail_squid",
   // sceneBg: '#000000',
   hasAnimation: true
-};
+} as const;
 
 const Cephalopoda_BlueRingedOctopus: IModelData = {
-  topic: "mollusca_class_cephalopoda_octopus",
+  // topic: "mollusca_class_cephalopoda_octopus",
+  topic: ANIMAL_KINGDOM_TOPICS.MOLLUSCA_CLASS_CEPHALOPODA,
   // source: "/scene.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/blue_ring_octopus_compressed.glb',
   name: "Blue-ringed Octopus",
@@ -161,10 +165,11 @@ const Cephalopoda_BlueRingedOctopus: IModelData = {
   // sound: '/sounds/ocean.wav',
   sceneBg: '#000000',
   hasAnimation: true
-};
+} as const;
 
 const Cephalopoda_Nautilus: IModelData = {
-  topic: "mollusca_class_cephalopoda_nautilus",
+  // topic: "mollusca_class_cephalopoda_nautilus",
+  topic: ANIMAL_KINGDOM_TOPICS.MOLLUSCA_CLASS_CEPHALOPODA,
   // source: "/nautilus_shell.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/nautilus_shell_compressed.glb',
   name: "Nautilus pompilius",
@@ -220,10 +225,11 @@ const Cephalopoda_Nautilus: IModelData = {
   // sound: '/sounds/ocean.wav',
   sceneBg: '#5A6E7F',
   hasAnimation: false
-};
+} as const;
 
 const Bivalvia_CardiumCostatum: IModelData = {
-  topic: "mollusca_class_bivalvia",
+  // topic: "mollusca_class_bivalvia",
+  topic: ANIMAL_KINGDOM_TOPICS.MOLLUSCA_CLASS_BIVALVIA,
   // source: "/cardium_costatum.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/cardium_costatum_compressed.glb',
   name: "Cardium costatum",
@@ -279,7 +285,7 @@ const Bivalvia_CardiumCostatum: IModelData = {
   // sound: '/sounds/ocean.wav',
   sceneBg: '#000',
   hasAnimation: false
-};
+} as const;
 
 export const MOLLUSCA_MODELS: IModelData[] = [
   Gastropod,

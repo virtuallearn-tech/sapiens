@@ -6,6 +6,7 @@ import { MembraneTransport } from "@futures/content/biology/MembraneTransport";
 import { PlantCell } from "@futures/content/biology/PlanCell";
 import { ProkaryoticCell } from "@futures/content/biology/ProkaryoticCell";
 import type { IContent } from "@interfaces/content";
+import { DISCIPLINE, DISCIPLINE_MODULE, DISCIPLINE_TOPICS } from "@interfaces/discipline";
 
 import { Cover } from "@utils/getImageCover";
 
@@ -14,63 +15,63 @@ export const CitologySummary: IContent[] = [
   {
     id: "bio-citologia-geral",
     title: "Citologia",
-    discipline: "BIOLOGY",
-    module: "CYTOLOGY",
-    topic: "citology",
+    discipline: DISCIPLINE.BIOLOGY,
+    module: DISCIPLINE_MODULE.CYTOLOGY,
+    topic: DISCIPLINE_TOPICS.CITOLOGY,
     cover: Cover.citology,
     component: Citology
   },
   {
     id: "bio-celula-eucarionte",
     title: "Célula Eucarionte",
-    discipline: "BIOLOGY",
-    module: "CYTOLOGY",
-    topic: "eukaryotic_cell",
+    discipline: DISCIPLINE.BIOLOGY,
+    module: DISCIPLINE_MODULE.CYTOLOGY,
+    topic: DISCIPLINE_TOPICS.EUKARYOTIC_CELL,
     cover: Cover.eukaryotic_cell,
     component: EukaryoticCellContent
   },
   {
     id: "bio-celula-procarionte",
     title: "Célula Procarionte",
-    discipline: "BIOLOGY",
-    module: "CYTOLOGY",
-    topic: "prokaryotic_cell",
+    discipline: DISCIPLINE.BIOLOGY,
+    module: DISCIPLINE_MODULE.CYTOLOGY,
+    topic: DISCIPLINE_TOPICS.PROKARYOTIC_CELL,
     cover: Cover.prokaryotic_cell,
     component: ProkaryoticCell
   },
   {
     id: "bio-celula-vegetal",
     title: "Célula Vegetal",
-    discipline: "BIOLOGY",
-    module: "CYTOLOGY",
-    topic: "plant_cell",
+    discipline: DISCIPLINE.BIOLOGY,
+    module: DISCIPLINE_MODULE.CYTOLOGY,
+    topic: DISCIPLINE_TOPICS.PLANT_CELL,
     cover: Cover.plant_cell,
     component: PlantCell
   },
   {
     id: "bio-organelas",
     title: "Organelas Citoplasmáticas",
-    discipline: "BIOLOGY",
-    module: "CYTOLOGY",
-    topic: "cytoplasmic_organelles",
+    discipline: DISCIPLINE.BIOLOGY,
+    module: DISCIPLINE_MODULE.CYTOLOGY,
+    topic: DISCIPLINE_TOPICS.CYTOPLASMIC_ORGANELLES,
     cover: Cover.cytoplasmic_organelles,
     component: CytoplasmicOrganelles
   },
   {
     id: "bio-membrana",
     title: "Membrana Plasmática e Transporte",
-    discipline: "BIOLOGY",
-    module: "CYTOLOGY",
-    topic: "membrane_transport",
+    discipline: DISCIPLINE.BIOLOGY,
+    module: DISCIPLINE_MODULE.CYTOLOGY,
+    topic: DISCIPLINE_TOPICS.MEMBRANE_TRANSPORT,
     cover: Cover.membrane_transport,
     component: MembraneTransport
   },
   {
     id: "bio-ciclo-mitose",
     title: "Ciclo Celular e Mitose",
-    discipline: "BIOLOGY",
-    module: "CYTOLOGY",
-    topic: "cell_cycle_mitosis",
+    discipline: DISCIPLINE.BIOLOGY,
+    module: DISCIPLINE_MODULE.CYTOLOGY,
+    topic: DISCIPLINE_TOPICS.CELL_CYCLE_MITOSIS,
     cover: Cover.cell_cycle_mitosis,
     component: CellCycle
   }

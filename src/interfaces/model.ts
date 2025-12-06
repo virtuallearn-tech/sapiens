@@ -1,4 +1,4 @@
-import type { DISCIPLINE_MODULE, DISCIPLINE_TOPICS } from "./discipline"
+import { DISCIPLINE_MODULE, DISCIPLINE_TOPICS } from "./discipline"
 
 export interface IModelNode {
   name: string,
@@ -8,7 +8,7 @@ export interface IModelNode {
 }
 
 export interface IModelData {
-  topic: DISCIPLINE_TOPICS,
+  topic: typeof DISCIPLINE_TOPICS[keyof typeof DISCIPLINE_TOPICS],
   source: string,
   name: string,
   title: string,
@@ -32,7 +32,7 @@ export interface IModelData {
 
 export interface IModel {
   // discipline: DISCIPLINE,
-  module: DISCIPLINE_MODULE,
+  module: typeof DISCIPLINE_MODULE[keyof typeof DISCIPLINE_MODULE],
   data: IModelData[]
 }
 

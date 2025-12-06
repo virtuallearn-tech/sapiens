@@ -1,7 +1,9 @@
+import { ANIMAL_KINGDOM_TOPICS } from "@interfaces/disciplines/biology";
 import type { IModelData } from "@interfaces/model";
 
 const Anthozoa: IModelData = {
-  topic: "cnidaria_class_anthozoa",
+  // topic: "cnidaria_class_anthozoa",
+  topic: ANIMAL_KINGDOM_TOPICS.CNIDARIA_CLASS_ANTHOZOA,
   // source: "/brain_coral.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/brain_coral_compressed.glb',
   name: "Coral-cérebro",
@@ -58,10 +60,11 @@ const Anthozoa: IModelData = {
   // sound: '/sounds/ocean.wav',
   // sceneBg: "#000",
   hasAnimation: false
-};
+} as const;
 
 const Hydrozoa: IModelData = {
-  topic: "cnidaria_class_hydrozoa",
+  // topic: "cnidaria_class_hydrozoa",
+  topic: ANIMAL_KINGDOM_TOPICS.CNIDARIA_CLASS_HYDROZOA,
   // source: "/solmundella_jellyfish_narcomedusae.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/solmundella_jellyfish_narcomedusae_compressed-updated.glb',
   name: "Solmundella Jellyfish",
@@ -118,10 +121,11 @@ const Hydrozoa: IModelData = {
   // sound: '/sounds/ocean.wav',
   sceneBg: "#323232",
   hasAnimation: true
-};
+} as const;
 
 const Scyphozoa: IModelData = {
-  topic: "cnidaria_class_scyphozoa",
+  // topic: "cnidaria_class_scyphozoa",
+  topic: ANIMAL_KINGDOM_TOPICS.CNIDARIA_CLASS_SCYPHOZOA,
   // source: "/cnidarians_class_scyphozoa.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/cnidarians_class_scyphozoa_compressed.glb',
   name: "Água-viva Mosaico",
@@ -178,7 +182,7 @@ const Scyphozoa: IModelData = {
   // sound: '/sounds/ocean.wav',
   sceneBg: "#323232",
   hasAnimation: true
-};
+} as const; 
 
 
 export const CNIDARIAN_MODELS: IModelData[] = [

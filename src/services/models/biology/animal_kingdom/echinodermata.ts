@@ -1,8 +1,10 @@
+import { ANIMAL_KINGDOM_TOPICS } from "@interfaces/disciplines/biology";
 import type { IModelData } from "@interfaces/model";
 import { NINETY } from "@utils/radAngles";
 
 const Echinodermata_Asteroidea_Starfish: IModelData = { 
-  topic: "echinodermata_class_asteroidea_starfish",
+  // topic: "echinodermata_class_asteroidea_starfish",
+  topic: ANIMAL_KINGDOM_TOPICS.ECHINODERMATA_CLASS_ASTEROIDEA_STARFISH,
   // source: "/scene_star3.glb",
   source:'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/seastar_compressed.glb',
   name: "Estrela-do-mar",
@@ -52,11 +54,12 @@ const Echinodermata_Asteroidea_Starfish: IModelData = {
   wikipedia: "https://pt.wikipedia.org/wiki/Estrela-do-mar",
   sceneBg: '#000',
   hasAnimation: false
-};
+} as const;
 
 
 const Echinodermata_Echinoidea_SandDollar: IModelData = {
-  topic: "echinodermata_class_echinoidea_sanddollar",
+  // topic: "echinodermata_class_echinoidea_sanddollar",
+  topic: ANIMAL_KINGDOM_TOPICS.ECHINODERMATA_CLASS_ECHINOIDEA_SANDDOLLAR,
   // source: "/scene_dolla.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/sea_dolla_compressed.glb',
   name: "Bolacha-de-praia",
@@ -106,7 +109,7 @@ const Echinodermata_Echinoidea_SandDollar: IModelData = {
   wikipedia: "https://pt.wikipedia.org/wiki/Bolacha-da-praia",
   sceneBg: '#000',
   hasAnimation: false
-};
+} as const;
 
 
 export const ECHINODERMATA_MODELS: IModelData[] = [

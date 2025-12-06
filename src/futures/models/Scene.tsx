@@ -13,7 +13,7 @@ import { FabButton } from '@components/common/Fab'
 import { MenuOptions } from '@components/ui-3d/MenuOptions'
 import { Explanation } from '@components/ui-3d/Explanation'
 import { useSpeech } from '@hooks/useSpeech'
-import type { DISCIPLINE, DISCIPLINE_MODULE, DISCIPLINE_TOPICS } from '@interfaces/discipline'
+import  { DISCIPLINE, DISCIPLINE_MODULE, DISCIPLINE_TOPICS } from '@interfaces/discipline'
 import { License } from '@components/layout/License'
 
 import { BsArrowsFullscreen } from "react-icons/bs";
@@ -95,7 +95,10 @@ const Scene = () => {
   } = useSpeech()
 
   useEffect(() => {
-    const m = getModelByTopic(code as DISCIPLINE_TOPICS, discipline as DISCIPLINE, topic as DISCIPLINE_MODULE) //getModel().data[0]
+    const m = getModelByTopic(
+      code as typeof DISCIPLINE_TOPICS[keyof typeof DISCIPLINE_TOPICS], 
+      discipline as typeof DISCIPLINE[keyof typeof DISCIPLINE], 
+      topic as typeof DISCIPLINE_MODULE[keyof typeof DISCIPLINE_MODULE]) //getModel().data[0]
     //console.log('MODEL ', m)
     const nodesNames = m?.node?.map(n => n.name).filter((s): s is string => typeof s === 'string') ?? []
     const menuOptions = [m?.name, ...nodesNames, 'Fechar'].filter((s): s is string => typeof s === 'string')

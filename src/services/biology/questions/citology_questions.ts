@@ -1,8 +1,9 @@
+import { DISCIPLINE, DISCIPLINE_MODULE } from "@interfaces/discipline";
 import type { IQuestion } from "interfaces/question";
 
 export const CitologyQuestions: IQuestion = {
-    discipline: "BIOLOGY",
-    module: "CYTOLOGY",
+    discipline: DISCIPLINE.BIOLOGY,
+    module: DISCIPLINE_MODULE.CYTOLOGY,
     data: [
       {
         code: "Q1A2B3C4",

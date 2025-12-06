@@ -15,7 +15,10 @@ const TopicOptions = () => {
   const [moduleData, setModule] = useState<ITopicCode | null>(null)
   
   useEffect(()=>{
-    const modules = getContentByTopic(discipline as DISCIPLINE, module as DISCIPLINE_MODULE, topic as DISCIPLINE_TOPICS )
+    const modules = getContentByTopic(
+      discipline as typeof DISCIPLINE[keyof typeof DISCIPLINE],
+      module as typeof DISCIPLINE_MODULE[keyof typeof DISCIPLINE_MODULE], 
+      topic as typeof DISCIPLINE_TOPICS[keyof typeof DISCIPLINE_TOPICS])
     // console.log('modules on get topics', modules)
     setModule(modules)
   }, [moduleData])

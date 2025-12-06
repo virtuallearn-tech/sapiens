@@ -1,9 +1,10 @@
-import type { ANIMAL_KINGDOM_TOPICS } from "@interfaces/disciplines/biology";
+import { DISCIPLINE, DISCIPLINE_MODULE } from "@interfaces/discipline";
+import { ANIMAL_KINGDOM_TOPICS } from "@interfaces/disciplines/biology";
 import type { IQuestion } from "@interfaces/question";
 
 export const poriferosQuestions: IQuestion = {
-  discipline: 'BIOLOGY',
-  module: 'ANIMAL_KINGDOM',
+  discipline: DISCIPLINE.BIOLOGY,
+  module: DISCIPLINE_MODULE.ANIMAL_KINGDOM,
   data: [
     {
       code: "PORI0001",
@@ -430,8 +431,8 @@ export const poriferosQuestions: IQuestion = {
 };
 
 export const cnidariosQuestions: IQuestion = {
-  discipline: 'BIOLOGY',
-  module: 'ANIMAL_KINGDOM',
+  discipline: DISCIPLINE.BIOLOGY,
+  module: DISCIPLINE_MODULE.ANIMAL_KINGDOM,
   data: [
     {
       code: "CNID0001",
@@ -858,8 +859,8 @@ export const cnidariosQuestions: IQuestion = {
 };
 
 export const platelmintosQuestions: IQuestion = {
-  discipline: 'BIOLOGY',
-  module: 'ANIMAL_KINGDOM',
+  discipline: DISCIPLINE.BIOLOGY,
+  module: DISCIPLINE_MODULE.ANIMAL_KINGDOM,
   data: [
     {
       code: "PLAT0001",
@@ -1309,8 +1310,8 @@ export const platelmintosQuestions: IQuestion = {
 };
 
 export const nematelmintosQuestions: IQuestion = {
-  discipline: 'BIOLOGY',
-  module: 'ANIMAL_KINGDOM',
+  discipline: DISCIPLINE.BIOLOGY,
+  module: DISCIPLINE_MODULE.ANIMAL_KINGDOM,
   data: [
     {
       code: "NEMA0001",
@@ -1557,8 +1558,8 @@ export const nematelmintosQuestions: IQuestion = {
 };
 
 export const anelideosQuestions: IQuestion = {
-  discipline: 'BIOLOGY',
-  module: 'ANIMAL_KINGDOM',
+  discipline: DISCIPLINE.BIOLOGY,
+  module: DISCIPLINE_MODULE.ANIMAL_KINGDOM,
   data: [
     {
       code: "ANEL0001",
@@ -1744,8 +1745,8 @@ export const anelideosQuestions: IQuestion = {
 };
 
 export const moluscosQuestions: IQuestion = {
-  discipline: 'BIOLOGY',
-  module: 'ANIMAL_KINGDOM',
+  discipline: DISCIPLINE.BIOLOGY,
+  module: DISCIPLINE_MODULE.ANIMAL_KINGDOM,
   data: [
     {
       code: "MOLU0001",
@@ -2171,8 +2172,8 @@ export const moluscosQuestions: IQuestion = {
 };
 
 export const artropodesQuestions: IQuestion = {
-  discipline: 'BIOLOGY',
-  module: 'ANIMAL_KINGDOM',
+  discipline: DISCIPLINE.BIOLOGY,
+  module: DISCIPLINE_MODULE.ANIMAL_KINGDOM,
   data: [
     {
       code: "ARTR0001",
@@ -2598,8 +2599,8 @@ export const artropodesQuestions: IQuestion = {
 };
 
 export const equinodermosQuestions: IQuestion = {
-  discipline: 'BIOLOGY',
-  module: 'ANIMAL_KINGDOM',
+  discipline: DISCIPLINE.BIOLOGY,
+  module: DISCIPLINE_MODULE.ANIMAL_KINGDOM,
   data: [
     {
       code: "EQUI0001",
@@ -2785,8 +2786,8 @@ export const equinodermosQuestions: IQuestion = {
 };
 
 export const cordadosPeixesQuestions: IQuestion = {
-  discipline: 'BIOLOGY',
-  module: 'ANIMAL_KINGDOM',
+  discipline: DISCIPLINE.BIOLOGY,
+  module: DISCIPLINE_MODULE.ANIMAL_KINGDOM,
   data: [
     {
       code: "PEIX0001",
@@ -3213,8 +3214,8 @@ export const cordadosPeixesQuestions: IQuestion = {
 };
 
 export const cordadosAnfibiosQuestions: IQuestion = {
-  discipline: 'BIOLOGY',
-  module: 'ANIMAL_KINGDOM',
+  discipline: DISCIPLINE.BIOLOGY,
+  module: DISCIPLINE_MODULE.ANIMAL_KINGDOM,
   data: [
     {
       code: "ANFI0001",
@@ -3641,8 +3642,8 @@ export const cordadosAnfibiosQuestions: IQuestion = {
 };
 
 export const cordadosRepteisQuestions: IQuestion = {
-  discipline: 'BIOLOGY',
-  module: 'ANIMAL_KINGDOM',
+  discipline: DISCIPLINE.BIOLOGY,
+  module: DISCIPLINE_MODULE.ANIMAL_KINGDOM,
   data: [
     {
       code: "REPT0001",
@@ -4069,8 +4070,8 @@ export const cordadosRepteisQuestions: IQuestion = {
 };
 
 export const cordadosAvesQuestions: IQuestion = {
-  discipline: 'BIOLOGY',
-  module: 'ANIMAL_KINGDOM',
+  discipline: DISCIPLINE.BIOLOGY,
+  module: DISCIPLINE_MODULE.ANIMAL_KINGDOM,
   data: [
     {
       code: "AVES0001",
@@ -4497,8 +4498,8 @@ export const cordadosAvesQuestions: IQuestion = {
 };
 
 export const cordadosMamiferosQuestions: IQuestion = {
-  discipline: 'BIOLOGY',
-  module: 'ANIMAL_KINGDOM',
+  discipline: DISCIPLINE.BIOLOGY,
+  module: DISCIPLINE_MODULE.ANIMAL_KINGDOM,
   data: [
     {
       code: "MAMI0001",
@@ -4924,7 +4925,7 @@ export const cordadosMamiferosQuestions: IQuestion = {
   ]
 };
 
-export const getAnimalKingdomQuestions = (topic: ANIMAL_KINGDOM_TOPICS): IQuestion | undefined => {
+export const getAnimalKingdomQuestions = (topic: typeof ANIMAL_KINGDOM_TOPICS[keyof typeof ANIMAL_KINGDOM_TOPICS]): IQuestion | undefined => {
   if (topic.includes('porifera')) return poriferosQuestions;
   if (topic.includes('cnidaria')) return cnidariosQuestions;
   if (topic.includes('platyhelminthes')) return platelmintosQuestions;

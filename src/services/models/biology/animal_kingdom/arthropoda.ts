@@ -1,8 +1,10 @@
+import { ANIMAL_KINGDOM_TOPICS } from "@interfaces/disciplines/biology";
 import type { IModelData } from "@interfaces/model";
-import { FIFTEEN, FORTY_FIVE, NINETY, TEN, THIRTY, TWENTY } from "@utils/radAngles";
+import { FIFTEEN, FORTY_FIVE, THIRTY, TWENTY } from "@utils/radAngles";
 
 const Arachnida_Pseudoscorpion: IModelData = {
-  topic: "arthropoda_class_arachnida_pseudoscorpion",
+  // topic: "arthropoda_class_arachnida_pseudoscorpion",
+  topic: ANIMAL_KINGDOM_TOPICS.ARTHROPODA_CLASS_ARACHNIDA_PSEUDOSCORPION,
   // source: "/pseudoscorpion.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/pseudoscorpion_compressed.glb',
   name: "Pseudoscorpion",
@@ -54,10 +56,11 @@ const Arachnida_Pseudoscorpion: IModelData = {
   // sceneBg: '#1a1a1a',
   hasAnimation: true,
   animation: "Walk"
-};
+} as const;
 
 const Arachnida_Araneae_WolfSpider: IModelData = {
-  topic: "arthropoda_class_arachnida_araneae_wolf_spider",
+  // topic: "arthropoda_class_arachnida_araneae_wolf_spider",
+  topic: ANIMAL_KINGDOM_TOPICS.ARTHROPODA_CLASS_ARACHNIDA_ARANEAE_WOLF_SPIDER,
   // source: "/wolf_spider.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/wolf_spider_compressed.glb',
   name: "Aranha-lobo",
@@ -106,10 +109,11 @@ const Arachnida_Araneae_WolfSpider: IModelData = {
   </div>`,
   wikipedia: "https://en.wikipedia.org/wiki/Wolf_spider",
   hasAnimation: true
-};
+} as const;
 
 const Crustacea_Woodlouse: IModelData = {
-  topic: "arthropoda_class_crustacea_woodlouse",
+  // topic: "arthropoda_class_crustacea_woodlouse",
+  topic: ANIMAL_KINGDOM_TOPICS.ARTHROPODA_CLASS_CRUSTACEA_WOODLOUSE,
   // source: "/woodlouse.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/woodlouse_compressed.glb',
   name: "Tatuzinho-de-jardim",
@@ -158,10 +162,11 @@ const Crustacea_Woodlouse: IModelData = {
 </div>`,
   wikipedia: "https://en.wikipedia.org/wiki/Woodlouse",
   hasAnimation: true
-};
+} as const;
 
 const Crustacea_Crab: IModelData = {
-  topic: "arthropoda_class_crustacea_crab",
+  // topic: "arthropoda_class_crustacea_crab",
+  topic: ANIMAL_KINGDOM_TOPICS.ARTHROPODA_CLASS_CRUSTACEA_CRAB,
   // source: "/freshwater_crab.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/freshwater_crab_compressed.glb',
   sound: "/sounds/peel-prawns-277146.mp3",
@@ -211,10 +216,11 @@ const Crustacea_Crab: IModelData = {
   wikipedia: "https://en.wikipedia.org/wiki/Crab",
   sceneBg: "#323232",
   hasAnimation: true
-};
+} as const;
 
 const Insecta_Butterfly: IModelData = {
-  topic: "arthropoda_class_insecta_butterfly",
+  // topic: "arthropoda_class_insecta_butterfly",
+  topic: ANIMAL_KINGDOM_TOPICS.ARTHROPODA_CLASS_INSECTA_BUTTERFLY,
   // source: "/butterfly.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/butterfly_compressed.glb',
   name: "Borboleta",
@@ -263,10 +269,11 @@ const Insecta_Butterfly: IModelData = {
   wikipedia: "https://en.wikipedia.org/wiki/Butterfly",
   // sceneBg: "#2e1e1e",
   hasAnimation: true
-};
+} as const;
 
 const Insecta_BombusDahlbomii: IModelData = {
-  topic: "arthropoda_class_insecta_bombus_dahlbomii",
+  // topic: "arthropoda_class_insecta_bombus_dahlbomii",
+  topic: ANIMAL_KINGDOM_TOPICS.ARTHROPODA_CLASS_INSECTA_BOMBUS_DAHLBOMII,
   // source: "/bombus_dahlbomii.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/bombus_dahlbomii_compressed.glb',
   sound: "/sounds/bee-flying-loop-42287.mp3",
@@ -316,10 +323,11 @@ const Insecta_BombusDahlbomii: IModelData = {
   wikipedia: "https://en.wikipedia.org/wiki/Bombus_dahlbomii",
   // sceneBg: "#2a1a1a",
   hasAnimation: true
-};
+} as const;
 
 const Insecta_Ant: IModelData = {
-  topic: "arthropoda_class_insecta_ant",
+  // topic: "arthropoda_class_insecta_ant",
+  topic: ANIMAL_KINGDOM_TOPICS.ARTHROPODA_CLASS_INSECTA_ANT,
   // source: "/ant.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/ant_compressed.glb',
   name: "Formiga",
@@ -368,10 +376,11 @@ const Insecta_Ant: IModelData = {
   wikipedia: "https://en.wikipedia.org/wiki/Ant",
   // sceneBg: "#1f1f1f",
   hasAnimation: true
-};
+} as const;
 
 const Chilopoda_Centipede: IModelData = {
-  topic: "arthropoda_class_chilopoda_centipede",
+  // topic: "arthropoda_class_chilopoda_centipede",
+  topic: ANIMAL_KINGDOM_TOPICS.ARTHROPODA_CLASS_CHILOPODA_CENTIPEDE,
   // source: "/polydesmus_angustus.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/polydesmus_angustus_compressed.glb',
   name: "Centopeia",
@@ -425,7 +434,7 @@ const Chilopoda_Centipede: IModelData = {
 </div>`,
   wikipedia: "https://en.wikipedia.org/wiki/Centipede",
   hasAnimation: false
-};
+} as const;
 
 export const ARTHROPODA_MODELS: IModelData[] = [
   Arachnida_Pseudoscorpion,

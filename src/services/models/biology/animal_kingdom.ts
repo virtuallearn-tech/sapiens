@@ -1,4 +1,4 @@
-import type { IModel, IModelData } from "@interfaces/model";
+import type {IModelData } from "@interfaces/model";
 import { CNIDARIAN_MODELS } from "./animal_kingdom/cnidarians";
 import { MOLLUSCA_MODELS } from "./animal_kingdom/mollusca";
 import { ARTHROPODA_MODELS } from "./animal_kingdom/arthropoda";

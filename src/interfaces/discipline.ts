@@ -1,11 +1,16 @@
-import type { BIOLOGY_MODULE, BIOLOGY_TOPICS } from "./disciplines/biology";
+import  { BIOLOGY_MODULE, BIOLOGY_TOPICS } from "./disciplines/biology";
 
-export type PHYSICS_TOPICS = never;
-export type CHEMISTRY_TOPICS = never;
-export type MATH_TOPICS = never;
+export const DISCIPLINE = {
+  BIOLOGY: 'biologia',
+  PHYSICS: 'fisica',
+  QUEMISTRY: 'quimica',
+  MATH: 'matematica',
+} as const;
 
-export type DISCIPLINE = 'BIOLOGY' | 'PHYSICS' | 'CHEMISTRY' | 'MATH'
+export const DISCIPLINE_MODULE = {
+  ...BIOLOGY_MODULE,
+} as const;
 
-export type DISCIPLINE_MODULE = BIOLOGY_MODULE 
-
-export type DISCIPLINE_TOPICS = BIOLOGY_TOPICS
+export const DISCIPLINE_TOPICS = {
+  ...BIOLOGY_TOPICS,
+} as const;

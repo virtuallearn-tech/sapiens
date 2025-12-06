@@ -1,8 +1,10 @@
+import { CYTOLOGY_TOPICS } from "@interfaces/disciplines/biology";
 import type { IModelData } from "@interfaces/model";
 
 
 const PROKARYOTIC_CELL: IModelData = {
-  topic: 'prokaryotic_cell',
+  // topic: 'prokaryotic_cell',
+  topic: CYTOLOGY_TOPICS.PROKARYOTIC_CELL,
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-models/master/archaea.glb',//'/models/archaea.glb',
   name: 'Célula Procarionte',
   title: 'Célula Procarionte',
@@ -71,10 +73,11 @@ const PROKARYOTIC_CELL: IModelData = {
   licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
 </div>
 `
-}
+} as const;
 
 const PLANT_CELL: IModelData = {
-  topic: "plant_cell", // exemplo de subtopic
+  // topic: "plant_cell", 
+  topic: CYTOLOGY_TOPICS.PLANT_CELL,
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-models/master/plant_cell.glb', //"/models/plant_cell.glb",
   name: "Célula Vegetal",
   title: "Estrutura da Célula Vegetal",
@@ -179,10 +182,11 @@ const PLANT_CELL: IModelData = {
   licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
 </div>
 `,
-}
+} as const
 
 const EUKARYOTIC_CELL: IModelData = {
-  topic: "eukaryotic_cell",
+  // topic: "eukaryotic_cell",
+  topic: CYTOLOGY_TOPICS.EUKARYOTIC_CELL,
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-models/master/eukaryotic_cell.glb',//"/models/eukaryotic_cell.glb",
   name: "Célula Eucarionte",
   title: "Estrutura da Célula Eucarionte",

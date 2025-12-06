@@ -2216,7 +2216,7 @@ export const cordadosMamiferosFlashcards: IFlashcard[] = [
 ];
 
 
-export const getAnimalKingdomFlashcards = (topic:ANIMAL_KINGDOM_TOPICS): IFlashcard[] => {
+export const getAnimalKingdomFlashcards = (topic: typeof ANIMAL_KINGDOM_TOPICS[keyof typeof ANIMAL_KINGDOM_TOPICS]): IFlashcard[] => {
   if(topic.includes('porifera')) return poriferosFlashcards;
   if(topic.includes('cnidaria')) return cnidariosFlashcards;
   if(topic.includes('platyhelminthes')) return platelmintosFlashcards;
