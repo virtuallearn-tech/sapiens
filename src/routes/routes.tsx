@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Home } from "@pages/Home";
 import Loading from "@components/layout/Loading";
+import { ROUTES_NAME } from "./routesName";
 
 const Signin = lazy(() => import("@pages/Signin"));
 const Signup = lazy(() => import("@pages/Signup"));
@@ -23,20 +24,20 @@ export const AppRoutes = () => {
     <Suspense fallback={<Loading/>}>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/learn-3d" element={<Learn3D />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/signin" element={<Signin />} />
-        <Route path="/share-app" element={<ShareApp />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/donate" element={<Donate />} />
-        <Route path="/enem" element={<ENEMQuestions />} />
-        <Route path="/summary-list" element={<SumaryList />} />
-        <Route path="/summary/:discipline/:code" element={<Sumary />} />
-        <Route path="/topic-option/:discipline/:module/:topic" element={<TopicOptions />} />
-        <Route path="/flashcards/:discipline/:module/:topic" element={<Flashcards />} />
-        <Route path="/exercises/:discipline/:module/:topic" element={<Exercises />} />
-        <Route path="/results/:total/:right" element={<Results />} />
-        <Route path="/scene/:discipline/:topic/:code" element={<Scene />} />
+        <Route path={ROUTES_NAME.LEARN_3D} element={<Learn3D />} />
+        <Route path={ROUTES_NAME.SIGNUP} element={<Signup />} />
+        <Route path={ROUTES_NAME.SIGNIN} element={<Signin />} />
+        <Route path={ROUTES_NAME.SHARE_APP} element={<ShareApp />} />
+        <Route path={ROUTES_NAME.CONTACT} element={<Contact />} />
+        <Route path={ROUTES_NAME.DONATE} element={<Donate />} />
+        <Route path={ROUTES_NAME.ENEM_QUESTIONS} element={<ENEMQuestions />} />
+        <Route path={ROUTES_NAME.SUMMARY_LIST} element={<SumaryList />} />
+        <Route path={`${ROUTES_NAME.SUMMARY}/:discipline/:code`} element={<Sumary />} />
+        <Route path={`${ROUTES_NAME.TOPIC_OPTIONS}/:discipline/:module/:topic`}element={<TopicOptions />} />
+        <Route path={`${ROUTES_NAME.FLASHCARDS}/:discipline/:module/:topic`}  element={<Flashcards />} />
+        <Route path={`${ROUTES_NAME.EXERCISES}/:discipline/:module/:topic`} element={<Exercises />} />
+        <Route path={`${ROUTES_NAME.RESULTS}/:total/:right`} element={<Results />} />
+        <Route path={`${ROUTES_NAME.SCENE}/:discipline/:topic/:code`} element={<Scene />} />
       </Routes>
     </Suspense>
   );

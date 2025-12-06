@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom'
-import { FaHome, FaShareAlt, FaBookOpen, FaHeart } from "react-icons/fa";
-import { GiProgression } from "react-icons/gi";
+import { FaHome, FaShareAlt, FaHeart } from "react-icons/fa";
 import { MdContactSupport } from "react-icons/md";
-import { BsFillBadge3dFill, BsFillPencilFill } from "react-icons/bs";
-import { PiExam } from "react-icons/pi";
+import { BsFillBadge3dFill } from "react-icons/bs";
 
 
 import { useSidebar } from "@store/SidebarContext";
+import { ROUTES_NAME } from '@routes/routesName';
 
 export const Sidebar = () => {
   const { isOpen, close } = useSidebar();
@@ -16,13 +15,13 @@ export const Sidebar = () => {
       <nav className="m-sidebar__nav">
         <ul className="m-sidebar__list">
           <li onClick={close}>
-            <Link to="" className="m-sidebar__item">
+            <Link to="/" className="m-sidebar__item">
               <FaHome className="m-sidebar__icon" />
               <span>Home</span>
             </Link>
           </li>
           <li onClick={close}>
-            <Link to="/learn-3d" className="m-sidebar__item">
+            <Link to={ROUTES_NAME.LEARN_3D}className="m-sidebar__item">
               <BsFillBadge3dFill className="m-sidebar__icon" />
               <span>Aprender em 3D</span>
             </Link>
@@ -40,19 +39,19 @@ export const Sidebar = () => {
             </Link>
           </li> */}
           <li onClick={close}>
-            <Link to="/share-app" className="m-sidebar__item">
+            <Link to={ROUTES_NAME.SHARE_APP} className="m-sidebar__item">
               <FaShareAlt className="m-sidebar__icon" />
               <span>Compartilhar</span>
             </Link>
           </li>
           <li onClick={close}>
-            <Link to="/contact" className="m-sidebar__item">
+            <Link to={ROUTES_NAME.CONTACT} className="m-sidebar__item">
               <MdContactSupport className="m-sidebar__icon" />
               <span>Contato</span>
             </Link>
           </li>
           <li onClick={close}>
-            <Link to="/donate" className="m-sidebar__item">
+            <Link to={ROUTES_NAME.DONATE} className="m-sidebar__item">
               <FaHeart className="m-sidebar__icon" />
               <span>Apoie o Sapiens</span>
             </Link>

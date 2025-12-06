@@ -5,6 +5,7 @@ import { Button } from "@components/common/Button";
 import type { DISCIPLINE_MODULE, DISCIPLINE, DISCIPLINE_TOPICS } from "interfaces/discipline";
 import type { ITopicCode } from "@interfaces/topic";
 import { getContentByTopic } from "@services/content";
+import { ROUTES_NAME } from "@routes/routesName";
 
 const TopicOptions = () => {
 
@@ -32,20 +33,20 @@ const TopicOptions = () => {
         <Button 
           type="button" 
           className="m-button--full"
-          onClick={() => navigate(`/scene/${discipline}/${moduleData?.module}/${moduleData?.topic}`)}
+          onClick={() => navigate(`${ROUTES_NAME.SCENE}/${discipline}/${moduleData?.module}/${moduleData?.topic}`)}
           >
           Explorar em 3D
         </Button>
         <Button 
           type="button" 
           className="m-button--full" 
-          onClick={() => navigate(`/flashcards/${discipline}/${moduleData?.module}/${moduleData?.topic}`)}>
+          onClick={() => navigate(`${ROUTES_NAME.FLASHCARDS}/${discipline}/${moduleData?.module}/${moduleData?.topic}`)}>
           Flashcards
         </Button>
         <Button 
           type="button" 
           className="m-button--full"
-          onClick={() => navigate(`/exercises/${discipline}/${moduleData?.module}/${moduleData?.topic}`)}
+          onClick={() => navigate(`${ROUTES_NAME.EXERCISES}/${discipline}/${moduleData?.module}/${moduleData?.topic}`)}
           >
           Exercícios
         </Button>

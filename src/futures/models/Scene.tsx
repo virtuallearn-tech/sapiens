@@ -20,6 +20,7 @@ import { BsArrowsFullscreen } from "react-icons/bs";
 import { RiFullscreenExitFill } from "react-icons/ri";
 import { toggleFullscreen } from '@utils/fullScreen'
 import { useAudioPlayer } from '@hooks/useAudio'
+import { ROUTES_NAME } from '@routes/routesName'
 
 const defaultBgColor: string = '#CCCCCC'
 
@@ -356,7 +357,7 @@ const Scene = () => {
             type='button'
             typeBtn='dark'
             className='m-button--full'
-            onClick={() => navigate(`/exercises/${discipline}/${topic}`)}
+            onClick={() => navigate(`${ROUTES_NAME.EXERCISES}/${discipline}/${topic}`)}
           >
             Exercícios
           </Button>

@@ -1,5 +1,6 @@
 import { Button } from "@components/common/Button"
 import { Input } from "@components/common/Input"
+import { ROUTES_NAME } from "@routes/routesName";
 import { useState } from "react"
 import { useNavigate } from 'react-router-dom'
 
@@ -46,7 +47,7 @@ const Signin = () => {
             <Button type="button" 
               typeBtn="secondary" 
               className="m-button--full"
-              onClick={()=> navigate("/signup")}
+              onClick={()=> navigate(`${ROUTES_NAME.SIGNUP}`)}
               >Criar conta</Button>
 
           </div>

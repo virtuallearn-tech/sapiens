@@ -109,7 +109,7 @@ const Cephalopoda_BobtailSquid: IModelData = {
 
 const Cephalopoda_BlueRingedOctopus: IModelData = {
   // topic: "mollusca_class_cephalopoda_octopus",
-  topic: ANIMAL_KINGDOM_TOPICS.MOLLUSCA_CLASS_CEPHALOPODA,
+  topic: ANIMAL_KINGDOM_TOPICS.MOLLUSCA_CLASS_CEPHALOPODA_OCTOPUS,
   // source: "/scene.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/blue_ring_octopus_compressed.glb',
   name: "Blue-ringed Octopus",
@@ -169,7 +169,7 @@ const Cephalopoda_BlueRingedOctopus: IModelData = {
 
 const Cephalopoda_Nautilus: IModelData = {
   // topic: "mollusca_class_cephalopoda_nautilus",
-  topic: ANIMAL_KINGDOM_TOPICS.MOLLUSCA_CLASS_CEPHALOPODA,
+  topic: ANIMAL_KINGDOM_TOPICS.MOLLUSCA_CLASS_CEPHALOPODA_NAUTILUS,
   // source: "/nautilus_shell.glb",
   source: 'https://raw.githubusercontent.com/virtuallearn-tech/sapiens-animal-kingdom-models/master/nautilus_shell_compressed.glb',
   name: "Nautilus pompilius",

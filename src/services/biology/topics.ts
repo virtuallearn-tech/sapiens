@@ -101,7 +101,7 @@ export const BIOLOGY_TOPICS: Itopic = {
         },
         {
           // topic: 'mollusca_class_cephalopoda_octopus',
-          topic: DISCIPLINE_TOPICS.MOLLUSCA_CLASS_CEPHALOPODA_BOBTAIL_SQUID,
+          topic: DISCIPLINE_TOPICS.MOLLUSCA_CLASS_CEPHALOPODA_OCTOPUS,
           cover: BlueRingedOctopus,
           title: "Polvo-de-anéis-azuis (Mollusca)",
           description: "Pequeno cefalópode venenoso do Indo-Pacífico."

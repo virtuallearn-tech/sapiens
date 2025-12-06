@@ -8,6 +8,7 @@ import type { IFlashcard } from "@interfaces/flashcards";
 import { useNavigate } from "react-router-dom";
 import { getFlashcardsByTopic } from "@services/flashcards";
 import { DISCIPLINE_MODULE, DISCIPLINE, DISCIPLINE_TOPICS } from "@interfaces/discipline";
+import { ROUTES_NAME } from "@routes/routesName";
 
 
 const Flashcard = () => {
@@ -29,7 +30,7 @@ const Flashcard = () => {
 
   const handleNext = () => {
     if (currentIndex === flashcards.length - 1) {
-      return navigate(`/results/${flashcards.length}/${right}`)
+      return navigate(`${ROUTES_NAME.RESULTS}/${flashcards.length}/${right}`)
     }
     setFlipped(false);
     setAnswer(null);

@@ -6,6 +6,7 @@ import { getExerciciesByTopic } from "@services/exercicies";
 import  { DISCIPLINE, DISCIPLINE_MODULE, DISCIPLINE_TOPICS } from "@interfaces/discipline";
 import { SelectNumQuestions } from "@components/layout/SelectNumQuestions";
 import { Message } from "@components/layout/Message";
+import { ROUTES_NAME } from "@routes/routesName";
 
 
 const Exercises = () => {
@@ -41,7 +42,7 @@ const Exercises = () => {
 
   const handleNext = () => {
     if (currentIndex === questions.length - 1) {
-      return navigate(`/results/${questions.length}/${right}`)
+      return navigate(`${ROUTES_NAME.RESULTS}/${questions.length}/${right}`)
       // return navigate(`/results/10/8`)
     }
     setSelected(null);

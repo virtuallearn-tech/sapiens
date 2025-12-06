@@ -6,6 +6,7 @@ import { ENEM_ANO, ENEM_AREA, ENEM_NUM_QUESTOES } from "@services/enem/enemOptio
 import type { EnemAreas } from "@interfaces/enem";
 import { useEnemQuestions } from "@hooks/useENEMQuestoes";
 import { Message } from "@components/layout/Message";
+import { ROUTES_NAME } from "@routes/routesName";
 
 
 const ENEMQuestions = () => {
@@ -29,7 +30,7 @@ const ENEMQuestions = () => {
 
   const handleNext = async () => {
     if (currentIndex === questions.length - 1) {
-      return navigate(`/results/${questions.length}/${right}`)
+      return navigate(`/${ROUTES_NAME.RESULTS}/${questions.length}/${right}`)
     }
     setSelected(null);
     setSelectedLetter(null);

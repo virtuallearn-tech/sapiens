@@ -1,5 +1,6 @@
 import { CardContent } from "@components/cards/CardContent"
 import type { ITopicCode } from "@interfaces/topic"
+import { ROUTES_NAME } from "@routes/routesName"
 import { getAllTopics } from "@services/content"
 import { useEffect, useState } from "react"
 
@@ -27,7 +28,7 @@ const Learn3D = () => {
                title={topic.title}
                description={topic.description}
                cover={topic.cover}
-               link={`/scene/${topic.discipline}/${topic.module}/${topic.topic}`}
+               link={`${ROUTES_NAME.SCENE}/${topic.discipline}/${topic.module}/${topic.topic}`}
              />
          ))}
        </div>

@@ -4,6 +4,7 @@ import { CardContent } from "@components/cards/CardContent"
 
 import type { ITopicCode } from "interfaces/topic"
 import {getAllTopics } from "@services/content"
+import { ROUTES_NAME } from "@routes/routesName"
 
 
 export const Home = () => {
@@ -31,7 +32,7 @@ export const Home = () => {
               title={topic.title}
               description={topic.description}
               cover={topic.cover}
-              link={`/topic-option/${topic.discipline}/${topic.module}/${topic.topic}`}
+              link={`${ROUTES_NAME.TOPIC_OPTIONS}/${topic.discipline}/${topic.module}/${topic.topic}`}
             />
         ))}
       </div>
