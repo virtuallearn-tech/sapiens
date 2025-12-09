@@ -1,4 +1,4 @@
-import { CYTOLOGY_TOPICS } from "@interfaces/disciplines/biology";
+import { CYTOLOGY_TOPICS } from "@interfaces/disciplines/biology-topics/cytology";
 import type { IModelData } from "@interfaces/model";
 
 

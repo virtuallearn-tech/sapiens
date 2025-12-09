@@ -1,5 +1,5 @@
 import { DISCIPLINE, DISCIPLINE_MODULE } from "@interfaces/discipline";
-import { ANIMAL_KINGDOM_TOPICS } from "@interfaces/disciplines/biology";
+import { ANIMAL_KINGDOM_TOPICS } from "@interfaces/disciplines/biology-topics/animal-kingdom";
 import type { IQuestion } from "@interfaces/question";
 
 export const poriferosQuestions: IQuestion = {

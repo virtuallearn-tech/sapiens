@@ -1,4 +1,4 @@
-import { ANIMAL_KINGDOM_TOPICS } from "@interfaces/disciplines/biology";
+import { ANIMAL_KINGDOM_TOPICS } from "@interfaces/disciplines/biology-topics/animal-kingdom";
 import type { IModelData } from "@interfaces/model";
 import { NINETY } from "@utils/radAngles";
 
