@@ -21,7 +21,7 @@ export const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotMode
   const [scaleModel, setScale] = useState<number>(1)
 
   const { scene, animations } = useGLTF(model.source)
-  // console.log('scene', scene)
+  console.log('Model on scene', scene)
   // console.log('animations ', animations)
 
   const { actions } = useAnimations(animations, group)
