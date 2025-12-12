@@ -331,12 +331,12 @@ export const BIOLOGY_TOPICS: Itopic = {
           description: "Defende o corpo e transporta linfa.",
           title: "Sistema Linfático",
         },
-        {
-          topic: DISCIPLINE_TOPICS.INTEGUMENTARY_SYSTEM,
-          cover: Cover.integumentary_system,
-          description: "Protege o corpo e regula temperatura.",
-          title: "Sistema Tegumentar",
-        }
+        // {
+        //   topic: DISCIPLINE_TOPICS.INTEGUMENTARY_SYSTEM,
+        //   cover: Cover.integumentary_system,
+        //   description: "Protege o corpo e regula temperatura.",
+        //   title: "Sistema Tegumentar",
+        // }
       ]
     }
   ]
