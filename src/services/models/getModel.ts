@@ -11,7 +11,9 @@ export const getModelByDiscipline = (discipline: typeof DISCIPLINE[keyof typeof 
   }
 }
 
-export const getModel = (discipline: typeof  DISCIPLINE[keyof typeof DISCIPLINE] = DISCIPLINE.BIOLOGY, module: typeof DISCIPLINE_MODULE[keyof typeof DISCIPLINE_MODULE] = DISCIPLINE_MODULE.CYTOLOGY): IModel => {
+export const getModel = (
+  discipline: typeof  DISCIPLINE[keyof typeof DISCIPLINE] = DISCIPLINE.BIOLOGY, 
+  module: typeof DISCIPLINE_MODULE[keyof typeof DISCIPLINE_MODULE] = DISCIPLINE_MODULE.CYTOLOGY): IModel => {
   const disciplineData = getModelByDiscipline(discipline)
   return disciplineData.find((models) => models.module == module)!
 }

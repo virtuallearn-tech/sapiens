@@ -1,6 +1,6 @@
 @use '../base/breakpoint' as *;
 
-.p-home {
+.p-page-module {
   &__title {
     font-size: 1.3rem;
     padding: 0.3rem 0 0;
@@ -15,18 +15,3 @@
   }
 }
 
-@include breakpoint($lg) {
-  .m-card-content {
-    &--module {
-      // background-color: red;
-      min-height: 500px;
-    }
-
-    &__image {
-        &--module{
-          height: 100%;
-        }
-      }
-
-  }
-}

@@ -15,7 +15,7 @@ export const getAllTopics = (): ITopicCode[] => {
   return allTpícs
 }
 
-export const getContentByDiscipline = (discipline: typeof DISCIPLINE[keyof typeof DISCIPLINE] = DISCIPLINE.BIOLOGY) => {
+export const getContentByDiscipline = (discipline: typeof DISCIPLINE[keyof typeof DISCIPLINE] = DISCIPLINE.BIOLOGY):Itopic => {
   return BIOLOGY_TOPICS
   // switch (discipline) {
   //   case 'BIOLOGY':
@@ -30,24 +30,24 @@ export const getContentByDiscipline = (discipline: typeof DISCIPLINE[keyof typeo
 }
 
 export const getContentByModule = (
+    module: typeof DISCIPLINE_MODULE[keyof typeof DISCIPLINE_MODULE],
     discipline: typeof DISCIPLINE[keyof typeof DISCIPLINE] = DISCIPLINE.BIOLOGY, 
-    module: typeof DISCIPLINE_MODULE[keyof typeof DISCIPLINE_MODULE]
   ): ITopicData => {
   const content = getContentByDiscipline(discipline)!
   const modules = content.data.find(t => t.module === module)! 
+  modules['discipline'] = content.discipline
   return modules
 }
 
 
 export const getContentByTopic = (
-  discipline: typeof DISCIPLINE[keyof typeof DISCIPLINE] = DISCIPLINE.BIOLOGY,
   module: typeof DISCIPLINE_MODULE[keyof typeof DISCIPLINE_MODULE],
-  topic: string): ITopicCode => {
-  const moduleData = getContentByModule(discipline, module)
-  // console.log('module', moduleData)
+  topic: string,
+  discipline: typeof DISCIPLINE[keyof typeof DISCIPLINE] = DISCIPLINE.BIOLOGY,
+): ITopicCode => {
   
+  const moduleData = getContentByModule(module, discipline)
   const topicData = moduleData.data.find(d => d.topic === topic)!
-  // console.log('topicdata ', topicData)
   
   topicData['discipline'] = discipline
   topicData.module = moduleData?.module

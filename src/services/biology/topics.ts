@@ -11,20 +11,17 @@ export const BIOLOGY_TOPICS: Itopic = {
       data: [
         {
           topic: DISCIPLINE_TOPICS.EUKARYOTIC_CELL,
-          // topic: 'eukaryotic_cell',
           cover: Cover.eukaryotic_cell,
           description: "Células com núcleo definido e organelas membranosas.",
           title: 'Célula Eucarionte',
         },
         {
-          // topic: 'prokaryotic_cell',
           topic: DISCIPLINE_TOPICS.PROKARYOTIC_CELL,
           cover: Cover.prokaryotic_cell,
           description: "Células simples, sem núcleo definido, típicas de bactérias.",
           title: 'Célula Procarionte',
         },
         {
-          // topic: 'plant_cell',
           topic: DISCIPLINE_TOPICS.PLANT_CELL,
           cover: Cover.plant_cell,
           description: "Células com parede celular, cloroplastos e vacúolos.",

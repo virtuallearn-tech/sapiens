@@ -18,6 +18,7 @@ const Contact = lazy(() => import("@pages/Contact"))
 const Donate = lazy(() => import("@pages/Donate"))
 const Scene = lazy(() => import("@futures/models/Scene"))
 const Learn3D = lazy(() => import("@futures/Learn3D"))
+const PageModule = lazy(() => import("@pages/PageModule"))
 
 export const AppRoutes = () => {
   return (
@@ -32,6 +33,8 @@ export const AppRoutes = () => {
         <Route path={ROUTES_NAME.DONATE} element={<Donate />} />
         <Route path={ROUTES_NAME.ENEM_QUESTIONS} element={<ENEMQuestions />} />
         <Route path={ROUTES_NAME.SUMMARY_LIST} element={<SumaryList />} />
+
+        <Route path={`${ROUTES_NAME.MODULE}/:module`} element={<PageModule />} />
         <Route path={`${ROUTES_NAME.SUMMARY}/:discipline/:code`} element={<Sumary />} />
         <Route path={`${ROUTES_NAME.TOPIC_OPTIONS}/:discipline/:module/:topic`}element={<TopicOptions />} />
         <Route path={`${ROUTES_NAME.FLASHCARDS}/:discipline/:module/:topic`}  element={<Flashcards />} />

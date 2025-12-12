@@ -13,5 +13,6 @@ export const ROUTES_NAME = {
   FLASHCARDS: "/flashcards",
   EXERCISES: "/exercicios",
   RESULTS: "/resultados",
-  SCENE: "/laboratorio-3d"
+  SCENE: "/laboratorio-3d",
+  MODULE: "/modulo",
 } as const;

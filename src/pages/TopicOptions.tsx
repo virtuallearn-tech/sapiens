@@ -10,16 +10,16 @@ import { ROUTES_NAME } from "@routes/routesName";
 const TopicOptions = () => {
 
   const { discipline, module, topic } = useParams<{ discipline:string, module: string, topic:string}>()
-  // console.log('params', discipline, module, topic)
+  console.log('params on topic', discipline, module, topic)
   const navigate = useNavigate()
 
   const [moduleData, setModule] = useState<ITopicCode | null>(null)
   
   useEffect(()=>{
     const modules = getContentByTopic(
-      discipline as typeof DISCIPLINE[keyof typeof DISCIPLINE],
       module as typeof DISCIPLINE_MODULE[keyof typeof DISCIPLINE_MODULE], 
       topic as typeof DISCIPLINE_TOPICS[keyof typeof DISCIPLINE_TOPICS])
+      //discipline as typeof DISCIPLINE[keyof typeof DISCIPLINE],
     // console.log('modules on get topics', modules)
     setModule(modules)
   }, [moduleData])
