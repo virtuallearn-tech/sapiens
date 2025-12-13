@@ -1,9 +1,11 @@
 import { HUMAN_ANATOMY_TOPICS } from "@interfaces/disciplines/biology-topics/human-anatomy";
 import type { IModelData } from "@interfaces/model";
+import { getGithubResource, GIT_REPOSITORIES } from "@utils/getGithubResouce";
 
 const EndocrineSystem: IModelData = {
   topic: HUMAN_ANATOMY_TOPICS.ENDOCRINE_SYSTEM,
-  source: "/models/endocrine_system.glb",
+  // source: "/models/endocrine_system.glb",
+  source: getGithubResource(GIT_REPOSITORIES.HUMAN_ANATOMY, "endocrine_system.glb"),
 
   name: "Sistema Endócrino",
   title: "Sistema Endócrino",

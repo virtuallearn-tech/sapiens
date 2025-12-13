@@ -1,9 +1,11 @@
 import { HUMAN_ANATOMY_TOPICS } from "@interfaces/disciplines/biology-topics/human-anatomy";
 import type { IModelData } from "@interfaces/model";
+import { getGithubResource, GIT_REPOSITORIES } from "@utils/getGithubResouce";
 
 const UrinarySystem: IModelData = {
   topic: HUMAN_ANATOMY_TOPICS.URINARY_SYSTEM,
-  source: "/models/urinary_system.glb",
+  // source: "/models/urinary_system.glb",
+  source: getGithubResource(GIT_REPOSITORIES.HUMAN_ANATOMY, "urinary_system.glb"),
 
   name: "Sistema Urinário",
   title: "Sistema Urinário",
@@ -40,6 +42,7 @@ const UrinarySystem: IModelData = {
   wikipedia: "https://pt.wikipedia.org/wiki/Sistema_urin%C3%A1rio",
 
   hasAnimation: false,
+  // sceneBg: '#000'
   // animation: "Take 001"
 } as const;
 

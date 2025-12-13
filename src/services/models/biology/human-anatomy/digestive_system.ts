@@ -1,9 +1,11 @@
 import { HUMAN_ANATOMY_TOPICS } from "@interfaces/disciplines/biology-topics/human-anatomy";
 import type { IModelData } from "@interfaces/model";
+import { getGithubResource, GIT_REPOSITORIES } from "@utils/getGithubResouce";
 
 const DigestiveSystem: IModelData = {
   topic: HUMAN_ANATOMY_TOPICS.DIGESTIVE_SYSTEM,
-  source: "/models/digestive_system.glb",
+  // source: "/models/digestive_system.glb",
+  source: getGithubResource(GIT_REPOSITORIES.HUMAN_ANATOMY, "digestive_system.glb"),
   name: "Sistema Digestório",
   title: "Sistema Digestório",
 

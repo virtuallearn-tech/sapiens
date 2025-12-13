@@ -1,9 +1,11 @@
 import { HUMAN_ANATOMY_TOPICS } from "@interfaces/disciplines/biology-topics/human-anatomy";
 import type { IModelData } from "@interfaces/model";
+import { getGithubResource, GIT_REPOSITORIES } from "@utils/getGithubResouce";
 
 const CirculatorySystem: IModelData = {
   topic: HUMAN_ANATOMY_TOPICS.CIRCULATORY_SYSTEM,
-  source: "/models/circulatory_system.glb",
+  // source: "/models/circulatory_system.glb",
+  source: getGithubResource(GIT_REPOSITORIES.HUMAN_ANATOMY, "circulatory_system.glb"),
   name: "Sistema Circulatório",
   title: "Sistema Circulatório",
 

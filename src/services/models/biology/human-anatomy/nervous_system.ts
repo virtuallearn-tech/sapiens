@@ -1,9 +1,11 @@
 import { HUMAN_ANATOMY_TOPICS } from "@interfaces/disciplines/biology-topics/human-anatomy";
 import type { IModelData } from "@interfaces/model";
+import { getGithubResource, GIT_REPOSITORIES } from "@utils/getGithubResouce";
 
 const NervousSystem: IModelData = {
   topic: HUMAN_ANATOMY_TOPICS.NERVOUS_SYSTEM,
-  source: "/models/nervous_system.glb",
+  // source: "/models/nervous_system.glb",
+  source: getGithubResource(GIT_REPOSITORIES.HUMAN_ANATOMY, "nervous_system.glb"),
 
   name: "Sistema Nervoso",
   title: "Sistema Nervoso",

@@ -1,9 +1,11 @@
 import { HUMAN_ANATOMY_TOPICS } from "@interfaces/disciplines/biology-topics/human-anatomy";
 import type { IModelData } from "@interfaces/model";
+import { getGithubResource, GIT_REPOSITORIES } from "@utils/getGithubResouce";
 
 const SkeletalSystem: IModelData = {
   topic: HUMAN_ANATOMY_TOPICS.SKELETAL_SYSTEM,
-  source: "/models/skeletal_system.glb",
+  // source: "/models/skeletal_system.glb",
+  source: getGithubResource(GIT_REPOSITORIES.HUMAN_ANATOMY, "skeletal_system.glb"),
 
   name: "Sistema Esquelético",
   title: "Sistema Esquelético",

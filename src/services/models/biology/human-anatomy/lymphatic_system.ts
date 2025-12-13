@@ -1,9 +1,11 @@
 import { HUMAN_ANATOMY_TOPICS } from "@interfaces/disciplines/biology-topics/human-anatomy";
 import type { IModelData } from "@interfaces/model";
+import { getGithubResource, GIT_REPOSITORIES } from "@utils/getGithubResouce";
 
 const LymphaticSystem: IModelData = {
   topic: HUMAN_ANATOMY_TOPICS.LYMPHATIC_SYSTEM,
-  source: "/models/lymphatic_system.glb",
+  // source: "/models/lymphatic_system.glb",
+  source: getGithubResource(GIT_REPOSITORIES.HUMAN_ANATOMY, "lymphatic_system.glb"),
 
   name: "Sistema Linfático",
   title: "Sistema Linfático",

@@ -1,9 +1,11 @@
 import { HUMAN_ANATOMY_TOPICS } from "@interfaces/disciplines/biology-topics/human-anatomy";
 import type { IModelData } from "@interfaces/model";
+import { getGithubResource, GIT_REPOSITORIES } from "@utils/getGithubResouce";
 
 const RespiratorySystem: IModelData = {
   topic: HUMAN_ANATOMY_TOPICS.RESPIRATORY_SYSTEM,
-  source: "/models/respiratory_system.glb",
+  // source: "/models/respiratory_system.glb",
+  source: getGithubResource(GIT_REPOSITORIES.HUMAN_ANATOMY, "respiratory_system.glb"),
   // source:"/models/tiger.glb",
   name: "Sistema Respiratório",
   title: "Sistema Respiratório",

@@ -1,9 +1,11 @@
 import { HUMAN_ANATOMY_TOPICS } from "@interfaces/disciplines/biology-topics/human-anatomy";
 import type { IModelData } from "@interfaces/model";
+import { getGithubResource, GIT_REPOSITORIES } from "@utils/getGithubResouce";
 
 const MuscularSystem: IModelData = {
   topic: HUMAN_ANATOMY_TOPICS.MUSCULAR_SYSTEM,
-  source: "/models/muscular_system.glb",
+  // source: "/models/muscular_system.glb",
+  source: getGithubResource(GIT_REPOSITORIES.HUMAN_ANATOMY, "muscular_system.glb"),
 
   name: "Sistema Muscular",
   title: "Sistema Muscular",
@@ -38,6 +40,7 @@ const MuscularSystem: IModelData = {
   </div>`,
 
   wikipedia: "https://pt.wikipedia.org/wiki/Sistema_muscular",
+  sceneBg: '#000'
 
   // hasAnimation: true,
   // animation: "Take 001"
