@@ -1,4 +1,4 @@
-import type { ANIMAL_KINGDOM_TOPICS } from "@interfaces/disciplines/biology";
+import type { ANIMAL_KINGDOM_TOPICS } from "@interfaces/disciplines/biology-topics/animal-kingdom";
 import type { IFlashcard } from "@interfaces/flashcards";
 
 export const poriferosFlashcards: IFlashcard[] = [
