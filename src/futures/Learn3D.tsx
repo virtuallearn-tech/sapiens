@@ -17,7 +17,7 @@ const Learn3D = () => {
      <div className="p-home">
  
        <h1 className="p-home__title">
-         Explore a ciência em 3D
+         Modelos científicos disponíveis em 3D.
        </h1>
  
        <div className="p-home__list">

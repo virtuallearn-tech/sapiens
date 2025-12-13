@@ -26,7 +26,7 @@ const PageModule = () => {
     <div className="p-page-module">
 
       <h1 className="p-page-module__title">
-        Descubra o mundo das ciências
+        Selecione o modelo para visualização em 3D.
       </h1>
 
       <div className="p-page-module__list">

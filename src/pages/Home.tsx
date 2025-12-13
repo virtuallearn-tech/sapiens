@@ -22,7 +22,7 @@ export const Home = () => {
     <div className="p-home">
 
       <h1 className="p-home__title">
-        Descubra o mundo das ciências
+        O universo da ciência na ponta dos seus dedos.
       </h1>
 
       <div className="p-home__list">
