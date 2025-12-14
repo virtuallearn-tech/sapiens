@@ -13,10 +13,10 @@ const RespiratorySystem: IModelData = {
   text:
     "O sistema respiratório é o conjunto de órgãos que garante as trocas gasosas entre o corpo humano e o ambiente. Ele permite que o oxigênio — essencial para a produção de energia nas células — entre no organismo, ao mesmo tempo em que remove o dióxido de carbono, um gás residual do metabolismo celular. É composto pelas vias aéreas (nariz, faringe, laringe, traqueia e brônquios) e pelos pulmões, onde ocorre a hematose. O bom funcionamento desse sistema é fundamental para a sobrevivência, o equilíbrio do pH sanguíneo e o suporte às atividades físicas e cognitivas.",
   scale: 20,
-  scale_sm: 20,
-  scale_md: 20,
-  scale_lg: 20,
-  scale_2lg: 20,
+  scale_sm: 22,
+  scale_md: 22,
+  scale_lg: 23,
+  scale_2lg: 23,
   rotation: [0, 0, 0],
   position: [0, 0.3, 0],
 
