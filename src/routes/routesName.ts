@@ -15,4 +15,5 @@ export const ROUTES_NAME = {
   RESULTS: "/resultados",
   SCENE: "/laboratorio-3d",
   MODULE: "/modulo",
+  RESUME: "/resumo"
 } as const;

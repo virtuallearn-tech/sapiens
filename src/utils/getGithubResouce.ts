@@ -2,7 +2,8 @@ export const GIT_REPOSITORIES = {
   IMAGES: "sapiens-images-resources",
   ANIMAL_KINGDOM: "sapiens-animal-kingdom-models",
   HUMAN_ANATOMY: "sapiens-human-anatomy-models",
-  CYTOLOGY: "sapiens-models"
+  CYTOLOGY: "sapiens-models",
+  RESUMES: "sapiens-science-abstracts"
 } as const;
 
 export const getGithubResource = (

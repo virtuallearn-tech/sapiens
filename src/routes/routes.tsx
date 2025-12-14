@@ -19,12 +19,14 @@ const Donate = lazy(() => import("@pages/Donate"))
 const Scene = lazy(() => import("@futures/models/Scene"))
 const Learn3D = lazy(() => import("@futures/Learn3D"))
 const PageModule = lazy(() => import("@pages/PageModule"))
+const ResumeViewer = lazy(() => import("@pages/ResumeViewer"))
 
 export const AppRoutes = () => {
   return (
     <Suspense fallback={<Loading/>}>
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* <Route path="/" element={<Home />} /> */}
+         <Route path="/" element={<ResumeViewer />} />
         <Route path={ROUTES_NAME.LEARN_3D} element={<Learn3D />} />
         <Route path={ROUTES_NAME.SIGNUP} element={<Signup />} />
         <Route path={ROUTES_NAME.SIGNIN} element={<Signin />} />

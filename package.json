@@ -18,11 +18,15 @@
     "firebase": "^12.6.0",
     "gsap": "^3.13.0",
     "html2canvas": "^1.4.1",
+    "katex": "^0.16.27",
     "leva": "^0.10.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-icons": "^5.5.0",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^7.9.3",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
     "three": "^0.180.0"
   },
   "devDependencies": {
