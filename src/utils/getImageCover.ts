@@ -55,6 +55,12 @@ export const Cover: Record<string, string> = {
   urinary_system: getGithubResource(GIT_REPOSITORIES.IMAGES, "urinary-system.png"),
   circulatory_system: getGithubResource(GIT_REPOSITORIES.IMAGES, "circulatory-system.png"),
   digestive_system: getGithubResource(GIT_REPOSITORIES.IMAGES, "digestive-system.png"),
+
+  //cover for cards summaries
+  
+  cover_chemistry: getGithubResource(GIT_REPOSITORIES.IMAGES, "cover_chemistry.jpg"),
+  cover_math: getGithubResource(GIT_REPOSITORIES.IMAGES, "cover_math.jpg"),
+  cover_physics: getGithubResource(GIT_REPOSITORIES.IMAGES, "cover_physics.jpg"),
   
   
 } as const

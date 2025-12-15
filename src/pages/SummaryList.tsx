@@ -1,27 +1,26 @@
 import { CardContent } from "@components/cards/CardContent";
-import type { IContent } from "@interfaces/content";
-import { getSummaryAll } from "@services/summary";
+import { ROUTES_NAME } from "@routes/routesName";
+import type { DisciplineCard } from "@services/summaries/disciplines";
+import { getDiscipline } from "@services/summary";
 // import { useNavigate } from "react-router-dom";
 
 const SumaryList = () => {
   // const navigate = useNavigate()
-  const contents: IContent[] = getSummaryAll();
+  const contents: DisciplineCard[] = getDiscipline();
 
   return (
     <section className="p-summary-list">
-      <h1 className="p-summary-list__title">Conteúdos de Biologia</h1>
+      <h1 className="p-summary-list__title">Resumos Científicos de Forma Didática.</h1>
 
       <div className="p-summary-list__grid">
         {contents.map(content => (
-          // <Link to={`/summary/${content.discipline}/${content.code}`}>
           <CardContent
-            key={content.id}
-            id={content.id}
-            cover={content.cover} // caminho fictício para imagem
+            key={content.discipline}
+            id={content.discipline}
+            cover={content.cover}
             title={content.title}
-            link={`/summary/${content.discipline}/${content.module}`}
+            link={`${ROUTES_NAME.LISTA_RESUMO}/${content.discipline}`}
           />
-          // </Link>
         ))}
       </div>
     </section>

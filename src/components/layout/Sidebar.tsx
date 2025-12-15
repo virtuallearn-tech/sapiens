@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FaHome, FaShareAlt, FaHeart } from "react-icons/fa";
+import { FaHome, FaShareAlt, FaHeart, FaBookOpen } from "react-icons/fa";
 import { MdContactSupport } from "react-icons/md";
 import { BsFillBadge3dFill } from "react-icons/bs";
 
@@ -26,12 +26,12 @@ export const Sidebar = () => {
               <span>Aprender em 3D</span>
             </Link>
           </li>
-          {/* <li onClick={close}>
-            <Link to="/summary-list" className="m-sidebar__item">
+          <li onClick={close}>
+            <Link to={ROUTES_NAME.SUMMARY_LIST} className="m-sidebar__item">
               <FaBookOpen className="m-sidebar__icon" />
-              <span>Conteúdo</span>
+              <span>Resumos</span>
             </Link>
-          </li> */}
+          </li>
           {/* <li onClick={close}>
             <Link to="/enem" className="m-sidebar__item">
               <BsFillPencilFill className="m-sidebar__icon" />

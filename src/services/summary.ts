@@ -1,23 +1,22 @@
-import type { DISCIPLINE, DISCIPLINE_MODULE, DISCIPLINE_TOPICS } from "@interfaces/discipline";
-import { CitologySummary } from "./biology/summary";
-import type { IContent } from "@interfaces/content";
+import type { DISCIPLINE, DISCIPLINE_TOPICS } from "@interfaces/discipline";
+import { SUMMARIES, type IDiscipline, type Summary, type DisciplineCard } from "./summaries/disciplines";
 
-export const getSummaryByDiscipline = (discipline: typeof DISCIPLINE[keyof typeof DISCIPLINE]): IContent[] => {
-  return CitologySummary.filter(c => c.discipline === discipline);
+export const getSummaryListByDiscipline = (discipline: typeof DISCIPLINE[keyof typeof DISCIPLINE]): Summary[] => {
+  const summaries: IDiscipline = SUMMARIES.find(c => c.discipline === discipline)!;
+  return summaries.summaries
 }
 
 export const getSummaryByTopic = (
-    discipline: typeof DISCIPLINE[keyof typeof DISCIPLINE],
-    topic: typeof DISCIPLINE_TOPICS[keyof typeof DISCIPLINE_TOPICS]): IContent[] => {
-  return CitologySummary.filter(c => c.discipline === discipline && c.topic === topic);
+  discipline: typeof DISCIPLINE[keyof typeof DISCIPLINE],
+  topic: typeof DISCIPLINE_TOPICS[keyof typeof DISCIPLINE_TOPICS]): Summary => {
+  const disciplineSummaries = getSummaryListByDiscipline(discipline)
+  return disciplineSummaries.find((summary) => summary.topic == topic)!
 }
 
-export const getSummaryByCode = (
-    discipline: typeof DISCIPLINE[keyof typeof DISCIPLINE], 
-    module: typeof DISCIPLINE_MODULE[keyof typeof DISCIPLINE_MODULE]): IContent | undefined => {
-  return CitologySummary.find(c => c.discipline === discipline && c.module === module);
-}
-
-export const getSummaryAll = (): IContent[] => {
-  return CitologySummary;
-}
+export const getDiscipline = (): DisciplineCard[] => {
+  return SUMMARIES.map((d: IDiscipline) => ({
+    title: d.title,
+    discipline: d.discipline,
+    cover: d.cover
+  }));
+};

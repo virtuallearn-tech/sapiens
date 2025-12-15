@@ -1,0 +1,52 @@
+/* ===== Layout ===== */
+.summary-list {
+  padding: 1rem;
+
+  &__title{
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+  }
+ 
+}
+
+/* ===== Module: Card ===== */
+.summary-card {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2933;
+    line-height: 1.4;
+    margin: 0;
+    text-align: center;
+  }
+}

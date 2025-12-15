@@ -19,14 +19,15 @@ const Donate = lazy(() => import("@pages/Donate"))
 const Scene = lazy(() => import("@futures/models/Scene"))
 const Learn3D = lazy(() => import("@futures/Learn3D"))
 const PageModule = lazy(() => import("@pages/PageModule"))
-const ResumeViewer = lazy(() => import("@pages/ResumeViewer"))
+// const ResumeViewer = lazy(() => import("@pages/ResumeViewer"))
+const SummaryListByDiscipline = lazy(() => import("@pages/SummaryListByDiscipline"))
 
 export const AppRoutes = () => {
   return (
     <Suspense fallback={<Loading/>}>
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
-         <Route path="/" element={<ResumeViewer />} />
+        <Route path="/" element={<Home />} />
+         {/* <Route path="/" element={<SumaryList />} /> */}
         <Route path={ROUTES_NAME.LEARN_3D} element={<Learn3D />} />
         <Route path={ROUTES_NAME.SIGNUP} element={<Signup />} />
         <Route path={ROUTES_NAME.SIGNIN} element={<Signin />} />
@@ -34,7 +35,9 @@ export const AppRoutes = () => {
         <Route path={ROUTES_NAME.CONTACT} element={<Contact />} />
         <Route path={ROUTES_NAME.DONATE} element={<Donate />} />
         <Route path={ROUTES_NAME.ENEM_QUESTIONS} element={<ENEMQuestions />} />
+
         <Route path={ROUTES_NAME.SUMMARY_LIST} element={<SumaryList />} />
+        <Route path={`${ROUTES_NAME.LISTA_RESUMO}/:discipline`} element={<SummaryListByDiscipline />} />
 
         <Route path={`${ROUTES_NAME.MODULE}/:module`} element={<PageModule />} />
         <Route path={`${ROUTES_NAME.SUMMARY}/:discipline/:code`} element={<Sumary />} />

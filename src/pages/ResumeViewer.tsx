@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
+import { useGetAbstract } from "@hooks/useGetAbstract";
 
-interface ResumoMarkdownProps {
-  discipline: "biology" | "physics" | "math";
-  file: string;
-}
-const GITHUB_RAW_BASE = "https://raw.githubusercontent.com/virtuallearn-tech/sapiens-science-abstracts/master"
+// interface ResumoMarkdownProps {
+//   discipline: "biology" | "physics" | "math";
+//   file: string;
+// }
 
 const discipline="physics";
 const  file="dynamics";
@@ -16,17 +15,11 @@ const  file="dynamics";
 //{ discipline="biology", file="cytology" }
 //: ResumoMarkdownProps
 const ResumeViewer = () =>{
-  const [content, setContent] = useState("");
+ 
+  const { content, loading, error } = useGetAbstract({ discipline, file });
 
-  useEffect(() => {
-    // const url = `https://raw.githubusercontent.com/virtuallearn-tech/sapiens-science-abstracts/master/${discipline}/${file}.md`;
-    const url = `${GITHUB_RAW_BASE}/${discipline}/${file}.md`
-
-    fetch(url)
-      .then(res => res.text())
-      .then(setContent)
-      .catch(console.error);
-  }, [discipline, file]);
+  if (loading) return <p>Carregando resumo...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <div className="resumo">
