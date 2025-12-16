@@ -23,6 +23,7 @@ export function useGetAbstract({ discipline, file }: UseGetAbstractParams) {
         setError(null);
 
         const url = `${GIT_REPOSITORIES.GITHUB_RAW_BASE}/${discipline}/${file}.md`;
+        console.log(url)
 
         const response = await axios.get<string>(url, {
           signal: controller.signal,

@@ -19,7 +19,7 @@ const Donate = lazy(() => import("@pages/Donate"))
 const Scene = lazy(() => import("@futures/models/Scene"))
 const Learn3D = lazy(() => import("@futures/Learn3D"))
 const PageModule = lazy(() => import("@pages/PageModule"))
-// const ResumeViewer = lazy(() => import("@pages/ResumeViewer"))
+const ResumeViewer = lazy(() => import("@pages/ResumeViewer"))
 const SummaryListByDiscipline = lazy(() => import("@pages/SummaryListByDiscipline"))
 
 export const AppRoutes = () => {
@@ -38,6 +38,7 @@ export const AppRoutes = () => {
 
         <Route path={ROUTES_NAME.SUMMARY_LIST} element={<SumaryList />} />
         <Route path={`${ROUTES_NAME.LISTA_RESUMO}/:discipline`} element={<SummaryListByDiscipline />} />
+        <Route path={`${ROUTES_NAME.RESUME}/:discipline/:file`} element={<ResumeViewer />} />
 
         <Route path={`${ROUTES_NAME.MODULE}/:module`} element={<PageModule />} />
         <Route path={`${ROUTES_NAME.SUMMARY}/:discipline/:code`} element={<Sumary />} />

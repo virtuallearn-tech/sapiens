@@ -65,7 +65,7 @@ export const SUMMARIES: IDiscipline[] = [
       { title: "Cálculo estequiométrico", file: "estequiometria" },
       { title: "Soluções e concentração", file: "solucoes-concentracao" },
       { title: "Ácidos, bases e pH", file: "acidos-bases-ph" },
-      { title: "Oxirredução", file: "oxirredução" },
+      { title: "Oxirredução", file: "oxirreducao" },
       { title: "Termoquímica", file: "termoquimica" },
       { title: "Cinética química", file: "cinetica-quimica" },
       { title: "Equilíbrio químico", file: "equilibrio-quimico" },
