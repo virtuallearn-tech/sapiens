@@ -42,8 +42,11 @@
 
     //NOVO CSS PARA RESOLVER BUG
     // min-height: 100vh;
-     min-height: calc(100vh - 54px);
+     min-height: calc(100dvh - 54px);
     // overflow-y: auto;
+    @include breakpoint($lg){
+      min-height: calc(100vh - 54px);
+    }
 
     @include breakpoint($md, max-width){
       padding: 0.5rem;
