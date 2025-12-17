@@ -11,7 +11,7 @@ const Results = lazy(() => import("@futures/Results"))
 const Flashcards = lazy(() => import("@futures/Flashcard"))
 const Exercises = lazy(() => import("@futures/Exercises"))
 const SumaryList = lazy(() => import("@pages/SummaryList"))
-const Sumary = lazy(() => import("@pages/Summary"))
+// const Sumary = lazy(() => import("@pages/Summary"))
 const ENEMQuestions = lazy(() => import("@futures/ENEMQuestions"))
 const ShareApp = lazy(() => import("@pages/ShareApp"))
 const Contact = lazy(() => import("@pages/Contact"))
@@ -41,7 +41,7 @@ export const AppRoutes = () => {
         <Route path={`${ROUTES_NAME.RESUME}/:discipline/:file`} element={<ResumeViewer />} />
 
         <Route path={`${ROUTES_NAME.MODULE}/:module`} element={<PageModule />} />
-        <Route path={`${ROUTES_NAME.SUMMARY}/:discipline/:code`} element={<Sumary />} />
+        {/* <Route path={`${ROUTES_NAME.SUMMARY}/:discipline/:code`} element={<Sumary />} /> */}
         <Route path={`${ROUTES_NAME.TOPIC_OPTIONS}/:discipline/:module/:topic`}element={<TopicOptions />} />
         <Route path={`${ROUTES_NAME.FLASHCARDS}/:discipline/:module/:topic`}  element={<Flashcards />} />
         <Route path={`${ROUTES_NAME.EXERCISES}/:discipline/:module/:topic`} element={<Exercises />} />

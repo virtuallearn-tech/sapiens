@@ -22,6 +22,7 @@
     background-color: $gray-light;
     // width: 100%;
     min-height: 0;
+    align-items: start;//ADICIONADO PARA RESOLVER BUG ESPACO GRANDE NOS RESUMOS
 
     @include breakpoint($md, max-width){
       flex-direction: column; 
@@ -34,9 +35,15 @@
     background-color: $white;
     overflow-y: auto;
     width: 100%;
-    height: 100vh;
-    height: 100dvh;
-    min-height: 0;
+    //REMOVIDOS PARA RESOLVER BUG ESPACO GRANDE NOS RESUMOS
+    // height: 100vh;
+    // height: 100dvh;
+    // min-height: 0;
+
+    //NOVO CSS PARA RESOLVER BUG
+    // min-height: 100vh;
+     min-height: calc(100vh - 54px);
+    // overflow-y: auto;
 
     @include breakpoint($md, max-width){
       padding: 0.5rem;

@@ -98,7 +98,7 @@ export const SUMMARIES: IDiscipline[] = [
       { title: "Física moderna: introdução", file: "fisica-moderna" },
       { title: "Radioatividade", file: "radioatividade" },
       { title: "Física e meio ambiente", file: "fisica-meio-ambiente" },
-      { title: "Leitura de gráficos", file: "graficos-fisica" },
+      // { title: "Leitura de gráficos", file: "graficos-fisica" },
       { title: "Análise dimensional", file: "analise-dimensional" }
     ]
   },
@@ -125,7 +125,7 @@ export const SUMMARIES: IDiscipline[] = [
       { title: "Geometria espacial", file: "geometria-espacial" },
       { title: "Probabilidade", file: "probabilidade" },
       { title: "Estatística básica", file: "estatistica-basica" },
-      { title: "Leitura e interpretação de gráficos", file: "graficos-matematica" },
+      // { title: "Leitura e interpretação de gráficos", file: "graficos-matematica" },
       { title: "Matemática aplicada ao ENEM", file: "matematica-aplicada-enem" }
     ]
   }
