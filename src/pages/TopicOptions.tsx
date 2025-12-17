@@ -10,7 +10,7 @@ import { ROUTES_NAME } from "@routes/routesName";
 const TopicOptions = () => {
 
   const { discipline, module, topic } = useParams<{ discipline:string, module: string, topic:string}>()
-  console.log('params on topic', discipline, module, topic)
+  // console.log('params on topic', discipline, module, topic)
   const navigate = useNavigate()
 
   const [moduleData, setModule] = useState<ITopicCode | null>(null)

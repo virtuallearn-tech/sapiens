@@ -23,7 +23,7 @@ export function useGetAbstract({ discipline, file }: UseGetAbstractParams) {
         setError(null);
 
         const url = `${GIT_REPOSITORIES.GITHUB_RAW_BASE}/${discipline}/${file}.md`;
-        console.log(url)
+        // console.log(url)
 
         const response = await axios.get<string>(url, {
           signal: controller.signal,
@@ -34,7 +34,7 @@ export function useGetAbstract({ discipline, file }: UseGetAbstractParams) {
         if (axios.isCancel(err)) return;
 
         setError("Erro ao carregar o resumo.");
-        console.error(err);
+        // console.error(err);
       } finally {
         setLoading(false);
       }

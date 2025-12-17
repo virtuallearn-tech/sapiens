@@ -9,12 +9,12 @@ import { ROUTES_NAME } from "@routes/routesName";
 const SummaryListByDiscipline = () => {
   const params = useParams()
   const [summaries, setSummaries] = useState<Summary[]>([])
-  console.log(params.discipline)
+  // console.log(params.discipline)
 
   useEffect(() => {
     const summariesList = getSummaryListByDiscipline(params.discipline as typeof DISCIPLINE[keyof typeof DISCIPLINE]);
     setSummaries(summariesList)
-    console.log(summaries)
+    // console.log(summaries)
   }, [params.discipline])
 
 

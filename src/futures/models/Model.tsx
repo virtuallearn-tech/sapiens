@@ -13,7 +13,7 @@ interface IPlotModel {
   isAnimating: boolean
 }
 
-export const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotModel) => {
+const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotModel) => {
   // Controles de transformação + foco
   const group = useRef(null)
 
@@ -126,10 +126,11 @@ export const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotMode
     // </group>
     <group scale={scaleModel} position={model.position} rotation={model.rotation}>
       <primitive object={scene} ref={group} />
-    // </group>
+    </group>
   )
 }
 
+export default Model
 // useEffect(()=>{
 //   if(updateScale) handleUpdateScale()
 // }, [updateScale])

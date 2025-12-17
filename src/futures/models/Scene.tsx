@@ -1,9 +1,10 @@
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 
-import { Suspense, useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import { Html, useProgress } from '@react-three/drei'
-import { Model } from './Model'
+// import { Model } from './Model'
+const Model = React.lazy(() => import("./Model"));
 
 import { useParams, useNavigate } from 'react-router-dom'
 import type { IClass, IModelData } from '@interfaces/model'
@@ -155,8 +156,8 @@ const Scene = () => {
     // Só roda no unmount
     return () => {
       // if (isSpeaking) {
-      stop(),
-        stopAudio()
+      stop();
+      stopAudio()
       // }
     }
   }, [])
@@ -229,7 +230,7 @@ const Scene = () => {
     return (
       <>
         {!isSpeaking && (
-          <FabButton icon="volume" onClick={() => { stopAudio(), setIsPlayingAudio(false), speak(textToSpeech!) }} />
+          <FabButton icon="volume" onClick={() => { stopAudio(); setIsPlayingAudio(false); speak(textToSpeech!) }} />
         )}
 
         {isSpeaking && !isPaused && (
