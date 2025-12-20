@@ -13,7 +13,10 @@ const ResumeViewer = () => {
   //  const processedContent = content.replace(/\\\[(.+?)\\\]/gs, "$$$1$$");
 
   if (loading) return <p>Carregando resumo...</p>;
-  if (error) return <p>{error}</p>;
+  // if (error) return <div>{error}</div>;
+  if (error) {
+  return <div dangerouslySetInnerHTML={{ __html: error }} />;
+}
 
   return (
     <div className="resumo">

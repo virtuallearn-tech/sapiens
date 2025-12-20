@@ -8,15 +8,16 @@ export default defineConfig({
   server: {
     host: true
   },
-   preview: {
+  preview: {
     host: true
   },
   plugins: [
-    react(), 
+    react(),
     tsconfigPaths(),
     // basicSsl(),
     VitePWA({
       registerType: 'prompt',
+      includeAssets: ['icons/icon-192.png', 'icons/icon-512.png'],
       manifest: {
         name: "Sapiens Lab 3D",
         short_name: "Sapiens Lab 3D",
@@ -37,7 +38,42 @@ export default defineConfig({
             type: "image/png"
           }
         ]
-      }
+      }, //END MANIFEST
+      workbox: {
+        globPatterns: ["**/*.{js,css,html,ico,png,svg,webp}"],
+        runtimeCaching: [
+          {
+            urlPattern: ({ request }) => request.destination === "image",
+            handler: "CacheFirst",
+            options: {
+              cacheName: "images-cache",
+              expiration: {
+                maxEntries: 200,
+                maxAgeSeconds: 60 * 60 * 24 * 30 // 30 dias
+              }
+            }//END IMAGES CACHE
+          },
+          {
+            urlPattern: ({ url }) => url.pathname.endsWith(".md"),
+            handler: "NetworkFirst",
+            options: {
+              cacheName: "markdown-cache",
+              expiration: {
+                maxEntries: 300,
+                maxAgeSeconds: 60 * 60 * 24 * 7
+              },
+              networkTimeoutSeconds: 3,
+              plugins: [
+                {
+                  handlerDidError: async () => {
+                    return fetch("/offline.md");
+                  }
+                }
+              ]
+            }
+          }//END MARKDOWN CACHE
+        ]
+      },//END WORKBOX
     })
   ],
 })

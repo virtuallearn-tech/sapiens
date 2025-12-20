@@ -33,7 +33,7 @@ export function useGetAbstract({ discipline, file }: UseGetAbstractParams) {
       } catch (err: any) {
         if (axios.isCancel(err)) return;
 
-        setError("Erro ao carregar o resumo.");
+        setError(`<h1>Resumo não disponível</h1><p>Você está offline e esse conteúdo ainda não foi baixado antes.</p>Volte quando estiver online e bons estudos.`);
         // console.error(err);
       } finally {
         setLoading(false);
