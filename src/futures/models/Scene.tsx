@@ -86,6 +86,8 @@ const Scene = () => {
   const [isAnimating, setIsAnimating] = useState<boolean>(false)
   const [hasAnimation, setHasAnimation] = useState<boolean>(false)
 
+   const [isOnline, setIsOnline] = useState<boolean>(navigator.onLine);
+
   const {
     isSupported,
     isSpeaking,
@@ -96,7 +98,24 @@ const Scene = () => {
     speak,
   } = useSpeech()
 
+
   useEffect(() => {
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    }
+  }, []);
+
+  useEffect(() => {
+
+     if (!isOnline) return;
+
     const m = getModelByTopic(
       code as typeof DISCIPLINE_TOPICS[keyof typeof DISCIPLINE_TOPICS], 
       discipline as typeof DISCIPLINE[keyof typeof DISCIPLINE], 
@@ -124,7 +143,7 @@ const Scene = () => {
 
     //console.log('iClass', iClass)
     // handleSpeech(m?.name!)
-  }, [])
+  }, [isOnline])
 
   useEffect(() => {
     if (!isClassActive || isClassPaused) return
@@ -284,6 +303,15 @@ const Scene = () => {
       stopAudio()
       setIsPlayingAudio(false)
     }
+  }
+
+  if (!isOnline) {
+    return (
+      <div className="m-scene__offline">
+        <h2>Conexão necessária</h2>
+        <p>Você precisa estar online para acessar os modelos 3D.</p>
+      </div>
+    );
   }
 
   return (
