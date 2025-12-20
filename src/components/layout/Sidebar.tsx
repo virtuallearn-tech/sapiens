@@ -6,6 +6,7 @@ import { BsFillBadge3dFill } from "react-icons/bs";
 
 import { useSidebar } from "@store/SidebarContext";
 import { ROUTES_NAME } from '@routes/routesName';
+import { InstallPWAButton } from '@components/common/InstallPWAButton';
 
 export const Sidebar = () => {
   const { isOpen, close } = useSidebar();
@@ -56,6 +57,7 @@ export const Sidebar = () => {
               <span>Apoie o Sapiens</span>
             </Link>
           </li>
+          <InstallPWAButton/>
         </ul>
       </nav>
     </aside>
