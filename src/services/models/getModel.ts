@@ -2,6 +2,7 @@ import  { DISCIPLINE, DISCIPLINE_MODULE, DISCIPLINE_TOPICS } from "@interfaces/d
 import { BIOLOGY_MODELS } from "./biology/biologyModels";
 import type { IClass, IModel, IModelData } from "@interfaces/model";
 
+
 export const getModelByDiscipline = (discipline: typeof DISCIPLINE[keyof typeof DISCIPLINE]) => {
   switch(discipline){
     case DISCIPLINE.BIOLOGY:

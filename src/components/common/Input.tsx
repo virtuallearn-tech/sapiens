@@ -12,7 +12,6 @@ interface IInput {
 
 export const Input = ({
   id,
-  name,
   label,
   type = "text",
   placeholder,

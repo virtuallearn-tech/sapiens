@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { Button } from "@components/common/Button";
-import type { DISCIPLINE_MODULE, DISCIPLINE, DISCIPLINE_TOPICS } from "interfaces/discipline";
+import type { DISCIPLINE_MODULE, DISCIPLINE_TOPICS } from "interfaces/discipline";
 import type { ITopicCode } from "@interfaces/topic";
 import { getContentByTopic } from "@services/content";
 import { ROUTES_NAME } from "@routes/routesName";
@@ -10,7 +10,7 @@ import { ROUTES_NAME } from "@routes/routesName";
 const TopicOptions = () => {
 
   const { discipline, module, topic } = useParams<{ discipline:string, module: string, topic:string}>()
-  // console.log('params on topic', discipline, module, topic)
+  console.log('params on topic', discipline, module, topic)
   const navigate = useNavigate()
 
   const [moduleData, setModule] = useState<ITopicCode | null>(null)

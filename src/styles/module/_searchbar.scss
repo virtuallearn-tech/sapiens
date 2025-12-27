@@ -1,0 +1,81 @@
+@use '../base/var' as *;
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+
+  background-color: $gray-light;
+  border: 2px solid transparent;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:focus-within {
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba($primary, 0.25);
+  }
+
+  &__input {
+    flex: 1;
+
+    border: none;
+    outline: none;
+    background: transparent;
+
+    font-size: 1rem;
+    color: $secondary;
+
+    &::placeholder {
+      color: rgba($secondary, 0.6);
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    border: none;
+
+    background-color: $primary;
+    color: $white;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease, transform 0.1s ease;
+
+    &:hover {
+      background-color: $tertiary;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    svg {
+      font-size: 1.25rem;
+    }
+  }
+
+  /* Modifier example (opcional, mas recomendado) */
+  &--compact {
+    padding: 0.3rem 0.5rem;
+
+    &__input {
+      font-size: 0.9rem;
+    }
+  }
+
+  &--warning {
+    border-color: $warning;
+
+    &:focus-within {
+      box-shadow: 0 0 0 3px rgba($warning, 0.4);
+    }
+  }
+}
