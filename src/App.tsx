@@ -25,11 +25,11 @@ function App() {
       {/* <button className="fab" onClick={toggle}>
         ☰
       </button> */}
-       {!isScenePage && (
+       {/* {!isScenePage && (
         <button className="fab" onClick={toggle}>
           ☰
         </button>
-      )}
+      )} */}
     </div>
   );
 }

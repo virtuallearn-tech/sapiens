@@ -14,7 +14,7 @@ import { FabButton } from '@components/common/Fab'
 import { MenuOptions } from '@components/ui-3d/MenuOptions'
 import { Explanation } from '@components/ui-3d/Explanation'
 import { useSpeech } from '@hooks/useSpeech'
-import  { DISCIPLINE, DISCIPLINE_MODULE, DISCIPLINE_TOPICS } from '@interfaces/discipline'
+import { DISCIPLINE, DISCIPLINE_MODULE, DISCIPLINE_TOPICS } from '@interfaces/discipline'
 import { License } from '@components/layout/License'
 
 import { BsArrowsFullscreen } from "react-icons/bs";
@@ -22,6 +22,7 @@ import { RiFullscreenExitFill } from "react-icons/ri";
 import { toggleFullscreen } from '@utils/fullScreen'
 import { useAudioPlayer } from '@hooks/useAudio'
 import { ROUTES_NAME } from '@routes/routesName'
+import { MobileSceneLayout } from './ui/MobileSceneLayout';
 
 const defaultBgColor: string = '#CCCCCC'
 
@@ -86,7 +87,7 @@ const Scene = () => {
   const [isAnimating, setIsAnimating] = useState<boolean>(false)
   const [hasAnimation, setHasAnimation] = useState<boolean>(false)
 
-   const [isOnline, setIsOnline] = useState<boolean>(navigator.onLine);
+  const [isOnline, setIsOnline] = useState<boolean>(navigator.onLine);
 
   const {
     isSupported,
@@ -114,11 +115,11 @@ const Scene = () => {
 
   useEffect(() => {
 
-     if (!isOnline) return;
+    if (!isOnline) return;
 
     const m = getModelByTopic(
-      code as typeof DISCIPLINE_TOPICS[keyof typeof DISCIPLINE_TOPICS], 
-      discipline as typeof DISCIPLINE[keyof typeof DISCIPLINE], 
+      code as typeof DISCIPLINE_TOPICS[keyof typeof DISCIPLINE_TOPICS],
+      discipline as typeof DISCIPLINE[keyof typeof DISCIPLINE],
       topic as typeof DISCIPLINE_MODULE[keyof typeof DISCIPLINE_MODULE]) //getModel().data[0]
     //console.log('MODEL ', m)
     const nodesNames = m?.node?.map(n => n.name).filter((s): s is string => typeof s === 'string') ?? []
@@ -305,18 +306,9 @@ const Scene = () => {
     }
   }
 
-  if (!isOnline) {
+
+  const SceneCanvas = () => {
     return (
-      <div className="m-scene__offline">
-        <h2>Conexão necessária</h2>
-        <p>Você precisa estar online para acessar os modelos 3D.</p>
-      </div>
-    );
-  }
-
-  return (
-    <div className="m-scene">
-
       <Canvas className='m-scene__canvas' camera={{ position: [0, 0, 5], fov: 75 }}>
         <ambientLight intensity={0.6} />
         <directionalLight position={[5, 5, 5]} intensity={2} />
@@ -327,8 +319,42 @@ const Scene = () => {
           <Model model={model!} focusNames={focusNames} updateScale={updateScale} isAnimating={isAnimating} />
         </Suspense>
       </Canvas>
+    )
+  }
 
-      <div className="m-scene__label">
+  if (!isOnline) {
+    return (
+      <div className="m-scene__offline">
+        <h2>Conexão necessária</h2>
+        <p>Você precisa estar online para acessar os modelos 3D.</p>
+      </div>
+    );
+  }
+
+
+  return (
+
+    <MobileSceneLayout>
+      <SceneCanvas />
+    </MobileSceneLayout>
+  )
+
+    {/* <div className="m-scene">
+
+     
+
+      <Canvas className='m-scene__canvas' camera={{ position: [0, 0, 5], fov: 75 }}>
+        <ambientLight intensity={0.6} />
+        <directionalLight position={[5, 5, 5]} intensity={2} />
+        <OrbitControls maxDistance={10} />
+        <color attach="background" args={[bg]} />
+        <Suspense fallback={<Loader />}>
+          {/* <axesHelper args={[5]} /> }
+          <Model model={model!} focusNames={focusNames} updateScale={updateScale} isAnimating={isAnimating} />
+        </Suspense>
+      </Canvas> }
+
+  {/* <div className="m-scene__label">
         {isClassActive && <span>{currentStep + 1}/{classRoutine.length} {titleModel}</span>}
         {!isClassActive && <span>{titleModel}</span>}
       </div>
@@ -346,7 +372,7 @@ const Scene = () => {
           onClick={handleUpdateScale}
         >
           Redimensionar
-        </Button> */}
+        </Button> }
           {model?.sound && (<Button
             type='button'
             typeBtn='dark'
@@ -363,7 +389,7 @@ const Scene = () => {
               onClick={() => setIsAnimating(prev => !prev)}
             >
               {isAnimating ? 'Estático' : 'Animar'}
-              {/* Animar/Pausar */}
+              {/* Animar/Pausar }
             </Button>)
           }
           <Button
@@ -394,13 +420,13 @@ const Scene = () => {
       </div>}
 
       <div className="m-scene__ui m-scene__ui--right">
-        {/* MODO LIVRE */}
+        {/* MODO LIVRE }
         {!isClassActive && handleFreeUI()}
 
-        {/* MODO AULA */}
+        {/* MODO AULA }
         {isClassActive && handleClassUI()}
 
-        {/* Botão de explicação sempre visível */}
+        {/* Botão de explicação sempre visível }
         <FabButton
           icon={showExplanation ? "close" : "letter"}
           onClick={() => setShowExplanation((prev) => !prev)}
@@ -414,11 +440,11 @@ const Scene = () => {
 
       {showDetailOptions && <MenuOptions items={menuOptions} onClick={handleModelInfo} />}
       {showExplanation && <Explanation explanation={explanation!} />}
-      {license && <License content={model?.attribuition!} />}
+      {license && <License content={model?.attribuition!} />} 
 
-    </div>
+    </div >*
 
-  )
+  )*/}
 }
 
 export default Scene
