@@ -3,10 +3,25 @@ import { AiOutlineFullscreenExit } from 'react-icons/ai'
 import { FaEllipsisVertical } from 'react-icons/fa6'
 import { GrCaretNext, GrCaretPrevious } from 'react-icons/gr'
 import { SlSizeFullscreen } from 'react-icons/sl'
+import { MobileActionMenu, type IActionMenuOption } from './MobileActionMenu'
 
 interface MobileSceneLayoutProps {
     children: ReactNode
 }
+const optionsMenu: IActionMenuOption[] = [
+    {
+        id: 'info',
+        label: 'Informações do modelo',
+        onSelect: () => console.log('Info')
+    },
+    {
+        id: 'reset',
+        label: 'Resetar posição',
+        onSelect: () => console.log('Reset')
+    }
+]
+
+
 
 export const MobileSceneLayout = ({ children }: MobileSceneLayoutProps) => {
     return (
@@ -33,7 +48,7 @@ export const MobileSceneLayout = ({ children }: MobileSceneLayoutProps) => {
             <div className="m-scene__bottombar">
 
                 <div className="m-scene__actions m-scene__actions--bottom">
-                    
+
                     <button className=" m-scene__action m-scene__action--bottom m-scene__action--previous">
                         <GrCaretPrevious />
                     </button>
@@ -57,6 +72,14 @@ export const MobileSceneLayout = ({ children }: MobileSceneLayoutProps) => {
                 </div>
 
             </div>
+
+            {true && (
+                <MobileActionMenu
+                    type="top-right"
+                    options={optionsMenu}
+                />
+            )}
+
 
         </div>
 
