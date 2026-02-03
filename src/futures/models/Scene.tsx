@@ -23,6 +23,8 @@ import { toggleFullscreen } from '@utils/fullScreen'
 import { useAudioPlayer } from '@hooks/useAudio'
 import { ROUTES_NAME } from '@routes/routesName'
 import { MobileSceneLayout } from './ui/MobileSceneLayout';
+import type { IActionMenuOption } from './ui/MobileActionMenu';
+import { label } from 'three/tsl';
 
 const defaultBgColor: string = '#CCCCCC'
 
@@ -66,7 +68,8 @@ const Scene = () => {
   const [explanation, setExplanation] = useState<string | null>(null)
   const [focusNames, setFocusNames] = useState<string | string[] | null>(null)
 
-  const [menuOptions, setMenuOptions] = useState<string[]>([])
+  const [menuOptions, setMenuOptions] = useState<IActionMenuOption[]>([])
+
   const [showDetailOptions, setShowDetailOptions] = useState<boolean>(false)
   const [showExplanation, setShowExplanation] = useState<boolean>(false)
 
@@ -78,7 +81,7 @@ const Scene = () => {
   const [isClassPaused, setIsClassPaused] = useState(false)
 
   const [license, setLicense] = useState<boolean>(false)
-  const [isFullscreen, setIsFullscreen] = useState<boolean>(false)
+  // const [isFullscreen, setIsFullscreen] = useState<boolean>(false)
 
   //hooks to handle audios from audio
   const [isPlayigAudio, setIsPlayingAudio] = useState<boolean>(false)
@@ -123,8 +126,12 @@ const Scene = () => {
       topic as typeof DISCIPLINE_MODULE[keyof typeof DISCIPLINE_MODULE]) //getModel().data[0]
     //console.log('MODEL ', m)
     const nodesNames = m?.node?.map(n => n.name).filter((s): s is string => typeof s === 'string') ?? []
-    const menuOptions = [m?.name, ...nodesNames, 'Fechar'].filter((s): s is string => typeof s === 'string')
-    setMenuOptions(menuOptions)
+
+    const menuOptions = [m?.name, ...nodesNames, 'Fechar']
+      .filter((s): s is string => typeof s === 'string')
+    const t = menuOptions.map((d, index) => { return { label: d, onSelect: () => handleModelInfo(d), id: `${index + 1}` } })
+
+    setMenuOptions(t)
 
     setModel(m)
     setTextToSpeech(m?.text ?? null)
@@ -289,10 +296,10 @@ const Scene = () => {
     )
   }
 
-  const handleFullscreen = () => {
-    toggleFullscreen(".m-scene")
-    setIsFullscreen(prev => !prev)
-  }
+  // const handleFullscreen = () => {
+  //   toggleFullscreen(".m-scene")
+  //   setIsFullscreen(prev => !prev)
+  // }
 
   const handleModelAudio = () => {
     if (model!.sound && !isPlayigAudio) {
@@ -331,15 +338,36 @@ const Scene = () => {
     );
   }
 
+  const handleLicense = () => setLicense((prev) => !prev)
+
+  const optionsMenu: IActionMenuOption[] = [
+    {
+      id: 'info',
+      label: 'Informações do modelo',
+      onSelect: handleLicense
+    },
+    {
+      id: 'reset',
+      label: 'Resetar posição',
+      onSelect: handleUpdateScale
+    }
+  ]
 
   return (
+    <>
+      <MobileSceneLayout
+        model={model!}
+        optionsMenu={optionsMenu}
+        exploreMenu={menuOptions}
+      >
+        <SceneCanvas />
+      </MobileSceneLayout>
+      {license && <License content={model?.attribuition!} />}
+    </>
 
-    <MobileSceneLayout>
-      <SceneCanvas />
-    </MobileSceneLayout>
   )
 
-    {/* <div className="m-scene">
+  {/* <div className="m-scene">
 
      
 

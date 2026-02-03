@@ -28,6 +28,8 @@
     &--bottom-left {
         bottom: 4.5rem;
         left: 0.5rem;
+        top: unset;
+        max-height: max-content;
     }
 
 }

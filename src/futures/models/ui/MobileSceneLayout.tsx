@@ -1,29 +1,36 @@
-import type { ReactNode } from 'react'
-import { AiOutlineFullscreenExit } from 'react-icons/ai'
+import { useState, type ReactNode } from 'react'
 import { FaEllipsisVertical } from 'react-icons/fa6'
 import { GrCaretNext, GrCaretPrevious } from 'react-icons/gr'
 import { SlSizeFullscreen } from 'react-icons/sl'
 import { MobileActionMenu, type IActionMenuOption } from './MobileActionMenu'
+import type { IModelData } from '@interfaces/model'
+import { toggleFullscreen } from '@utils/fullScreen'
+import { AiOutlineFullscreenExit } from 'react-icons/ai'
 
 interface MobileSceneLayoutProps {
-    children: ReactNode
+    children: ReactNode,
+    model?:IModelData,
+    optionsMenu?: IActionMenuOption[],
+    exploreMenu?: IActionMenuOption[],
+    //fullscreem?: () => void
 }
-const optionsMenu: IActionMenuOption[] = [
-    {
-        id: 'info',
-        label: 'Informações do modelo',
-        onSelect: () => console.log('Info')
-    },
-    {
-        id: 'reset',
-        label: 'Resetar posição',
-        onSelect: () => console.log('Reset')
-    }
-]
 
 
+export const MobileSceneLayout = ({ 
+    children, 
+    model, 
+    optionsMenu,
+    exploreMenu 
+}: MobileSceneLayoutProps) => {
+    const [isTopLeftMenu, setIsTopRighttMenu] = useState<boolean>(false)
+    const [isExploreMenu, setIsExploreMenu] = useState<boolean>(false)
+    const [isFullscreen, setIsFullscreen] = useState<boolean>(false)
 
-export const MobileSceneLayout = ({ children }: MobileSceneLayoutProps) => {
+    const handleFullscreen = () => {
+        toggleFullscreen(".m-scene")
+        setIsFullscreen(prev => !prev)
+      }
+
     return (
         <div className="m-scene m-scene--mobile">
 
@@ -32,14 +39,22 @@ export const MobileSceneLayout = ({ children }: MobileSceneLayoutProps) => {
             </div>
 
             <div className="m-scene__topbar">
-                <div className="m-scene__title">Nome do Modelo</div>
+                <div className="m-scene__title">{model?.name}</div>
 
                 <div className="m-scene__actions">
-                    <button className="m-scene__action m-scene__action--fullscreen">
-                        <SlSizeFullscreen />
+                    <button 
+                        className="m-scene__action m-scene__action--fullscreen"
+                        onClick={handleFullscreen}
+                        >
+                        {!isFullscreen && <SlSizeFullscreen />}
+                        {isFullscreen && <AiOutlineFullscreenExit />}
+
                     </button>
 
-                    <button className="m-scene__action m-scene__action--options">
+                    <button 
+                        className="m-scene__action m-scene__action--options"
+                        onClick={() => setIsTopRighttMenu((prev) => !prev)}
+                        >
                         <FaEllipsisVertical />
                     </button>
                 </div>
@@ -53,7 +68,9 @@ export const MobileSceneLayout = ({ children }: MobileSceneLayoutProps) => {
                         <GrCaretPrevious />
                     </button>
 
-                    <button className="m-scene__action m-scene__action--bottom m-scene__action--explore">
+                    <button className="m-scene__action m-scene__action--bottom m-scene__action--explore"
+                        onClick={() => setIsExploreMenu((prev) => !prev)}
+                    >
                         Explorar
                     </button>
 
@@ -73,10 +90,17 @@ export const MobileSceneLayout = ({ children }: MobileSceneLayoutProps) => {
 
             </div>
 
-            {true && (
+            {isTopLeftMenu && optionsMenu && (
                 <MobileActionMenu
                     type="top-right"
                     options={optionsMenu}
+                />
+            )}
+
+            {isExploreMenu && exploreMenu && (
+                <MobileActionMenu
+                    type="bottom-left"
+                    options={exploreMenu}
                 />
             )}
 
