@@ -1,7 +1,7 @@
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 
-import React, { Suspense, useEffect, useState } from 'react'
+import React, { Suspense, useCallback, useEffect, useState } from 'react'
 import { Html, useProgress } from '@react-three/drei'
 // import { Model } from './Model'
 const Model = React.lazy(() => import("./Model"));
@@ -70,6 +70,7 @@ const Scene = () => {
 
   const [menuOptions, setMenuOptions] = useState<IActionMenuOption[]>([])
 
+  //remove
   const [showDetailOptions, setShowDetailOptions] = useState<boolean>(false)
   const [showExplanation, setShowExplanation] = useState<boolean>(false)
 
@@ -116,7 +117,7 @@ const Scene = () => {
     }
   }, []);
 
-  useEffect(() => {
+  /*useEffect(() => {
 
     if (!isOnline) return;
 
@@ -125,15 +126,16 @@ const Scene = () => {
       discipline as typeof DISCIPLINE[keyof typeof DISCIPLINE],
       topic as typeof DISCIPLINE_MODULE[keyof typeof DISCIPLINE_MODULE]) //getModel().data[0]
     //console.log('MODEL ', m)
+    setModel(m)
     const nodesNames = m?.node?.map(n => n.name).filter((s): s is string => typeof s === 'string') ?? []
 
     const menuOptions = [m?.name, ...nodesNames, 'Fechar']
       .filter((s): s is string => typeof s === 'string')
     const t = menuOptions.map((d, index) => { return { label: d, onSelect: () => handleModelInfo(d), id: `${index + 1}` } })
-
+    console.log('T ', t);
     setMenuOptions(t)
 
-    setModel(m)
+    
     setTextToSpeech(m?.text ?? null)
     setExplanation(m?.text ?? null)
     setTitleModel(m?.name ?? '')
@@ -151,7 +153,48 @@ const Scene = () => {
 
     //console.log('iClass', iClass)
     // handleSpeech(m?.name!)
-  }, [isOnline])
+  }, [isOnline])*/
+
+  useEffect(() => {
+    if (!isOnline) return;
+
+    const m = getModelByTopic(
+      code as typeof DISCIPLINE_TOPICS[keyof typeof DISCIPLINE_TOPICS],
+      discipline as typeof DISCIPLINE[keyof typeof DISCIPLINE],
+      topic as typeof DISCIPLINE_MODULE[keyof typeof DISCIPLINE_MODULE]
+    );
+
+    setModel(m);
+
+    setTextToSpeech(m?.text ?? null);
+    setExplanation(m?.text ?? null);
+    setTitleModel(m?.name ?? '');
+
+    if (m?.sceneBg) setBg(m.sceneBg);
+
+    if (m?.hasAnimation) {
+      setHasAnimation(true);
+      setIsAnimating(true);
+    }
+  }, [isOnline, code, discipline, topic]);
+
+  useEffect(() => {
+    if (!model) return;
+
+    const nodesNames =
+      model.node?.map(n => n.name).filter((s): s is string => typeof s === 'string') ?? [];
+
+    const labels = [model.name, ...nodesNames, 'Fechar'];
+
+    const t = labels.map((d, index) => ({
+      label: d,
+      id: `${index + 1}`,
+      onSelect: () => handleModelInfo(d)
+    }));
+
+    setMenuOptions(t);
+  }, [model]);
+
 
   useEffect(() => {
     if (!isClassActive || isClassPaused) return
@@ -196,26 +239,50 @@ const Scene = () => {
     }
   }
 
-  const handleModelInfo = (name: string) => {
-    //console.log('name', name)
-    //  if(!name) return null
-    if (name == model?.name || name == 'Fechar') {
-      setTextToSpeech(model!.text)
-      setExplanation(model!.text)
-      setTitleModel(model!.name)
-      setFocusNames(model!.name)
+  const handleModelInfo = useCallback((name: string) => {
+    if (!model) return;
+
+    if (name === model.name || name === 'Fechar') {
+      setTextToSpeech(model.text);
+      setExplanation(model.text);
+      setTitleModel(model.name);
+      setFocusNames(model.name);
     } else {
-      const findText = model?.node!.find((n) => n.name == name)
-      //console.log('find ', findText)
+      const findText = model.node?.find(n => n.name === name);
       if (findText) {
-        setTextToSpeech(findText.text)
-        setExplanation(findText.text)
-        setTitleModel(findText?.name)
-        setFocusNames(findText.node)
+        setTextToSpeech(findText.text);
+        setExplanation(findText.text);
+        setTitleModel(findText.name);
+        setFocusNames(findText.node);
       }
     }
-    setShowDetailOptions(false)
-  }
+
+    setShowDetailOptions(false);
+  }, [model]);
+
+
+  // const handleModelInfo = (name: string) => {
+  //   console.log('model t ', model);
+  //   console.log('name', name, model?.name)
+  //   //  if(!name) return null
+  //   if (name == model?.name || name == 'Fechar') {
+  //     console.log('entrou if')
+  //     setTextToSpeech(model!.text)
+  //     setExplanation(model!.text)
+  //     setTitleModel(model!.name)
+  //     setFocusNames(model!.name)
+  //   } else {
+  //     const findText = model?.node!.find((n) => n.name == name)
+  //     console.log('entrou else find ', findText)
+  //     if (findText) {
+  //       setTextToSpeech(findText.text)
+  //       setExplanation(findText.text)
+  //       setTitleModel(findText?.name)
+  //       setFocusNames(findText.node)
+  //     }
+  //   }
+  //   setShowDetailOptions(false)
+  // }
 
   const startClassRoutine = () => {
     if (!model) return
@@ -296,10 +363,6 @@ const Scene = () => {
     )
   }
 
-  // const handleFullscreen = () => {
-  //   toggleFullscreen(".m-scene")
-  //   setIsFullscreen(prev => !prev)
-  // }
 
   const handleModelAudio = () => {
     if (model!.sound && !isPlayigAudio) {
@@ -367,112 +430,6 @@ const Scene = () => {
 
   )
 
-  {/* <div className="m-scene">
-
-     
-
-      <Canvas className='m-scene__canvas' camera={{ position: [0, 0, 5], fov: 75 }}>
-        <ambientLight intensity={0.6} />
-        <directionalLight position={[5, 5, 5]} intensity={2} />
-        <OrbitControls maxDistance={10} />
-        <color attach="background" args={[bg]} />
-        <Suspense fallback={<Loader />}>
-          {/* <axesHelper args={[5]} /> }
-          <Model model={model!} focusNames={focusNames} updateScale={updateScale} isAnimating={isAnimating} />
-        </Suspense>
-      </Canvas> }
-
-  {/* <div className="m-scene__label">
-        {isClassActive && <span>{currentStep + 1}/{classRoutine.length} {titleModel}</span>}
-        {!isClassActive && <span>{titleModel}</span>}
-      </div>
-
-      <div className="m-scene__label--fullscreen" onClick={handleFullscreen}>
-        {isFullscreen ? <RiFullscreenExitFill /> : <BsArrowsFullscreen />}
-      </div>
-
-      {!showDetailOptions && !isClassActive && <div className="m-scene__ui m-scene__ui--left">
-        <div className="m-scene__ui--left__inner">
-          {/* <Button
-          type='button'
-          typeBtn='dark'
-          className='m-button--full'
-          onClick={handleUpdateScale}
-        >
-          Redimensionar
-        </Button> }
-          {model?.sound && (<Button
-            type='button'
-            typeBtn='dark'
-            className='m-button--full'
-            onClick={handleModelAudio}
-          >
-            {isPlayigAudio ? 'Pausar' : 'Ouvir'}
-          </Button>)}
-          {hasAnimation && (
-            <Button
-              type='button'
-              typeBtn='dark'
-              className='m-button--full'
-              onClick={() => setIsAnimating(prev => !prev)}
-            >
-              {isAnimating ? 'Estático' : 'Animar'}
-              {/* Animar/Pausar }
-            </Button>)
-          }
-          <Button
-            type='button'
-            typeBtn='dark'
-            className='m-button--full'
-            onClick={() => setShowDetailOptions(prev => !prev)}
-          >
-            Explorar
-          </Button>
-          <Button
-            type='button'
-            typeBtn='dark'
-            className='m-button--full'
-            onClick={startClassRoutine}
-          >
-            Aula
-          </Button>
-          <Button
-            type='button'
-            typeBtn='dark'
-            className='m-button--full'
-            onClick={() => navigate(`${ROUTES_NAME.EXERCISES}/${discipline}/${topic}/${code}`)}
-          >
-            Exercícios
-          </Button>
-        </div>
-      </div>}
-
-      <div className="m-scene__ui m-scene__ui--right">
-        {/* MODO LIVRE }
-        {!isClassActive && handleFreeUI()}
-
-        {/* MODO AULA }
-        {isClassActive && handleClassUI()}
-
-        {/* Botão de explicação sempre visível }
-        <FabButton
-          icon={showExplanation ? "close" : "letter"}
-          onClick={() => setShowExplanation((prev) => !prev)}
-        />
-        <FabButton
-          icon={license ? 'close' : 'info'}
-          onClick={() => setLicense((prev) => !prev)}
-        />
-      </div>
-
-
-      {showDetailOptions && <MenuOptions items={menuOptions} onClick={handleModelInfo} />}
-      {showExplanation && <Explanation explanation={explanation!} />}
-      {license && <License content={model?.attribuition!} />} 
-
-    </div >*
-
-  )*/}
 }
 
 export default Scene

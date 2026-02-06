@@ -1,35 +1,55 @@
 import { useState, type ReactNode } from 'react'
-import { FaEllipsisVertical } from 'react-icons/fa6'
-import { GrCaretNext, GrCaretPrevious } from 'react-icons/gr'
-import { SlSizeFullscreen } from 'react-icons/sl'
+
+//actions
 import { MobileActionMenu, type IActionMenuOption } from './MobileActionMenu'
 import type { IModelData } from '@interfaces/model'
 import { toggleFullscreen } from '@utils/fullScreen'
+
+//reducers
+import { useUiScene } from '@context/UiSceneContext'
+
+//icons
 import { AiOutlineFullscreenExit } from 'react-icons/ai'
+import { FaEllipsisVertical } from 'react-icons/fa6'
+import { GrCaretNext, GrCaretPrevious } from 'react-icons/gr'
+import { SlSizeFullscreen } from 'react-icons/sl'
 
 interface MobileSceneLayoutProps {
     children: ReactNode,
-    model?:IModelData,
+    model?: IModelData,
     optionsMenu?: IActionMenuOption[],
     exploreMenu?: IActionMenuOption[],
     //fullscreem?: () => void
 }
 
 
-export const MobileSceneLayout = ({ 
-    children, 
-    model, 
+export const MobileSceneLayout = ({
+    children,
+    model,
     optionsMenu,
-    exploreMenu 
+    exploreMenu
 }: MobileSceneLayoutProps) => {
-    const [isTopLeftMenu, setIsTopRighttMenu] = useState<boolean>(false)
+    /*const [isTopLeftMenu, setIsTopRighttMenu] = useState<boolean>(false)
     const [isExploreMenu, setIsExploreMenu] = useState<boolean>(false)
-    const [isFullscreen, setIsFullscreen] = useState<boolean>(false)
+    const [isFullscreen, setIsFullscreen] = useState<boolean>(false)*/
+
+    const { state, dispatch } = useUiScene()
+
+    console.log('UI state', state)
 
     const handleFullscreen = () => {
         toggleFullscreen(".m-scene")
-        setIsFullscreen(prev => !prev)
-      }
+        //setIsFullscreen(prev => !prev)
+        dispatch({ type: 'TOGGLE_FULLSCREEN' })
+    }
+
+    const handleToggleOptionsMenu = () => {
+        console.log('TOGGLE_MENU_OPTION')
+        dispatch({ type: 'TOGGLE_MENU_OPTION' })
+    }
+    const handleToggleExploreMenu = () => {
+        dispatch({type: 'TOGGLE_EXPLORE_MENU'})
+    }
 
     return (
         <div className="m-scene m-scene--mobile">
@@ -42,19 +62,19 @@ export const MobileSceneLayout = ({
                 <div className="m-scene__title">{model?.name}</div>
 
                 <div className="m-scene__actions">
-                    <button 
+                    <button
                         className="m-scene__action m-scene__action--fullscreen"
                         onClick={handleFullscreen}
-                        >
-                        {!isFullscreen && <SlSizeFullscreen />}
-                        {isFullscreen && <AiOutlineFullscreenExit />}
+                    >
+                        {!state.isFullscreen && <SlSizeFullscreen />}
+                        {state.isFullscreen && <AiOutlineFullscreenExit />}
 
                     </button>
 
-                    <button 
+                    <button
                         className="m-scene__action m-scene__action--options"
-                        onClick={() => setIsTopRighttMenu((prev) => !prev)}
-                        >
+                        onClick={handleToggleOptionsMenu}
+                    >
                         <FaEllipsisVertical />
                     </button>
                 </div>
@@ -69,7 +89,7 @@ export const MobileSceneLayout = ({
                     </button>
 
                     <button className="m-scene__action m-scene__action--bottom m-scene__action--explore"
-                        onClick={() => setIsExploreMenu((prev) => !prev)}
+                        onClick={handleToggleExploreMenu}
                     >
                         Explorar
                     </button>
@@ -90,14 +110,14 @@ export const MobileSceneLayout = ({
 
             </div>
 
-            {isTopLeftMenu && optionsMenu && (
+            {state.isShowMenuOptions&& optionsMenu && (
                 <MobileActionMenu
                     type="top-right"
                     options={optionsMenu}
                 />
             )}
 
-            {isExploreMenu && exploreMenu && (
+            {state.isShowExploreMenu && exploreMenu && (
                 <MobileActionMenu
                     type="bottom-left"
                     options={exploreMenu}

@@ -43,6 +43,12 @@
       ],
       "@hookes/*": [
         "hookes/*"
+      ],
+      "@reducers/*": [
+        "reducers/*"
+      ],
+      "@context/*": [
+        "context/*"
       ]
     },
      "types": [

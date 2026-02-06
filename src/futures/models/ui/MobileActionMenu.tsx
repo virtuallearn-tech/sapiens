@@ -26,7 +26,7 @@ export const MobileActionMenu = ({
           <button
             key={option.id}
             className="m-action-menu__item"
-            onClick={option.onSelect}
+            onClick={() => {option.onSelect()}}
             disabled={option.disabled}
           >
             {option.label}
