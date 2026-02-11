@@ -1,4 +1,211 @@
-import { Canvas } from '@react-three/fiber'
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, Html, useProgress } from '@react-three/drei';
+import React, { Suspense, useEffect, useState, useCallback, useReducer } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import type { IClass, IModelData } from '@interfaces/model';
+import { getModelByTopic, setClass } from '@services/models/getModel';
+import { MobileSceneLayout } from './ui/MobileSceneLayout';
+import type { IActionMenuOption } from './ui/MobileActionMenu';
+import { License } from '@components/layout/License';
+import { useAudioPlayer } from '@hooks/useAudio';
+import { useSpeech } from '@hooks/useSpeech';
+//import { Model } from './Model'; // você pode manter lazy se quiser
+const Model = React.lazy(() => import("./Model"));
+import { ModelActionType, ModelReducer, type ModelState } from '@reducers/model.reducer'; // seu reducer
+
+const defaultBgColor = '#CCCCCC';
+
+// Loader do Canvas
+function Loader() {
+  const { progress } = useProgress();
+  return (
+    <Html center>
+      <div
+        style={{
+          background: "rgba(0,0,0,0.7)",
+          color: "white",
+          padding: "6px 12px",
+          borderRadius: "8px",
+          fontFamily: "sans-serif",
+          fontSize: "0.9rem",
+          display: "inline-block",
+          whiteSpace: "nowrap"
+        }}
+      >
+        {progress.toFixed(0)}% carregado
+      </div>
+    </Html>
+  )
+}
+
+const Scene = () => {
+  const navigate = useNavigate();
+  const { discipline, topic, code } = useParams();
+
+  // ===== Reducer da Model =====
+  const [state, dispatch] = useReducer(ModelReducer, {
+    model: null,
+    title: '',
+    textToSpeech: '',
+    explanation: '',
+    focusName: null,
+    menuOptions: [],
+    exploreMenu: [],
+    hasAnimation: false,
+    isAnimating: false,
+  });
+
+  // ===== Estados locais UI =====
+  const [bg, setBg] = useState(defaultBgColor);
+  const [updateScale, setUpdateScale] = useState(false);
+  const [license, setLicense] = useState(false);
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
+  const [classRoutine, setClassRoutine] = useState<IClass[]>([]);
+  const [currentStep, setCurrentStep] = useState(0);
+  const [isClassActive, setIsClassActive] = useState(false);
+  const [isClassPaused, setIsClassPaused] = useState(false);
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+
+  const { isSpeaking, isPaused, pause, resume, stop, speak } = useSpeech();
+  const { play: playAudio, stop: stopAudio } = useAudioPlayer();
+
+  // ===== Detecta online/offline =====
+  useEffect(() => {
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    }
+  }, []);
+
+  // ===== Carrega a model =====
+  useEffect(() => {
+    if (!isOnline) return;
+    const m = getModelByTopic(code as any, discipline as any, topic as any);
+    if (!m) return;
+
+    // dispatch para o reducer
+    dispatch({ type: ModelActionType.SET_MODEL, payload: m });
+    dispatch({ type: ModelActionType.SET_TEXT_TO_SPEECH, payload: m.text ?? '' });
+    dispatch({ type: ModelActionType.SET_EXPLANATION, payload: m.text ?? '' });
+    dispatch({ type: ModelActionType.SET_TITLE, payload: m.name ?? '' });
+    dispatch({ type: ModelActionType.SET_HAS_ANIMATION, payload: m.hasAnimation ?? false });
+    dispatch({ type: ModelActionType.SET_ANIMATION, payload: m.hasAnimation ?? false });
+
+    if (m.sceneBg) setBg(m.sceneBg);
+
+  }, [isOnline, code, discipline, topic]);
+
+  // ===== Atualiza menuOptions baseado na model =====
+  useEffect(() => {
+    if (!state.model) return;
+
+    const nodesNames =
+      state.model.node?.map(n => n.name).filter((s): s is string => typeof s === 'string') ?? [];
+
+    const labels = [state.model.name, ...nodesNames, 'Fechar'];
+    const t: IActionMenuOption[] = labels.map((d, i) => ({
+      label: d,
+      id: `${i + 1}`,
+      onSelect: () => handleModelInfo(d)
+    }));
+
+    dispatch({ type: ModelActionType.SET_MENU_OPTIONS, payload: t });
+  }, [state.model]);
+
+  // ===== handleModelInfo =====
+  const handleModelInfo = useCallback((name: string) => {
+    if (!state.model) return;
+
+    if (name === state.model.name || name === 'Fechar') {
+      dispatch({ type: ModelActionType.SET_TEXT_TO_SPEECH, payload: state.model.text });
+      dispatch({ type: ModelActionType.SET_EXPLANATION, payload: state.model.text });
+      dispatch({ type: ModelActionType.SET_TITLE, payload: state.model.name });
+      dispatch({ type: ModelActionType.SET_FOCUS_NAME, payload: state.model.name });
+    } else {
+      const findText = state.model.node?.find(n => n.name === name);
+      if (findText) {
+        dispatch({ type: ModelActionType.SET_TEXT_TO_SPEECH, payload: findText.text });
+        dispatch({ type: ModelActionType.SET_EXPLANATION, payload: findText.text });
+        dispatch({ type: ModelActionType.SET_TITLE, payload: findText.name });
+        dispatch({ type: ModelActionType.SET_FOCUS_NAME, payload: findText.node });
+      }
+    }
+  }, [state.model]);
+
+  // ===== Rotina de aula =====
+  useEffect(() => {
+    if (!isClassActive || isClassPaused) return;
+    if (classRoutine.length === 0 || currentStep >= classRoutine.length) {
+      dispatch({ type: ModelActionType.SET_FOCUS_NAME, payload: null });
+      setIsClassActive(false);
+      return;
+    }
+
+    const current = classRoutine[currentStep];
+
+    dispatch({ type: ModelActionType.SET_TITLE, payload: current.name });
+    dispatch({ type: ModelActionType.SET_EXPLANATION, payload: current.text });
+    dispatch({ type: ModelActionType.SET_TEXT_TO_SPEECH, payload: current.text });
+    dispatch({ type: ModelActionType.SET_FOCUS_NAME, payload: current.node });
+
+    speak(current.text, {
+      onAllEnd: () => {
+        if (!isClassPaused) setCurrentStep(prev => prev + 1);
+      }
+    });
+  }, [currentStep, classRoutine, isClassActive, isClassPaused]);
+
+  // ===== Canvas =====
+  const SceneCanvas = () => (
+    <Canvas className='m-scene__canvas' camera={{ position: [0,0,5], fov: 75 }}>
+      <ambientLight intensity={0.6} />
+      <directionalLight position={[5,5,5]} intensity={2} />
+      <OrbitControls maxDistance={10} />
+      <color attach="background" args={[bg]} />
+      <Suspense fallback={<Loader />}>
+        <Model
+          model={state.model!}
+          focusNames={state.focusName}
+          updateScale={updateScale}
+          isAnimating={state.isAnimating}
+        />
+      </Suspense>
+    </Canvas>
+  );
+
+  if (!isOnline) return (
+    <div className="m-scene__offline">
+      <h2>Conexão necessária</h2>
+      <p>Você precisa estar online para acessar os modelos 3D.</p>
+    </div>
+  );
+
+  // ===== Menu =====
+  const optionsMenu: IActionMenuOption[] = [
+    { id: 'info', label: 'Informações do modelo', onSelect: () => setLicense(prev => !prev) },
+    { id: 'reset', label: 'Resetar posição', onSelect: () => setUpdateScale(true) }
+  ];
+
+  return (
+    <>
+      <MobileSceneLayout>
+        <SceneCanvas />
+      </MobileSceneLayout>
+      {license && <License content={state.model?.attribuition!} />}
+    </>
+  );
+};
+
+export default Scene;
+
+
+
+
+/*import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 
 import React, { Suspense, useCallback, useEffect, useState } from 'react'
@@ -117,44 +324,6 @@ const Scene = () => {
     }
   }, []);
 
-  /*useEffect(() => {
-
-    if (!isOnline) return;
-
-    const m = getModelByTopic(
-      code as typeof DISCIPLINE_TOPICS[keyof typeof DISCIPLINE_TOPICS],
-      discipline as typeof DISCIPLINE[keyof typeof DISCIPLINE],
-      topic as typeof DISCIPLINE_MODULE[keyof typeof DISCIPLINE_MODULE]) //getModel().data[0]
-    //console.log('MODEL ', m)
-    setModel(m)
-    const nodesNames = m?.node?.map(n => n.name).filter((s): s is string => typeof s === 'string') ?? []
-
-    const menuOptions = [m?.name, ...nodesNames, 'Fechar']
-      .filter((s): s is string => typeof s === 'string')
-    const t = menuOptions.map((d, index) => { return { label: d, onSelect: () => handleModelInfo(d), id: `${index + 1}` } })
-    console.log('T ', t);
-    setMenuOptions(t)
-
-    
-    setTextToSpeech(m?.text ?? null)
-    setExplanation(m?.text ?? null)
-    setTitleModel(m?.name ?? '')
-
-    const iClass = setClass(m!)
-
-    if (m.sceneBg) {
-      setBg(m.sceneBg)
-    }
-
-    if (m.hasAnimation) {
-      setHasAnimation(true)
-      setIsAnimating(true)
-    }
-
-    //console.log('iClass', iClass)
-    // handleSpeech(m?.name!)
-  }, [isOnline])*/
-
   useEffect(() => {
     if (!isOnline) return;
 
@@ -261,29 +430,6 @@ const Scene = () => {
   }, [model]);
 
 
-  // const handleModelInfo = (name: string) => {
-  //   console.log('model t ', model);
-  //   console.log('name', name, model?.name)
-  //   //  if(!name) return null
-  //   if (name == model?.name || name == 'Fechar') {
-  //     console.log('entrou if')
-  //     setTextToSpeech(model!.text)
-  //     setExplanation(model!.text)
-  //     setTitleModel(model!.name)
-  //     setFocusNames(model!.name)
-  //   } else {
-  //     const findText = model?.node!.find((n) => n.name == name)
-  //     console.log('entrou else find ', findText)
-  //     if (findText) {
-  //       setTextToSpeech(findText.text)
-  //       setExplanation(findText.text)
-  //       setTitleModel(findText?.name)
-  //       setFocusNames(findText.node)
-  //     }
-  //   }
-  //   setShowDetailOptions(false)
-  // }
-
   const startClassRoutine = () => {
     if (!model) return
     if (isPlayigAudio) {
@@ -345,17 +491,17 @@ const Scene = () => {
   const handleClassUI = () => {
     return (
       <>
-        {/* Aula pausada → botão para retomar */}
+        {/* Aula pausada → botão para retomar /}
         {isClassPaused && (
           <FabButton icon="play" onClick={handleResumeClass} />
         )}
 
-        {/* Aula em andamento → botão para pausar */}
+        {/* Aula em andamento → botão para pausar /}
         {!isClassPaused && isSpeaking && (
           <FabButton icon="pause" onClick={handlePauseClass} />
         )}
 
-        {/* Aula em andamento → botão para parar */}
+        {/* Aula em andamento → botão para parar /}
         {!isClassPaused && isSpeaking && (
           <FabButton icon="stop" onClick={handleStopClass} />
         )}
@@ -385,7 +531,7 @@ const Scene = () => {
         <OrbitControls maxDistance={10} />
         <color attach="background" args={[bg]} />
         <Suspense fallback={<Loader />}>
-          {/* <axesHelper args={[5]} /> */}
+          {/* <axesHelper args={[5]} /> /}
           <Model model={model!} focusNames={focusNames} updateScale={updateScale} isAnimating={isAnimating} />
         </Suspense>
       </Canvas>
@@ -432,4 +578,4 @@ const Scene = () => {
 
 }
 
-export default Scene
+export default Scene*/

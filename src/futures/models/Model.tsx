@@ -26,16 +26,6 @@ const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotModel) => {
 
   const { actions } = useAnimations(animations, group)
 
-  // const { scale, posX, posY, posZ, rotX, rotY, rotZ } = useControls("Transformações", {
-  //   scale: { value: 1, min: 0.5, max: 150, step: 0.1 },
-  //   posX: { value: 0, min: -10, max: 10, step: 0.1 },
-  //   posY: { value: 0.5, min: -10, max: 10, step: 0.1 },
-  //   posZ: { value: 0, min: -10, max: 10, step: 0.1 },
-  //   rotX: { value: 0, min: -Math.PI, max: Math.PI, step: 0.01 },
-  //   rotY: { value: 0, min: -Math.PI, max: Math.PI, step: 0.01 },
-  //   rotZ: { value: 0, min: -Math.PI, max: Math.PI, step: 0.01 },
-  // });
-
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
@@ -80,13 +70,6 @@ const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotModel) => {
     scene.position.sub(center); // move o modelo para que o centro fique em (0,0,0)
   }, [scene]);
 
-  // const handlePlayAnimation = () => {
-  //   if (animations.length > 0 && actions) {
-  //     const first = model.animation ? model.animation : Object.values(actions)[0]
-  //     if (isAnimating) first?.fadeIn(0.5).play()
-  //     else first?.fadeOut(0.5).stop()
-  //   }
-  // }
 
   const handlePlayAnimation = () => {
     if (animations.length > 0 && actions) {
@@ -121,9 +104,6 @@ const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotModel) => {
 
 
   return (
-    // <group scale={scale} position={[posX, posY, posZ]} rotation={[rotX, rotY, rotZ]}>
-    //   <primitive object={scene} ref={group}/>
-    // </group>
     <group scale={scaleModel} position={model.position} rotation={model.rotation}>
       <primitive object={scene} ref={group} />
     </group>
@@ -131,6 +111,3 @@ const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotModel) => {
 }
 
 export default Model
-// useEffect(()=>{
-//   if(updateScale) handleUpdateScale()
-// }, [updateScale])
