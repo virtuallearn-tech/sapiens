@@ -3,8 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import { Home } from "@pages/Home";
 import Loading from "@components/layout/Loading";
 import { ROUTES_NAME } from "./routesName";
-import { UiSceneProvider } from "@context/UiSceneContext";
-import { ModelProvider } from "@context/ModelContext";
 
 const Signin = lazy(() => import("@pages/Signin"));
 const Signup = lazy(() => import("@pages/Signup"));
@@ -48,7 +46,7 @@ export const AppRoutes = () => {
         <Route path={`${ROUTES_NAME.FLASHCARDS}/:discipline/:module/:topic`}  element={<Flashcards />} />
         <Route path={`${ROUTES_NAME.EXERCISES}/:discipline/:module/:topic`} element={<Exercises />} />
         <Route path={`${ROUTES_NAME.RESULTS}/:total/:right`} element={<Results />} />
-        <Route path={`${ROUTES_NAME.SCENE}/:discipline/:topic/:code`} element={<ModelProvider><UiSceneProvider><Scene /></UiSceneProvider></ModelProvider> } />
+        <Route path={`${ROUTES_NAME.SCENE}/:discipline/:topic/:code`} element={<Scene /> } />
       </Routes>
     </Suspense>
   );

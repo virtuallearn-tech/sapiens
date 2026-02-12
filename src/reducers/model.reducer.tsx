@@ -87,6 +87,7 @@ export type ModelAction = SetModelAction | SetFocusNameAction | SetTextToSpeechA
     SetTitleAction | SetMenuExploreAction
 
 export const ModelReducer = (state: ModelState, action: ModelAction): ModelState => {
+     console.log('MODEL REDUCER:', action.type, action.payload)
     switch (action.type) {
         case ModelActionType.SET_MODEL:
             return { ...state, model: action.payload }

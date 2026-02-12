@@ -26,7 +26,7 @@ export function InstallPWAButton() {
 
     // Verifica o que o usuário escolheu
     const { outcome } = await deferredPrompt.userChoice
-    console.log('Instalação:', outcome)
+    //console.log('Instalação:', outcome)
 
     // Evento só pode ser usado uma vez
     setDeferredPrompt(null)

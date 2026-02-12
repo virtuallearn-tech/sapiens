@@ -7,6 +7,8 @@ import { BrowserRouter } from "react-router-dom";
 import { SidebarProvider } from '@store/SidebarContext.tsx'
 
 import { registerSW } from 'virtual:pwa-register'
+import { ModelProvider } from '@context/ModelContext.tsx';
+import { UiSceneProvider } from '@context/UiSceneContext.tsx';
 
 const updateSW = registerSW({
   immediate: true,
@@ -18,12 +20,16 @@ const updateSW = registerSW({
 })
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <SidebarProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </SidebarProvider>
-  </StrictMode>,
+  // <StrictMode>
+    <ModelProvider>
+      <UiSceneProvider>
+        <SidebarProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </SidebarProvider>
+      </UiSceneProvider>
+    </ModelProvider>
+  // </StrictMode>,
 )
 

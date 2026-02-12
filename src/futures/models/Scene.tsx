@@ -12,6 +12,7 @@ import { useSpeech } from '@hooks/useSpeech';
 //import { Model } from './Model'; // você pode manter lazy se quiser
 const Model = React.lazy(() => import("./Model"));
 import { ModelActionType, ModelReducer, type ModelState } from '@reducers/model.reducer'; // seu reducer
+import { useModel } from '@context/ModelContext';
 
 const defaultBgColor = '#CCCCCC';
 
@@ -41,9 +42,11 @@ function Loader() {
 const Scene = () => {
   const navigate = useNavigate();
   const { discipline, topic, code } = useParams();
+  const { state, dispatch } = useModel()
+
 
   // ===== Reducer da Model =====
-  const [state, dispatch] = useReducer(ModelReducer, {
+  /*const [state, dispatch] = useReducer(ModelReducer, {
     model: null,
     title: '',
     textToSpeech: '',
@@ -53,7 +56,7 @@ const Scene = () => {
     exploreMenu: [],
     hasAnimation: false,
     isAnimating: false,
-  });
+  });*/
 
   // ===== Estados locais UI =====
   const [bg, setBg] = useState(defaultBgColor);
@@ -86,6 +89,7 @@ const Scene = () => {
     if (!isOnline) return;
     const m = getModelByTopic(code as any, discipline as any, topic as any);
     if (!m) return;
+    console.log('MODEL SETADA ', m);
 
     // dispatch para o reducer
     dispatch({ type: ModelActionType.SET_MODEL, payload: m });
@@ -95,9 +99,16 @@ const Scene = () => {
     dispatch({ type: ModelActionType.SET_HAS_ANIMATION, payload: m.hasAnimation ?? false });
     dispatch({ type: ModelActionType.SET_ANIMATION, payload: m.hasAnimation ?? false });
 
+    console.log('NOME DA MODE NO STATE ', state.title)
+
     if (m.sceneBg) setBg(m.sceneBg);
 
   }, [isOnline, code, discipline, topic]);
+
+  useEffect(() => {
+  console.log('STATE ATUALIZADO:', state);
+}, [state]);
+
 
   // ===== Atualiza menuOptions baseado na model =====
   useEffect(() => {
@@ -137,7 +148,7 @@ const Scene = () => {
   }, [state.model]);
 
   // ===== Rotina de aula =====
-  useEffect(() => {
+  /*useEffect(() => {
     if (!isClassActive || isClassPaused) return;
     if (classRoutine.length === 0 || currentStep >= classRoutine.length) {
       dispatch({ type: ModelActionType.SET_FOCUS_NAME, payload: null });
@@ -157,7 +168,7 @@ const Scene = () => {
         if (!isClassPaused) setCurrentStep(prev => prev + 1);
       }
     });
-  }, [currentStep, classRoutine, isClassActive, isClassPaused]);
+  }, [currentStep, classRoutine, isClassActive, isClassPaused]);*/
 
   // ===== Canvas =====
   const SceneCanvas = () => (

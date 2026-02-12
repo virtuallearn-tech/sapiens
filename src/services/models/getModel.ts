@@ -25,7 +25,7 @@ export const getModelByTopic = (
   module: typeof DISCIPLINE_MODULE[keyof typeof DISCIPLINE_MODULE] = DISCIPLINE_MODULE.CYTOLOGY,
 ): IModelData => {
   const model = getModelByDiscipline(discipline).find((model) => model.module == module)!.data.find(m => m.topic === topic)
-  console.log('model by topic', model)
+  //console.log('model by topic', model)
   return model!
 }
 

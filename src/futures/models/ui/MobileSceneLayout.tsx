@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
 
 // actions
 import { MobileActionMenu, type IActionMenuOption } from './MobileActionMenu'
@@ -24,6 +24,23 @@ export const MobileSceneLayout = ({ children }: MobileSceneLayoutProps) => {
 
   // Model state
   const { state: modelState, dispatch: modelDispatch } = useModel()
+
+  console.log('MODEL STATE NO LAYOUT:', modelState);
+
+  useEffect(() => {
+    console.log('MENU MOUNT');
+
+    return () => {
+      console.log('MENU UNMOUNT');
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log('MENU STATE', modelState);
+  }, [modelState]);
+
+
+
 
   const handleFullscreen = () => {
     toggleFullscreen(".m-scene")

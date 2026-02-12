@@ -1,33 +1,38 @@
-import { 
+import {
     initialModelState,
     ModelReducer,
-    type ModelAction, 
-    type ModelState } 
-from "@reducers/model.reducer"
+    type ModelAction,
+    type ModelState
+}
+    from "@reducers/model.reducer"
 
 import React, {
     createContext,
     useContext,
+    useEffect,
     useReducer,
     type ReactNode
 } from "react"
 
-interface ModelContextProps{
+interface ModelContextProps {
     state: ModelState,
     dispatch: React.Dispatch<ModelAction>
 }
 
-export const ModelContext = createContext<ModelContextProps|undefined>(undefined)
+export const ModelContext = createContext<ModelContextProps | undefined>(undefined)
 
-interface ModelProviderProps{
+interface ModelProviderProps {
     children: ReactNode
 }
 
-export const ModelProvider = ({children}: ModelProviderProps) => {
+export const ModelProvider = ({ children }: ModelProviderProps) => {
     const [state, dispatch] = useReducer(ModelReducer, initialModelState)
 
+        console.log('MODEL PROVIDER INSTANCE')
+
+
     return (
-        <ModelContext.Provider value={{state, dispatch}}>
+        <ModelContext.Provider value={{ state, dispatch }}>
             {children}
         </ModelContext.Provider>
     )
@@ -35,8 +40,14 @@ export const ModelProvider = ({children}: ModelProviderProps) => {
 
 export const useModel = () => {
     const context = useContext(ModelContext)
-    if(!context){
+
+    useEffect(() => {
+        console.log('MODEL PROVIDER MOUNT');
+    }, []);
+
+    if (!context) {
         throw new Error("useModel must be used with a model provider")
     }
+    console.log('MODEL STATE', context.state)
     return context
 }

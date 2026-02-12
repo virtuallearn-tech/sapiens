@@ -15,7 +15,7 @@ const PageModule = () => {
 
   useEffect(() => {
     const listTopic = getContentByModule(params.module! as typeof DISCIPLINE_MODULE[keyof typeof DISCIPLINE_MODULE])
-    console.log('listTopic', listTopic)
+    //console.log('listTopic', listTopic)
     
     setTopicList(listTopic.data)
     setDiscipline(listTopic?.discipline)
