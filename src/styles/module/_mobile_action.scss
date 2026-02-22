@@ -32,6 +32,13 @@
         max-height: max-content;
     }
 
+    &--bottom-right {
+        bottom: 4.5rem;
+        right: 0.5rem;
+        top: unset;
+        max-height: max-content;
+    }
+
 }
 
 .m-action-menu__list {

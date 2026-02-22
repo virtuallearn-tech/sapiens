@@ -44,7 +44,6 @@ function Loader() {
 
 const Scene = () => {
 
-  const navigate = useNavigate();
   const { discipline, topic, code } = useParams();
   const { state, dispatch } = useModel()
   const { state: uiState, dispatch: uiDispatch } = useUiScene()
@@ -68,7 +67,7 @@ const Scene = () => {
   const [updateScale, setUpdateScale] = useState(false);
   const [license, setLicense] = useState(false);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
-  
+
 
   // ===== Detecta online/offline =====
   useEffect(() => {
@@ -97,6 +96,7 @@ const Scene = () => {
     dispatch({ type: ModelActionType.SET_FOCUS_NAME, payload: m.name ?? '' });
     dispatch({ type: ModelActionType.SET_HAS_ANIMATION, payload: m.hasAnimation ?? false });
     dispatch({ type: ModelActionType.SET_ANIMATION, payload: m.hasAnimation ?? false });
+    dispatch({ type: ModelActionType.SET_SOUND, payload: m.sound ?? null });
 
     console.log('NOME DA MODE NO STATE ', state.title)
 
@@ -146,8 +146,7 @@ const Scene = () => {
       dispatch({ type: ModelActionType.SET_FOCUS_NAME, payload: state.model.name });
       uiDispatch({ type: 'CLOSE_AUDIO_MENU' })
     }
-    else 
-      {
+    else {
       const findText = state.model.node?.find(n => n.name === name);
       if (findText) {
         dispatch({ type: ModelActionType.SET_TEXT_TO_SPEECH, payload: findText.text });
@@ -158,7 +157,7 @@ const Scene = () => {
       }
     }
 
-    uiDispatch({type: 'TOGGLE_EXPLORE_MENU'})
+    uiDispatch({ type: 'TOGGLE_EXPLORE_MENU' })
 
   }, [state.model]);
 
@@ -172,10 +171,7 @@ const Scene = () => {
       <color attach="background" args={[bg]} />
       <Suspense fallback={<Loader />}>
         <Model
-          model={state.model!}
-          focusNames={state.focusName}
           updateScale={updateScale}
-          isAnimating={state.isAnimating}
         />
       </Suspense>
     </Canvas>
@@ -191,7 +187,11 @@ const Scene = () => {
 
   return (
     <>
-      <MobileSceneLayout>
+      <MobileSceneLayout
+        discipline={discipline!}
+        topic={topic!}
+        code={code!}
+      >
         <SceneCanvas />
       </MobileSceneLayout>
       {license && <License content={state.model?.attribuition!} />}

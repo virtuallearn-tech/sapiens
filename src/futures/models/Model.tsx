@@ -1,3 +1,4 @@
+import { useModel } from "@context/ModelContext";
 import type { IModelData } from "@interfaces/model"
 import { useGLTF, useAnimations } from "@react-three/drei"
 import { hasFocusMatch, resetTransverseModel, transverseModel } from "@utils/modifyModel"
@@ -7,20 +8,22 @@ import { useEffect, useRef, useState } from "react"
 import * as THREE from 'three';
 
 interface IPlotModel {
-  model: IModelData,
-  focusNames: string | string[] | null,
+  //model: IModelData,
+  //focusNames: string | string[] | null,
   updateScale: boolean | null,
-  isAnimating: boolean
+  //isAnimating: boolean
 }
 
-const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotModel) => {
+const Model = ({ updateScale }: IPlotModel) => {
   // Controles de transformação + foco
   const group = useRef(null)
+
+  const { state, dispatch } = useModel()
 
   const [width, setWidth] = useState<number>(window.innerWidth);
   const [scaleModel, setScale] = useState<number>(1)
 
-  const { scene, animations } = useGLTF(model.source)
+  const { scene, animations } = useGLTF(state.model!.source)
   console.log('Model on scene', scene)
   // console.log('animations ', animations)
 
@@ -37,42 +40,21 @@ const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotModel) => {
     handleUpdateScale()
   }, [width, updateScale]);
 
-  /*useEffect(() => {
-
-    if (focusNames == 'Fechar' || focusNames == model.name || focusNames == null) {
-      resetTransverseModel(scene)
-    }
-    else if (focusNames !== null) {
-      const namesArray = Array.isArray(focusNames)
-        ? focusNames
-        : (focusNames as string).split(',').map((n) => n.trim())
-
-      // const focusSet = new Set(focusNames)
-      const focusSet = new Set(namesArray)
-
-      transverseModel(
-        scene,
-        // model.node,
-        focusSet,
-      )
-    }
-
-  }, [scene, focusNames])*/
 
   useEffect(() => {
 
     if (
-      focusNames == 'Fechar' ||
-      focusNames == model.name ||
-      focusNames == null
+      state.focusName == 'Fechar' ||
+      state.focusName == state.model!.name ||
+      state.focusName == null
     ) {
       resetTransverseModel(scene)
       return
     }
 
-    const namesArray = Array.isArray(focusNames)
-      ? focusNames
-      : (focusNames as string).split(',').map(n => n.trim())
+    const namesArray = Array.isArray(state.focusName)
+      ? state.focusName
+      : (state.focusName as string).split(',').map(n => n.trim())
 
     const focusSet = new Set(namesArray)
 
@@ -88,11 +70,11 @@ const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotModel) => {
     // Só aplica se existir match
     transverseModel(scene, focusSet)
 
-  }, [scene, focusNames])
+  }, [scene, state.focusName!])
 
   useEffect(() => {
     handlePlayAnimation()
-  }, [actions, animations, isAnimating])
+  }, [actions, animations, state.isAnimating])
 
   useEffect(() => {
     const box = new THREE.Box3().setFromObject(scene);
@@ -101,16 +83,14 @@ const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotModel) => {
     scene.position.sub(center); // move o modelo para que o centro fique em (0,0,0)
   }, [scene]);
 
-
-
   const handlePlayAnimation = () => {
     if (animations.length > 0 && actions) {
       const selected =
-        model.animation && actions[model.animation]
-          ? actions[model.animation]
+        state.model!.animation && actions[state.model!.animation]
+          ? actions[state.model!.animation]
           : Object.values(actions)[0];
       // console.log('selected animation', selected);
-      if (isAnimating) {
+      if (state.isAnimating) {
         selected?.reset().fadeIn(0.5).play();
       } else {
         selected?.fadeOut(0.5).stop();
@@ -120,21 +100,21 @@ const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotModel) => {
 
   const handleUpdateScale = () => {
     if (width < 640) {
-      setScale(model.scale);
+      setScale(state.model!.scale);
     } else if (width < 768) {
-      setScale(model.scale_sm);
+      setScale(state.model!.scale_sm);
     } else if (width < 1024) {
-      setScale(model.scale_md);
+      setScale(state.model!.scale_md);
     } else if (width < 1280) {
-      setScale(model.scale_lg);
+      setScale(state.model!.scale_lg);
     } else {//if (width < 1536)
-      setScale(model.scale_2lg);
+      setScale(state.model!.scale_2lg);
     }
   }
 
 
   return (
-    <group scale={scaleModel} position={model.position} rotation={model.rotation}>
+    <group scale={scaleModel} position={state.model!.position} rotation={state.model!.rotation}>
       <primitive object={scene} ref={group} />
     </group>
   )

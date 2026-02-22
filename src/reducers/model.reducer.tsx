@@ -12,7 +12,8 @@ export interface ModelState {
     currentClassIndex: number,
     exploreMenu: any[],
     isAnimating: boolean,
-    hasAnimation: boolean
+    hasAnimation: boolean,
+    sound: string | null
 }
 
 export const initialModelState: ModelState = {
@@ -26,7 +27,8 @@ export const initialModelState: ModelState = {
     classTexts: [],
     currentClassIndex: 0,
     isAnimating: false,
-    hasAnimation: false
+    hasAnimation: false,
+    sound: null
 }
 
 export enum ModelActionType {
@@ -41,7 +43,8 @@ export enum ModelActionType {
     SET_NEXT_CLASS_STEP = "NEXT_CLASS_STEP",
     SET_MENU_EXPLORE = "SET_MENU_EXPLORE",
     SET_ANIMATION = "SET_ANIMATION",
-    SET_HAS_ANIMATION = "SET_HAS_ANIMATION"
+    SET_HAS_ANIMATION = "SET_HAS_ANIMATION",
+    SET_SOUND = "SET_SOUND"
 }
 
 interface SetModelAction {
@@ -51,6 +54,11 @@ interface SetModelAction {
 
 interface SetTitleAction {
     type: ModelActionType.SET_TITLE
+    payload: string | null
+}
+
+interface SetSoundAction {
+    type: ModelActionType.SET_SOUND
     payload: string | null
 }
 
@@ -109,6 +117,7 @@ export type ModelAction = SetModelAction | SetFocusNameAction | SetTextToSpeechA
     SetExplanationAction | SetMenuOptionAction | SetAnimationAction | SetHasAnimation |
     SetTitleAction | SetMenuExploreAction | SetClassTextAction
     | SetClearClassTextAction | SetNextClassStepAction
+    | SetSoundAction
 
 export const ModelReducer = (state: ModelState, action: ModelAction): ModelState => {
     console.log('MODEL REDUCER:', action.type, action.payload)
@@ -143,6 +152,8 @@ export const ModelReducer = (state: ModelState, action: ModelAction): ModelState
             return { ...state, isAnimating: action.payload }
         case ModelActionType.SET_HAS_ANIMATION:
             return { ...state, hasAnimation: action.payload }
+        case ModelActionType.SET_SOUND:
+            return { ...state, sound: action.payload }
         default:
             return state
     }

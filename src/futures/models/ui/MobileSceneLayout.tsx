@@ -20,12 +20,19 @@ import { AudioActionType } from '@reducers/audio.reducer'
 import { useSpeech } from '@hooks/useSpeech'
 import { setClass } from '@services/models/getModel'
 import { ModelActionType } from '@reducers/model.reducer'
+import { useAudioPlayer } from '@hooks/useAudio'
+import { useNavigate } from 'react-router-dom'
+import { ROUTES_NAME } from '@routes/routesName'
 
 interface MobileSceneLayoutProps {
   children: ReactNode,
+  discipline: string,
+  topic: string,
+  code: string
 }
 
-export const MobileSceneLayout = ({ children }: MobileSceneLayoutProps) => {
+
+export const MobileSceneLayout = ({ children, discipline, topic, code }: MobileSceneLayoutProps) => {
   // UI state
   const { state: uiState, dispatch: uiDispatch } = useUiScene()
   // Model state
@@ -33,7 +40,25 @@ export const MobileSceneLayout = ({ children }: MobileSceneLayoutProps) => {
   //Audio State
   const { state: audioState, dispatch: audioDispatch } = useAudio()
 
+  const navigate = useNavigate()
+
+  const [menuOptions, setMenuOptions] = useState<IActionMenuOption[]>([])
+  const [isShowMoreOptions, setIsShowMoreOptions] = useState<boolean>(false)
+
+  const handleAnimationModel = () => {
+    if (!modelState.hasAnimation) return
+
+    modelDispatch({
+      type: ModelActionType.SET_ANIMATION,
+      payload: !modelState.isAnimating
+    })
+  }
+
   const { speak, pause, resume, stop } = useSpeech()
+  const {
+    isPlaying: isPlayingAudio, play: playAudio,
+    resume: resumeAudio, stop: stopAudio
+  } = useAudioPlayer()
 
   console.log('MODEL STATE NO LAYOUT:', modelState);
 
@@ -47,7 +72,39 @@ export const MobileSceneLayout = ({ children }: MobileSceneLayoutProps) => {
 
   useEffect(() => {
     console.log('MENU STATE', modelState);
-  }, [modelState]);
+
+    const options: IActionMenuOption[] = []
+
+    if (modelState.hasAnimation) {
+      options.unshift({
+        id: '1',
+        label: !modelState.isAnimating ? 'Animar' : 'Parar animação',
+        onSelect: handleAnimationModel
+      })
+    }
+
+    if (modelState.sound) {
+      options.push(
+        {
+          id: '2',
+          label: !isPlayingAudio ? 'Ouvir som' : 'Parar som',
+          onSelect: handleModelSound
+        }
+      )
+    }
+
+    options.push(
+      {
+        id: '3',
+        label: 'Exercícios',
+        onSelect: () => {
+          navigate(`${ROUTES_NAME.EXERCISES}/${discipline}/${topic}/${code}`)
+        }
+      })
+
+    setMenuOptions(options)
+
+  }, [modelState, isPlayingAudio, modelState.isAnimating])
 
 
   const handleFullscreen = () => {
@@ -220,6 +277,16 @@ export const MobileSceneLayout = ({ children }: MobileSceneLayoutProps) => {
     })
   }
 
+  const handleModelSound = () => {
+    if (modelState!.sound && !isPlayingAudio) {
+      // console.log('iniciou o audio', model!.sound)
+      playAudio(modelState!.sound)
+    }
+    else if (modelState!.sound && isPlayingAudio) {
+      stopAudio()
+    }
+  }
+
   const HandleClassUI = () => {
     return (
       <div className="m-scene__audio-menu">
@@ -300,8 +367,12 @@ export const MobileSceneLayout = ({ children }: MobileSceneLayoutProps) => {
             Aula
           </button>
 
-          <button className="m-scene__action m-scene__action--bottom m-scene__action--listen">
-            Ouvir
+          <button className="m-scene__action m-scene__action--bottom m-scene__action--listen"
+            onClick={() => setIsShowMoreOptions((prev) => !prev)}
+          >
+            {/* {!modelState.sound && 'Sem áudio'}
+            {modelState.sound && (!isPlayingAudio ? 'Ouvir' : 'Parar')} */}
+            Mais
           </button>
 
           <button className="m-scene__action m-scene__action--bottom m-scene__action--next">
@@ -322,6 +393,13 @@ export const MobileSceneLayout = ({ children }: MobileSceneLayoutProps) => {
         <MobileActionMenu
           type="bottom-left"
           options={modelState.exploreMenu}
+        />
+      )}
+
+      {isShowMoreOptions && modelState.exploreMenu?.length > 0 && (
+        <MobileActionMenu
+          type="bottom-right"
+          options={menuOptions}
         />
       )}
 

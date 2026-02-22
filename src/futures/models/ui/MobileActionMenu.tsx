@@ -9,6 +9,7 @@ export type ActionMenuType =
   | 'top-right'
   | 'bottom-center'
   | 'bottom-left'
+  | 'bottom-right'
 
 type MobileActionMenuProps = {
   options: IActionMenuOption[]
