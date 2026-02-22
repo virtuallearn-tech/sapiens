@@ -136,6 +136,15 @@
     // }
 
   }
+
+  &__audio-menu{
+    position: absolute;
+    bottom: 4rem;
+    right: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
 
 .m-scene {

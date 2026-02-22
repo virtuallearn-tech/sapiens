@@ -9,6 +9,7 @@ import { SidebarProvider } from '@store/SidebarContext.tsx'
 import { registerSW } from 'virtual:pwa-register'
 import { ModelProvider } from '@context/ModelContext.tsx';
 import { UiSceneProvider } from '@context/UiSceneContext.tsx';
+import { AudioProvider } from '@context/AudioContext.tsx';
 
 const updateSW = registerSW({
   immediate: true,
@@ -21,15 +22,17 @@ const updateSW = registerSW({
 
 createRoot(document.getElementById('root')!).render(
   // <StrictMode>
-    <ModelProvider>
-      <UiSceneProvider>
+  <ModelProvider>
+    <UiSceneProvider>
+      <AudioProvider>
         <SidebarProvider>
           <BrowserRouter>
             <App />
           </BrowserRouter>
         </SidebarProvider>
-      </UiSceneProvider>
-    </ModelProvider>
+      </AudioProvider>
+    </UiSceneProvider>
+  </ModelProvider>
   // </StrictMode>,
 )
 
