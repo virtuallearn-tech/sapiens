@@ -68,14 +68,7 @@ const Scene = () => {
   const [updateScale, setUpdateScale] = useState(false);
   const [license, setLicense] = useState(false);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
-  const [classRoutine, setClassRoutine] = useState<IClass[]>([]);
-  const [currentStep, setCurrentStep] = useState(0);
-  const [isClassActive, setIsClassActive] = useState(false);
-  const [isClassPaused, setIsClassPaused] = useState(false);
-  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
-
-  const { isSpeaking, isPaused, pause, resume, stop, speak } = useSpeech();
-  const { play: playAudio, stop: stopAudio } = useAudioPlayer();
+  
 
   // ===== Detecta online/offline =====
   useEffect(() => {
@@ -101,6 +94,7 @@ const Scene = () => {
     dispatch({ type: ModelActionType.SET_TEXT_TO_SPEECH, payload: m.text ?? '' });
     dispatch({ type: ModelActionType.SET_EXPLANATION, payload: m.text ?? '' });
     dispatch({ type: ModelActionType.SET_TITLE, payload: m.name ?? '' });
+    dispatch({ type: ModelActionType.SET_FOCUS_NAME, payload: m.name ?? '' });
     dispatch({ type: ModelActionType.SET_HAS_ANIMATION, payload: m.hasAnimation ?? false });
     dispatch({ type: ModelActionType.SET_ANIMATION, payload: m.hasAnimation ?? false });
 
@@ -168,28 +162,6 @@ const Scene = () => {
 
   }, [state.model]);
 
-  // ===== Rotina de aula =====
-  useEffect(() => {
-    if (!isClassActive || isClassPaused) return;
-    if (classRoutine.length === 0 || currentStep >= classRoutine.length) {
-      dispatch({ type: ModelActionType.SET_FOCUS_NAME, payload: null });
-      setIsClassActive(false);
-      return;
-    }
-
-    const current = classRoutine[currentStep];
-
-    dispatch({ type: ModelActionType.SET_TITLE, payload: current.name });
-    dispatch({ type: ModelActionType.SET_EXPLANATION, payload: current.text });
-    dispatch({ type: ModelActionType.SET_TEXT_TO_SPEECH, payload: current.text });
-    dispatch({ type: ModelActionType.SET_FOCUS_NAME, payload: current.node });
-
-    speak(current.text, {
-      onAllEnd: () => {
-        if (!isClassPaused) setCurrentStep(prev => prev + 1);
-      }
-    });
-  }, [currentStep, classRoutine, isClassActive, isClassPaused]);
 
   // ===== Canvas =====
   const SceneCanvas = () => (

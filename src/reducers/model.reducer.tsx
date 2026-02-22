@@ -1,5 +1,5 @@
 import type { IActionMenuOption } from "@futures/models/ui/MobileActionMenu";
-import type { IModelData } from "@interfaces/model";
+import type { IClass, IModelData } from "@interfaces/model";
 
 export interface ModelState {
     model: IModelData | null,
@@ -8,6 +8,8 @@ export interface ModelState {
     textToSpeech: string | null,
     explanation: string | null,
     menuOptions: IActionMenuOption[],
+    classTexts: IClass[],
+    currentClassIndex: number,
     exploreMenu: any[],
     isAnimating: boolean,
     hasAnimation: boolean
@@ -21,6 +23,8 @@ export const initialModelState: ModelState = {
     explanation: null,
     menuOptions: [],
     exploreMenu: [],
+    classTexts: [],
+    currentClassIndex: 0,
     isAnimating: false,
     hasAnimation: false
 }
@@ -32,6 +36,9 @@ export enum ModelActionType {
     SET_TEXT_TO_SPEECH = "SET_TEXT_TO_SPEECH",
     SET_EXPLANATION = "SET_EXPLANATION",
     SET_MENU_OPTIONS = "SET_MENU_OPTIONS",
+    SET_CLASS_TEXT = "SET_CLASS_TEXT",
+    SET_CLEAR_CLASS_TEXTS = 'SET_CLEAR_CLASS_TEXTS',
+    SET_NEXT_CLASS_STEP = "NEXT_CLASS_STEP",
     SET_MENU_EXPLORE = "SET_MENU_EXPLORE",
     SET_ANIMATION = "SET_ANIMATION",
     SET_HAS_ANIMATION = "SET_HAS_ANIMATION"
@@ -67,6 +74,22 @@ interface SetMenuOptionAction {
     payload: IActionMenuOption[]
 }
 
+interface SetClassTextAction {
+    type: ModelActionType.SET_CLASS_TEXT
+    payload: IClass[]
+}
+
+interface SetClearClassTextAction {
+    type: ModelActionType.SET_CLEAR_CLASS_TEXTS
+    payload: IClass[]
+}
+
+//SET_NEXT_CLASS_STEP
+interface SetNextClassStepAction {
+    type: ModelActionType.SET_NEXT_CLASS_STEP
+    payload: number
+}
+
 interface SetMenuExploreAction {
     type: ModelActionType.SET_MENU_EXPLORE
     payload: any[]
@@ -84,19 +107,32 @@ interface SetHasAnimation {
 
 export type ModelAction = SetModelAction | SetFocusNameAction | SetTextToSpeechAction |
     SetExplanationAction | SetMenuOptionAction | SetAnimationAction | SetHasAnimation |
-    SetTitleAction | SetMenuExploreAction
+    SetTitleAction | SetMenuExploreAction | SetClassTextAction
+    | SetClearClassTextAction | SetNextClassStepAction
 
 export const ModelReducer = (state: ModelState, action: ModelAction): ModelState => {
-     console.log('MODEL REDUCER:', action.type, action.payload)
+    console.log('MODEL REDUCER:', action.type, action.payload)
     switch (action.type) {
         case ModelActionType.SET_MODEL:
             return { ...state, model: action.payload }
+
         case ModelActionType.SET_TITLE:
             return { ...state, title: action.payload }
         case ModelActionType.SET_FOCUS_NAME:
             return { ...state, focusName: action.payload }
+
         case ModelActionType.SET_TEXT_TO_SPEECH:
             return { ...state, textToSpeech: action.payload }
+
+
+        case ModelActionType.SET_CLASS_TEXT:
+            return { ...state, classTexts: action.payload }
+        case ModelActionType.SET_CLEAR_CLASS_TEXTS:
+            return { ...state, classTexts: [] }
+        case ModelActionType.SET_NEXT_CLASS_STEP:
+            return { ...state, currentClassIndex: state.currentClassIndex + 1 }
+
+
         case ModelActionType.SET_EXPLANATION:
             return { ...state, explanation: action.payload }
         case ModelActionType.SET_MENU_OPTIONS:

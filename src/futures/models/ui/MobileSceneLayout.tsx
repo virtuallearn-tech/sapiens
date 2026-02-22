@@ -18,6 +18,8 @@ import { Explanation } from '@components/ui-3d/Explanation'
 import { useAudio } from '@context/AudioContext'
 import { AudioActionType } from '@reducers/audio.reducer'
 import { useSpeech } from '@hooks/useSpeech'
+import { setClass } from '@services/models/getModel'
+import { ModelActionType } from '@reducers/model.reducer'
 
 interface MobileSceneLayoutProps {
   children: ReactNode,
@@ -107,7 +109,117 @@ export const MobileSceneLayout = ({ children }: MobileSceneLayoutProps) => {
   const closeAudioMenu = () => {
     handleStop()
     uiDispatch({ type: 'CLOSE_AUDIO_MENU' })
+    uiDispatch({ type: 'CLOSE_EXPLANATION' })
   }
+
+  const handleStartClass = () => {
+    if (!modelState.model) return
+
+    // 1) Gera a rotina completa
+    const steps = setClass(modelState.model)
+
+    console.log('STEPPSSS ', steps)
+
+    if (steps.length === 0) return
+
+    // 2) Salva no ModelReducer
+    modelDispatch({
+      type: ModelActionType.SET_CLASS_TEXT,
+      payload: steps
+    })
+
+    modelDispatch({
+      type: ModelActionType.SET_NEXT_CLASS_STEP,
+      payload: 0
+    })
+
+    // 3) Atualiza UI com o primeiro passo
+    const firstStep = steps[0]
+    console.log('FIRST STEP ', firstStep)
+
+    modelDispatch({
+      type: ModelActionType.SET_TITLE,
+      payload: firstStep.name
+    })
+
+    modelDispatch({
+      type: ModelActionType.SET_EXPLANATION,
+      payload: firstStep.text
+    })
+
+    modelDispatch({
+      type: ModelActionType.SET_FOCUS_NAME,
+      payload: firstStep.node
+    })
+
+    // 4) Atualiza status do áudio
+    audioDispatch({
+      type: AudioActionType.SET_STATUS,
+      payload: 'playing'
+    })
+
+    uiDispatch({ type: 'OPEN_AUDIO_MENU' })
+
+    // 5) Extrai apenas os textos para o speech
+    const texts = steps.map(step => step.text)
+
+    let stepIndex = 0
+
+    speak(texts, {
+      onParagraphEnd: () => {
+        stepIndex++
+
+        if (stepIndex >= steps.length) return
+
+        const current = steps[stepIndex]
+
+        modelDispatch({
+          type: ModelActionType.SET_EXPLANATION,
+          payload: current.text
+        })
+
+        // Atualiza índice no reducer
+        modelDispatch({
+          type: ModelActionType.SET_NEXT_CLASS_STEP,
+          payload: stepIndex
+        })
+
+        // Atualiza título
+        modelDispatch({
+          type: ModelActionType.SET_TITLE,
+          payload: current.name
+        })
+
+        // Atualiza foco do modelo
+        modelDispatch({
+          type: ModelActionType.SET_FOCUS_NAME,
+          payload: current.node
+        })
+      },
+
+      onAllEnd: () => {
+        audioDispatch({
+          type: AudioActionType.SET_STATUS,
+          payload: 'idle'
+        })
+
+        modelDispatch({
+          type: ModelActionType.SET_NEXT_CLASS_STEP,
+          payload: 0
+        })
+
+        modelDispatch({
+          type: ModelActionType.SET_TITLE,
+          payload: modelState.title
+        })
+
+        uiDispatch({
+          type: 'CLOSE_AUDIO_MENU'
+        })
+      }
+    })
+  }
+
   const HandleClassUI = () => {
     return (
       <div className="m-scene__audio-menu">
@@ -182,7 +294,9 @@ export const MobileSceneLayout = ({ children }: MobileSceneLayoutProps) => {
             Explorar
           </button>
 
-          <button className="m-scene__action m-scene__action--bottom m-scene__action--class">
+          <button className="m-scene__action m-scene__action--bottom m-scene__action--class"
+            onClick={handleStartClass}
+          >
             Aula
           </button>
 

@@ -105,3 +105,18 @@ export function resetTransverseModel(scene: any) {
     child.visible = true
   })
 }
+
+export function hasFocusMatch(scene: any, focusSet: Set<string>): boolean {
+  let found = false
+
+  scene.traverse((child: any) => {
+    if (found) return
+    if (!child.isMesh) return
+
+    if (focusSet.has(child.name)) {
+      found = true
+    }
+  })
+
+  return found
+}

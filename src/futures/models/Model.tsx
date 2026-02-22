@@ -1,6 +1,6 @@
 import type { IModelData } from "@interfaces/model"
 import { useGLTF, useAnimations } from "@react-three/drei"
-import { resetTransverseModel, transverseModel } from "@utils/modifyModel"
+import { hasFocusMatch, resetTransverseModel, transverseModel } from "@utils/modifyModel"
 // import { useControls } from "leva"
 import { useEffect, useRef, useState } from "react"
 
@@ -37,7 +37,7 @@ const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotModel) => {
     handleUpdateScale()
   }, [width, updateScale]);
 
-  useEffect(() => {
+  /*useEffect(() => {
 
     if (focusNames == 'Fechar' || focusNames == model.name || focusNames == null) {
       resetTransverseModel(scene)
@@ -57,6 +57,37 @@ const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotModel) => {
       )
     }
 
+  }, [scene, focusNames])*/
+
+  useEffect(() => {
+
+    if (
+      focusNames == 'Fechar' ||
+      focusNames == model.name ||
+      focusNames == null
+    ) {
+      resetTransverseModel(scene)
+      return
+    }
+
+    const namesArray = Array.isArray(focusNames)
+      ? focusNames
+      : (focusNames as string).split(',').map(n => n.trim())
+
+    const focusSet = new Set(namesArray)
+
+    // 🔴 NOVA VALIDAÇÃO
+    const hasMatch = hasFocusMatch(scene, focusSet)
+
+    if (!hasMatch) {
+      // Não existe correspondência → não aplicar efeito
+      resetTransverseModel(scene)
+      return
+    }
+
+    // Só aplica se existir match
+    transverseModel(scene, focusSet)
+
   }, [scene, focusNames])
 
   useEffect(() => {
@@ -69,6 +100,7 @@ const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotModel) => {
     box.getCenter(center);
     scene.position.sub(center); // move o modelo para que o centro fique em (0,0,0)
   }, [scene]);
+
 
 
   const handlePlayAnimation = () => {
@@ -85,8 +117,6 @@ const Model = ({ model, focusNames, updateScale, isAnimating }: IPlotModel) => {
       }
     }
   };
-
-
 
   const handleUpdateScale = () => {
     if (width < 640) {
