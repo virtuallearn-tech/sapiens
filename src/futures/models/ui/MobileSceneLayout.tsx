@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from 'react'
+import { useCallback, useEffect, useState, type ReactNode } from 'react'
 
 // actions
 import { MobileActionMenu, type IActionMenuOption } from './MobileActionMenu'
@@ -18,11 +18,12 @@ import { Explanation } from '@components/ui-3d/Explanation'
 import { useAudio } from '@context/AudioContext'
 import { AudioActionType } from '@reducers/audio.reducer'
 import { useSpeech } from '@hooks/useSpeech'
-import { setClass } from '@services/models/getModel'
+import { getModelByModule, setClass } from '@services/models/getModel'
 import { ModelActionType } from '@reducers/model.reducer'
 import { useAudioPlayer } from '@hooks/useAudio'
 import { useNavigate } from 'react-router-dom'
 import { ROUTES_NAME } from '@routes/routesName'
+import type { IModel, IModelData } from '@interfaces/model'
 
 interface MobileSceneLayoutProps {
   children: ReactNode,
@@ -42,9 +43,6 @@ export const MobileSceneLayout = ({ children, discipline, topic, code }: MobileS
 
   const navigate = useNavigate()
 
-  const [menuOptions, setMenuOptions] = useState<IActionMenuOption[]>([])
-  const [isShowMoreOptions, setIsShowMoreOptions] = useState<boolean>(false)
-
   const handleAnimationModel = () => {
     if (!modelState.hasAnimation) return
 
@@ -61,6 +59,11 @@ export const MobileSceneLayout = ({ children, discipline, topic, code }: MobileS
   } = useAudioPlayer()
 
   console.log('MODEL STATE NO LAYOUT:', modelState);
+
+
+  const [menuOptions, setMenuOptions] = useState<IActionMenuOption[]>([])
+  const [isShowMoreOptions, setIsShowMoreOptions] = useState<boolean>(false)
+
 
   useEffect(() => {
     console.log('MENU MOUNT');
@@ -104,8 +107,10 @@ export const MobileSceneLayout = ({ children, discipline, topic, code }: MobileS
 
     setMenuOptions(options)
 
-  }, [modelState, isPlayingAudio, modelState.isAnimating])
-
+  }, [
+    modelState, isPlayingAudio, modelState.isAnimating,
+    discipline, topic, code
+  ])
 
   const handleFullscreen = () => {
     toggleFullscreen(".m-scene")
@@ -317,6 +322,70 @@ export const MobileSceneLayout = ({ children, discipline, topic, code }: MobileS
     )
   }
 
+  //UPDATE MODEL BY NEXT/PREV
+  // ===============================
+  // NEXT / PREVIOUS (derivado da URL)
+  // ===============================
+
+  const models: IModelData[] =
+    getModelByModule(discipline as any, topic as any)?.data ?? []
+
+  console.log('LISTA DE MODELOS MENU ', models)
+
+  const currentIndex = models.findIndex(
+    (m) => m.topic === code
+  )
+
+  console.log('INDEX MODELO ', currentIndex);
+
+  const handleNext = () => {
+    if (currentIndex === -1) return
+
+    const nextIndex =
+      currentIndex >= models.length - 1
+        ? 0
+        : currentIndex + 1
+
+    const nextModel = models[nextIndex]
+
+    resetBeforeChange()
+
+    navigate(
+      `${ROUTES_NAME.SCENE}/${discipline}/${topic}/${nextModel.topic}`,
+      { replace: true }
+    )
+  }
+
+  const handlePrevious = () => {
+    if (currentIndex === -1) return
+
+    const prevIndex =
+      currentIndex <= 0
+        ? models.length - 1
+        : currentIndex - 1
+
+    const prevModel = models[prevIndex]
+
+    resetBeforeChange()
+
+    navigate(
+      `${ROUTES_NAME.SCENE}/${discipline}/${topic}/${prevModel.topic}`,
+      { replace: true }
+    )
+  }
+
+  const resetBeforeChange = () => {
+    stopAudio()
+    stop()
+
+    modelDispatch({ type: ModelActionType.SET_ANIMATION, payload: false })
+    modelDispatch({ type: ModelActionType.SET_FOCUS_NAME, payload: null })
+
+    audioDispatch({ type: AudioActionType.SET_STATUS, payload: 'idle' })
+    uiDispatch({ type: 'CLOSE_AUDIO_MENU' })
+  }
+
+
   return (
     <div className="m-scene m-scene--mobile">
 
@@ -327,7 +396,7 @@ export const MobileSceneLayout = ({ children, discipline, topic, code }: MobileS
 
       {/* Topbar */}
       <div className="m-scene__topbar">
-        <div className="m-scene__title">{modelState.title}</div>
+        <div className="m-scene__title">{(modelState.title ?? '').length <= 20 ? modelState.title : modelState.title?.slice(0, 17) + '...' }</div>
 
         <div className="m-scene__actions">
           <button
@@ -350,7 +419,10 @@ export const MobileSceneLayout = ({ children, discipline, topic, code }: MobileS
       {/* Bottombar */}
       <div className="m-scene__bottombar">
         <div className="m-scene__actions m-scene__actions--bottom">
-          <button className="m-scene__action m-scene__action--bottom m-scene__action--previous">
+          <button
+            className="m-scene__action m-scene__action--bottom m-scene__action--previous"
+            onClick={handlePrevious}
+          >
             <GrCaretPrevious />
           </button>
 
@@ -375,7 +447,10 @@ export const MobileSceneLayout = ({ children, discipline, topic, code }: MobileS
             Mais
           </button>
 
-          <button className="m-scene__action m-scene__action--bottom m-scene__action--next">
+          <button
+            className="m-scene__action m-scene__action--bottom m-scene__action--next"
+            onClick={handleNext}
+          >
             <GrCaretNext />
           </button>
         </div>

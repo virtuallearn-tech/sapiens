@@ -60,7 +60,7 @@ const Gastropod: IModelData = {
   hasAnimation: true
 } as const;
 
-const Cephalopoda_BobtailSquid: IModelData = {
+/*const Cephalopoda_BobtailSquid: IModelData = {
   // topic: "mollusca_class_cephalopoda_bobtail_squid",
   topic: ANIMAL_KINGDOM_TOPICS.MOLLUSCA_CLASS_CEPHALOPODA,
   source: "/firefly-squid-glowing.glb",
@@ -105,7 +105,7 @@ const Cephalopoda_BobtailSquid: IModelData = {
   wikipedia: "https://en.wikipedia.org/wiki/Bobtail_squid",
   // sceneBg: '#000000',
   hasAnimation: true
-} as const;
+} as const;*/
 
 const Cephalopoda_BlueRingedOctopus: IModelData = {
   // topic: "mollusca_class_cephalopoda_octopus",
@@ -289,7 +289,7 @@ const Bivalvia_CardiumCostatum: IModelData = {
 
 export const MOLLUSCA_MODELS: IModelData[] = [
   Gastropod,
-  Cephalopoda_BobtailSquid,
+  //Cephalopoda_BobtailSquid,
   Cephalopoda_BlueRingedOctopus,
   Cephalopoda_Nautilus,
   Bivalvia_CardiumCostatum

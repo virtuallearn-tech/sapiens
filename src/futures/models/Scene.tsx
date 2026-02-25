@@ -1,9 +1,9 @@
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Html, useProgress } from '@react-three/drei';
-import React, { Suspense, useEffect, useState, useCallback, useReducer } from 'react';
+import React, { Suspense, useEffect, useState, useCallback, useReducer, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import type { IClass, IModelData } from '@interfaces/model';
-import { getModelByTopic, setClass } from '@services/models/getModel';
+import { getModelByModule, getModelByTopic, setClass } from '@services/models/getModel';
 import { MobileSceneLayout } from './ui/MobileSceneLayout';
 import type { IActionMenuOption } from './ui/MobileActionMenu';
 import { License } from '@components/layout/License';
@@ -16,6 +16,8 @@ const Model = React.lazy(() => import("./Model"));
 import { ModelActionType, ModelReducer, type ModelState } from '@reducers/model.reducer'; // seu reducer
 import { useModel } from '@context/ModelContext';
 import { useUiScene } from '@context/UiSceneContext';
+import { useAudio } from '@context/AudioContext';
+import { AudioActionType } from '@reducers/audio.reducer';
 
 const defaultBgColor = '#CCCCCC';
 
@@ -45,124 +47,135 @@ function Loader() {
 const Scene = () => {
 
   const { discipline, topic, code } = useParams();
-  const { state, dispatch } = useModel()
-  const { state: uiState, dispatch: uiDispatch } = useUiScene()
 
+  const { state, dispatch } = useModel();
+  const { dispatch: uiDispatch } = useUiScene();
+  const { dispatch: audioDispatch, state: audioState } = useAudio();
+  const {
+    isPlaying: isPlayingAudio, play: playAudio,
+    resume: resumeAudio, stop: stopAudio
+  } = useAudioPlayer()
 
-  // ===== Reducer da Model =====
-  /*const [state, dispatch] = useReducer(ModelReducer, {
-    model: null,
-    title: '',
-    textToSpeech: '',
-    explanation: '',
-    focusName: null,
-    menuOptions: [],
-    exploreMenu: [],
-    hasAnimation: false,
-    isAnimating: false,
-  });*/
-
-  // ===== Estados locais UI =====
   const [bg, setBg] = useState(defaultBgColor);
   const [updateScale, setUpdateScale] = useState(false);
   const [license, setLicense] = useState(false);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
 
-
-  // ===== Detecta online/offline =====
+  // ===============================
+  // ONLINE / OFFLINE
+  // ===============================
   useEffect(() => {
     const handleOnline = () => setIsOnline(true);
     const handleOffline = () => setIsOnline(false);
+
     window.addEventListener('online', handleOnline);
     window.addEventListener('offline', handleOffline);
+
     return () => {
       window.removeEventListener('online', handleOnline);
       window.removeEventListener('offline', handleOffline);
-    }
+    };
   }, []);
 
-  // ===== Carrega a model =====
+  // ===============================
+  // LOAD MODEL (ÚNICA FONTE DE VERDADE)
+  // ===============================
   useEffect(() => {
     if (!isOnline) return;
-    const m = getModelByTopic(code as any, discipline as any, topic as any);
-    if (!m) return;
-    console.log('MODEL SETADA ', m);
+    if (!discipline || !topic || !code) return;
 
-    // dispatch para o reducer
-    dispatch({ type: ModelActionType.SET_MODEL, payload: m });
-    dispatch({ type: ModelActionType.SET_TEXT_TO_SPEECH, payload: m.text ?? '' });
-    dispatch({ type: ModelActionType.SET_EXPLANATION, payload: m.text ?? '' });
-    dispatch({ type: ModelActionType.SET_TITLE, payload: m.name ?? '' });
-    dispatch({ type: ModelActionType.SET_FOCUS_NAME, payload: m.name ?? '' });
-    dispatch({ type: ModelActionType.SET_HAS_ANIMATION, payload: m.hasAnimation ?? false });
-    dispatch({ type: ModelActionType.SET_ANIMATION, payload: m.hasAnimation ?? false });
-    dispatch({ type: ModelActionType.SET_SOUND, payload: m.sound ?? null });
+    const model = getModelByTopic(code as any, discipline as any, topic as any);
+    if (!model) return;
 
-    console.log('NOME DA MODE NO STATE ', state.title)
+    // 🔥 RESET GLOBAL ANTES DE TROCAR MODELO
+    stopAudio();
+    audioDispatch({ type: AudioActionType.SET_STATUS, payload: 'idle' });
+    uiDispatch({ type: 'CLOSE_AUDIO_MENU' });
 
-    if (m.sceneBg) setBg(m.sceneBg);
+    dispatch({ type: ModelActionType.SET_MODEL, payload: model });
+    dispatch({ type: ModelActionType.SET_TEXT_TO_SPEECH, payload: model.text ?? '' });
+    dispatch({ type: ModelActionType.SET_EXPLANATION, payload: model.text ?? '' });
+    dispatch({ type: ModelActionType.SET_TITLE, payload: model.name ?? '' });
+    dispatch({ type: ModelActionType.SET_FOCUS_NAME, payload: model.name ?? '' });
+    dispatch({ type: ModelActionType.SET_HAS_ANIMATION, payload: model.hasAnimation ?? false });
+    dispatch({ type: ModelActionType.SET_ANIMATION, payload: model.hasAnimation ?? false });
+    dispatch({ type: ModelActionType.SET_SOUND, payload: model.sound ?? null });
 
-  }, [isOnline, code, discipline, topic]);
+    setBg(model.sceneBg ?? defaultBgColor);
 
-  useEffect(() => {
-    console.log('STATE ATUALIZADO:', state);
-  }, [state]);
+  }, [discipline, topic, code, isOnline]);
 
-
-  // ===== Atualiza menuOptions baseado na model =====
+  // ===============================
+  // MENU DINÂMICO BASEADO NO MODELO
+  // ===============================
   useEffect(() => {
     if (!state.model) return;
 
     const nodesNames =
-      state.model.node?.map(n => n.name).filter((s): s is string => typeof s === 'string') ?? [];
+      state.model.node?.map(n => n.name).filter(Boolean) ?? [];
 
     const labels = [state.model.name, ...nodesNames, 'Fechar'];
-    const t: IActionMenuOption[] = labels.map((d, i) => ({
-      label: d,
-      id: `${i + 1}`,
-      onSelect: () => handleModelInfo(d)
+
+    const exploreMenu: IActionMenuOption[] = labels.map((label, index) => ({
+      label,
+      id: `${index + 1}`,
+      onSelect: () => handleModelInfo(label)
     }));
 
-    dispatch({ type: ModelActionType.SET_MENU_EXPLORE, payload: t });
+    dispatch({ type: ModelActionType.SET_MENU_EXPLORE, payload: exploreMenu });
 
-    // ===== Menu =====
     const optionsMenu: IActionMenuOption[] = [
-      { id: 'info', label: 'Informações do modelo', onSelect: () => setLicense(prev => !prev) },
-      { id: 'reset', label: 'Resetar posição', onSelect: () => setUpdateScale(true) }
+      {
+        id: 'info',
+        label: 'Informações do modelo',
+        onSelect: () => setLicense(prev => !prev)
+      },
+      {
+        id: 'reset',
+        label: 'Resetar posição',
+        onSelect: () => setUpdateScale(true)
+      }
     ];
 
     dispatch({ type: ModelActionType.SET_MENU_OPTIONS, payload: optionsMenu });
 
   }, [state.model]);
 
-  // ===== handleModelInfo =====
+  // ===============================
+  // HANDLE MODEL INFO
+  // ===============================
   const handleModelInfo = useCallback((name: string) => {
     if (!state.model) return;
 
     if (name === state.model.name || name === 'Fechar') {
+
       dispatch({ type: ModelActionType.SET_TEXT_TO_SPEECH, payload: state.model.text });
       dispatch({ type: ModelActionType.SET_EXPLANATION, payload: state.model.text });
       dispatch({ type: ModelActionType.SET_TITLE, payload: state.model.name });
       dispatch({ type: ModelActionType.SET_FOCUS_NAME, payload: state.model.name });
-      uiDispatch({ type: 'CLOSE_AUDIO_MENU' })
-    }
-    else {
-      const findText = state.model.node?.find(n => n.name === name);
-      if (findText) {
-        dispatch({ type: ModelActionType.SET_TEXT_TO_SPEECH, payload: findText.text });
-        dispatch({ type: ModelActionType.SET_EXPLANATION, payload: findText.text });
-        dispatch({ type: ModelActionType.SET_TITLE, payload: findText.name });
-        dispatch({ type: ModelActionType.SET_FOCUS_NAME, payload: findText.node });
-        uiDispatch({ type: 'OPEN_AUDIO_MENU' })
-      }
+
+      uiDispatch({ type: 'CLOSE_AUDIO_MENU' });
+
+    } else {
+
+      const node = state.model.node?.find(n => n.name === name);
+      if (!node) return;
+
+      dispatch({ type: ModelActionType.SET_TEXT_TO_SPEECH, payload: node.text });
+      dispatch({ type: ModelActionType.SET_EXPLANATION, payload: node.text });
+      dispatch({ type: ModelActionType.SET_TITLE, payload: node.name });
+      dispatch({ type: ModelActionType.SET_FOCUS_NAME, payload: node.node });
+
+      uiDispatch({ type: 'OPEN_AUDIO_MENU' });
     }
 
-    uiDispatch({ type: 'TOGGLE_EXPLORE_MENU' })
+    uiDispatch({ type: 'TOGGLE_EXPLORE_MENU' });
 
   }, [state.model]);
 
-
-  // ===== Canvas =====
+  // ===============================
+  // CANVAS
+  // ===============================
   const SceneCanvas = () => (
     <Canvas className='m-scene__canvas' camera={{ position: [0, 0, 5], fov: 75 }}>
       <ambientLight intensity={0.6} />
@@ -170,20 +183,19 @@ const Scene = () => {
       <OrbitControls maxDistance={10} />
       <color attach="background" args={[bg]} />
       <Suspense fallback={<Loader />}>
-        <Model
-          updateScale={updateScale}
-        />
+        <Model updateScale={updateScale} />
       </Suspense>
     </Canvas>
   );
 
-  if (!isOnline) return (
-    <div className="m-scene__offline">
-      <h2>Conexão necessária</h2>
-      <p>Você precisa estar online para acessar os modelos 3D.</p>
-    </div>
-  );
-
+  if (!isOnline) {
+    return (
+      <div className="m-scene__offline">
+        <h2>Conexão necessária</h2>
+        <p>Você precisa estar online para acessar os modelos 3D.</p>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -194,6 +206,7 @@ const Scene = () => {
       >
         <SceneCanvas />
       </MobileSceneLayout>
+
       {license && <License content={state.model?.attribuition!} />}
     </>
   );

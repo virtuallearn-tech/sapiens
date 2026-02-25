@@ -442,53 +442,53 @@ const Reptilia_Squamata_Snake: IModelData = {
 } as const;
 
 
-const Reptilia_Crocodylia_Crocodile: IModelData = {
-  // topic: "chordata_class_reptilia_crocodylia_crocodile",
-  topic: ANIMAL_KINGDOM_TOPICS.CHORDATA_CLASS_REPTILIA_CROCODYLIA_CROCODILE,
-  source: "/scene_crocodile.glb",
-  sound: '/sounds/alligator-411864.mp3',
-  name: "Crocodilo",
-  title: "Crocodilo (Crocodylia)",
-  description: "Réptil da ordem Crocodylia, com corpo robusto, pele espessa e mandíbulas poderosas. Modelo genérico representando crocodilos.",
-  text: "Os crocodilos são répteis da ordem Crocodylia, grupo que inclui crocodilos, jacarés e gaviais. Possuem corpo robusto, pele recoberta por escamas grossas e placas ósseas chamadas osteodermos. São predadores semiaquáticos, vivendo em rios, lagos e áreas costeiras. Suas mandíbulas são extremamente fortes, adaptadas para capturar e segurar presas, enquanto a dentição é projetada para perfurar e rasgar carne. São animais ectotérmicos, regulando a temperatura corporal por meio do ambiente. Apresentam comportamento social complexo, incluindo cuidado parental, algo raro entre répteis. São considerados fósseis vivos, pois mantêm muitas características primitivas desde a era dos dinossauros.",
-  scale: 1,
-  scale_sm: 1,
-  scale_md: 1,
-  scale_lg: 1,
-  scale_2lg: 1,
-  rotation: [0, 0, 0],//3.054
-  position: [0, 0.2, 0],
-  node: [
-    {
-      name: "Mandíbulas poderosas",
-      node: null,
-      description: "Força de mordida impressionante.",
-      text: "As mandíbulas dos crocodilos estão entre as mais fortes do reino animal, capazes de esmagar ossos com facilidade."
-    },
-    {
-      name: "Pele espessa",
-      node: null,
-      description: "Proteção contra predadores e ambiente.",
-      text: "A pele é recoberta por escamas e osteodermos, oferecendo proteção e ajudando na regulação térmica."
-    },
-    {
-      name: "Estilo de vida semiaquático",
-      node: null,
-      description: "Adaptados para água e terra.",
-      text: "Os crocodilos vivem em rios, lagos e pântanos, mas também se deslocam em terra firme com eficiência."
-    },
-    {
-      name: "Cuidado parental",
-      node: null,
-      description: "Proteção dos filhotes.",
-      text: "As fêmeas protegem os ninhos e auxiliam os filhotes recém-nascidos, comportamento raro entre répteis."
-    }
-  ],
-  attribuition: "Modelo genérico por Treey - Sketchfab",
-  wikipedia: "https://en.wikipedia.org/wiki/Crocodile",
-  // sceneBg: '#1a1f1f',
-  hasAnimation: true
-} as const;
+// const Reptilia_Crocodylia_Crocodile: IModelData = {
+//   // topic: "chordata_class_reptilia_crocodylia_crocodile",
+//   topic: ANIMAL_KINGDOM_TOPICS.CHORDATA_CLASS_REPTILIA_CROCODYLIA_CROCODILE,
+//   source: "/scene_crocodile.glb",
+//   sound: '/sounds/alligator-411864.mp3',
+//   name: "Crocodilo",
+//   title: "Crocodilo (Crocodylia)",
+//   description: "Réptil da ordem Crocodylia, com corpo robusto, pele espessa e mandíbulas poderosas. Modelo genérico representando crocodilos.",
+//   text: "Os crocodilos são répteis da ordem Crocodylia, grupo que inclui crocodilos, jacarés e gaviais. Possuem corpo robusto, pele recoberta por escamas grossas e placas ósseas chamadas osteodermos. São predadores semiaquáticos, vivendo em rios, lagos e áreas costeiras. Suas mandíbulas são extremamente fortes, adaptadas para capturar e segurar presas, enquanto a dentição é projetada para perfurar e rasgar carne. São animais ectotérmicos, regulando a temperatura corporal por meio do ambiente. Apresentam comportamento social complexo, incluindo cuidado parental, algo raro entre répteis. São considerados fósseis vivos, pois mantêm muitas características primitivas desde a era dos dinossauros.",
+//   scale: 1,
+//   scale_sm: 1,
+//   scale_md: 1,
+//   scale_lg: 1,
+//   scale_2lg: 1,
+//   rotation: [0, 0, 0],//3.054
+//   position: [0, 0.2, 0],
+//   node: [
+//     {
+//       name: "Mandíbulas poderosas",
+//       node: null,
+//       description: "Força de mordida impressionante.",
+//       text: "As mandíbulas dos crocodilos estão entre as mais fortes do reino animal, capazes de esmagar ossos com facilidade."
+//     },
+//     {
+//       name: "Pele espessa",
+//       node: null,
+//       description: "Proteção contra predadores e ambiente.",
+//       text: "A pele é recoberta por escamas e osteodermos, oferecendo proteção e ajudando na regulação térmica."
+//     },
+//     {
+//       name: "Estilo de vida semiaquático",
+//       node: null,
+//       description: "Adaptados para água e terra.",
+//       text: "Os crocodilos vivem em rios, lagos e pântanos, mas também se deslocam em terra firme com eficiência."
+//     },
+//     {
+//       name: "Cuidado parental",
+//       node: null,
+//       description: "Proteção dos filhotes.",
+//       text: "As fêmeas protegem os ninhos e auxiliam os filhotes recém-nascidos, comportamento raro entre répteis."
+//     }
+//   ],
+//   attribuition: "Modelo genérico por Treey - Sketchfab",
+//   wikipedia: "https://en.wikipedia.org/wiki/Crocodile",
+//   // sceneBg: '#1a1f1f',
+//   hasAnimation: true
+// } as const;
 
 
 export const Aves_Accipitriformes_RedTailedHawk: IModelData = {
@@ -935,7 +935,7 @@ export const CHORDATA_MODELS: IModelData[] = [
   Reptilia_Chelonia_Loggerhead,
   Reptilia_Squamata_Lizard,
   Reptilia_Squamata_Snake,
-  Reptilia_Crocodylia_Crocodile,
+  //Reptilia_Crocodylia_Crocodile,
   // Aves_Accipitriformes_BaldEagle,
   Aves_Accipitriformes_RedTailedHawk,
   Aves_Struthioniformes_Ostrich,
