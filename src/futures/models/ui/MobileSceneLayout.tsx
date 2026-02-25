@@ -100,9 +100,7 @@ export const MobileSceneLayout = ({ children, discipline, topic, code }: MobileS
       {
         id: '3',
         label: 'Exercícios',
-        onSelect: () => {
-          navigate(`${ROUTES_NAME.EXERCISES}/${discipline}/${topic}/${code}`)
-        }
+        onSelect: handleExercise
       })
 
     setMenuOptions(options)
@@ -111,6 +109,16 @@ export const MobileSceneLayout = ({ children, discipline, topic, code }: MobileS
     modelState, isPlayingAudio, modelState.isAnimating,
     discipline, topic, code
   ])
+
+  useEffect(() => {
+      return () => {
+        audioDispatch({
+        type: AudioActionType.SET_STATUS,
+        payload: 'idle'
+      })
+      stopAudio()
+      }
+    }, [])
 
   const handleFullscreen = () => {
     toggleFullscreen(".m-scene")
@@ -161,7 +169,7 @@ export const MobileSceneLayout = ({ children, discipline, topic, code }: MobileS
 
   const handleStop = () => {
     stop()
-
+    
     audioDispatch({
       type: AudioActionType.SET_STATUS,
       payload: 'idle'
@@ -322,6 +330,18 @@ export const MobileSceneLayout = ({ children, discipline, topic, code }: MobileS
     )
   }
 
+  const handleExercise = () => {
+    resetUi()
+    navigate(`${ROUTES_NAME.EXERCISES}/${discipline}/${topic}/${code}`)
+  }
+
+  const resetUi = () =>{
+    uiDispatch({type: 'CLOSE_AUDIO_MENU'})
+    uiDispatch({type: 'CLOSE_DETAIL_OPTION'})
+    uiDispatch({type: 'CLOSE_EXPLANATION'})
+    uiDispatch({type: 'CLOSE_MENU_OPTIONS'})
+  }
+
   //UPDATE MODEL BY NEXT/PREV
   // ===============================
   // NEXT / PREVIOUS (derivado da URL)
@@ -444,7 +464,7 @@ export const MobileSceneLayout = ({ children, discipline, topic, code }: MobileS
           >
             {/* {!modelState.sound && 'Sem áudio'}
             {modelState.sound && (!isPlayingAudio ? 'Ouvir' : 'Parar')} */}
-            Mais
+            {!isShowMoreOptions ? 'Mais':'Fechar'}
           </button>
 
           <button

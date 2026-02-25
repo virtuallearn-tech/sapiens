@@ -85,6 +85,7 @@
   &__action {
 
     @include action-style();
+    cursor: pointer;
 
     &--fullscreen,
     &--options {
@@ -144,6 +145,10 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+
+    @include breakpoint($md){
+      bottom: 8rem;
+    }
   }
 }
 
