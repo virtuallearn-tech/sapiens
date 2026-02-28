@@ -64,15 +64,6 @@ export const MobileSceneLayout = ({ children, discipline, topic, code }: MobileS
   const [menuOptions, setMenuOptions] = useState<IActionMenuOption[]>([])
   const [isShowMoreOptions, setIsShowMoreOptions] = useState<boolean>(false)
 
-
-  useEffect(() => {
-    console.log('MENU MOUNT');
-
-    return () => {
-      console.log('MENU UNMOUNT');
-    };
-  }, []);
-
   useEffect(() => {
     console.log('MENU STATE', modelState);
 
@@ -118,6 +109,8 @@ export const MobileSceneLayout = ({ children, discipline, topic, code }: MobileS
       })
       stopAudio()
       }
+
+      resetUi()
     }, [])
 
   const handleFullscreen = () => {
@@ -319,7 +312,7 @@ export const MobileSceneLayout = ({ children, discipline, topic, code }: MobileS
         )}
         {/*label de explicação*/}
         <FabButton
-          icon={!modelState.explanation ? "close" : "letter"}
+          icon={uiState.isShowExplanation ? "close-square" : "letter"}
           onClick={() => uiDispatch({ type: 'TOGGLE_EXPLANATION' })}
         />
         <FabButton
@@ -403,6 +396,9 @@ export const MobileSceneLayout = ({ children, discipline, topic, code }: MobileS
 
     audioDispatch({ type: AudioActionType.SET_STATUS, payload: 'idle' })
     uiDispatch({ type: 'CLOSE_AUDIO_MENU' })
+    uiDispatch({type: 'CLOSE_EXPLANATION'})
+
+    resetUi()
   }
 
 

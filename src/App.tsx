@@ -1,6 +1,7 @@
 import { Header } from "@components/layout/Header"
 import { Sidebar } from "@components/layout/Sidebar";
 import { AppRoutes } from "@routes/routes";
+import { ROUTES_NAME } from "@routes/routesName";
 import { useSidebar } from "@store/SidebarContext";
 import { useLocation } from "react-router-dom"
 
@@ -9,7 +10,7 @@ import { useLocation } from "react-router-dom"
 function App() {
 
   const location = useLocation()
-  const isScenePage = location.pathname.startsWith("/scene/")
+  const isScenePage = location.pathname.startsWith(`${ROUTES_NAME.SCENE}/`)
   
   const { toggle } = useSidebar();
 
@@ -25,11 +26,11 @@ function App() {
       {/* <button className="fab" onClick={toggle}>
         ☰
       </button> */}
-       {/* {!isScenePage && (
+       {!isScenePage && (
         <button className="fab" onClick={toggle}>
           ☰
         </button>
-      )} */}
+      )} 
     </div>
   );
 }

@@ -21,7 +21,7 @@ const updateSW = registerSW({
 })
 
 createRoot(document.getElementById('root')!).render(
-  // <StrictMode>
+  <StrictMode>
   <ModelProvider>
     <UiSceneProvider>
       <AudioProvider>
@@ -33,6 +33,6 @@ createRoot(document.getElementById('root')!).render(
       </AudioProvider>
     </UiSceneProvider>
   </ModelProvider>
-  // </StrictMode>,
+  </StrictMode>,
 )
 
