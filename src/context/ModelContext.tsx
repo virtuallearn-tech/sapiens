@@ -27,10 +27,6 @@ interface ModelProviderProps {
 
 export const ModelProvider = ({ children }: ModelProviderProps) => {
     const [state, dispatch] = useReducer(ModelReducer, initialModelState)
-
-        console.log('MODEL PROVIDER INSTANCE')
-
-
     return (
         <ModelContext.Provider value={{ state, dispatch }}>
             {children}
@@ -41,13 +37,9 @@ export const ModelProvider = ({ children }: ModelProviderProps) => {
 export const useModel = () => {
     const context = useContext(ModelContext)
 
-    useEffect(() => {
-        console.log('MODEL PROVIDER MOUNT');
-    }, []);
-
     if (!context) {
         throw new Error("useModel must be used with a model provider")
     }
-    console.log('MODEL STATE', context.state)
+    
     return context
 }

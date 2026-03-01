@@ -24,7 +24,7 @@ const Model = ({ updateScale }: IPlotModel) => {
   const [scaleModel, setScale] = useState<number>(1)
 
   const { scene, animations } = useGLTF(state.model!.source)
-  console.log('Model on scene', scene)
+  //console.log('Model on scene', scene)
   // console.log('animations ', animations)
 
   const { actions } = useAnimations(animations, group)

@@ -58,14 +58,14 @@ export const MobileSceneLayout = ({ children, discipline, topic, code }: MobileS
     resume: resumeAudio, stop: stopAudio
   } = useAudioPlayer()
 
-  console.log('MODEL STATE NO LAYOUT:', modelState);
+  //console.log('MODEL STATE NO LAYOUT:', modelState);
 
 
   const [menuOptions, setMenuOptions] = useState<IActionMenuOption[]>([])
   const [isShowMoreOptions, setIsShowMoreOptions] = useState<boolean>(false)
 
   useEffect(() => {
-    console.log('MENU STATE', modelState);
+    //console.log('MENU STATE', modelState);
 
     const options: IActionMenuOption[] = []
 
@@ -181,7 +181,7 @@ export const MobileSceneLayout = ({ children, discipline, topic, code }: MobileS
     // 1) Gera a rotina completa
     const steps = setClass(modelState.model)
 
-    console.log('STEPPSSS ', steps)
+    //console.log('STEPPSSS ', steps)
 
     if (steps.length === 0) return
 
@@ -198,7 +198,7 @@ export const MobileSceneLayout = ({ children, discipline, topic, code }: MobileS
 
     // 3) Atualiza UI com o primeiro passo
     const firstStep = steps[0]
-    console.log('FIRST STEP ', firstStep)
+    //console.log('FIRST STEP ', firstStep)
 
     modelDispatch({
       type: ModelActionType.SET_TITLE,
@@ -343,13 +343,13 @@ export const MobileSceneLayout = ({ children, discipline, topic, code }: MobileS
   const models: IModelData[] =
     getModelByModule(discipline as any, topic as any)?.data ?? []
 
-  console.log('LISTA DE MODELOS MENU ', models)
+  //console.log('LISTA DE MODELOS MENU ', models)
 
   const currentIndex = models.findIndex(
     (m) => m.topic === code
   )
 
-  console.log('INDEX MODELO ', currentIndex);
+  //console.log('INDEX MODELO ', currentIndex);
 
   const handleNext = () => {
     if (currentIndex === -1) return
